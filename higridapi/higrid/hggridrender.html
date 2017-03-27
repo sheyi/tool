@@ -1,0 +1,692 @@
+<!doctype html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="generator" content="higrid.net (http://higrid.net/)">
+<meta name="when" content="Sat, 23 Feb 2013 06:50:18 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>hgGridRender (Higrid API Documentation _higrid.net)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higrid/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higrid/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higrid\hggridrender.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">hiGrid\hgGridRender</div>
+<div class="location">hgGrid.php at line 2717</div>
+<h1>Class hgGridRender</h1>
+
+<pre class="tree"><a href="../higrid/jqgrid.html">jqGrid</a><br>    └─<a href="../higrid/hggridedit.html">hgGridEdit</a><br>       └─<strong>hgGridRender</strong><br /></pre>
+
+<dl>
+<dt>All Known Subclasses:</dt>
+<dd><a href="../hgtreegrid/hgtreegrid.html">hgTreeGrid\hgTreeGrid</a> </dd>
+</dl>
+
+<hr>
+
+<p class="signature">public abstract  class <strong>hgGridRender</strong><br>extends <a href="../higrid/hggridedit.html">hgGridEdit</a>
+
+</p>
+
+<div class="comment" id="overview_description"><p></p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>She Yi sheyee@163.com</dd>
+<dt>Copyright:</dt>
+<dd>HiGrid.net</dd>
+<dt>Version:</dt>
+<dd>2.1</dd>
+</dl>
+<hr>
+
+<table id="summary_field">
+<tr><th colspan="2">Field Summary</th></tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#csvfile">$csvfile</a></p><p class="description">The export to file to CSV</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#csvsep">$csvsep</a></p><p class="description">SCV separator</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#csvsepreplace">$csvsepreplace</a></p><p class="description">CSV string to replavce separator</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#export">$export</a></p><p class="description">Enable/disable the export to excel</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#exportfile">$exportfile</a></p><p class="description">The export to file to excel</p></td>
+</tr>
+<tr>
+<td class="type"> type boolean If set to true add the inline navigator buttons for inline editing</td>
+<td class="description"><p class="name"><a href="#inlineNav">$inlineNav</a></p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#navigator">$navigator</a></p><p class="description">Enable/disable navigator in the grid. </p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#pdffile">$pdffile</a></p><p class="description">The export to file to PDF</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#sharedAddOptions">$sharedAddOptions</a></p><p class="description">If set to true put the form add options as grid option so they can be used from other places</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#sharedDelOptions">$sharedDelOptions</a></p><p class="description">If set to true put the form delete options as grid option so they can be used from other places</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#sharedEditOptions">$sharedEditOptions</a></p><p class="description">If set to true put the form edit options as grid option so they can be used from other places</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#toolbarfilter">$toolbarfilter</a></p><p class="description">Enable/disable tollbar search. </p></td>
+</tr>
+</table>
+
+<table class="inherit">
+<tr><th colspan="2">Fields inherited from hiGrid\hgGridEdit</th></tr>
+<tr><td><a href="../higrid/hggridedit.html#add">add</a>, <a href="../higrid/hggridedit.html#decodeinput">decodeinput</a>, <a href="../higrid/hggridedit.html#del">del</a>, <a href="../higrid/hggridedit.html#edit">edit</a>, <a href="../higrid/hggridedit.html#getLastInsert">getLastInsert</a>, <a href="../higrid/hggridedit.html#mtype">mtype</a>, <a href="../higrid/hggridedit.html#serialKey">serialKey</a>, <a href="../higrid/hggridedit.html#trans">trans</a></td></tr></table>
+
+<table class="inherit">
+<tr><th colspan="2">Fields inherited from hiGrid\jqGrid</th></tr>
+<tr><td><a href="../higrid/jqgrid.html#ExportCommand">ExportCommand</a>, <a href="../higrid/jqgrid.html#SubgridCommand">SubgridCommand</a>, <a href="../higrid/jqgrid.html#cacheCount">cacheCount</a>, <a href="../higrid/jqgrid.html#customClass">customClass</a>, <a href="../higrid/jqgrid.html#customError">customError</a>, <a href="../higrid/jqgrid.html#customFunc">customFunc</a>, <a href="../higrid/jqgrid.html#dataType">dataType</a>, <a href="../higrid/jqgrid.html#datearray">datearray</a>, <a href="../higrid/jqgrid.html#debug">debug</a>, <a href="../higrid/jqgrid.html#encoding">encoding</a>, <a href="../higrid/jqgrid.html#errorMessage">errorMessage</a>, <a href="../higrid/jqgrid.html#gSQLMaxRows">gSQLMaxRows</a>, <a href="../higrid/jqgrid.html#higridSC">higridSC</a>, <a href="../higrid/jqgrid.html#jsonencode">jsonencode</a>, <a href="../higrid/jqgrid.html#logtofile">logtofile</a>, <a href="../higrid/jqgrid.html#mongofields">mongofields</a>, <a href="../higrid/jqgrid.html#mongointegers">mongointegers</a>, <a href="../higrid/jqgrid.html#oper">oper</a>, <a href="../higrid/jqgrid.html#optimizeSearch">optimizeSearch</a>, <a href="../higrid/jqgrid.html#performcount">performcount</a>, <a href="../higrid/jqgrid.html#readFromXML">readFromXML</a>, <a href="../higrid/jqgrid.html#showError">showError</a>, <a href="../higrid/jqgrid.html#table">table</a>, <a href="../higrid/jqgrid.html#version">version</a>, <a href="../higrid/jqgrid.html#xmlCDATA">xmlCDATA</a></td></tr></table>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getColModel()">getColModel</a>()</p><p class="description">Return the generated colModel</p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#getGridOption()">getGridOption</a>(string key)</p><p class="description">Return a jqGrid option specified by the key, false if the option can not be found.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#higridsGO()">higridsGO</a>(array aoptions)</p><p class="description">Set a grid option. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#setUrl()">setUrl</a>(string newurl)</p><p class="description">Set a editing url. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#setSubGrid()">setSubGrid</a>(string suburl, array subnames, array subwidth, array subalign, array subparams)</p><p class="description">Prepares a executuion of a simple subgrid
+Return false if no name options for the subgrid.</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#setSubGridGrid()">setSubGridGrid</a>(string subgridurl, array subgridnames)</p><p class="description">Prepares a subgrid in the grid expecting any valid html content provieded
+via the $suggridurl</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#setSelect()">setSelect</a>(string colname, mixed data, boolean formatter, boolean editing, boolean seraching, array defvals)</p><p class="description">Construct the select used in the grid. </p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setAutocomplete()">setAutocomplete</a>(string colname, string target, mixed data, array options, boolean editing, boolean seraching, bool searching)</p><p class="description">Construct autocompleter used in the grid. </p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setDatepicker()">setDatepicker</a>(string colname, array options, boolean editing, boolean seraching, bool searching)</p><p class="description">Construct a pop up calender used in the grid. </p></td>
+</tr>
+<tr>
+<td class="type"> bolean</td>
+<td class="description"><p class="name"><a href="#setGridEvent()">setGridEvent</a>(string event, string code)</p><p class="description">Set a valid grid event</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#higridsNO()">higridsNO</a>(string module, array aoptions)</p><p class="description">Set options in the navigator for the diffrent actions</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#setNavEvent()">setNavEvent</a>(string module, string event, string code)</p><p class="description">Set a event in the navigator or in the diffrent modules add,edit,del,view, search</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#inlineNavOptions()">inlineNavOptions</a>(string module, array aoptions)</p><p class="description">Set a options for inline editing in particulear module</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#inlineNavEvent()">inlineNavEvent</a>(string module, string event, string code)</p><p class="description">Set a event for inline editing in particulear module</p></td>
+</tr>
+<tr>
+<td class="type"> type</td>
+<td class="description"><p class="name"><a href="#getInlineOptions()">getInlineOptions</a>()</p><p class="description">Return a array of the all events and options for the inline navigator</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setFilterOptions()">setFilterOptions</a>(array aoptions)</p><p class="description">Set options for the tolbar filter when enabled</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#callGridMethod()">callGridMethod</a>(string grid, string method, array aoptions)</p><p class="description">Construct a code for execution of valid grid method. </p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setJSCode()">setJSCode</a>(string code)</p><p class="description">Put a javascript arbitrary code after all things are created. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#setColModel()">setColModel</a>(array model, array params, array labels)</p><p class="description">Construct the column model of the grid. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#higridsCP()">higridsCP</a>(mixed colname, array aproperties)</p><p class="description">Set a new property in the constructed colModel
+Return true on success.</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#addCol()">addCol</a>(array aproperties, string position)</p><p class="description">Add a column at the first or last position in the colModel and sets a certain
+properties to it</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setButtonOptions()">setButtonOptions</a>(string exptype, array aoptions)</p><p class="description">Set a various options for the buttons on the pager. </p></td>
+</tr>
+<tr>
+<td class="type"> mixed.</td>
+<td class="description"><p class="name"><a href="#higridOP()">higridOP</a>(string tblelement, string pager, boolean script, array summary, array params, boolean createtbl, boolean createpg, boolean echo)</p><p class="description">Main method which do allmost everthing for the grid.
+</p></td>
+</tr>
+</table>
+
+<table class="inherit">
+<tr><th colspan="2">Methods inherited from hiGrid\hgGridEdit</th></tr>
+<tr><td><a href="../higrid/hggridedit.html#checkPrimary()">checkPrimary</a>, <a href="../higrid/hggridedit.html#delete()">delete</a>, <a href="../higrid/hggridedit.html#editGrid()">editGrid</a>, <a href="../higrid/hggridedit.html#getFields()">getFields</a>, <a href="../higrid/hggridedit.html#getLastInsertId()">getLastInsertId</a>, <a href="../higrid/hggridedit.html#getPrimaryKeyId()">getPrimaryKeyId</a>, <a href="../higrid/hggridedit.html#insert()">insert</a>, <a href="../higrid/hggridedit.html#setAfterCrudAction()">setAfterCrudAction</a>, <a href="../higrid/hggridedit.html#setBeforeCrudAction()">setBeforeCrudAction</a>, <a href="../higrid/hggridedit.html#setPrimaryKeyId()">setPrimaryKeyId</a>, <a href="../higrid/hggridedit.html#setSuccessMsg()">setSuccessMsg</a>, <a href="../higrid/hggridedit.html#setTable()">setTable</a>, <a href="../higrid/hggridedit.html#update()">update</a></td></tr></table>
+
+<table class="inherit">
+<tr><th colspan="2">Methods inherited from hiGrid\jqGrid</th></tr>
+<tr><td><a href="../higrid/jqgrid.html#__construct()">__construct</a>, <a href="../higrid/jqgrid.html#addUserData()">addUserData</a>, <a href="../higrid/jqgrid.html#buildSearch()">buildSearch</a>, <a href="../higrid/jqgrid.html#debugout()">debugout</a>, <a href="../higrid/jqgrid.html#execute()">execute</a>, <a href="../higrid/jqgrid.html#exportToCsv()">exportToCsv</a>, <a href="../higrid/jqgrid.html#exportToExcel()">exportToExcel</a>, <a href="../higrid/jqgrid.html#exportToPdf()">exportToPdf</a>, <a href="../higrid/jqgrid.html#getDbDate()">getDbDate</a>, <a href="../higrid/jqgrid.html#getDbTime()">getDbTime</a>, <a href="../higrid/jqgrid.html#getGridParams()">getGridParams</a>, <a href="../higrid/jqgrid.html#getSqlElement()">getSqlElement</a>, <a href="../higrid/jqgrid.html#getStringForGroup()">getStringForGroup</a>, <a href="../higrid/jqgrid.html#getUserDate()">getUserDate</a>, <a href="../higrid/jqgrid.html#getUserTime()">getUserTime</a>, <a href="../higrid/jqgrid.html#logQuery()">logQuery</a>, <a href="../higrid/jqgrid.html#parseSql()">parseSql</a>, <a href="../higrid/jqgrid.html#queryForObject()">queryForObject</a>, <a href="../higrid/jqgrid.html#queryGrid()">queryGrid</a>, <a href="../higrid/jqgrid.html#querySubGrid()">querySubGrid</a>, <a href="../higrid/jqgrid.html#rs2excel()">rs2excel</a>, <a href="../higrid/jqgrid.html#rs2pdf()">rs2pdf</a>, <a href="../higrid/jqgrid.html#selectLimit()">selectLimit</a>, <a href="../higrid/jqgrid.html#sendErrorHeader()">sendErrorHeader</a>, <a href="../higrid/jqgrid.html#setDbDate()">setDbDate</a>, <a href="../higrid/jqgrid.html#setDbTime()">setDbTime</a>, <a href="../higrid/jqgrid.html#setGridParams()">setGridParams</a>, <a href="../higrid/jqgrid.html#setPdfOptions()">setPdfOptions</a>, <a href="../higrid/jqgrid.html#setUserDate()">setUserDate</a>, <a href="../higrid/jqgrid.html#setUserTime()">setUserTime</a></td></tr></table>
+
+<h2 id="detail_field">Field Detail</h2>
+<div class="location">hgGrid.php at line 2759</div>
+<h3 id="csvfile">csvfile</h3>
+<code class="signature">public  string <strong>$csvfile</strong> = 'higrid_export.csv'</code>
+<div class="details">
+<p>The export to file to CSV</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2764</div>
+<h3 id="csvsep">csvsep</h3>
+<code class="signature">public  string <strong>$csvsep</strong> = ';'</code>
+<div class="details">
+<p>SCV separator</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2769</div>
+<h3 id="csvsepreplace">csvsepreplace</h3>
+<code class="signature">public  string <strong>$csvsepreplace</strong> = &quot;;&quot;</code>
+<div class="details">
+<p>CSV string to replavce separator</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2744</div>
+<h3 id="export">export</h3>
+<code class="signature">public  boolean <strong>$export</strong> = true</code>
+<div class="details">
+<p>Enable/disable the export to excel</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2749</div>
+<h3 id="exportfile">exportfile</h3>
+<code class="signature">public  string <strong>$exportfile</strong> = 'higrid_export.xml'</code>
+<div class="details">
+<p>The export to file to excel</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2739</div>
+<h3 id="inlineNav">inlineNav</h3>
+<code class="signature">public  type boolean If set to true add the inline navigator buttons for inline editing <strong>$inlineNav</strong> = false</code>
+<div class="details">
+<p></p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2728</div>
+<h3 id="navigator">navigator</h3>
+<code class="signature">public  boolean <strong>$navigator</strong> = false</code>
+<div class="details">
+<p>Enable/disable navigator in the grid. Default false</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2754</div>
+<h3 id="pdffile">pdffile</h3>
+<code class="signature">public  string <strong>$pdffile</strong> = 'higrid_export.pdf'</code>
+<div class="details">
+<p>The export to file to PDF</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2779</div>
+<h3 id="sharedAddOptions">sharedAddOptions</h3>
+<code class="signature">public  boolean <strong>$sharedAddOptions</strong> = false</code>
+<div class="details">
+<p>If set to true put the form add options as grid option so they can be used from other places</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2784</div>
+<h3 id="sharedDelOptions">sharedDelOptions</h3>
+<code class="signature">public  boolean <strong>$sharedDelOptions</strong> = false</code>
+<div class="details">
+<p>If set to true put the form delete options as grid option so they can be used from other places</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2774</div>
+<h3 id="sharedEditOptions">sharedEditOptions</h3>
+<code class="signature">public  boolean <strong>$sharedEditOptions</strong> = false</code>
+<div class="details">
+<p>If set to true put the form edit options as grid option so they can be used from other places</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2733</div>
+<h3 id="toolbarfilter">toolbarfilter</h3>
+<code class="signature">public  boolean <strong>$toolbarfilter</strong> = false</code>
+<div class="details">
+<p>Enable/disable tollbar search. Default false</p></div>
+
+<hr>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">hgGrid.php at line 2859</div>
+<h3 id="getColModel()">getColModel</h3>
+<code class="signature">public  array <strong>getColModel</strong>()</code>
+<div class="details">
+<p>Return the generated colModel</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2870</div>
+<h3 id="getGridOption()">getGridOption</h3>
+<code class="signature">public  mixed <strong>getGridOption</strong>(string key)</code>
+<div class="details">
+<p>Return a jqGrid option specified by the key, false if the option can not be found.</p><dl>
+<dt>Parameters:</dt>
+<dd>key - the named grid option</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2882</div>
+<h3 id="higridsGO()">higridsGO</h3>
+<code class="signature">public  void <strong>higridsGO</strong>(array aoptions)</code>
+<div class="details">
+<p>Set a grid option. The method uses array with keys corresponding
+to the jqGrid options as described in jqGrid docs</p><dl>
+<dt>Parameters:</dt>
+<dd>aoptions - A key name pair. Some options can be array to.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2898</div>
+<h3 id="setUrl()">setUrl</h3>
+<code class="signature">public  boolean <strong>setUrl</strong>(string newurl)</code>
+<div class="details">
+<p>Set a editing url. Note that this set a url from where to obtain and/or edit
+data.
+Return false if runSetCommands is already runned (false)</p><dl>
+<dt>Parameters:</dt>
+<dd>newurl - the new url</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2921</div>
+<h3 id="setSubGrid()">setSubGrid</h3>
+<code class="signature">public  boolean <strong>setSubGrid</strong>(string suburl, array subnames, array subwidth, array subalign, array subparams)</code>
+<div class="details">
+<p>Prepares a executuion of a simple subgrid
+Return false if no name options for the subgrid.</p><dl>
+<dt>Parameters:</dt>
+<dd>suburl - Url from where to get the data</dd>
+<dd>subnames - Required - the names that should correspond to fields of the data</dd>
+<dd>subwidth - (optional) - sets a width of the subgrid columns. Default 100</dd>
+<dd>subalign - (optional) - set the aligmend of the columns. default center</dd>
+<dd>subparams - (optional) additional parameters that can be passed when the subgrid plus icon is clicked. The names should be present in colModel in order to pass the values</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2945</div>
+<h3 id="setSubGridGrid()">setSubGridGrid</h3>
+<code class="signature">public  boolean <strong>setSubGridGrid</strong>(string subgridurl, array subgridnames)</code>
+<div class="details">
+<p>Prepares a subgrid in the grid expecting any valid html content provieded
+via the $suggridurl</p><dl>
+<dt>Parameters:</dt>
+<dd>subgridurl - url from where to get html content</dd>
+<dd>subgridnames - a array with names from colModel which values will be posted to the server</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2997</div>
+<h3 id="setSelect()">setSelect</h3>
+<code class="signature">public  boolean <strong>setSelect</strong>(string colname, mixed data, boolean formatter, boolean editing, boolean seraching, array defvals)</code>
+<div class="details">
+<p>Construct the select used in the grid. The select element can be used in the
+editing modules, in formatter or in search module</p><dl>
+<dt>Parameters:</dt>
+<dd>colname - (requiered) valid colname in colmodel</dd>
+<dd>data - can be array (with pair key value) or string which is the SQL command which is executed to obtain the values. The command should contain a minimun two fields. The first is the key and the second is the value whch will be displayed in the select</dd>
+<dd>formatter - deternines that the select should be used in the formatter of type select. Default is true</dd>
+<dd>editing - determines if the select should be used in editing modules. Deafult is true</dd>
+<dd>seraching - determines if the select should be present in the search module. Deafult is true.</dd>
+<dd>defvals - Set the default value if none is selected. Typically this is usefull in serch modules. Can be something like arrar(""=>"All");</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3088</div>
+<h3 id="setAutocomplete()">setAutocomplete</h3>
+<code class="signature">public  void <strong>setAutocomplete</strong>(string colname, string target, mixed data, array options, boolean editing, boolean seraching, bool searching)</code>
+<div class="details">
+<p>Construct autocompleter used in the grid. The autocomplete can be used in the
+editing modules or/and in search module.</p><dl>
+<dt>Uses:</dt>
+<dd>jqAutocomplete class. This requiere to include jqAutocomplete.php in order to work</dd>
+<dt>Parameters:</dt>
+<dd>colname - (requiered) valid colname in colModel</dd>
+<dd>target - if set determines the input element on which the value will be set after the selection in the autocompleter</dd>
+<dd>data - can be array or string which is the SQL command which is executed to obtain the values. The command can contain one, two or three fields. If the field in SQL command is one, then this this field will be displayed and setted as value in the element. If the fields in SQL command are two, then the second field will be displayed but the first will be setted as value in the element.</dd>
+<dd>options - - array with options for the autocomplete. Can be all available options from jQuery UI autocomplete in pair name=>value. In case of events a "js:" tag should be added before the value. Additionally to this the following options can be used - cache, searchType, ajaxtype, itemLiength. For more info refer to docs.</dd>
+<dd>editing - determines if the autocomplete should be used in editing modules. Deafult is true</dd>
+<dd>seraching - determines if the autocomplete should be present in the search module. Deafult is true.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3182</div>
+<h3 id="setDatepicker()">setDatepicker</h3>
+<code class="signature">public  void <strong>setDatepicker</strong>(string colname, array options, boolean editing, boolean seraching, bool searching)</code>
+<div class="details">
+<p>Construct a pop up calender used in the grid. The datepicker can be used in the
+editing modules or/and in search module.</p><dl>
+<dt>Uses:</dt>
+<dd>jqCalender class. This requiere to include jqCalender.php in order to work</dd>
+<dt>Parameters:</dt>
+<dd>colname - (requiered) valid colname in colModel</dd>
+<dd>options - - array with options for the datepicker. Can be all available options from jQuery UI datepicker in pair name=>value. In case of events a "js:" tag should be added before the value.</dd>
+<dd>editing - determines if the datepicker should be used in editing modules. Deafult is true</dd>
+<dd>seraching - determines if the datepicker should be present in the search module. Deafult is true.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3230</div>
+<h3 id="setGridEvent()">setGridEvent</h3>
+<code class="signature">public  bolean <strong>setGridEvent</strong>(string event, string code)</code>
+<div class="details">
+<p>Set a valid grid event</p><dl>
+<dt>Parameters:</dt>
+<dd>event - - valid grid event</dd>
+<dd>code - Javascript code which will be executed when the event raises</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3245</div>
+<h3 id="higridsNO()">higridsNO</h3>
+<code class="signature">public  boolean <strong>higridsNO</strong>(string module, array aoptions)</code>
+<div class="details">
+<p>Set options in the navigator for the diffrent actions</p><dl>
+<dt>Parameters:</dt>
+<dd>module - - can be navigator, add, edit, del, view</dd>
+<dd>aoptions - options that are applicable to this module The key correspond to the options in jqGrid</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3287</div>
+<h3 id="setNavEvent()">setNavEvent</h3>
+<code class="signature">public  boolean <strong>setNavEvent</strong>(string module, string event, string code)</code>
+<div class="details">
+<p>Set a event in the navigator or in the diffrent modules add,edit,del,view, search</p><dl>
+<dt>Parameters:</dt>
+<dd>module - - can be navigator, add, edit, del, view</dd>
+<dd>event - - valid event for the particular module</dd>
+<dd>code - - javascript code to be executed when the event occur</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3326</div>
+<h3 id="inlineNavOptions()">inlineNavOptions</h3>
+<code class="signature">public  boolean <strong>inlineNavOptions</strong>(string module, array aoptions)</code>
+<div class="details">
+<p>Set a options for inline editing in particulear module</p><dl>
+<dt>Parameters:</dt>
+<dd>module - - can be navigator or add or edit</dd>
+<dd>aoptions - array of options</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3356</div>
+<h3 id="inlineNavEvent()">inlineNavEvent</h3>
+<code class="signature">public  boolean <strong>inlineNavEvent</strong>(string module, string event, string code)</code>
+<div class="details">
+<p>Set a event for inline editing in particulear module</p><dl>
+<dt>Parameters:</dt>
+<dd>module - - can be add or edit</dd>
+<dd>event - the name of the event</dd>
+<dd>code - the javascript code for this event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3373</div>
+<h3 id="getInlineOptions()">getInlineOptions</h3>
+<code class="signature">public  type <strong>getInlineOptions</strong>()</code>
+<div class="details">
+<p>Return a array of the all events and options for the inline navigator</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3382</div>
+<h3 id="setFilterOptions()">setFilterOptions</h3>
+<code class="signature">public  void <strong>setFilterOptions</strong>(array aoptions)</code>
+<div class="details">
+<p>Set options for the tolbar filter when enabled</p><dl>
+<dt>Parameters:</dt>
+<dd>aoptions - valid options for the filterToolbat</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3397</div>
+<h3 id="callGridMethod()">callGridMethod</h3>
+<code class="signature">public  void <strong>callGridMethod</strong>(string grid, string method, array aoptions)</code>
+<div class="details">
+<p>Construct a code for execution of valid grid method. This code is putted
+after the creation of the grid</p><dl>
+<dt>Parameters:</dt>
+<dd>grid - valid grid id should be putted as #mygrid</dd>
+<dd>method - valid grid method</dd>
+<dd>aoptions - contain the parameters passed to the method. Omit this parameter if the method does not have parameters</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3416</div>
+<h3 id="setJSCode()">setJSCode</h3>
+<code class="signature">public  void <strong>setJSCode</strong>(string code)</code>
+<div class="details">
+<p>Put a javascript arbitrary code after all things are created. The method is executed
+only once when the grid is created.</p><dl>
+<dt>Parameters:</dt>
+<dd>code - - javascript to be executed</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3438</div>
+<h3 id="setColModel()">setColModel</h3>
+<code class="signature">public  boolean <strong>setColModel</strong>(array model, array params, array labels)</code>
+<div class="details">
+<p>Construct the column model of the grid. The model can be passed as array
+or can be constructed from sql. See _setSQL() to determine which SQL is
+used. The method try to determine the primary key and if it is found is
+set as key:true to the appropriate field. If the primary key can not be
+determined set the first field as key:true in the colModel.
+Return true on success.</p><dl>
+<dt>See Also:</dt>
+<dd>_setSQL</dd>
+<dt>Parameters:</dt>
+<dd>model - if set construct the model ignoring the SQL command</dd>
+<dd>params - if a sql command is used parametters passed to the SQL</dd>
+<dd>labels - if this parameter is set it set the labels in colModel. The array should be associative which key value correspond to the name of colModel</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3504</div>
+<h3 id="higridsCP()">higridsCP</h3>
+<code class="signature">public  boolean <strong>higridsCP</strong>(mixed colname, array aproperties)</code>
+<div class="details">
+<p>Set a new property in the constructed colModel
+Return true on success.</p><dl>
+<dt>Parameters:</dt>
+<dd>colname - valid coulmn name or index in colModel</dd>
+<dd>aproperties - the key name properties.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3538</div>
+<h3 id="addCol()">addCol</h3>
+<code class="signature">public  boolean <strong>addCol</strong>(array aproperties, string position)</code>
+<div class="details">
+<p>Add a column at the first or last position in the colModel and sets a certain
+properties to it</p><dl>
+<dt>Parameters:</dt>
+<dd>aproperties - data representing the column properties - including name, label...</dd>
+<dd>position - can be first or last or number - default is first. If a number is set the column is added before the position corresponded to the position in colmodel</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3571</div>
+<h3 id="setButtonOptions()">setButtonOptions</h3>
+<code class="signature">public  void <strong>setButtonOptions</strong>(string exptype, array aoptions)</code>
+<div class="details">
+<p>Set a various options for the buttons on the pager. tite, caption , icon</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 3612</div>
+<h3 id="higridOP()">higridOP</h3>
+<code class="signature">public  mixed. <strong>higridOP</strong>(string tblelement, string pager, boolean script, array summary, array params, boolean createtbl, boolean createpg, boolean echo)</code>
+<div class="details">
+<p>Main method which do allmost everthing for the grid.
+Construct the grid, perform CRUD operations, perform Query and serch operations,
+export to excel, set a jqGrid method, and javascript code</p><dl>
+<dt>Parameters:</dt>
+<dd>tblelement - the id of the table element to costrict the grid</dd>
+<dd>pager - the id for the pager element</dd>
+<dd>script - if set to true add a script tag before constructin the grid.</dd>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use other one this way : array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+<dd>params - parameters passed to the query</dd>
+<dd>createtbl - if set to true the table element is created automatically from this method. Default is false</dd>
+<dd>createpg - if set to true the pager element is created automatically from this script. Default false.</dd>
+<dd>echo - if set to false the function return the string representing the grid</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higrid/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higrid/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higrid\hggridrender.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href=http://higrid.net/ target=_blank>Online PHP Grids & PHP Charts</a>&nbsp;Last updated:2013-02-23</p>
+
+<br><div style="display:none"><!--HIGRID GOOGLE STATS --><script type="text/javascript" src="/include/js/statgoogle.js"  charset="utf-8"></script><script src="http://s20.cnzz.com/stat.php?id=3552716&web_id=3552716" language="javascript"></script></div></body>
+
+</html>

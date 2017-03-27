@@ -1,0 +1,991 @@
+<!doctype html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="generator" content="higrid.net (http://higrid.net/)">
+<meta name="when" content="Sat, 23 Feb 2013 06:50:18 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>jqGrid (Higrid API Documentation _higrid.net)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higrid/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higrid/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higrid\jqgrid.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">hiGrid\jqGrid</div>
+<div class="location">hgGrid.php at line 48</div>
+<h1>Class jqGrid</h1>
+
+<pre class="tree"><strong>jqGrid</strong><br /></pre>
+
+<dl>
+<dt>All Known Subclasses:</dt>
+<dd><a href="../higrid/hggridedit.html">hgGridEdit</a> </dd>
+</dl>
+
+<hr>
+
+<p class="signature">public abstract  class <strong>jqGrid</strong></p>
+
+<div class="comment" id="overview_description"><p></p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>She Yi sheyee@163.com</dd>
+<dt>Copyright:</dt>
+<dd>HiGrid.net</dd>
+<dt>Version:</dt>
+<dd>2.1</dd>
+</dl>
+<hr>
+
+<table id="summary_field">
+<tr><th colspan="2">Field Summary</th></tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#ExportCommand">$ExportCommand</a></p><p class="description">Set the sql command for excel export. </p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#SubgridCommand">$SubgridCommand</a></p><p class="description">Set a sql command used for the simple subgrid</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#cacheCount">$cacheCount</a></p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#customClass">$customClass</a></p><p class="description">Custom call can be used again with custom function customFunc. </p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#customError">$customError</a></p></td>
+</tr>
+<tr>
+<td class="type"> function</td>
+<td class="description"><p class="name"><a href="#customFunc">$customFunc</a></p><p class="description">Custom function which can be called to modify the grid output. </p></td>
+</tr>
+<tr>
+<td class="type"> string the</td>
+<td class="description"><p class="name"><a href="#dataType">$dataType</a></p><p class="description">The output format for the grid. </p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#datearray">$datearray</a></p><p class="description">Store the names which are dates. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#debug">$debug</a></p><p class="description">Enable disable debuging</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#encoding">$encoding</a></p><p class="description">Default enconding passed to the browser</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#errorMessage">$errorMessage</a></p><p class="description">Last error message from the server</p></td>
+</tr>
+<tr>
+<td class="type"> integer</td>
+<td class="description"><p class="name"><a href="#gSQLMaxRows">$gSQLMaxRows</a></p><p class="description">Maximum number of rows to be exported for the excel export</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#higridSC">$higridSC</a></p><p class="description">In case if no table is set, this holds the sql command for
+retrieving the data from the db to the grid</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#jsonencode">$jsonencode</a></p><p class="description">If set to true uses the PHP json_encode if available. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#logtofile">$logtofile</a></p><p class="description">Determines if the log should be written to file or echoed.
+</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#mongofields">$mongofields</a></p><p class="description">Array which set which fields should be selected in case of mongodb.
+</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#mongointegers">$mongointegers</a></p><p class="description">Store the names for the int fields when database is MongoDB. </p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#oper">$oper</a></p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#optimizeSearch">$optimizeSearch</a></p><p class="description">Optimizes the search SQL when used in MySQL with big data sets.
+</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#performcount">$performcount</a></p><p class="description">Internal set in queryGrid if we should use count query in order to set
+the grid output</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#readFromXML">$readFromXML</a></p><p class="description">Obtain the SQL qurery from XML file.
+</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#showError">$showError</a></p><p class="description">If set to true all errors from the server are shown in the client in a
+dialog. </p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#table">$table</a></p><p class="description">set a table to display a data to the grid</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#version">$version</a></p><p class="description">Get te current version</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#xmlCDATA">$xmlCDATA</a></p><p class="description">Defines if the xml otput should be enclosed in CDATA when xml output is enabled</p></td>
+</tr>
+</table>
+
+<table id="summary_constructor">
+<tr><th colspan="2">Constructor Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#__construct()">__construct</a>(mixed db, str odbctype, resource -)</p><p class="description">Constructor</p></td>
+</tr>
+</table>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#logQuery()">logQuery</a>(string sql, array data, array types, mixed input, mixed fld, str primary)</p><p class="description">Log query</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#debugout()">debugout</a>()</p><p class="description">Prints all executed SQL queries to file or console</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#sendErrorHeader()">sendErrorHeader</a>()</p><p class="description">Function to simulate 500 Internal error so that it sends the error
+to the client. </p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#parseSql()">parseSql</a>(string sqlElement, array params, bool bind)</p><p class="description">Prepares a $sqlElement and binds a parameters $params
+Return prepared sql statement</p></td>
+</tr>
+<tr>
+<td class="type">protected  boolean</td>
+<td class="description"><p class="name"><a href="#execute()">execute</a>(string sqlId, array params, resource sql, boolean limit, integer nrows, integer offset, str order, str sort)</p><p class="description">Executes a prepared sql statement. </p></td>
+</tr>
+<tr>
+<td class="type">protected  mixed</td>
+<td class="description"><p class="name"><a href="#getSqlElement()">getSqlElement</a>(string sqlId)</p><p class="description">Read a xml file and the higridSC and return the sql string
+Return string if the query is found false if not.</p></td>
+</tr>
+<tr>
+<td class="type">protected  object</td>
+<td class="description"><p class="name"><a href="#queryForObject()">queryForObject</a>(string sqlId, array params, boolean fetchAll)</p><p class="description">Return the object from the query</p></td>
+</tr>
+<tr>
+<td class="type">protected  array</td>
+<td class="description"><p class="name"><a href="#getStringForGroup()">getStringForGroup</a>(object group, array prm)</p><p class="description">Recursivley build the sql query from a json object</p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#buildSearch()">buildSearch</a>(string filter, string otype)</p><p class="description">Build a search string from filter string posted from the grid
+Usually use this functio separatley</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#getUserDate()">getUserDate</a>()</p><p class="description">Return the current date format used from the client</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setUserDate()">setUserDate</a>(string newformat)</p><p class="description">Set a new user date format using PHP convensions</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#getUserTime()">getUserTime</a>()</p><p class="description">Return the current datetime format used from the client</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setUserTime()">setUserTime</a>(string newformat)</p><p class="description">Set a new user datetime format using PHP convensions</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#getDbDate()">getDbDate</a>()</p><p class="description">Return the current date format used in the undelayed database</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setDbDate()">setDbDate</a>(string newformat)</p><p class="description">Set a new  database date format using PHP convensions</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#getDbTime()">getDbTime</a>()</p><p class="description">Return the current datetime format used in the undelayed database</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setDbTime()">setDbTime</a>(string newformat)</p><p class="description">Set a new  database datetime format using PHP convensions</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getGridParams()">getGridParams</a>()</p><p class="description">Return the associative array which contain the parameters
+that are sended from the grid to request, search, update delete data.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setGridParams()">setGridParams</a>(array _aparams)</p><p class="description">Set a grid parameters to identify the action from the grid
+Note that these should be set in the grid - i.e the parameters from the grid
+should equal to the GridParams.</p></td>
+</tr>
+<tr>
+<td class="type"> object</td>
+<td class="description"><p class="name"><a href="#selectLimit()">selectLimit</a>(string limsql, integer is, array array, int nrows, int offset, mixed params, str order, str sort)</p><p class="description">Will select, getting rows from $offset (1-based), for $nrows.
+</p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#queryGrid()">queryGrid</a>(array summary, array params, boolen echo)</p><p class="description">Return the result of the query to jqGrid. </p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#exportToExcel()">exportToExcel</a>(array summary, array params, array colmodel, boolean echo, string filename)</p><p class="description">Export the recordset to excel xml file.
+</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setPdfOptions()">setPdfOptions</a>(array apdf)</p><p class="description">Set options for PDF export.</p></td>
+</tr>
+<tr>
+<td class="type">protected  null</td>
+<td class="description"><p class="name"><a href="#rs2pdf()">rs2pdf</a>(object rs, pdf created, array colmodel, mixed pdf, mixed summary)</p><p class="description">Convert a recordeset to pdf object</p></td>
+</tr>
+<tr>
+<td class="type"> </td>
+<td class="description"><p class="name"><a href="#exportToPdf()">exportToPdf</a>(array summary, array params, array colmodel, string filename)</p><p class="description">Export the recordset to pdf file.
+</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#exportToCsv()">exportToCsv</a>(array summary, array params, array colmodel, boolean echo, string filename, string sep, string sepreplace)</p><p class="description">Public method to export a grid data to csv data.
+</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#querySubGrid()">querySubGrid</a>(array params, boolean echo)</p><p class="description">Return the result of the query for the simple subgrid
+The format depend of dataType variable</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#rs2excel()">rs2excel</a>(pdo recordset, array colmodel, boolean echo, string filename, array summary, mixed rs)</p><p class="description">From a given recordset returns excel xml file. </p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#addUserData()">addUserData</a>(array adata)</p><p class="description">Add a custom data to the grid footer row if it is enabled.
+</p></td>
+</tr>
+</table>
+
+<h2 id="detail_field">Field Detail</h2>
+<div class="location">hgGrid.php at line 261</div>
+<h3 id="ExportCommand">ExportCommand</h3>
+<code class="signature">public  string <strong>$ExportCommand</strong> = &quot;&quot;</code>
+<div class="details">
+<p>Set the sql command for excel export. If not set a _setSQL
+function is used to set a sql for export</p><dl>
+<dt>See Also:</dt>
+<dd>_setSQL</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 271</div>
+<h3 id="SubgridCommand">SubgridCommand</h3>
+<code class="signature">public  string <strong>$SubgridCommand</strong> = &quot;&quot;</code>
+<div class="details">
+<p>Set a sql command used for the simple subgrid</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 343</div>
+<h3 id="cacheCount">cacheCount</h3>
+<code class="signature">public  boolean <strong>$cacheCount</strong> = false</code>
+<div class="details">
+<p></p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 326</div>
+<h3 id="customClass">customClass</h3>
+<code class="signature">public  mixed <strong>$customClass</strong> = false</code>
+<div class="details">
+<p>Custom call can be used again with custom function customFunc. We can call
+this using static defined functions in class customClass::customFunc - i.e
+$grid->customClass = Custom, $grid->customFunc = myfunc
+or $grid->customClass = new Custom(), $grid->customFunc = myfunc</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 327</div>
+<h3 id="customError">customError</h3>
+<code class="signature">public  mixed <strong>$customError</strong> = null</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 318</div>
+<h3 id="customFunc">customFunc</h3>
+<code class="signature">public  function <strong>$customFunc</strong> = null</code>
+<div class="details">
+<p>Custom function which can be called to modify the grid output. Parameters
+passed to this function are the response object and the db connection</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 215</div>
+<h3 id="dataType">dataType</h3>
+<code class="signature">public  string the <strong>$dataType</strong> = &quot;xml&quot;</code>
+<div class="details">
+<p>The output format for the grid. Can be json or xml</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 234</div>
+<h3 id="datearray">datearray</h3>
+<code class="signature">public  array <strong>$datearray</strong> = array()</code>
+<div class="details">
+<p>Store the names which are dates. The name should correspond of the name
+in colModel. Used to perform the conversion from userdate and dbdate</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 144</div>
+<h3 id="debug">debug</h3>
+<code class="signature">public  boolean <strong>$debug</strong> = false</code>
+<div class="details">
+<p>Enable disable debuging</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 220</div>
+<h3 id="encoding">encoding</h3>
+<code class="signature">public  string <strong>$encoding</strong> = &quot;utf-8&quot;</code>
+<div class="details">
+<p>Default enconding passed to the browser</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 184</div>
+<h3 id="errorMessage">errorMessage</h3>
+<code class="signature">public  string <strong>$errorMessage</strong> = ''</code>
+<div class="details">
+<p>Last error message from the server</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 266</div>
+<h3 id="gSQLMaxRows">gSQLMaxRows</h3>
+<code class="signature">public  integer <strong>$gSQLMaxRows</strong> = 1000</code>
+<div class="details">
+<p>Maximum number of rows to be exported for the excel export</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 253</div>
+<h3 id="higridSC">higridSC</h3>
+<code class="signature">public  string <strong>$higridSC</strong> = &quot;&quot;</code>
+<div class="details">
+<p>In case if no table is set, this holds the sql command for
+retrieving the data from the db to the grid</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 228</div>
+<h3 id="jsonencode">jsonencode</h3>
+<code class="signature">public  boolean <strong>$jsonencode</strong> = true</code>
+<div class="details">
+<p>If set to true uses the PHP json_encode if available. If this is set to
+false a custom encode function in jqGrid is used. Also use this to false
+if the encoding of your database is not utf-8</p><dl>
+<dt>Deprecated:</dt>
+<dd>this not needed anymore also the related option is $encoding</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 150</div>
+<h3 id="logtofile">logtofile</h3>
+<code class="signature">public  boolean <strong>$logtofile</strong> = true</code>
+<div class="details">
+<p>Determines if the log should be written to file or echoed.
+Ih set to created is a file HiGrid.log in the directory where the script is</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 247</div>
+<h3 id="mongofields">mongofields</h3>
+<code class="signature">public  array <strong>$mongofields</strong> = array()</code>
+<div class="details">
+<p>Array which set which fields should be selected in case of mongodb.
+If the array is empty all fields will be selected from the collection.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 241</div>
+<h3 id="mongointegers">mongointegers</h3>
+<code class="signature">public  array <strong>$mongointegers</strong> = array()</code>
+<div class="details">
+<p>Store the names for the int fields when database is MongoDB. Used to perform
+right serach in MongoDB. The array should contain the right names as listed
+into the collection</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 350</div>
+<h3 id="oper">oper</h3>
+<code class="signature">public  mixed <strong>$oper</strong></code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 338</div>
+<h3 id="optimizeSearch">optimizeSearch</h3>
+<code class="signature">public  boolean <strong>$optimizeSearch</strong> = false</code>
+<div class="details">
+<p>Optimizes the search SQL when used in MySQL with big data sets.
+Use this option carefully on complex SQL</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 349</div>
+<h3 id="performcount">performcount</h3>
+<code class="signature">public  boolean <strong>$performcount</strong> = true</code>
+<div class="details">
+<p>Internal set in queryGrid if we should use count query in order to set
+the grid output</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 306</div>
+<h3 id="readFromXML">readFromXML</h3>
+<code class="signature">public  boolean <strong>$readFromXML</strong> = false</code>
+<div class="details">
+<p>Obtain the SQL qurery from XML file.
+In this case the higridSC should be set as xmlfile.sqlid.
+The xmlfile is the name of xml file where we store the sql commands,
+sqlid is the id of the required sql.
+The simple xml file can look like this
+< ?xml version="1.0" encoding="UTF-8"?>
+<queries>
+<sql Id="getUserById">
+Select *
+From users
+Where Id = ?
+</sql>
+<sql Id="validateUser">
+Select Count(Id)
+From users
+Where Email = ? AND Password = ?
+</sql>
+</queries>
+Important note: The class first look for readFromXML, then for
+selectCommand and last for a table.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 179</div>
+<h3 id="showError">showError</h3>
+<code class="signature">public  boolean <strong>$showError</strong> = false</code>
+<div class="details">
+<p>If set to true all errors from the server are shown in the client in a
+dialog. Curretly work only for grid and form edit.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 276</div>
+<h3 id="table">table</h3>
+<code class="signature">public  string <strong>$table</strong> = &quot;&quot;</code>
+<div class="details">
+<p>set a table to display a data to the grid</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 54</div>
+<h3 id="version">version</h3>
+<code class="signature">public  string <strong>$version</strong> = '2.1'</code>
+<div class="details">
+<p>Get te current version</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 332</div>
+<h3 id="xmlCDATA">xmlCDATA</h3>
+<code class="signature">public  boolean <strong>$xmlCDATA</strong> = false</code>
+<div class="details">
+<p>Defines if the xml otput should be enclosed in CDATA when xml output is enabled</p></div>
+
+<hr>
+
+<h2 id="detail_method">Constructor Detail</h2>
+<div class="location">hgGrid.php at line 356</div>
+<h3 id="__construct()">__construct</h3>
+<code class="signature">public  void <strong>__construct</strong>(mixed db, str odbctype, resource -)</code>
+<div class="details">
+<p>Constructor</p><dl>
+<dt>Parameters:</dt>
+<dd>- - $db the database connection passed to the constructor</dd>
+</dl>
+</div>
+
+<hr>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">hgGrid.php at line 128</div>
+<h3 id="logQuery()">logQuery</h3>
+<code class="signature">public  void <strong>logQuery</strong>(string sql, array data, array types, mixed input, mixed fld, str primary)</code>
+<div class="details">
+<p>Log query</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 155</div>
+<h3 id="debugout()">debugout</h3>
+<code class="signature">public  void <strong>debugout</strong>()</code>
+<div class="details">
+<p>Prints all executed SQL queries to file or console</p><dl>
+<dt>See Also:</dt>
+<dd><a href="../higrid/jqgrid.html#logtofile">$logtofile</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 189</div>
+<h3 id="sendErrorHeader()">sendErrorHeader</h3>
+<code class="signature">public  void <strong>sendErrorHeader</strong>()</code>
+<div class="details">
+<p>Function to simulate 500 Internal error so that it sends the error
+to the client. It is activated only if $showError is true.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 381</div>
+<h3 id="parseSql()">parseSql</h3>
+<code class="signature">protected  string <strong>parseSql</strong>(string sqlElement, array params, bool bind)</code>
+<div class="details">
+<p>Prepares a $sqlElement and binds a parameters $params
+Return prepared sql statement</p><dl>
+<dt>Parameters:</dt>
+<dd>sqlElement - sql to be prepared</dd>
+<dd>params - - parameters passed to the sql</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 399</div>
+<h3 id="execute()">execute</h3>
+<code class="signature">protected  boolean <strong>execute</strong>(string sqlId, array params, resource sql, boolean limit, integer nrows, integer offset, str order, str sort)</code>
+<div class="details">
+<p>Executes a prepared sql statement. Also if limit is set to true is used
+to return limited set of records
+Return true on success</p><dl>
+<dt>Parameters:</dt>
+<dd>sqlId - - sql to pe executed</dd>
+<dd>params - - array of values which are passed as parameters to the sql</dd>
+<dd>sql - - pointer to the constructed sql</dd>
+<dd>limit - - if set to true we use a pagging mechanizm</dd>
+<dd>nrows - - number of rows to return</dd>
+<dd>offset - - the offset from which the nrows should be returned</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 441</div>
+<h3 id="getSqlElement()">getSqlElement</h3>
+<code class="signature">protected  mixed <strong>getSqlElement</strong>(string sqlId)</code>
+<div class="details">
+<p>Read a xml file and the higridSC and return the sql string
+Return string if the query is found false if not.</p><dl>
+<dt>Parameters:</dt>
+<dd>sqlId - the string of type xmlfile.sqlId</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 520</div>
+<h3 id="queryForObject()">queryForObject</h3>
+<code class="signature">protected  object <strong>queryForObject</strong>(string sqlId, array params, boolean fetchAll)</code>
+<div class="details">
+<p>Return the object from the query</p><dl>
+<dt>Parameters:</dt>
+<dd>sqlId - the sql to be queried</dd>
+<dd>params - - parameter values passed to the sql</dd>
+<dd>fetchAll - - if set to true fetch all records</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 537</div>
+<h3 id="getStringForGroup()">getStringForGroup</h3>
+<code class="signature">protected  array <strong>getStringForGroup</strong>(object group, array prm)</code>
+<div class="details">
+<p>Recursivley build the sql query from a json object</p><dl>
+<dt>Parameters:</dt>
+<dd>group - the object to parse</dd>
+<dd>prm - parameters array</dd>
+<dt>Returns:</dt>
+<dd>- first element is the where clause secon is the array of values to pass</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 675</div>
+<h3 id="buildSearch()">buildSearch</h3>
+<code class="signature">public  mixed <strong>buildSearch</strong>(string filter, string otype)</code>
+<div class="details">
+<p>Build a search string from filter string posted from the grid
+Usually use this functio separatley</p><dl>
+<dt>Returns:</dt>
+<dd>- string or array depending on $otype param</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 721</div>
+<h3 id="getUserDate()">getUserDate</h3>
+<code class="signature">public  string <strong>getUserDate</strong>()</code>
+<div class="details">
+<p>Return the current date format used from the client</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 729</div>
+<h3 id="setUserDate()">setUserDate</h3>
+<code class="signature">public  void <strong>setUserDate</strong>(string newformat)</code>
+<div class="details">
+<p>Set a new user date format using PHP convensions</p><dl>
+<dt>Parameters:</dt>
+<dd>newformat - - the new format</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 737</div>
+<h3 id="getUserTime()">getUserTime</h3>
+<code class="signature">public  string <strong>getUserTime</strong>()</code>
+<div class="details">
+<p>Return the current datetime format used from the client</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 745</div>
+<h3 id="setUserTime()">setUserTime</h3>
+<code class="signature">public  void <strong>setUserTime</strong>(string newformat)</code>
+<div class="details">
+<p>Set a new user datetime format using PHP convensions</p><dl>
+<dt>Parameters:</dt>
+<dd>newformat - - the new format</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 753</div>
+<h3 id="getDbDate()">getDbDate</h3>
+<code class="signature">public  string <strong>getDbDate</strong>()</code>
+<div class="details">
+<p>Return the current date format used in the undelayed database</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 761</div>
+<h3 id="setDbDate()">setDbDate</h3>
+<code class="signature">public  void <strong>setDbDate</strong>(string newformat)</code>
+<div class="details">
+<p>Set a new  database date format using PHP convensions</p><dl>
+<dt>Parameters:</dt>
+<dd>newformat - - the new database format</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 769</div>
+<h3 id="getDbTime()">getDbTime</h3>
+<code class="signature">public  string <strong>getDbTime</strong>()</code>
+<div class="details">
+<p>Return the current datetime format used in the undelayed database</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 777</div>
+<h3 id="setDbTime()">setDbTime</h3>
+<code class="signature">public  void <strong>setDbTime</strong>(string newformat)</code>
+<div class="details">
+<p>Set a new  database datetime format using PHP convensions</p><dl>
+<dt>Parameters:</dt>
+<dd>newformat - - the new database format</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 787</div>
+<h3 id="getGridParams()">getGridParams</h3>
+<code class="signature">public  array <strong>getGridParams</strong>()</code>
+<div class="details">
+<p>Return the associative array which contain the parameters
+that are sended from the grid to request, search, update delete data.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 797</div>
+<h3 id="setGridParams()">setGridParams</h3>
+<code class="signature">public  void <strong>setGridParams</strong>(array _aparams)</code>
+<div class="details">
+<p>Set a grid parameters to identify the action from the grid
+Note that these should be set in the grid - i.e the parameters from the grid
+should equal to the GridParams.</p><dl>
+<dt>Parameters:</dt>
+<dd>_aparams - set new parameter.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 818</div>
+<h3 id="selectLimit()">selectLimit</h3>
+<code class="signature">public  object <strong>selectLimit</strong>(string limsql, integer is, array array, int nrows, int offset, mixed params, str order, str sort)</code>
+<div class="details">
+<p>Will select, getting rows from $offset (1-based), for $nrows.
+This simulates the MySQL "select * from table limit $offset,$nrows" , and
+the PostgreSQL "select * from table limit $nrows offset $offset". Note that
+MySQL and PostgreSQL parameter ordering is the opposite of the other.
+eg. Also supports Microsoft SQL Server
+SelectLimit('select * from table',3); will return rows 1 to 3 (1-based)
+SelectLimit('select * from table',3,2); will return rows 3 to 5 (1-based)
+Return object containing the limited record set</p><dl>
+<dt>Parameters:</dt>
+<dd>limsql - - optional sql clause</dd>
+<dd>is - the number of rows to get</dd>
+<dd>is - the row to start calculations from (1-based)</dd>
+<dd>array - of bind variables</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 844</div>
+<h3 id="queryGrid()">queryGrid</h3>
+<code class="signature">public  mixed <strong>queryGrid</strong>(array summary, array params, boolen echo)</code>
+<div class="details">
+<p>Return the result of the query to jqGrid. Support searching</p><dl>
+<dt>Parameters:</dt>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use the other one this way array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+<dd>params - - parameter values passed to the sql</dd>
+<dd>echo - if set to false return the records as object, otherwiese json encoded or xml string depending on the dataType variable</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1015</div>
+<h3 id="exportToExcel()">exportToExcel</h3>
+<code class="signature">public  string <strong>exportToExcel</strong>(array summary, array params, array colmodel, boolean echo, string filename)</code>
+<div class="details">
+<p>Export the recordset to excel xml file.
+Can use the ExportCommand. If this command is not set uses _setSQL to set the query.
+The number of rows exported is limited from gSQLMaxRows variable</p><dl>
+<dt>See Also:</dt>
+<dd>_setSQL</dd>
+<dt>Parameters:</dt>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use the other one this way array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+<dd>params - parameter values passed to the sql array(value)</dd>
+<dd>colmodel - - different description for the headers - see rs2excel</dd>
+<dd>echo - determines if the result should be returned or echoed</dd>
+<dd>filename - the filename to which the sheet can be saved in case if $echo is true</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1112</div>
+<h3 id="setPdfOptions()">setPdfOptions</h3>
+<code class="signature">public  void <strong>setPdfOptions</strong>(array apdf)</code>
+<div class="details">
+<p>Set options for PDF export.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1127</div>
+<h3 id="rs2pdf()">rs2pdf</h3>
+<code class="signature">protected  null <strong>rs2pdf</strong>(object rs, pdf created, array colmodel, mixed pdf, mixed summary)</code>
+<div class="details">
+<p>Convert a recordeset to pdf object</p><dl>
+<dt>Parameters:</dt>
+<dd>rs - the recorde set object from the query</dd>
+<dd>created - object $pdf</dd>
+<dd>colmodel - can be either manually created array see rs2excel or genereted from setColModel methd.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1353</div>
+<h3 id="exportToPdf()">exportToPdf</h3>
+<code class="signature">public   <strong>exportToPdf</strong>(array summary, array params, array colmodel, string filename)</code>
+<div class="details">
+<p>Export the recordset to pdf file.
+Can use the ExportCommand. If this command is not set uses _setSQL to set the query.
+The number of rows exported is limited from gSQLMaxRows variable</p><dl>
+<dt>See Also:</dt>
+<dd>_setSQL</dd>
+<dt>Parameters:</dt>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use the other one this way array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+<dd>params - parameter values passed to the sql array(value)</dd>
+<dd>colmodel - - different description for the headers - see rs2excel</dd>
+<dd>filename - the filename to which the sheet can be saved in case if $echo is true</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1610</div>
+<h3 id="exportToCsv()">exportToCsv</h3>
+<code class="signature">public  string <strong>exportToCsv</strong>(array summary, array params, array colmodel, boolean echo, string filename, string sep, string sepreplace)</code>
+<div class="details">
+<p>Public method to export a grid data to csv data.
+Can use the ExportCommand. If this command is not set uses _setSQL to set the query.
+The number of rows exported is limited from gSQLMaxRows variable</p><dl>
+<dt>See Also:</dt>
+<dd>_setSQL</dd>
+<dd><a href="../higrid/jqgrid.html#rs2excel()">rs2excel</a></dd>
+<dt>Parameters:</dt>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use the other one this way array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+<dd>params - parameter values passed to the sql array(value)</dd>
+<dd>colmodel - - different description for the headers</dd>
+<dd>echo - determines if the result should be returned or echoed</dd>
+<dd>filename - the filename to which the sheet can be saved in case if $echo is true</dd>
+<dd>sep - - the separator for the csv data</dd>
+<dd>sepreplace - - with what to replace the separator if in data</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1630</div>
+<h3 id="querySubGrid()">querySubGrid</h3>
+<code class="signature">public  void <strong>querySubGrid</strong>(array params, boolean echo)</code>
+<div class="details">
+<p>Return the result of the query for the simple subgrid
+The format depend of dataType variable</p><dl>
+<dt>Parameters:</dt>
+<dd>params - parameters passed to the query</dd>
+<dd>echo - if set to false return object containing the data</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1703</div>
+<h3 id="rs2excel()">rs2excel</h3>
+<code class="signature">protected  string <strong>rs2excel</strong>(pdo recordset, array colmodel, boolean echo, string filename, array summary, mixed rs)</code>
+<div class="details">
+<p>From a given recordset returns excel xml file. If the summary array is
+defined add summary formula at last row.
+Return well formated xml excel string</p><dl>
+<dt>Parameters:</dt>
+<dd>recordset - $rs recordset from pdo execute command</dd>
+<dd>colmodel - diffrent descriptions for the headars, width, hidden cols This array is actually a colModel array in jqGrid. The array can look like Array( [0]=>Array("label"=>"Some label", "width"=>100, "hidden"=>true, "name"=>"client_id", "formatter"=>"select", editoptions=>...), [1]=>Array("label"=>"Other label", "width"=>80, "hidden"=>false, "name"=>"date",... ), ... )</dd>
+<dd>echo - determines if the result should be send to browser or returned as string</dd>
+<dd>filename - filename to which file can be saved</dd>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use the other one this way array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1892</div>
+<h3 id="addUserData()">addUserData</h3>
+<code class="signature">public  void <strong>addUserData</strong>(array adata)</code>
+<div class="details">
+<p>Add a custom data to the grid footer row if it is enabled.
+Also can be used to transport additional data in userdata array to be
+used later at client side.
+The syntax is $grid->addUserData(array("Name1"=>"Data1",...));
+The method is executed after the sumarry rows are executed, so it can
+overwrite some summary data which is palced on the footer.</p></div>
+
+<hr>
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higrid/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higrid/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higrid\jqgrid.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href=http://higrid.net/ target=_blank>Online PHP Grids & PHP Charts</a>&nbsp;Last updated:2013-02-23</p>
+
+<br><div style="display:none"><!--HIGRID GOOGLE STATS --><script type="text/javascript" src="/include/js/statgoogle.js"  charset="utf-8"></script><script src="http://s20.cnzz.com/stat.php?id=3552716&web_id=3552716" language="javascript"></script></div></body>
+
+</html>

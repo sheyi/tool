@@ -1,0 +1,436 @@
+<!doctype html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="generator" content="higrid.net (http://higrid.net/)">
+<meta name="when" content="Sat, 23 Feb 2013 06:50:18 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>hgGridEdit (Higrid API Documentation _higrid.net)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higrid/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higrid/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higrid\hggridedit.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">hiGrid\hgGridEdit</div>
+<div class="location">hgGrid.php at line 1917</div>
+<h1>Class hgGridEdit</h1>
+
+<pre class="tree"><a href="../higrid/jqgrid.html">jqGrid</a><br>    └─<strong>hgGridEdit</strong><br /></pre>
+
+<dl>
+<dt>All Known Subclasses:</dt>
+<dd><a href="../higrid/hggridrender.html">hgGridRender</a> </dd>
+</dl>
+
+<hr>
+
+<p class="signature">public abstract  class <strong>hgGridEdit</strong><br>extends <a href="../higrid/jqgrid.html">jqGrid</a>
+
+</p>
+
+<div class="comment" id="overview_description"><p></p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>She Yi sheyee@163.com</dd>
+<dt>Copyright:</dt>
+<dd>HiGrid.net</dd>
+<dt>Version:</dt>
+<dd>2.1</dd>
+</dl>
+<hr>
+
+<table id="summary_field">
+<tr><th colspan="2">Field Summary</th></tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#add">$add</a></p><p class="description">Enables/disables adding of record into the table</p></td>
+</tr>
+<tr>
+<td class="type"> booolen</td>
+<td class="description"><p class="name"><a href="#decodeinput">$decodeinput</a></p><p class="description">Decodes the input for update and insert opeartions using the html_entity_decode</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#del">$del</a></p><p class="description">Enables/disables deleting of record into the table</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#edit">$edit</a></p><p class="description">Enables/disables updating of record into the table</p></td>
+</tr>
+<tr>
+<td class="type"> bolean</td>
+<td class="description"><p class="name"><a href="#getLastInsert">$getLastInsert</a></p><p class="description">Allow a obtaining and sending the last id (in case of serial key) to
+the client.</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#mtype">$mtype</a></p><p class="description">Determines the type of accepting the input data. </p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#serialKey">$serialKey</a></p><p class="description">Defines if the primary key is serial (autoincrement)</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#trans">$trans</a></p><p class="description">If true every CRUD is enclosed within begin transaction - commit/rollback</p></td>
+</tr>
+</table>
+
+<table class="inherit">
+<tr><th colspan="2">Fields inherited from hiGrid\jqGrid</th></tr>
+<tr><td><a href="../higrid/jqgrid.html#ExportCommand">ExportCommand</a>, <a href="../higrid/jqgrid.html#SubgridCommand">SubgridCommand</a>, <a href="../higrid/jqgrid.html#cacheCount">cacheCount</a>, <a href="../higrid/jqgrid.html#customClass">customClass</a>, <a href="../higrid/jqgrid.html#customError">customError</a>, <a href="../higrid/jqgrid.html#customFunc">customFunc</a>, <a href="../higrid/jqgrid.html#dataType">dataType</a>, <a href="../higrid/jqgrid.html#datearray">datearray</a>, <a href="../higrid/jqgrid.html#debug">debug</a>, <a href="../higrid/jqgrid.html#encoding">encoding</a>, <a href="../higrid/jqgrid.html#errorMessage">errorMessage</a>, <a href="../higrid/jqgrid.html#gSQLMaxRows">gSQLMaxRows</a>, <a href="../higrid/jqgrid.html#higridSC">higridSC</a>, <a href="../higrid/jqgrid.html#jsonencode">jsonencode</a>, <a href="../higrid/jqgrid.html#logtofile">logtofile</a>, <a href="../higrid/jqgrid.html#mongofields">mongofields</a>, <a href="../higrid/jqgrid.html#mongointegers">mongointegers</a>, <a href="../higrid/jqgrid.html#oper">oper</a>, <a href="../higrid/jqgrid.html#optimizeSearch">optimizeSearch</a>, <a href="../higrid/jqgrid.html#performcount">performcount</a>, <a href="../higrid/jqgrid.html#readFromXML">readFromXML</a>, <a href="../higrid/jqgrid.html#showError">showError</a>, <a href="../higrid/jqgrid.html#table">table</a>, <a href="../higrid/jqgrid.html#version">version</a>, <a href="../higrid/jqgrid.html#xmlCDATA">xmlCDATA</a></td></tr></table>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setSuccessMsg()">setSuccessMsg</a>(string msg)</p><p class="description">Set the message which will be send to client side grid when succefull CRUD
+operation is performed. </p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#getPrimaryKeyId()">getPrimaryKeyId</a>()</p><p class="description">Return the primary key of the table</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setPrimaryKeyId()">setPrimaryKeyId</a>(string keyid)</p><p class="description">Set a primary key for the table</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setTable()">setTable</a>(string _newtable)</p><p class="description">Set table for CRUD and build the fields</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setBeforeCrudAction()">setBeforeCrudAction</a>(string oper, string sql, array params)</p><p class="description">Run a sql command(s) before the operation from the CRUD.
+</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setAfterCrudAction()">setAfterCrudAction</a>(string oper, string sql, array params)</p><p class="description">Run a sql command(s) after the operation from the CRUD is succefull.
+</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getFields()">getFields</a>()</p><p class="description">Return the fields generated for CRUD operations</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#insert()">insert</a>(array data)</p><p class="description">Insert the data array into the database according to the table element.
+</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#update()">update</a>(array data)</p><p class="description">Update the data into the database according the table element
+A primaryKey should be set. </p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#getLastInsertId()">getLastInsertId</a>()</p><p class="description">Return the last inserted id from the insert method in cas getLastInsert is
+set to true</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#delete()">delete</a>(array data, str where, mixed params)</p><p class="description">Delete the data into the database according the table element
+A primaryKey should be set. </p></td>
+</tr>
+<tr>
+<td class="type">protected  boolean</td>
+<td class="description"><p class="name"><a href="#checkPrimary()">checkPrimary</a>()</p><p class="description">Check for primary key and if not set try to obtain it
+Return true on success</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#editGrid()">editGrid</a>(array summary, array params, string oper, bool echo)</p><p class="description">Perform the all CRUD operations depending on the oper param send from the grid
+and the table element
+If the primaryKey is not set we try to obtain it using hiGridDB::getPrimaryKey
+If the primary key is not set or can not be obtained the operation is aborted.
+</p></td>
+</tr>
+</table>
+
+<table class="inherit">
+<tr><th colspan="2">Methods inherited from hiGrid\jqGrid</th></tr>
+<tr><td><a href="../higrid/jqgrid.html#__construct()">__construct</a>, <a href="../higrid/jqgrid.html#addUserData()">addUserData</a>, <a href="../higrid/jqgrid.html#buildSearch()">buildSearch</a>, <a href="../higrid/jqgrid.html#debugout()">debugout</a>, <a href="../higrid/jqgrid.html#execute()">execute</a>, <a href="../higrid/jqgrid.html#exportToCsv()">exportToCsv</a>, <a href="../higrid/jqgrid.html#exportToExcel()">exportToExcel</a>, <a href="../higrid/jqgrid.html#exportToPdf()">exportToPdf</a>, <a href="../higrid/jqgrid.html#getDbDate()">getDbDate</a>, <a href="../higrid/jqgrid.html#getDbTime()">getDbTime</a>, <a href="../higrid/jqgrid.html#getGridParams()">getGridParams</a>, <a href="../higrid/jqgrid.html#getSqlElement()">getSqlElement</a>, <a href="../higrid/jqgrid.html#getStringForGroup()">getStringForGroup</a>, <a href="../higrid/jqgrid.html#getUserDate()">getUserDate</a>, <a href="../higrid/jqgrid.html#getUserTime()">getUserTime</a>, <a href="../higrid/jqgrid.html#logQuery()">logQuery</a>, <a href="../higrid/jqgrid.html#parseSql()">parseSql</a>, <a href="../higrid/jqgrid.html#queryForObject()">queryForObject</a>, <a href="../higrid/jqgrid.html#queryGrid()">queryGrid</a>, <a href="../higrid/jqgrid.html#querySubGrid()">querySubGrid</a>, <a href="../higrid/jqgrid.html#rs2excel()">rs2excel</a>, <a href="../higrid/jqgrid.html#rs2pdf()">rs2pdf</a>, <a href="../higrid/jqgrid.html#selectLimit()">selectLimit</a>, <a href="../higrid/jqgrid.html#sendErrorHeader()">sendErrorHeader</a>, <a href="../higrid/jqgrid.html#setDbDate()">setDbDate</a>, <a href="../higrid/jqgrid.html#setDbTime()">setDbTime</a>, <a href="../higrid/jqgrid.html#setGridParams()">setGridParams</a>, <a href="../higrid/jqgrid.html#setPdfOptions()">setPdfOptions</a>, <a href="../higrid/jqgrid.html#setUserDate()">setUserDate</a>, <a href="../higrid/jqgrid.html#setUserTime()">setUserTime</a></td></tr></table>
+
+<h2 id="detail_field">Field Detail</h2>
+<div class="location">hgGrid.php at line 1974</div>
+<h3 id="add">add</h3>
+<code class="signature">public  boolean <strong>$add</strong> = true</code>
+<div class="details">
+<p>Enables/disables adding of record into the table</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1994</div>
+<h3 id="decodeinput">decodeinput</h3>
+<code class="signature">public  booolen <strong>$decodeinput</strong> = false</code>
+<div class="details">
+<p>Decodes the input for update and insert opeartions using the html_entity_decode</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1984</div>
+<h3 id="del">del</h3>
+<code class="signature">public  boolean <strong>$del</strong> = true</code>
+<div class="details">
+<p>Enables/disables deleting of record into the table</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1979</div>
+<h3 id="edit">edit</h3>
+<code class="signature">public  boolean <strong>$edit</strong> = true</code>
+<div class="details">
+<p>Enables/disables updating of record into the table</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1951</div>
+<h3 id="getLastInsert">getLastInsert</h3>
+<code class="signature">public  bolean <strong>$getLastInsert</strong> = false</code>
+<div class="details">
+<p>Allow a obtaining and sending the last id (in case of serial key) to
+the client.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1989</div>
+<h3 id="mtype">mtype</h3>
+<code class="signature">public  string <strong>$mtype</strong> = &quot;POST&quot;</code>
+<div class="details">
+<p>Determines the type of accepting the input data. Can be POST or GET</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1945</div>
+<h3 id="serialKey">serialKey</h3>
+<code class="signature">public  boolean <strong>$serialKey</strong> = true</code>
+<div class="details">
+<p>Defines if the primary key is serial (autoincrement)</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1969</div>
+<h3 id="trans">trans</h3>
+<code class="signature">public  boolean <strong>$trans</strong> = true</code>
+<div class="details">
+<p>If true every CRUD is enclosed within begin transaction - commit/rollback</p></div>
+
+<hr>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">hgGrid.php at line 1935</div>
+<h3 id="setSuccessMsg()">setSuccessMsg</h3>
+<code class="signature">public  void <strong>setSuccessMsg</strong>(string msg)</code>
+<div class="details">
+<p>Set the message which will be send to client side grid when succefull CRUD
+operation is performed. Usually afterSubmit event should be used in this case.</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 1999</div>
+<h3 id="getPrimaryKeyId()">getPrimaryKeyId</h3>
+<code class="signature">public  string <strong>getPrimaryKeyId</strong>()</code>
+<div class="details">
+<p>Return the primary key of the table</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2007</div>
+<h3 id="setPrimaryKeyId()">setPrimaryKeyId</h3>
+<code class="signature">public  void <strong>setPrimaryKeyId</strong>(string keyid)</code>
+<div class="details">
+<p>Set a primary key for the table</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2016</div>
+<h3 id="setTable()">setTable</h3>
+<code class="signature">public  void <strong>setTable</strong>(string _newtable)</code>
+<div class="details">
+<p>Set table for CRUD and build the fields</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2170</div>
+<h3 id="setBeforeCrudAction()">setBeforeCrudAction</h3>
+<code class="signature">public  void <strong>setBeforeCrudAction</strong>(string oper, string sql, array params)</code>
+<div class="details">
+<p>Run a sql command(s) before the operation from the CRUD.
+Can run a unlimited</p><dl>
+<dt>Parameters:</dt>
+<dd>oper - - the operation after which the command should be run</dd>
+<dd>sql - - the sql command</dd>
+<dd>params - - parameters passed to the sql query.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2194</div>
+<h3 id="setAfterCrudAction()">setAfterCrudAction</h3>
+<code class="signature">public  void <strong>setAfterCrudAction</strong>(string oper, string sql, array params)</code>
+<div class="details">
+<p>Run a sql command(s) after the operation from the CRUD is succefull.
+Can run a unlimited</p><dl>
+<dt>Parameters:</dt>
+<dd>oper - - the operation after which the command should be run</dd>
+<dd>sql - - the sql command</dd>
+<dd>params - - parameters passed to the sql query.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2214</div>
+<h3 id="getFields()">getFields</h3>
+<code class="signature">public  array <strong>getFields</strong>()</code>
+<div class="details">
+<p>Return the fields generated for CRUD operations</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2229</div>
+<h3 id="insert()">insert</h3>
+<code class="signature">public  boolean <strong>insert</strong>(array data)</code>
+<div class="details">
+<p>Insert the data array into the database according to the table element.
+A primaryKey should be set. If the key is not set It can be obtained
+from hiGridDB::getPrimaryKey
+Return true on succes, false otherwiese.</p><dl>
+<dt>Todo:</dt>
+<dd>in the future we should return the last insert id from the table</dd>
+<dt>Parameters:</dt>
+<dd>data - associative array which key values correspond to the names in the table.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2373</div>
+<h3 id="update()">update</h3>
+<code class="signature">public  boolean <strong>update</strong>(array data)</code>
+<div class="details">
+<p>Update the data into the database according the table element
+A primaryKey should be set. If the key is not set It can be obtained
+from hiGridDB::getPrimaryKey
+Return true on success, false when the operation is not succefull</p><dl>
+<dt>Todo:</dt>
+<dd>possibility to set additional where clause</dd>
+<dt>Parameters:</dt>
+<dd>data - associative array which key values correspond to the names in the table</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2506</div>
+<h3 id="getLastInsertId()">getLastInsertId</h3>
+<code class="signature">public  mixed <strong>getLastInsertId</strong>()</code>
+<div class="details">
+<p>Return the last inserted id from the insert method in cas getLastInsert is
+set to true</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2522</div>
+<h3 id="delete()">delete</h3>
+<code class="signature">public  boolean <strong>delete</strong>(array data, str where, mixed params)</code>
+<div class="details">
+<p>Delete the data into the database according the table element
+A primaryKey should be set. If the key is not set It can be obtained
+from hiGridDB::getPrimaryKey
+Return true on success, false when the operation is not succefull</p><dl>
+<dt>Todo:</dt>
+<dd>possibility to set additional where clause</dd>
+<dt>Parameters:</dt>
+<dd>data - associative array which key values correspond to the names in the delete command</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2635</div>
+<h3 id="checkPrimary()">checkPrimary</h3>
+<code class="signature">protected  boolean <strong>checkPrimary</strong>()</code>
+<div class="details">
+<p>Check for primary key and if not set try to obtain it
+Return true on success</p></div>
+
+<hr>
+
+<div class="location">hgGrid.php at line 2667</div>
+<h3 id="editGrid()">editGrid</h3>
+<code class="signature">public  void <strong>editGrid</strong>(array summary, array params, string oper, bool echo)</code>
+<div class="details">
+<p>Perform the all CRUD operations depending on the oper param send from the grid
+and the table element
+If the primaryKey is not set we try to obtain it using hiGridDB::getPrimaryKey
+If the primary key is not set or can not be obtained the operation is aborted.
+Also the method call the queryGrid to perform the grid ouput</p><dl>
+<dt>Parameters:</dt>
+<dd>summary - - set which columns should be sumarized in order to be displayed to the grid By default this parameter uses SQL SUM function: array("colmodelname"=>"sqlname"); It can be set to use the other one this way array("colmodelname"=>array("sqlname"=>"AVG")); By default the first field correspond to the name of colModel the second to the database name</dd>
+<dd>params - additional parameters that can be passed to the query</dd>
+<dd>oper - if set the requested oper operation is performed without to check the parameter sended from the grid.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higrid/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higrid/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higrid\hggridedit.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href=http://higrid.net/ target=_blank>Online PHP Grids & PHP Charts</a>&nbsp;Last updated:2013-02-23</p>
+
+<br><div style="display:none"><!--HIGRID GOOGLE STATS --><script type="text/javascript" src="/include/js/statgoogle.js"  charset="utf-8"></script><script src="http://s20.cnzz.com/stat.php?id=3552716&web_id=3552716" language="javascript"></script></div></body>
+
+</html>

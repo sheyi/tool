@@ -1,0 +1,570 @@
+<!doctype html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="generator" content="higrid.net (http://higrid.net/)">
+<meta name="when" content="Sat, 23 Feb 2013 06:50:18 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>higridCharts (Higrid API Documentation _higrid.net)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higridcharts/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higridcharts/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higridcharts\higridcharts.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">higridCharts\higridCharts</div>
+<div class="location">hgChart.php at line 13</div>
+<h1>Class higridCharts</h1>
+
+<pre class="tree"><strong>higridCharts</strong><br /></pre>
+
+<hr>
+
+<p class="signature">public abstract  class <strong>higridCharts</strong></p>
+
+<div class="comment" id="overview_description"><p></p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>She Yi sheyee@163.com</dd>
+<dt>Copyright:</dt>
+<dd>HiGrid.net</dd>
+<dt>Version:</dt>
+<dd>2.1</dd>
+</dl>
+<hr>
+
+<table id="summary_field">
+<tr><th colspan="2">Field Summary</th></tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#version">$version</a></p></td>
+</tr>
+</table>
+
+<table id="summary_constructor">
+<tr><th colspan="2">Constructor Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#__construct()">__construct</a>(mixed db)</p></td>
+</tr>
+</table>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type">protected  void</td>
+<td class="description"><p class="name"><a href="#convertVar()">convertVar</a>(mixed value, mixed type)</p></td>
+</tr>
+<tr>
+<td class="type">protected  array</td>
+<td class="description"><p class="name"><a href="#getSQLSerie()">getSQLSerie</a>(string sql, array params, mixed limit, number offset)</p><p class="description">Return a array representation of the sql query. </p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getChartOptions()">getChartOptions</a>()</p><p class="description">Return all the option for the Chart</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsCO()">HCsCO</a>(mixed name, mixed mixvalue)</p><p class="description">Options regarding the chart area and plot area as well as general chart options.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsCE()">HCsCE</a>(string name, string jscode)</p><p class="description">Set event listeners for the chart.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setColors()">setColors</a>(array avalue)</p><p class="description">Set array containing the default colors for the chart's series.
+</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setLabels()">setLabels</a>(mixed name, mixed mixvalue)</p><p class="description">Set HTML labels that can be positioined anywhere in the chart area.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setLanguage()">setLanguage</a>(mixed name, mixed mixvalue)</p><p class="description">Set a language object. </p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsL()">HCsL</a>(mixed name, mixed mixvalue)</p><p class="description">Set the legend. </p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setLoading()">setLoading</a>(mixed name, mixed mixvalue)</p><p class="description">Set the loading options which control the appearance of the loading
+screen that covers the plot area on chart operations</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsPO()">HCsPO</a>(mixed name, array avalue)</p><p class="description">Set the plot options for the chart.
+</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsST()">HCsST</a>(mixed name, mixed mixvalue)</p><p class="description">Set the subtitle of the chart</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsT()">HCsT</a>(mixed name, mixed mixvalue)</p><p class="description">Set the main title of the chart</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsTT()">HCsTT</a>(mixed name, mixed mixvalue)</p><p class="description">Set options for the tooltip that appears when the user hovers over a series or point</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsX()">HCsX</a>(mixed name, mixed mixvalue)</p><p class="description">Set the X axis or category axis. </p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsY()">HCsY</a>(mixed name, mixed mixvalue)</p><p class="description">Set the Y axis or value axis. </p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCsE()">HCsE</a>(mixed name, mixed mixvalue)</p><p class="description">Set options for the Exporting module</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setNavigation()">setNavigation</a>(mixed name, mixed mixvalue)</p><p class="description">Set  collection of options for buttons and menus appearing in the
+exporting module.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#HCaS()">HCaS</a>(string name, mixed value, array params, mixed limit, integer offset)</p><p class="description">Add a data to the series with a given name. </p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setSeriesOption()">setSeriesOption</a>(string name, mixed option, mixed value)</p><p class="description">Set a various options for a serie.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setJSCode()">setJSCode</a>(string code)</p><p class="description">Put a javascript code after all things are created. </p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../higridcharts/higridcharts.html">higridCharts</a></td>
+<td class="description"><p class="name"><a href="#setTheme()">setTheme</a>(string theme)</p><p class="description">Set a theme - Can be grid, gray, dark-blue, dark-green</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#HCoP()">HCoP</a>(string div_id, boolean createlem, mixed width, <type> height, string chart)</p><p class="description">Main method which construct the chart based on the options set
+with the previous methods</p></td>
+</tr>
+</table>
+
+<h2 id="detail_field">Field Detail</h2>
+<div class="location">hgChart.php at line 15</div>
+<h3 id="version">version</h3>
+<code class="signature">public  mixed <strong>$version</strong> = '2.1'</code>
+<div class="details">
+</div>
+
+<hr>
+
+<h2 id="detail_method">Constructor Detail</h2>
+<div class="location">hgChart.php at line 47</div>
+<h3 id="__construct()">__construct</h3>
+<code class="signature">public  void <strong>__construct</strong>(mixed db)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">hgChart.php at line 73</div>
+<h3 id="convertVar()">convertVar</h3>
+<code class="signature">protected  void <strong>convertVar</strong>(mixed value, mixed type)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 95</div>
+<h3 id="getSQLSerie()">getSQLSerie</h3>
+<code class="signature">protected  array <strong>getSQLSerie</strong>(string sql, array params, mixed limit, number offset)</code>
+<div class="details">
+<p>Return a array representation of the sql query. Also return only the
+the values of the first column</p><dl>
+<dt>Parameters:</dt>
+<dd>sql - The sql query string</dd>
+<dd>params - array of parameters passed to the query</dd>
+<dd>limit - the number of records to retrieve. if false - all</dd>
+<dd>offset - how many record to skip. 0 - none</dd>
+<dt>Returns:</dt>
+<dd>of the values of the first column of the query</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 131</div>
+<h3 id="getChartOptions()">getChartOptions</h3>
+<code class="signature">public  array <strong>getChartOptions</strong>()</code>
+<div class="details">
+<p>Return all the option for the Chart</p></div>
+
+<hr>
+
+<div class="location">hgChart.php at line 144</div>
+<h3 id="HCsCO()">HCsCO</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsCO</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Options regarding the chart area and plot area as well as general chart options.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the chart. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - is the value option in case the name is string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 170</div>
+<h3 id="HCsCE()">HCsCE</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsCE</strong>(string name, string jscode)</code>
+<div class="details">
+<p>Set event listeners for the chart.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - The name of the event, Can be click, load, redraw, selection See documentation for more details</dd>
+<dd>jscode - The javascript code associated with this event</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 187</div>
+<h3 id="setColors()">setColors</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setColors</strong>(array avalue)</code>
+<div class="details">
+<p>Set array containing the default colors for the chart's series.
+When all colors are used, new colors are pulled from the start again.
+Defaults to:
+array('#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE', '#DB843D', '#92A8CD', '#A47D7C', 	'#B5CA92')</p><dl>
+<dt>Parameters:</dt>
+<dd>avalue - values to be set for the colors</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 202</div>
+<h3 id="setLabels()">setLabels</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setLabels</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set HTML labels that can be positioined anywhere in the chart area.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the label. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 228</div>
+<h3 id="setLanguage()">setLanguage</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setLanguage</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set a language object. The default language is English. For detailed info on the
+object rehfer to the documentation</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the language. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 254</div>
+<h3 id="HCsL()">HCsL</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsL</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set the legend. The legend is a box containing a symbol and name for
+each series item or point item in the chart.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the legend. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 279</div>
+<h3 id="setLoading()">setLoading</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setLoading</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set the loading options which control the appearance of the loading
+screen that covers the plot area on chart operations</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 304</div>
+<h3 id="HCsPO()">HCsPO</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsPO</strong>(mixed name, array avalue)</code>
+<div class="details">
+<p>Set the plot options for the chart.
+The plotOptions is a wrapper object for config objects for each series type.
+The config objects for each series can also be overridden for each
+series item as given in the series array</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the name of tyhe option as per documentation</dd>
+<dd>avalue - array of options = key value pair</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 330</div>
+<h3 id="HCsST()">HCsST</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsST</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set the subtitle of the chart</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 354</div>
+<h3 id="HCsT()">HCsT</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsT</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set the main title of the chart</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 379</div>
+<h3 id="HCsTT()">HCsTT</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsTT</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set options for the tooltip that appears when the user hovers over a series or point</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 408</div>
+<h3 id="HCsX()">HCsX</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsX</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set the X axis or category axis. Normally this is the horizontal axis,
+though if the chart is inverted this is the vertical axis.
+In case of multiple axes, the xAxis node is an array of configuration objects.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 434</div>
+<h3 id="HCsY()">HCsY</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsY</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set the Y axis or value axis. Normally this is the vertical axis, though
+if the chart is inverted this is the horiontal axis. In case of multiple
+axes, the yAxis node is an array of configuration objects.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 458</div>
+<h3 id="HCsE()">HCsE</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCsE</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set options for the Exporting module</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 483</div>
+<h3 id="setNavigation()">setNavigation</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setNavigation</strong>(mixed name, mixed mixvalue)</code>
+<div class="details">
+<p>Set  collection of options for buttons and menus appearing in the
+exporting module.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the option name for the loading. Can be a string or array. When used as array a key value pair should be defined, where the key is the name</dd>
+<dd>mixvalue - a value option in case the name is a string</dd>
+<dt>Returns:</dt>
+<dd>instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 510</div>
+<h3 id="HCaS()">HCaS</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>HCaS</strong>(string name, mixed value, array params, mixed limit, integer offset)</code>
+<div class="details">
+<p>Add a data to the series with a given name. If the name exists the data will
+be overwritten. Data can be added via array, sql query or javascript function</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the name of the chart. This will be displayed in the chart</dd>
+<dd>value - can be array, sql query or java script function.</dd>
+<dd>params - parameters passed to the query in case of SQL data</dd>
+<dd>limit - if set to number the number of records to retrieve</dd>
+<dd>offset - how many records to skip in case of sql.</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 577</div>
+<h3 id="setSeriesOption()">setSeriesOption</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setSeriesOption</strong>(string name, mixed option, mixed value)</code>
+<div class="details">
+<p>Set a various options for a serie.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - the name for the serie</dd>
+<dd>option - can be a array or string. If array a key value pair should be used, where key is the properti value is the optinvalue</dd>
+<dd>value - the value of the option value in case the option is a string</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 606</div>
+<h3 id="setJSCode()">setJSCode</h3>
+<code class="signature">public  void <strong>setJSCode</strong>(string code)</code>
+<div class="details">
+<p>Put a javascript code after all things are created. The method is executed
+only once when the chart is created.</p><dl>
+<dt>Parameters:</dt>
+<dd>code - - javascript to be executed</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 617</div>
+<h3 id="setTheme()">setTheme</h3>
+<code class="signature">public  <a href="../higridcharts/higridcharts.html">higridCharts</a> <strong>setTheme</strong>(string theme)</code>
+<div class="details">
+<p>Set a theme - Can be grid, gray, dark-blue, dark-green</p><dl>
+<dt>Parameters:</dt>
+<dd>theme - the name of the theme</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgChart.php at line 646</div>
+<h3 id="HCoP()">HCoP</h3>
+<code class="signature">public  string <strong>HCoP</strong>(string div_id, boolean createlem, mixed width, <type> height, string chart)</code>
+<div class="details">
+<p>Main method which construct the chart based on the options set
+with the previous methods</p><dl>
+<dt>Parameters:</dt>
+<dd>div_id - the id of the chart element in the DOM. If empty the default name 'jqchart' is used.</dd>
+<dd>createlem - if set to true a div element is created. If the option is set to false the previous option should be set in order to render the chart to a existing element.</dd>
+<dd>width - set the width of the chart. If a number is used the width is created in pixels. Have sense only if $createlem is true</dd>
+<dd>height - set the height of the chart. If a number is used the height is created in pixels. Have sense only if $createlem is true</dd>
+<dd>chart - the name which is used when a javascript chart object is created. Can be used later to refer to the chart. The default name is 'chart'</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../higridcharts/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../higridcharts/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../higridcharts\higridcharts.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href=http://higrid.net/ target=_blank>Online PHP Grids & PHP Charts</a>&nbsp;Last updated:2013-02-23</p>
+
+<br><div style="display:none"><!--HIGRID GOOGLE STATS --><script type="text/javascript" src="/include/js/statgoogle.js"  charset="utf-8"></script><script src="http://s20.cnzz.com/stat.php?id=3552716&web_id=3552716" language="javascript"></script></div></body>
+
+</html>

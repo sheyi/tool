@@ -1,0 +1,384 @@
+<!doctype html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="generator" content="higrid.net (http://higrid.net/)">
+<meta name="when" content="Sat, 23 Feb 2013 06:50:18 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>hiGridDB (Higrid API Documentation _higrid.net)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../other_package/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../other_package/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../other_package\higriddb.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">other_package\hiGridDB</div>
+<div class="location">hgGridPdo.php at line 3</div>
+<h1>Class hiGridDB</h1>
+
+<pre class="tree"><strong>hiGridDB</strong><br /></pre>
+
+<hr>
+
+<p class="signature">public  class <strong>hiGridDB</strong></p>
+
+<hr>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#getInterface()">getInterface</a>()</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#prepare()">prepare</a>(mixed connhigrid, mixed sqlElement, mixed params, bool bind)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#limit()">limit</a>(mixed sqlId, mixed dbtype, int nrows, int offset, str order, str sort)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#execute()">execute</a>(mixed psql, mixed prm)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#query()">query</a>(mixed connhigrid, mixed sql)</p></td>
+</tr>
+<tr>
+<td class="type">static  boolean</td>
+<td class="description"><p class="name"><a href="#bindValues()">bindValues</a>(resurce stmt, array binds, array types)</p><p class="description">Bind the values for CRUD using the PDO bindValue.
+</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#beginTransaction()">beginTransaction</a>(mixed connhigrid)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#commit()">commit</a>(mixed connhigrid)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#rollBack()">rollBack</a>(mixed connhigrid)</p></td>
+</tr>
+<tr>
+<td class="type">static  number</td>
+<td class="description"><p class="name"><a href="#lastInsertId()">lastInsertId</a>(mixed connhigrid, mixed table, mixed IdCol, mixed dbtype)</p><p class="description">Return the last inserted id in a table in case when the serialKey is set to true</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#fetch_object()">fetch_object</a>(mixed psql, mixed fetchall, mixed connhigrid)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#fetch_num()">fetch_num</a>(mixed psql)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#fetch_assoc()">fetch_assoc</a>(mixed psql, mixed connhigrid)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#closeCursor()">closeCursor</a>(mixed sql)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#columnCount()">columnCount</a>(mixed rs)</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#getColumnMeta()">getColumnMeta</a>(mixed index, mixed sql)</p></td>
+</tr>
+<tr>
+<td class="type">static  string</td>
+<td class="description"><p class="name"><a href="#MetaType()">MetaType</a>(array t, string dbtype)</p><p class="description">Return the meta type of the field based on the underlayng db</p></td>
+</tr>
+<tr>
+<td class="type">protected static  string</td>
+<td class="description"><p class="name"><a href="#MetaPgsql()">MetaPgsql</a>(string native_type, integer max_length, int max_len)</p><p class="description">The meta types for PostgreSQL database</p></td>
+</tr>
+<tr>
+<td class="type">protected static  string</td>
+<td class="description"><p class="name"><a href="#MetaMysql()">MetaMysql</a>(string native_type, integer max_length)</p><p class="description">The meta types for MySQL database</p></td>
+</tr>
+<tr>
+<td class="type">protected static  string</td>
+<td class="description"><p class="name"><a href="#MetaSqlite()">MetaSqlite</a>(string native_type, integer max_length)</p><p class="description">The meta types for SQLite database</p></td>
+</tr>
+<tr>
+<td class="type">protected static  string</td>
+<td class="description"><p class="name"><a href="#MetaSqlsrv()">MetaSqlsrv</a>(string native_type, integer max_length)</p><p class="description">The meta types for SQLite database</p></td>
+</tr>
+<tr>
+<td class="type">static  mixed</td>
+<td class="description"><p class="name"><a href="#getPrimaryKey()">getPrimaryKey</a>(mixed table, mixed connhigrid, mixed dbtype)</p><p class="description">Try to get the primary key of the table automattically</p></td>
+</tr>
+<tr>
+<td class="type">static  void</td>
+<td class="description"><p class="name"><a href="#errorMessage()">errorMessage</a>(mixed connhigrid)</p><p class="description">Discover primary key column(s) for this table.</p></td>
+</tr>
+</table>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">hgGridPdo.php at line 5</div>
+<h3 id="getInterface()">getInterface</h3>
+<code class="signature">public static  void <strong>getInterface</strong>()</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 9</div>
+<h3 id="prepare()">prepare</h3>
+<code class="signature">public static  void <strong>prepare</strong>(mixed connhigrid, mixed sqlElement, mixed params, bool bind)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 40</div>
+<h3 id="limit()">limit</h3>
+<code class="signature">public static  void <strong>limit</strong>(mixed sqlId, mixed dbtype, int nrows, int offset, str order, str sort)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 89</div>
+<h3 id="execute()">execute</h3>
+<code class="signature">public static  void <strong>execute</strong>(mixed psql, mixed prm)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 97</div>
+<h3 id="query()">query</h3>
+<code class="signature">public static  void <strong>query</strong>(mixed connhigrid, mixed sql)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 115</div>
+<h3 id="bindValues()">bindValues</h3>
+<code class="signature">public static  boolean <strong>bindValues</strong>(resurce stmt, array binds, array types)</code>
+<div class="details">
+<p>Bind the values for CRUD using the PDO bindValue.
+In case of table we use the type to bind the values accordantly.
+In case of custom SQL we use the default PDO::PARAM</p><dl>
+<dt>Parameters:</dt>
+<dd>stmt - the prapared statement</dd>
+<dd>binds - array containing the value for binding</dd>
+<dd>types - array containing the type of the field</dd>
+<dt>Returns:</dt>
+<dd>true on success</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 147</div>
+<h3 id="beginTransaction()">beginTransaction</h3>
+<code class="signature">public static  void <strong>beginTransaction</strong>(mixed connhigrid)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 151</div>
+<h3 id="commit()">commit</h3>
+<code class="signature">public static  void <strong>commit</strong>(mixed connhigrid)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 155</div>
+<h3 id="rollBack()">rollBack</h3>
+<code class="signature">public static  void <strong>rollBack</strong>(mixed connhigrid)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 164</div>
+<h3 id="lastInsertId()">lastInsertId</h3>
+<code class="signature">public static  number <strong>lastInsertId</strong>(mixed connhigrid, mixed table, mixed IdCol, mixed dbtype)</code>
+<div class="details">
+<p>Return the last inserted id in a table in case when the serialKey is set to true</p></div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 172</div>
+<h3 id="fetch_object()">fetch_object</h3>
+<code class="signature">public static  void <strong>fetch_object</strong>(mixed psql, mixed fetchall, mixed connhigrid)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 188</div>
+<h3 id="fetch_num()">fetch_num</h3>
+<code class="signature">public static  void <strong>fetch_num</strong>(mixed psql)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 196</div>
+<h3 id="fetch_assoc()">fetch_assoc</h3>
+<code class="signature">public static  void <strong>fetch_assoc</strong>(mixed psql, mixed connhigrid)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 208</div>
+<h3 id="closeCursor()">closeCursor</h3>
+<code class="signature">public static  void <strong>closeCursor</strong>(mixed sql)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 212</div>
+<h3 id="columnCount()">columnCount</h3>
+<code class="signature">public static  void <strong>columnCount</strong>(mixed rs)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 219</div>
+<h3 id="getColumnMeta()">getColumnMeta</h3>
+<code class="signature">public static  void <strong>getColumnMeta</strong>(mixed index, mixed sql)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 233</div>
+<h3 id="MetaType()">MetaType</h3>
+<code class="signature">public static  string <strong>MetaType</strong>(array t, string dbtype)</code>
+<div class="details">
+<p>Return the meta type of the field based on the underlayng db</p><dl>
+<dt>Parameters:</dt>
+<dd>t - object returned from pdo getColumnMeta</dd>
+<dd>dbtype - the database type</dd>
+<dt>Returns:</dt>
+<dd>the type of the field can be string, date, datetime, blob, int, numeric</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 271</div>
+<h3 id="MetaPgsql()">MetaPgsql</h3>
+<code class="signature">protected static  string <strong>MetaPgsql</strong>(string native_type, integer max_length, int max_len)</code>
+<div class="details">
+<p>The meta types for PostgreSQL database</p></div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 333</div>
+<h3 id="MetaMysql()">MetaMysql</h3>
+<code class="signature">protected static  string <strong>MetaMysql</strong>(string native_type, integer max_length)</code>
+<div class="details">
+<p>The meta types for MySQL database</p></div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 386</div>
+<h3 id="MetaSqlite()">MetaSqlite</h3>
+<code class="signature">protected static  string <strong>MetaSqlite</strong>(string native_type, integer max_length)</code>
+<div class="details">
+<p>The meta types for SQLite database</p></div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 431</div>
+<h3 id="MetaSqlsrv()">MetaSqlsrv</h3>
+<code class="signature">protected static  string <strong>MetaSqlsrv</strong>(string native_type, integer max_length)</code>
+<div class="details">
+<p>The meta types for SQLite database</p></div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 484</div>
+<h3 id="getPrimaryKey()">getPrimaryKey</h3>
+<code class="signature">public static  mixed <strong>getPrimaryKey</strong>(mixed table, mixed connhigrid, mixed dbtype)</code>
+<div class="details">
+<p>Try to get the primary key of the table automattically</p><dl>
+<dt>Returns:</dt>
+<dd>the value of the key or false if not presend or not found</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">hgGridPdo.php at line 591</div>
+<h3 id="errorMessage()">errorMessage</h3>
+<code class="signature">public static  void <strong>errorMessage</strong>(mixed connhigrid)</code>
+<div class="details">
+<p>Discover primary key column(s) for this table.</p></div>
+
+<hr>
+
+<div class="header">
+<h1>higrid.net</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../other_package/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../other_package/package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../other_package\higriddb.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href=http://higrid.net/ target=_blank>Online PHP Grids & PHP Charts</a>&nbsp;Last updated:2013-02-23</p>
+
+<br><div style="display:none"><!--HIGRID GOOGLE STATS --><script type="text/javascript" src="/include/js/statgoogle.js"  charset="utf-8"></script><script src="http://s20.cnzz.com/stat.php?id=3552716&web_id=3552716" language="javascript"></script></div></body>
+
+</html>
