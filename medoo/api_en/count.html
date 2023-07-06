@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="http://medoo.in/css/core.css"/>
+<link rel="shortcut icon" href="http://medoo.in/favicon.png" />
+<meta property="og:title" content="Medoo - The lightest PHP database framework to accelerate development"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://medoo.in"/>
+<meta property="og:image" content="http://medoo.in/images/medoo-logo-128.png"/>
+<meta property="og:site_name" content="Medoo"/>
+<meta property="fb:admins" content="100001162628592" />
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObjects']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-15301273-5', 'medoo.in');ga('send', 'pageview');</script><title>Count API - Medoo</title>
+<meta name="keywords" content="Medoo,Medoo API,count" />
+<meta name="description" content="Medoo count API - Counts the number of rows" />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_count'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="http://medoo.in"><img width="297" height="58" id="head_logo" src="http://medoo.in/images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="http://medoo.in">Home</a></li>
+		<li><a href="http://medoo.in/api/new">Get Started</a></li>
+		<li><a href="http://medoo.in/doc">Documentation</a></li>
+		<li><a href="http://medoo.in/about">About</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>Get Started</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="http://medoo.in/api/new">new medoo()</a></li>
+</ul>
+
+<h4>Where Syntax</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="http://medoo.in/api/where">where</a></li>
+</ul>
+
+<h4>Query</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="http://medoo.in/api/select">select</a></li>
+<li id="api_list_insert"><a href="http://medoo.in/api/insert">insert</a></li>
+<li id="api_list_update"><a href="http://medoo.in/api/update">update</a></li>
+<li id="api_list_delete"><a href="http://medoo.in/api/delete">delete</a></li>
+<li id="api_list_replace"><a href="http://medoo.in/api/replace">replace</a></li>
+<li id="api_list_get"><a href="http://medoo.in/api/get">get</a></li>
+<li id="api_list_has"><a href="http://medoo.in/api/has">has</a></li>
+<li id="api_list_count"><a href="http://medoo.in/api/count">count</a></li>
+<li id="api_list_max"><a href="http://medoo.in/api/max">max</a></li>
+<li id="api_list_min"><a href="http://medoo.in/api/min">min</a></li>
+<li id="api_list_avg"><a href="http://medoo.in/api/avg">avg</a></li>
+<li id="api_list_sum"><a href="http://medoo.in/api/sum">sum</a></li>
+</ul>
+
+<h4>Transaction</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="http://medoo.in/api/action">action</a></li>
+</ul>
+
+<h4>Advanced</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="http://medoo.in/api/query">query</a></li>
+<li id="api_list_quote"><a href="http://medoo.in/api/quote">quote</a></li>
+</ul>
+
+<h4>PDO object</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="http://medoo.in/api/pdo">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="http://medoo.in/api/debug">debug</a></li>
+<li id="api_list_error"><a href="http://medoo.in/api/error">error</a></li>
+<li id="api_list_log"><a href="http://medoo.in/api/log">log</a></li>
+<li id="api_list_last_query"><a href="http://medoo.in/api/last_query">last_query</a></li>
+</ul>
+
+<h4>Information</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="http://medoo.in/api/info">info</a></li>
+</ul>
+</div><div id="main_body">
+<div id="doc_version">version: 1.1.3</div>
+<h3>count</h3>
+<p class="desc">Counts the number of rows</p><div class="function_name">count($table, $where)</div>
+		<ul class="para_list"><li><h5>table [string]</h5><p>The table name.</p></li><li><h5>where (optional) [array]</h5><p>The WHERE clause to filter records.</p></li></ul><div class="function_name">count($table, $join, $column, $where)</div>
+		<ul class="para_list"><li><h5>table [string]</h5><p>The table name.</p></li><li><h5>join [array]</h5><p>Table relativity for table joining.</p></li><li><h5>column [string]</h5><p>The target column will be counted.</p></li><li><h5>where (optional) [array]</h5><p>The WHERE clause to filter records.</p></li></ul>
+<div class="function_return">Return: [number] The number of rows.</div><div class="note">The type of returned data is number.</div><pre class="prettyprint linenums">$count = $database-&gt;count(&quot;account&quot;, [
+	&quot;gender&quot; =&gt; &quot;female&quot;
+]);
+
+echo &quot;We have &quot; . $count . &quot; female users.&quot;;
+</pre>	</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../css/core.css"/>
+<link rel="shortcut icon" href="../favicon.png" />
+<title>WHERE 语法 - Medoo中文文档</title>
+<meta name="keywords" content="Medoo,Medoo WHERE" />
+<meta name="description" content="Medoo WHERE 语法" />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_where'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="../index.html"><img width="297" height="58" id="head_logo" src="../images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="../index.html">主页</a></li>
+		<li><a href="../api/new.html">入门指南</a></li>
+		<li><a href="../doc.html">开发文档</a></li>
+		<li><a href="../about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>开始</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="../api/new.html">new medoo()</a></li>
+</ul>
+
+<h4>Where 语法</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="../api/where.html">where</a></li>
+</ul>
+
+<h4>查询</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="../api/select.html">select</a></li>
+<li id="api_list_insert"><a href="../api/insert.html">insert</a></li>
+<li id="api_list_update"><a href="../api/update.html">update</a></li>
+<li id="api_list_delete"><a href="../api/delete.html">delete</a></li>
+<li id="api_list_replace"><a href="../api/replace.html">replace</a></li>
+<li id="api_list_get"><a href="../api/get.html">get</a></li>
+<li id="api_list_has"><a href="../api/has.html">has</a></li>
+<li id="api_list_count"><a href="../api/count.html">count</a></li>
+<li id="api_list_max"><a href="../api/max.html">max</a></li>
+<li id="api_list_min"><a href="../api/min.html">min</a></li>
+<li id="api_list_avg"><a href="../api/avg.html">avg</a></li>
+<li id="api_list_sum"><a href="../api/sum.html">sum</a></li>
+</ul>
+
+<h4>事务</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="../api/action.html">action</a></li>
+</ul>
+
+<h4>高级</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="../api/query.html">query</a></li>
+<li id="api_list_quote"><a href="../api/quote.html">quote</a></li>
+</ul>
+
+<h4>PDO 对象</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="../api/pdo.html">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="../api/debug.html">debug</a></li>
+<li id="api_list_error"><a href="../api/error.html">error</a></li>
+<li id="api_list_log"><a href="../api/log.html">log</a></li>
+<li id="api_list_last_query"><a href="../api/last_query.html">last_query</a></li>
+</ul>
+
+<h4>数据库信息</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="../api/info.html">info</a></li>
+</ul>
+</div>
+<div id="main_body">
+<div id="doc_version">版本: 1.1.3</div>
+<h3>WHERE 语法</h3>
+<p class="intro">一些 Medoo 函数需要使用 $where 参数去过滤数据，SQL WHERE 子句是强大的但具有大量复杂的语法，逻辑关系并有潜在的安全问题比如SQL注入。Medoo 则提供了一个强大且易用的方法来建立 WHERE 查询子句并防止注入。</p>
+
+<h4>基本条件查询</h4>
+<p class="intro">基本条件查询非常简单，容易理解。您可使用附加符号来获取高级的数字范围。</p>
+<pre class="prettyprint linenums">
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+]);
+// WHERE email = &#039;foo@bar.com&#039;
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id&quot; =&gt; 200
+]);
+// WHERE user_id = 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id[&gt;]&quot; =&gt; 200
+]);
+// WHERE user_id &gt; 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id[&gt;=]&quot; =&gt; 200
+]);
+// WHERE user_id &gt;= 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id[!]&quot; =&gt; 200
+]);
+// WHERE user_id != 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;age[&lt;&gt;]&quot; =&gt; [200, 500]
+]);
+// WHERE age BETWEEN 200 AND 500
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;age[&gt;&lt;]&quot; =&gt; [200, 500]
+]);
+// WHERE age NOT BETWEEN 200 AND 500
+
+// [><] and [<>] 同样适用于 datetime
+$database->select("account", "user_name", [
+	"birthday[><]" => [date("Y-m-d", mktime(0, 0, 0, 1, 1, 2015)), date("Y-m-d")]
+]);
+//WHERE "create_date" BETWEEN '2015-01-01' AND '2015-05-01' (now)
+
+// 你不仅可以用于单个的字符串或数值，也可用于数组
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;OR&quot; =&gt; [
+		&quot;user_id&quot; =&gt; [2, 123, 234, 54],
+		&quot;email&quot; =&gt; [&quot;foo@bar.com&quot;, &quot;cat@dog.com&quot;, &quot;admin@medoo.in&quot;]
+	]
+]);
+// WHERE
+// user_id IN (2,123,234,54) OR
+// email IN (&#039;foo@bar.com&#039;,&#039;cat@dog.com&#039;,&#039;admin@medoo.in&#039;)
+
+// [否定的条件查询]
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;AND&quot; =&gt; [
+		&quot;user_name[!]&quot; =&gt; &quot;foo&quot;,
+		&quot;user_id[!]&quot; =&gt; 1024,
+		&quot;email[!]&quot; =&gt; [&quot;foo@bar.com&quot;, &quot;cat@dog.com&quot;, &quot;admin@medoo.in&quot;],
+		&quot;city[!]&quot; =&gt; null,
+		&quot;promoted[!]&quot; =&gt; true
+	]
+]);
+// WHERE
+// `user_name` != &#039;foo&#039; AND
+// `user_id` != 1024 AND
+// `email` NOT IN (&#039;foo@bar.com&#039;,&#039;cat@dog.com&#039;,&#039;admin@medoo.in&#039;) AND
+// `city` IS NOT NULL
+// `promoted` != 1
+
+// 或取值自 select() 或 get() 方法
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id&quot; =&gt; $database-&gt;select(&quot;post&quot;, &quot;user_id&quot;, [&quot;comments[&gt;]&quot; =&gt; 40])
+]);
+// WHERE user_id IN (2, 51, 321, 3431)
+</pre>
+
+<h4>关系条件查询</h4>
+<p class="intro">关系条件查询可以描述数据和数据之间的复杂关系。您可以使用 <code>AND</code> 和 <code>OR</code> 来构建复杂的相对性条件查询。</p>
+<pre class="prettyprint linenums">
+// [基本使用]
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;AND&quot; =&gt; [
+		&quot;user_id[&gt;]&quot; =&gt; 200,
+		&quot;age[&lt;&gt;]&quot; =&gt; [18, 25],
+		&quot;gender&quot; =&gt; &quot;female&quot;
+	]
+]);
+// WHERE user_id &gt; 200 AND age BETWEEN 18 AND 25 AND gender = &#039;female&#039;
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;OR&quot; =&gt; [
+		&quot;user_id[&gt;]&quot; =&gt; 200,
+		&quot;age[&lt;&gt;]&quot; =&gt; [18, 25],
+		&quot;gender&quot; =&gt; &quot;female&quot;
+	]
+]);
+// WHERE user_id &gt; 200 OR age BETWEEN 18 AND 25 OR gender = &#039;female&#039;
+
+// [混合使用]
+$database-&gt;has(&quot;account&quot;, [
+	&quot;AND&quot; =&gt; [
+		&quot;OR&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;foo&quot;,
+			&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+		],
+		&quot;password&quot; =&gt; &quot;12345&quot;
+	]
+]);
+// WHERE (user_name = &#039;foo&#039; OR email = &#039;foo@bar.com&#039;) AND password = &#039;12345&#039;
+
+// [重要提示]
+// 因为 Medoo 使用数组数据结构来描述关系条件查询，数组中重复的键将被覆盖。
+//
+// 以下是错误的:
+$database-&gt;select(&quot;account&quot;, &#039;*&#039;, [
+	&quot;AND&quot; =&gt; [
+		&quot;OR&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;foo&quot;,
+			&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+		],
+		&quot;OR&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;bar&quot;,
+			&quot;email&quot; =&gt; &quot;bar@foo.com&quot;
+		]
+	]
+]);
+// [X] SELECT * FROM &quot;account&quot; WHERE (&quot;user_name&quot; = &#039;bar&#039; OR &quot;email&quot; = &#039;bar@foo.com&#039;)
+
+// 要纠正这种情况，只需为每个 AND 和 OR 键名指定一个注释。内容可以任意。
+$database-&gt;select(&quot;account&quot;, &#039;*&#039;, [
+	&quot;AND #Actually, this comment feature can be used on every AND and OR relativity condition&quot; =&gt; [
+		&quot;OR #the first condition&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;foo&quot;,
+			&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+		],
+		&quot;OR #the second condition&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;bar&quot;,
+			&quot;email&quot; =&gt; &quot;bar@foo.com&quot;
+		]
+	]
+]);
+// SELECT * FROM &quot;account&quot;
+// WHERE (
+// 	(
+// 		&quot;user_name&quot; = &#039;foo&#039; OR &quot;email&quot; = &#039;foo@bar.com&#039;
+// 	)
+// 	AND
+// 	(
+// 		&quot;user_name&quot; = &#039;bar&#039; OR &quot;email&quot; = &#039;bar@foo.com&#039;
+// 	)
+// )
+</pre>
+
+<h4>LIKE 条件查询</h4>
+<p class="intro">LIKE 可用于基本条件查询和关系条件查询中，只需添加 <code>[~]</code> 语法。</p>
+<pre class="prettyprint linenums">
+// 默认情况下，关键字将被％前后包围起来。
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; &quot;lon&quot;
+]);
+
+WHERE &quot;city&quot; LIKE &#039;%lon%&#039;
+
+// 数组支持
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; [&quot;lon&quot;, &quot;foo&quot;, &quot;bar&quot;]
+]);
+
+WHERE &quot;city&quot; LIKE &#039;%lon%&#039; OR &quot;city&quot; LIKE &#039;%foo%&#039; OR &quot;city&quot; LIKE &#039;%bar%&#039;
+
+// 否定条件查询 [!~]
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[!~]&quot; =&gt; &quot;lon&quot;
+]);
+
+WHERE &quot;city&quot; NOT LIKE &#039;%lon%&#039;
+
+// SQL LIKE 通配符
+// 你可以使用 SQL 通配符来匹配更多复杂的情形
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; &quot;%stan&quot; // Kazakhstan,  Uzbekistan, T&uuml;rkmenistan
+]);
+
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; &quot;Londo_&quot; // London, Londox, Londos...
+]);
+
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;name[~]&quot; =&gt; &quot;[BCR]at&quot; // Bat, Cat, Rat
+]);
+
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;name[~]&quot; =&gt; &quot;[!BCR]at&quot; // Eat, Fat, Hat...
+]);
+</pre>
+
+<h4>排序 (更新自 v1.1)</h4>
+<pre class="prettyprint linenums">
+$database-&gt;select(&quot;account&quot;, &quot;user_id&quot;, [
+
+	// 单个条件
+	&quot;ORDER&quot; =&gt; &quot;user_id&quot;,
+
+	// 多个条件
+	&quot;ORDER&quot; =&gt; [
+		// Order by column with sorting by customized order.
+		&quot;user_id&quot; =&gt; [43, 12, 57, 98, 144, 1],
+
+		// Order by column
+		&quot;register_date&quot;,
+
+		// 降序 Order by column with descending sorting
+		&quot;profile_id&quot; =&gt; &quot;DESC&quot;,
+
+		// 升序 Order by column with ascending sorting
+		&quot;date&quot; =&gt; &quot;ASC&quot;
+	]
+]);
+</pre>
+
+<h4>全文搜索</h4>
+<pre class="prettyprint linenums">
+// [MATCH]
+$database-&gt;select(&quot;post_table&quot;, &quot;post_id&quot;, [
+	&quot;MATCH&quot; =&gt; [
+		&quot;columns&quot; =&gt; [&quot;content&quot;, &quot;title&quot;],
+		&quot;keyword&quot; =&gt; &quot;foo&quot;
+	]
+]);
+// WHERE MATCH (content, title) AGAINST (&#039;foo&#039;)
+</pre>
+
+<h4>使用 SQL 方法</h4>
+<p class="intro">在某些特殊情况下，您可能需要使用 SQL 函数来处理数据。只需在字段前面分配 <code>#</code>，那么该值就不会被引用。</p>
+<pre class="prettyprint linenums">
+$data = $database-&gt;select(&#039;account&#039;, [
+	&#039;user_id&#039;,
+	&#039;user_name&#039;
+], [
+	&#039;#datetime&#039; =&gt; &#039;NOW()&#039;
+]);
+
+// SELECT &quot;user_id&quot;,&quot;user_name&quot;
+// FROM &quot;account&quot;
+// WHERE &quot;datetime&quot; = NOW()
+
+// [重要提示] 请记住，值应匹配为大写的 XXX()，否则不会被引用。
+// 以下示例将失败。
+$database-&gt;select(&#039;account&#039;, [
+	&#039;user_id&#039;,
+	&#039;user_name&#039;
+], [
+    &#039;#datetime2&#039; =&gt; &#039;now()&#039;,
+
+    &#039;datetime3&#039; =&gt; &#039;NOW()&#039;,
+
+    &#039;#datetime4&#039; =&gt; &#039;NOW&#039;
+]);
+</pre>
+
+<h4>附加条件查询</h4>
+<pre class="prettyprint linenums">
+$database-&gt;select(&quot;account&quot;, &quot;user_id&quot;, [
+	&quot;GROUP&quot; =&gt; &quot;type&quot;,
+
+	// 必须与 GROUP 一起使用
+	&quot;HAVING&quot; =&gt; [
+		&quot;user_id[&gt;]&quot; =&gt; 500
+	],
+
+	// LIMIT =&gt; 20
+	&quot;LIMIT&quot; =&gt; [20, 100]
+]);
+//	SELECT user_id FROM account
+//	GROUP BY type
+//	HAVING user_id &gt; 500
+//	LIMIT 20,100
+</pre>
+
+</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

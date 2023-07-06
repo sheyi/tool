@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="http://medoo.in/css/core.css"/>
+<link rel="shortcut icon" href="http://medoo.in/favicon.png" />
+<meta property="og:title" content="Medoo - The lightest PHP database framework to accelerate development"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://medoo.in"/>
+<meta property="og:image" content="http://medoo.in/images/medoo-logo-128.png"/>
+<meta property="og:site_name" content="Medoo"/>
+<meta property="fb:admins" content="100001162628592" />
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObjects']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-15301273-5', 'medoo.in');ga('send', 'pageview');</script><title>WHERE Syntax - Medoo</title>
+<meta name="keywords" content="Medoo,Medoo WHERE" />
+<meta name="description" content="Medoo WHERE Syntax" />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_where'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="http://medoo.in"><img width="297" height="58" id="head_logo" src="http://medoo.in/images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="http://medoo.in">Home</a></li>
+		<li><a href="http://medoo.in/api/new">Get Started</a></li>
+		<li><a href="http://medoo.in/doc">Documentation</a></li>
+		<li><a href="http://medoo.in/about">About</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>Get Started</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="http://medoo.in/api/new">new medoo()</a></li>
+</ul>
+
+<h4>Where Syntax</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="http://medoo.in/api/where">where</a></li>
+</ul>
+
+<h4>Query</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="http://medoo.in/api/select">select</a></li>
+<li id="api_list_insert"><a href="http://medoo.in/api/insert">insert</a></li>
+<li id="api_list_update"><a href="http://medoo.in/api/update">update</a></li>
+<li id="api_list_delete"><a href="http://medoo.in/api/delete">delete</a></li>
+<li id="api_list_replace"><a href="http://medoo.in/api/replace">replace</a></li>
+<li id="api_list_get"><a href="http://medoo.in/api/get">get</a></li>
+<li id="api_list_has"><a href="http://medoo.in/api/has">has</a></li>
+<li id="api_list_count"><a href="http://medoo.in/api/count">count</a></li>
+<li id="api_list_max"><a href="http://medoo.in/api/max">max</a></li>
+<li id="api_list_min"><a href="http://medoo.in/api/min">min</a></li>
+<li id="api_list_avg"><a href="http://medoo.in/api/avg">avg</a></li>
+<li id="api_list_sum"><a href="http://medoo.in/api/sum">sum</a></li>
+</ul>
+
+<h4>Transaction</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="http://medoo.in/api/action">action</a></li>
+</ul>
+
+<h4>Advanced</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="http://medoo.in/api/query">query</a></li>
+<li id="api_list_quote"><a href="http://medoo.in/api/quote">quote</a></li>
+</ul>
+
+<h4>PDO object</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="http://medoo.in/api/pdo">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="http://medoo.in/api/debug">debug</a></li>
+<li id="api_list_error"><a href="http://medoo.in/api/error">error</a></li>
+<li id="api_list_log"><a href="http://medoo.in/api/log">log</a></li>
+<li id="api_list_last_query"><a href="http://medoo.in/api/last_query">last_query</a></li>
+</ul>
+
+<h4>Information</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="http://medoo.in/api/info">info</a></li>
+</ul>
+</div>
+<div id="main_body">
+<div id="doc_version">version: 1.1.3</div>
+<h3>WHERE Syntax</h3>
+<p class="intro">Some of Medoo functions are required $where argument to filter record like SQL WHERE clause which is powerful but with a lot of complex syntax, logical relativity, and potential security problem about SQL injection. But Medoo provided a powerful and extremely easy way to build WHERE query clause and prevent injection.</p>
+
+<h4>Basic condition</h4>
+<p class="intro">The basic condition is simple enough to understand. You can use additional symbol to get advanced filter range for number.</p>
+<pre class="prettyprint linenums">
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+]);
+// WHERE email = &#039;foo@bar.com&#039;
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id&quot; =&gt; 200
+]);
+// WHERE user_id = 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id[&gt;]&quot; =&gt; 200
+]);
+// WHERE user_id &gt; 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id[&gt;=]&quot; =&gt; 200
+]);
+// WHERE user_id &gt;= 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id[!]&quot; =&gt; 200
+]);
+// WHERE user_id != 200
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;age[&lt;&gt;]&quot; =&gt; [200, 500]
+]);
+// WHERE age BETWEEN 200 AND 500
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;age[&gt;&lt;]&quot; =&gt; [200, 500]
+]);
+// WHERE age NOT BETWEEN 200 AND 500
+
+// [><] and [<>] is also available for datetime
+$database->select("account", "user_name", [
+	"birthday[><]" => [date("Y-m-d", mktime(0, 0, 0, 1, 1, 2015)), date("Y-m-d")]
+]);
+//WHERE "create_date" BETWEEN '2015-01-01' AND '2015-05-01' (now)
+
+// You can use not only single string or number value, but also array
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;OR&quot; =&gt; [
+		&quot;user_id&quot; =&gt; [2, 123, 234, 54],
+		&quot;email&quot; =&gt; [&quot;foo@bar.com&quot;, &quot;cat@dog.com&quot;, &quot;admin@medoo.in&quot;]
+	]
+]);
+// WHERE
+// user_id IN (2,123,234,54) OR
+// email IN (&#039;foo@bar.com&#039;,&#039;cat@dog.com&#039;,&#039;admin@medoo.in&#039;)
+
+// [Negative condition]
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;AND&quot; =&gt; [
+		&quot;user_name[!]&quot; =&gt; &quot;foo&quot;,
+		&quot;user_id[!]&quot; =&gt; 1024,
+		&quot;email[!]&quot; =&gt; [&quot;foo@bar.com&quot;, &quot;cat@dog.com&quot;, &quot;admin@medoo.in&quot;],
+		&quot;city[!]&quot; =&gt; null,
+		&quot;promoted[!]&quot; =&gt; true
+	]
+]);
+// WHERE
+// `user_name` != &#039;foo&#039; AND
+// `user_id` != 1024 AND
+// `email` NOT IN (&#039;foo@bar.com&#039;,&#039;cat@dog.com&#039;,&#039;admin@medoo.in&#039;) AND
+// `city` IS NOT NULL
+// `promoted` != 1
+
+// Or fetched from select() or get() function
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;user_id&quot; =&gt; $database-&gt;select(&quot;post&quot;, &quot;user_id&quot;, [&quot;comments[&gt;]&quot; =&gt; 40])
+]);
+// WHERE user_id IN (2, 51, 321, 3431)
+</pre>
+
+<h4>Relativity condition</h4>
+<p class="intro">The relativity condition can describe complex relationship between data and data. You can use <code>AND</code> and <code>OR</code> to build complex relativity condition query.</p>
+<pre class="prettyprint linenums">
+// [Basic]
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;AND&quot; =&gt; [
+		&quot;user_id[&gt;]&quot; =&gt; 200,
+		&quot;age[&lt;&gt;]&quot; =&gt; [18, 25],
+		&quot;gender&quot; =&gt; &quot;female&quot;
+	]
+]);
+// WHERE user_id &gt; 200 AND age BETWEEN 18 AND 25 AND gender = &#039;female&#039;
+
+$database-&gt;select(&quot;account&quot;, &quot;user_name&quot;, [
+	&quot;OR&quot; =&gt; [
+		&quot;user_id[&gt;]&quot; =&gt; 200,
+		&quot;age[&lt;&gt;]&quot; =&gt; [18, 25],
+		&quot;gender&quot; =&gt; &quot;female&quot;
+	]
+]);
+// WHERE user_id &gt; 200 OR age BETWEEN 18 AND 25 OR gender = &#039;female&#039;
+
+// [Compound]
+$database-&gt;has(&quot;account&quot;, [
+	&quot;AND&quot; =&gt; [
+		&quot;OR&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;foo&quot;,
+			&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+		],
+		&quot;password&quot; =&gt; &quot;12345&quot;
+	]
+]);
+// WHERE (user_name = &#039;foo&#039; OR email = &#039;foo@bar.com&#039;) AND password = &#039;12345&#039;
+
+// [IMPORTANT]
+// Because Medoo is using array data construction to describe relativity condition,
+// array with duplicated key will be overwritten.
+//
+// This will be error:
+$database-&gt;select(&quot;account&quot;, &#039;*&#039;, [
+	&quot;AND&quot; =&gt; [
+		&quot;OR&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;foo&quot;,
+			&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+		],
+		&quot;OR&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;bar&quot;,
+			&quot;email&quot; =&gt; &quot;bar@foo.com&quot;
+		]
+	]
+]);
+// [X] SELECT * FROM &quot;account&quot; WHERE (&quot;user_name&quot; = &#039;bar&#039; OR &quot;email&quot; = &#039;bar@foo.com&#039;)
+
+// To correct that, just assign a comment for each AND and OR key name. The comment content can be everything.
+$database-&gt;select(&quot;account&quot;, &#039;*&#039;, [
+	&quot;AND #Actually, this comment feature can be used on every AND and OR relativity condition&quot; =&gt; [
+		&quot;OR #the first condition&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;foo&quot;,
+			&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+		],
+		&quot;OR #the second condition&quot; =&gt; [
+			&quot;user_name&quot; =&gt; &quot;bar&quot;,
+			&quot;email&quot; =&gt; &quot;bar@foo.com&quot;
+		]
+	]
+]);
+// SELECT * FROM &quot;account&quot;
+// WHERE (
+// 	(
+// 		&quot;user_name&quot; = &#039;foo&#039; OR &quot;email&quot; = &#039;foo@bar.com&#039;
+// 	)
+// 	AND
+// 	(
+// 		&quot;user_name&quot; = &#039;bar&#039; OR &quot;email&quot; = &#039;bar@foo.com&#039;
+// 	)
+// )
+</pre>
+
+<h4>LIKE condition</h4>
+<p class="intro">LIKE condition can be use it like basic condition or relativity condition with just adding <code>[~]</code> syntax now.</p>
+<pre class="prettyprint linenums">
+// By default, the keyword will be quoted with % front and end to match the whole word.
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; &quot;lon&quot;
+]);
+
+WHERE &quot;city&quot; LIKE &#039;%lon%&#039;
+
+// Array support
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; [&quot;lon&quot;, &quot;foo&quot;, &quot;bar&quot;]
+]);
+
+WHERE &quot;city&quot; LIKE &#039;%lon%&#039; OR &quot;city&quot; LIKE &#039;%foo%&#039; OR &quot;city&quot; LIKE &#039;%bar%&#039;
+
+// Negative condition [!~]
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[!~]&quot; =&gt; &quot;lon&quot;
+]);
+
+WHERE &quot;city&quot; NOT LIKE &#039;%lon%&#039;
+
+// SQL LIKE Wildcard
+// You can use SQL wildcard to match more complex situation
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; &quot;%stan&quot; // Kazakhstan,  Uzbekistan, T&uuml;rkmenistan
+]);
+
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;city[~]&quot; =&gt; &quot;Londo_&quot; // London, Londox, Londos...
+]);
+
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;name[~]&quot; =&gt; &quot;[BCR]at&quot; // Bat, Cat, Rat
+]);
+
+$database-&gt;select(&quot;person&quot;, &quot;id&quot;, [
+	&quot;name[~]&quot; =&gt; &quot;[!BCR]at&quot; // Eat, Fat, Hat...
+]);
+</pre>
+
+<h4>Order condition (Updated since v1.1)</h4>
+<pre class="prettyprint linenums">
+$database-&gt;select(&quot;account&quot;, &quot;user_id&quot;, [
+
+	// Single condition
+	&quot;ORDER&quot; =&gt; &quot;user_id&quot;,
+
+	// Multiple condition
+	&quot;ORDER&quot; =&gt; [
+		// Order by column with sorting by customized order.
+		&quot;user_id&quot; =&gt; [43, 12, 57, 98, 144, 1],
+
+		// Order by column
+		&quot;register_date&quot;,
+
+		// Order by column with descending sorting
+		&quot;profile_id&quot; =&gt; &quot;DESC&quot;,
+
+		// Order by column with ascending sorting
+		&quot;date&quot; =&gt; &quot;ASC&quot;
+	]
+]);
+</pre>
+
+<h4>Full text searching</h4>
+<pre class="prettyprint linenums">
+// [MATCH]
+$database-&gt;select(&quot;post_table&quot;, &quot;post_id&quot;, [
+	&quot;MATCH&quot; =&gt; [
+		&quot;columns&quot; =&gt; [&quot;content&quot;, &quot;title&quot;],
+		&quot;keyword&quot; =&gt; &quot;foo&quot;
+	]
+]);
+// WHERE MATCH (content, title) AGAINST (&#039;foo&#039;)
+</pre>
+
+<h4>Using SQL functions</h4>
+<p class="intro">In some of special case, you may need to use SQL functions to process data. Just assign <code>#</code> in front of the column name, then the value will not be quoted.</p>
+<pre class="prettyprint linenums">
+$data = $database-&gt;select(&#039;account&#039;, [
+	&#039;user_id&#039;,
+	&#039;user_name&#039;
+], [
+	&#039;#datetime&#039; =&gt; &#039;NOW()&#039;
+]);
+
+// SELECT &quot;user_id&quot;,&quot;user_name&quot;
+// FROM &quot;account&quot;
+// WHERE &quot;datetime&quot; = NOW()
+
+// [IMPORTANT] Keep in mind that, the value will not be quoted should be matched as XXX() uppercase.
+// The following sample will be failed.
+$database-&gt;select(&#039;account&#039;, [
+	&#039;user_id&#039;,
+	&#039;user_name&#039;
+], [
+    &#039;#datetime2&#039; =&gt; &#039;now()&#039;,
+
+    &#039;datetime3&#039; =&gt; &#039;NOW()&#039;,
+
+    &#039;#datetime4&#039; =&gt; &#039;NOW&#039;
+]);
+</pre>
+
+<h4>Additional condition</h4>
+<pre class="prettyprint linenums">
+$database-&gt;select(&quot;account&quot;, &quot;user_id&quot;, [
+	&quot;GROUP&quot; =&gt; &quot;type&quot;,
+
+	// Must have to use it with GROUP together
+	&quot;HAVING&quot; =&gt; [
+		&quot;user_id[&gt;]&quot; =&gt; 500
+	],
+
+	// LIMIT =&gt; 20
+	&quot;LIMIT&quot; =&gt; [20, 100]
+]);
+//	SELECT user_id FROM account
+//	GROUP BY type
+//	HAVING user_id &gt; 500
+//	LIMIT 20,100
+</pre>
+
+</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

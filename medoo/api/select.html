@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../css/core.css"/>
+<link rel="shortcut icon" href="../favicon.png" />
+<title>Select API - Medoo中文文档</title>
+<meta name="keywords" content="Medoo,Medoo API,select" />
+<meta name="description" content="Medoo select API - Select data from database" />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_select'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="../index.html"><img width="297" height="58" id="head_logo" src="../images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="../index.html">主页</a></li>
+		<li><a href="../api/new.html">入门指南</a></li>
+		<li><a href="../doc.html">开发文档</a></li>
+		<li><a href="../about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>开始</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="../api/new.html">new medoo()</a></li>
+</ul>
+
+<h4>Where 语法</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="../api/where.html">where</a></li>
+</ul>
+
+<h4>查询</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="../api/select.html">select</a></li>
+<li id="api_list_insert"><a href="../api/insert.html">insert</a></li>
+<li id="api_list_update"><a href="../api/update.html">update</a></li>
+<li id="api_list_delete"><a href="../api/delete.html">delete</a></li>
+<li id="api_list_replace"><a href="../api/replace.html">replace</a></li>
+<li id="api_list_get"><a href="../api/get.html">get</a></li>
+<li id="api_list_has"><a href="../api/has.html">has</a></li>
+<li id="api_list_count"><a href="../api/count.html">count</a></li>
+<li id="api_list_max"><a href="../api/max.html">max</a></li>
+<li id="api_list_min"><a href="../api/min.html">min</a></li>
+<li id="api_list_avg"><a href="../api/avg.html">avg</a></li>
+<li id="api_list_sum"><a href="../api/sum.html">sum</a></li>
+</ul>
+
+<h4>事务</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="../api/action.html">action</a></li>
+</ul>
+
+<h4>高级</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="../api/query.html">query</a></li>
+<li id="api_list_quote"><a href="../api/quote.html">quote</a></li>
+</ul>
+
+<h4>PDO 对象</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="../api/pdo.html">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="../api/debug.html">debug</a></li>
+<li id="api_list_error"><a href="../api/error.html">error</a></li>
+<li id="api_list_log"><a href="../api/log.html">log</a></li>
+<li id="api_list_last_query"><a href="../api/last_query.html">last_query</a></li>
+</ul>
+
+<h4>数据库信息</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="../api/info.html">info</a></li>
+</ul>
+</div>
+<div id="main_body">
+<div id="doc_version">版本: 1.1.3</div>
+<h3>select</h3>
+<p class="desc">从数据库中选择数据</p><div class="function_name">select($table, $columns, $where)</div>
+		<ul class="para_list"><li><h5>table [string]</h5><p>表名称。</p></li><li><h5>columns [string/array]</h5><p>将获取数据的目标字段列表。</p></li><li><h5>where (optional) [array]</h5><p>过滤数据记录的 WHERE 子句。</p></li></ul><div class="function_name">select($table, $join, $columns, $where)</div>
+		<ul class="para_list"><li><h5>table [string]</h5><p>表名称。</p></li><li><h5>join [array]</h5><p>多表查询，如果没有表连接则忽略。</p></li><li><h5>columns [string/array]</h5><p>将获取数据的目标字段列表。</p></li><li><h5>where (optional) [array]</h5><p>过滤数据记录的 WHERE 子句。</p></li></ul>
+<div class="function_return">返回: [array]</div><div class="note">你可以使用 "*" 作为 columns 参数以获取全部字段的数据，但最好能提供目标字段列表以提高查询性能。</div><pre class="prettyprint linenums">$datas = $database-&gt;select(&quot;account&quot;, [
+	&quot;user_name&quot;,
+	&quot;email&quot;
+], [
+	&quot;user_id[&gt;]&quot; =&gt; 100
+]);
+
+// $datas = array(
+// 	[0] =&gt; array(
+// 		&quot;user_name&quot; =&gt; &quot;foo&quot;,
+// 		&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+// 	),
+// 	[1] =&gt; array(
+// 		&quot;user_name&quot; =&gt; &quot;cat&quot;,
+// 		&quot;email&quot; =&gt; &quot;cat@dog.com&quot;
+// 	)
+// )
+
+foreach($datas as $data)
+{
+	echo &quot;user_name:&quot; . $data[&quot;user_name&quot;] . &quot; - email:&quot; . $data[&quot;email&quot;] . &quot;&lt;br/&gt;&quot;;
+}
+
+// 选择所有字段
+$datas = $database-&gt;select(&quot;account&quot;, &quot;*&quot;);
+
+// 选择一个字段
+$datas = $database-&gt;select(&quot;account&quot;, &quot;user_name&quot;);
+
+// $datas = array(
+// 	[0] =&gt; &quot;foo&quot;,
+// 	[1] =&gt; &quot;cat&quot;
+// )
+</pre><h4>表连接</h4><p class="intro">SQL JOIN 子句可以将两个表之间的行组合在一起。Medoo 为 JOIN 子句提供了简单的语法。</p><pre class="prettyprint linenums">// [&gt;] == LEFT JOIN
+// [&lt;] == RIGH JOIN
+// [&lt;&gt;] == FULL JOIN
+// [&gt;&lt;] == INNER JOIN
+
+$database-&gt;select(&quot;post&quot;, [
+	// 这是表关系参数，它告诉你要加入的表之间的关系。
+
+	// 表 post 中的 author_id 与表 account 中的 user_id 相等
+	&quot;[&gt;]account&quot; =&gt; [&quot;author_id&quot; =&gt; &quot;user_id&quot;],
+
+	// 表 post 中的 user_id 与表 album 中的 user_id 相等。
+	// 如果要比较的两个表中的行名称相同，可用这种简称来声明关系。
+	&quot;[&gt;]album&quot; =&gt; &quot;user_id&quot;,
+
+	// [post.user_id 等于 photo.user_id 并且 post.avatar_id 等于 photo.avatar_id]
+	// 同上，两个表中有两行或多行的名称一样。
+	&quot;[&gt;]photo&quot; =&gt; [&quot;user_id&quot;, &quot;avatar_id&quot;],
+
+	// 如果你要连接一个表以别的值，你必须指定一个别名给表
+	&quot;[&gt;]account (replyer)&quot; =&gt; [&quot;replyer_id&quot; =&gt; &quot;user_id&quot;],
+
+	// 你可以通过在字段前加上表名称来指向前面已连接的表
+	&quot;[&gt;]account&quot; =&gt; [&quot;author_id&quot; =&gt; &quot;user_id&quot;],
+	&quot;[&gt;]album&quot; =&gt; [&quot;account.user_id&quot; =&gt; &quot;user_id&quot;],
+
+	// 多个条件
+	&quot;[&gt;]account&quot; =&gt; [
+		&quot;author_id&quot; =&gt; &quot;user_id&quot;,
+		&quot;album.user_id&quot; =&gt; &quot;user_id&quot;
+	]
+], [
+	&quot;post.post_id&quot;,
+	&quot;post.title&quot;,
+	&quot;account.user_id&quot;,
+	&quot;account.city&quot;,
+	&quot;replyer.user_id&quot;,
+	&quot;replyer.city&quot;
+], [
+	&quot;post.user_id&quot; =&gt; 100,
+	&quot;ORDER&quot; =&gt; &quot;post.post_id DESC&quot;,
+	&quot;LIMIT&quot; =&gt; 50
+]);
+
+// SELECT
+// 	`post`.`post_id`,
+// 	`post`.`title`,
+// 	`account`.`city`
+// FROM `post`
+// LEFT JOIN `account` ON `post`.`author_id` = `account`.`user_id`
+// LEFT JOIN `album` USING (`user_id`)
+// LEFT JOIN `photo` USING (`user_id`, `avatar_id`)
+// WHERE
+// 	`post`.`user_id` = 100
+// ORDER BY `post`.`post_id` DESC
+// LIMIT 50
+</pre><h4>数据映射</h4><p class="intro">自定义输出的数据结构 - 包装数据的键名与字段本身没有关系，它是多维的。</p><pre class="prettyprint linenums">$data = $database-&gt;select(&quot;post&quot;, [
+	&quot;[&gt;]account&quot; =&gt; [&quot;user_id&quot;]
+], [
+	&quot;post.post_id&quot;,
+	&quot;post.content&quot;,
+
+	&quot;userData&quot; =&gt; [
+		&quot;account.user_id&quot;,
+		&quot;account.email&quot;,
+
+		&quot;meta&quot; =&gt; [
+			&quot;account.location&quot;,
+			&quot;account.gender&quot;
+		]
+	]
+], [
+	&quot;LIMIT&quot; =&gt; [0, 2]
+]);
+
+echo json_encode($data);
+
+// 输出的数据
+[
+	{
+		post_id: &quot;1&quot;,
+		content: &quot;Hello world!&quot;,
+		userData: {
+			user_id: &quot;1&quot;,
+			email: &quot;foo@example.com&quot;,
+			meta: {
+				location: &quot;New York&quot;,
+				gender: &quot;male&quot;
+			}
+		}
+	},
+	{
+		post_id: &quot;2&quot;,
+		content: &quot;Hey everyone&quot;,
+		userData: {
+			user_id: &quot;2&quot;,
+			email: &quot;bar@example.com&quot;,
+			meta: {
+				location: &quot;London&quot;,
+				gender: &quot;female&quot;
+			}
+		}
+	}
+]</pre><h4>别名</h4><p class="intro">您可以使用别名来替换旧的字段或表名称。 这在表连接中防止名称冲突很有用。</p><pre class="prettyprint linenums">$data = $database-&gt;select(&quot;account&quot;, [
+	&quot;user_id&quot;,
+	&quot;nickname(my_nickname)&quot;
+], [
+	&quot;LIMIT&quot; =&gt; 20
+]);
+
+// $data = array(
+// 	[0] =&gt; array(
+// 		&quot;user_id&quot; =&gt; &quot;1&quot;,
+// 		&quot;my_nickname&quot; =&gt; &quot;foo&quot;
+// 	),
+// 	[1] =&gt; array(
+// 		&quot;user_id&quot; =&gt; &quot;2&quot;,
+// 		&quot;my_nickname&quot; =&gt; &quot;bar&quot;
+// 	)
+// )
+
+$data = $database-&gt;select(&quot;post (content)&quot;, [
+	&quot;[&gt;]account (user)&quot; =&gt; &quot;user_id&quot;,
+], [
+	&quot;content.user_id (author_id)&quot;,
+	&quot;user.user_id&quot;
+], [
+	&quot;LIMIT&quot; =&gt; 20
+]);
+
+// SELECT
+// 	&quot;content&quot;.&quot;user_id&quot; AS author_id,
+// 	&quot;user&quot;.&quot;user_id&quot;
+// FROM
+// 	&quot;post&quot; AS &quot;content&quot;
+// LEFT JOIN &quot;account&quot; AS &quot;user&quot; USING (&quot;user_id&quot;)
+// LIMIT 2
+
+// $data = array(
+// 	[0] =&gt; array(
+// 		&quot;author_id&quot; =&gt; &quot;1&quot;,
+// 		&quot;user_id&quot; =&gt; &quot;321&quot;
+// 	),
+// 	[1] =&gt; array(
+// 		&quot;author_id&quot; =&gt; &quot;2&quot;,
+// 		&quot;user_id&quot; =&gt; &quot;322&quot;
+// 	)
+// )</pre>	</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

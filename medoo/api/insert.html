@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../css/core.css"/>
+<link rel="shortcut icon" href="../favicon.png" />
+<title>Insert API - Medoo中文文档</title>
+<meta name="keywords" content="Medoo,Medoo API,insert" />
+<meta name="description" content="Medoo insert API - Insert new records in table" />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_insert'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="../index.html"><img width="297" height="58" id="head_logo" src="../images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="../index.html">主页</a></li>
+		<li><a href="../api/new.html">入门指南</a></li>
+		<li><a href="../doc.html">开发文档</a></li>
+		<li><a href="../about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>开始</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="../api/new.html">new medoo()</a></li>
+</ul>
+
+<h4>Where 语法</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="../api/where.html">where</a></li>
+</ul>
+
+<h4>查询</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="../api/select.html">select</a></li>
+<li id="api_list_insert"><a href="../api/insert.html">insert</a></li>
+<li id="api_list_update"><a href="../api/update.html">update</a></li>
+<li id="api_list_delete"><a href="../api/delete.html">delete</a></li>
+<li id="api_list_replace"><a href="../api/replace.html">replace</a></li>
+<li id="api_list_get"><a href="../api/get.html">get</a></li>
+<li id="api_list_has"><a href="../api/has.html">has</a></li>
+<li id="api_list_count"><a href="../api/count.html">count</a></li>
+<li id="api_list_max"><a href="../api/max.html">max</a></li>
+<li id="api_list_min"><a href="../api/min.html">min</a></li>
+<li id="api_list_avg"><a href="../api/avg.html">avg</a></li>
+<li id="api_list_sum"><a href="../api/sum.html">sum</a></li>
+</ul>
+
+<h4>事务</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="../api/action.html">action</a></li>
+</ul>
+
+<h4>高级</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="../api/query.html">query</a></li>
+<li id="api_list_quote"><a href="../api/quote.html">quote</a></li>
+</ul>
+
+<h4>PDO 对象</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="../api/pdo.html">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="../api/debug.html">debug</a></li>
+<li id="api_list_error"><a href="../api/error.html">error</a></li>
+<li id="api_list_log"><a href="../api/log.html">log</a></li>
+<li id="api_list_last_query"><a href="../api/last_query.html">last_query</a></li>
+</ul>
+
+<h4>数据库信息</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="../api/info.html">info</a></li>
+</ul>
+</div>
+<div id="main_body">
+<div id="doc_version">版本: 1.1.3</div>
+<h3>insert</h3>
+<p class="desc">插入新数据到表中</p><div class="function_name">insert($table, $data)</div><ul class="para_list"><li><h5>table [string]</h5><p>表名称。</p></li><li><h5>data [array]</h5><p>将要插入表中的数据。</p></li></ul>
+<div class="function_return">返回: [number] 最后插入的 id</div><pre class="prettyprint linenums">$last_user_id = $database-&gt;insert(&quot;account&quot;, [
+	&quot;user_name&quot; =&gt; &quot;foo&quot;,
+	&quot;email&quot; =&gt; &quot;foo@bar.com&quot;,
+	&quot;age&quot; =&gt; 25
+]);</pre><h4>数组序列化</h4><p class="intro">默认情况下，数组数据在插入之前将通过 <code>serialize()</code> 序列化，但是您可以为其分配 JSON 并由 <code>json_encode()</code> 序列化。</p><pre class="prettyprint linenums">$last_user_id = $database-&gt;insert(&quot;account&quot;, [
+	&quot;user_name&quot; =&gt; &quot;foo&quot;,
+	&quot;email&quot; =&gt; &quot;foo@bar.com&quot;,
+	&quot;age&quot; =&gt; 25,
+	&quot;lang&quot; =&gt; [&quot;en&quot;, &quot;fr&quot;, &quot;jp&quot;, &quot;cn&quot;] // =&gt; 'a:4:{i:0;s:2:&quot;en&quot;;i:1;s:2:&quot;fr&quot;;i:2;s:2:&quot;jp&quot;;i:3;s:2:&quot;cn&quot;;}'
+]);
+
+$last_user_id = $database-&gt;insert(&quot;account&quot;, [
+	&quot;user_name&quot; =&gt; &quot;foo&quot;,
+	&quot;email&quot; =&gt; &quot;foo@bar.com&quot;,
+	&quot;age&quot; =&gt; 25,
+	&quot;(JSON) lang&quot; =&gt; [&quot;en&quot;, &quot;fr&quot;, &quot;jp&quot;, &quot;cn&quot;] // =&gt; '[&quot;en&quot;,&quot;fr&quot;,&quot;jp&quot;,&quot;cn&quot;]'
+]);</pre><h4>多行插入</h4><p class="intro">你也可以插入多行数据。</p><pre class="prettyprint linenums">$last_user_id = $database-&gt;insert(&quot;account&quot;, [
+	[
+		&quot;user_name&quot; =&gt; &quot;foo&quot;,
+		&quot;email&quot; =&gt; &quot;foo@bar.com&quot;,
+		&quot;age&quot; =&gt; 25,
+		&quot;city&quot; =&gt; &quot;New York&quot;,
+		&quot;(JSON) lang&quot; =&gt; [&quot;en&quot;, &quot;fr&quot;, &quot;jp&quot;, &quot;cn&quot;]
+	],
+	[
+		&quot;user_name&quot; =&gt; &quot;bar&quot;,
+		&quot;email&quot; =&gt; &quot;bar@foo.com&quot;,
+		&quot;age&quot; =&gt; 14,
+		&quot;city&quot; =&gt; &quot;Hong Kong&quot;,
+		&quot;(JSON) lang&quot; =&gt; [&quot;en&quot;, &quot;jp&quot;, &quot;cn&quot;]
+	]
+]);
+</pre><h4>使用 SQL 方法</h4><p class="intro">在某些特殊情况下，您可能需要使用 SQL 函数来处理数据。只需在字段前面分配 <code>#</code> ，那么该值就不会被引用。</p><pre class="prettyprint linenums">$last_user_id = $database-&gt;insert(&quot;account&quot;, [
+	&quot;user_name&quot; =&gt; &quot;bar&quot;,
+	&quot;#uid&quot; =&gt; &quot;UUID()&quot;
+]);
+</pre>	</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

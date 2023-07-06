@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="shortcut icon" href="favicon.png" />
+<title>Medoo 开发文档</title>
+<meta name="keywords" content="Medoo,Medoo 指南" />
+<meta name="description" content="Medoo 开发文档" />
+<link href="css/tomorrow.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="index.html"><img width="297" height="58" id="head_logo" src="images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="index.html">主页</a></li>
+		<li><a href="api/new.html">入门指南</a></li>
+		<li><a href="doc.html">开发文档</a></li>
+		<li><a href="about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>开始</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="api/new.html">new medoo()</a></li>
+</ul>
+
+<h4>Where 语法</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="api/where.html">where</a></li>
+</ul>
+
+<h4>查询</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="api/select.html">select</a></li>
+<li id="api_list_insert"><a href="api/insert.html">insert</a></li>
+<li id="api_list_update"><a href="api/update.html">update</a></li>
+<li id="api_list_delete"><a href="api/delete.html">delete</a></li>
+<li id="api_list_replace"><a href="api/replace.html">replace</a></li>
+<li id="api_list_get"><a href="api/get.html">get</a></li>
+<li id="api_list_has"><a href="api/has.html">has</a></li>
+<li id="api_list_count"><a href="api/count.html">count</a></li>
+<li id="api_list_max"><a href="api/max.html">max</a></li>
+<li id="api_list_min"><a href="api/min.html">min</a></li>
+<li id="api_list_avg"><a href="api/avg.html">avg</a></li>
+<li id="api_list_sum"><a href="api/sum.html">sum</a></li>
+</ul>
+
+<h4>事务</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="api/action.html">action</a></li>
+</ul>
+
+<h4>高级</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="api/query.html">query</a></li>
+<li id="api_list_quote"><a href="api/quote.html">quote</a></li>
+</ul>
+
+<h4>PDO 对象</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="api/pdo.html">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="api/debug.html">debug</a></li>
+<li id="api_list_error"><a href="api/error.html">error</a></li>
+<li id="api_list_log"><a href="api/log.html">log</a></li>
+<li id="api_list_last_query"><a href="api/last_query.html">last_query</a></li>
+</ul>
+
+<h4>数据库信息</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="api/info.html">info</a></li>
+</ul>
+</div><div id="main_body">
+	<div id="doc_version">版本: 1.1.3</div>
+	<h3>文档</h3>
+	<p class="desc">开始之前，我们建议您先阅读指南文档，以便了解如何安装 Medoo 以及开始一个简单的代码。</p>
+
+	<ul class="api_full_list">
+		<li><a href="api/new.html"><h5>new medoo</h5><p>提供开始使用 Medoo 并启动数据库连接的指南</p></a></li>
+	</ul>
+
+	<p class="desc">此文章有关于 Medoo 数据过滤，它在大多数 Medoo 函数中都有用到，并以 $where 作为参数，使用它过滤数据以获取我们想要的目标数据，这一点很重要。</p>
+
+	<ul class="api_full_list">
+		<li><a href="api/where.html"><h5>where</h5><p>文档介绍 $where 参数。</p></a></li>
+	</ul>
+
+	<p class="desc">以下是 Medoo API 列表。你可找到你想要的任何东西。</p>
+
+	<ul class="api_full_list">
+		<li><a href="api/select.html"><h5>select</h5><p>从数据库中获取数据</p></a></li><li><a href="api/insert.html"><h5>insert</h5><p>插入新记录到表中</p></a></li><li><a href="api/update.html"><h5>update</h5><p>修改表中的数据</p></a></li><li><a href="api/delete.html"><h5>delete</h5><p>删除表中的数据</p></a></li><li><a href="api/replace.html"><h5>replace</h5><p>替换掉旧数据</p></a></li><li><a href="api/get.html"><h5>get</h5><p>从表中获取一条记录</p></a></li><li><a href="api/has.html"><h5>has</h5><p>确定目标数据是否存在</p></a></li><li><a href="api/count.html"><h5>count</h5><p>计算行数</p></a></li><li><a href="api/max.html"><h5>max</h5><p>获取列中的最大值</p></a></li><li><a href="api/min.html"><h5>min</h5><p>获取列中的最小值</p></a></li><li><a href="api/avg.html"><h5>avg</h5><p>获取列平均值</p></a></li><li><a href="api/sum.html"><h5>sum</h5><p>获取列总值</p></a></li><li><a href="api/query.html"><h5>query</h5><p>插入新记录到表中</p></a></li><li><a href="api/quote.html"><h5>quote</h5><p>转义查询语句中的字符串</p></a></li><li><a href="api/action.html"><h5>action</h5><p>开始一个事务</p></a></li><li><a href="api/debug.html"><h5>debug</h5><p>输出已生成的 SQL，但不执行。</p></a></li><li><a href="api/error.html"><h5>error</h5><p>返回最后一次操作中的错误信息</p></a></li><li><a href="api/log.html"><h5>log</h5><p>返回所有已执行的查询语句。</p></a></li><li><a href="api/last_query.html"><h5>last_query</h5><p>返回最后一次查询语句。</p></a></li><li><a href="api/info.html"><h5>info</h5><p>获取数据库信息。</p></a></li>	</ul>
+</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

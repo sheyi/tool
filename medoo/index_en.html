@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="shortcut icon" href="favicon.png" />
+<meta property="og:title" content="Medoo - The lightest PHP database framework to accelerate development"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="images/medoo-logo-128.png"/>
+<meta property="og:site_name" content="Medoo"/>
+<meta property="fb:admins" content="100001162628592" />
+<title>Medoo - The lightest PHP database framework to accelerate development</title>
+<meta name="keywords" content="Medoo,PHP,MySQL,SQLite,database framework" />
+<meta name="description" content="The Lightest PHP database framework to accelerate development." />
+<script type="text/javascript" src="js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="js/prettify.js"></script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="/"><img width="297" height="58" id="head_logo" src="http://medoo.in/images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="/">Home</a></li>
+		<li><a href="api/new">Get Started</a></li>
+		<li><a href="doc_en.html">Documentation</a></li>
+		<li><a href="about_en.html">About</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="container">
+	<div id="section1">
+		<img width="256" height="256" id="medoo_logo" src="images/medoo-logo-256.png" alt="Medoo logo" />
+		<h4 id="title_desc">The lightest PHP database framework to accelerate development</h4>
+		<h5 id="title_version">Version: 1.1.3 [24KB]</h5>
+		<a href="https://github.com/catfan/Medoo/archive/master.zip" class="download_btn">download</a>
+
+		<div id="social_wrap">
+			<h5>Love Medoo?</h5>
+			<div id="social_btn_wrap">
+				<div id="fb-root"></div>
+				<div id="facebook_btn" class="fb-like" data-layout="button_count" data-href="http://medoo.in" data-width="250" data-show-faces="true"></div>
+				<a href="https://twitter.com/share" class="twitter-share-button"></a>
+				<div class="g-plusone" data-size="medium"></div>
+				<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=catfan&amp;repo=Medoo&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="94px" height="20px"></iframe>
+				<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=catfan&amp;repo=Medoo&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="94px" height="20px"></iframe>
+			</div>
+		</div>
+	</div>
+	<div id="section2">
+		<div class="section-header">
+			<h3>Why Medoo</h3>
+		</div>
+		<ul class="clearfix">
+			<li><h5>Lightweight</h5><p>20KB around with only one file.</p></li>
+			<li><h5>Easy</h5><p>Extremely easy to learn and use, friendly construction.</p></li>
+			<li><h5>Powerful</h5><p>Support various common and complex SQL queries.</p></li>
+			<li><h5>Compatible</h5><p>Support various SQL database, including MySQL, MSSQL, SQLite, MariaDB, Oracle, Sybase, PostgreSQL and more.</p></li>
+			<li><h5>Security</h5><p>Prevent SQL injection.</p></li>
+			<li><h5>Free</h5><p>Under MIT license, you can use it anywhere if you want.</p></li>
+		</ul>
+	</div>
+
+	<div id="section3">
+		<div class="section-header">
+			<h3>Get Started</h3>
+		</div>
+		<div class="section-body">
+		<h4>Composer require</h4>
+		<code class="console-code">
+		$ composer require catfan/Medoo
+		</code>
+		<h4>Update</h4>
+		<code class="console-code">
+		$ composer update
+		</code>
+		<h4>Get Started</h4>
+<pre class="prettyprint linenums">
+// If you installed via composer, just use this code to requrie autoloader on the top of your projects.
+require &#039;vendor/autoload.php&#039;;
+
+// Or if you just download the medoo.php into directory, and require it with the correct path.
+require_once &#039;medoo.php&#039;;
+
+// Initialize
+$database = new medoo([
+    &#039;database_type&#039; =&gt; &#039;mysql&#039;,
+    &#039;database_name&#039; =&gt; &#039;name&#039;,
+    &#039;server&#039; =&gt; &#039;localhost&#039;,
+    &#039;username&#039; =&gt; &#039;your_username&#039;,
+    &#039;password&#039; =&gt; &#039;your_password&#039;,
+    &#039;charset&#039; =&gt; &#039;utf8&#039;
+]);
+
+// Enjoy
+$database-&gt;insert(&#039;account&#039;, [
+    &#039;user_name&#039; =&gt; &#039;foo&#039;,
+    &#039;email&#039; =&gt; &#039;foo@bar.com&#039;,
+    &#039;age&#039; =&gt; 25,
+    &#039;lang&#039; =&gt; [&#039;en&#039;, &#039;fr&#039;, &#039;jp&#039;, &#039;cn&#039;]
+]);
+</pre>
+		<div class="tips">* On PHP 5.4+, you can use <b>[]</b> as short array syntax.</div>
+		</div>
+		</div>
+	</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

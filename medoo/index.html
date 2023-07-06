@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="shortcut icon" href="favicon.png" />
+<title>Medoo - 最轻量级PHP数据库框架以助力开发</title>
+<meta name="keywords" content="Medoo,PHP,MySQL,SQLite,database framework" />
+<meta name="description" content="最轻量级PHP数据库框架以助力开发" />
+<script type="text/javascript" src="js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function()
+{
+	prettyPrint();
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="index.html"><img width="297" height="58" id="head_logo" src="images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="index.html">主页</a></li>
+		<li><a href="api/new.html">入门指南</a></li>
+		<li><a href="doc.html">开发文档</a></li>
+		<li><a href="about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="container">
+	<div id="section1">
+		<img width="256" height="256" id="medoo_logo" src="images/medoo-logo-256.png" alt="Medoo logo" />
+		<h4 id="title_desc">最轻量级 PHP 数据库框架以助力开发</h4>
+		<h5 id="title_version">版本: 1.1.3 [24KB]</h5>
+		<a href="https://github.com/catfan/Medoo/archive/master.zip" class="download_btn">点击下载</a>
+
+		<div id="social_wrap">
+			<h5>喜欢 Medoo?</h5>
+			<div id="social_btn_wrap">
+				<div class="g-plusone" data-size="medium"></div>
+				<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=catfan&amp;repo=Medoo&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="94px" height="20px"></iframe>
+				<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=catfan&amp;repo=Medoo&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="94px" height="20px"></iframe>
+			</div>
+		</div>
+	</div>
+	<div id="section2">
+		<div class="section-header">
+			<h3>为什么选择 Medoo</h3>
+		</div>
+		<ul class="clearfix">
+			<li><h5>轻量级</h5><p>只有 20KB 左右，单文件。</p></li>
+			<li><h5>简单</h5><p>极易学习和上手，友好的框架结构。</p></li>
+			<li><h5>强大</h5><p>支持各种常见的或复杂的SQL查询。</p></li>
+			<li><h5>兼容</h5><p>支持各种 SQL 数据库，包括 MySQL, MSSQL, SQLite, MariaDB, Oracle, Sybase, PostgreSQL 等等。</p></li>
+			<li><h5>安全</h5><p>防止 SQL 注入。</p></li>
+			<li><h5>免费</h5><p>基于 MIT 开源协议，如果需要，你可以随时随地使用它。</p></li>
+		</ul>
+	</div>
+
+	<div id="section3">
+		<div class="section-header">
+			<h3>开始</h3>
+		</div>
+		<div class="section-body">
+		<h4>使用 Composer 安装</h4>
+		<code class="console-code">
+		$ composer require catfan/Medoo
+		</code>
+		<h4>更新</h4>
+		<code class="console-code">
+		$ composer update
+		</code>
+		<h4>入门代码</h4>
+<pre class="prettyprint linenums">
+// 如果你是通过 composer 安装，只需在项目的开始部分加上此代码即可自动加载。
+require &#039;vendor/autoload.php&#039;;
+
+// 或者你只需下载 medoo.php 并放置到项目目录中，然后 require 即可。
+require_once &#039;medoo.php&#039;;
+
+// 初始化
+$database = new medoo([
+    &#039;database_type&#039; =&gt; &#039;mysql&#039;,
+    &#039;database_name&#039; =&gt; &#039;name&#039;,
+    &#039;server&#039; =&gt; &#039;localhost&#039;,
+    &#039;username&#039; =&gt; &#039;your_username&#039;,
+    &#039;password&#039; =&gt; &#039;your_password&#039;,
+    &#039;charset&#039; =&gt; &#039;utf8&#039;
+]);
+
+// 开始使用
+$database-&gt;insert(&#039;account&#039;, [
+    &#039;user_name&#039; =&gt; &#039;foo&#039;,
+    &#039;email&#039; =&gt; &#039;foo@bar.com&#039;,
+    &#039;age&#039; =&gt; 25,
+    &#039;lang&#039; =&gt; [&#039;en&#039;, &#039;fr&#039;, &#039;jp&#039;, &#039;cn&#039;]
+]);
+</pre>
+		<div class="tips">* 在 PHP 5.4+ 中, 你可以使用 <b>[]</b> 作为数组语法。</div>
+		</div>
+		</div>
+	</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2023.</p>
+</div>
+</footer></body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../css/core.css"/>
+<link rel="shortcut icon" href="../favicon.png" />
+<title>Query API - Medoo中文文档</title>
+<meta name="keywords" content="Medoo,Medoo API,query" />
+<meta name="description" content="Medoo query API - Insert new records in a table" />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_query'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="../index.html"><img width="297" height="58" id="head_logo" src="../images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="../index.html">主页</a></li>
+		<li><a href="../api/new.html">入门指南</a></li>
+		<li><a href="../doc.html">开发文档</a></li>
+		<li><a href="../about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>开始</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="../api/new.html">new medoo()</a></li>
+</ul>
+
+<h4>Where 语法</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="../api/where.html">where</a></li>
+</ul>
+
+<h4>查询</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="../api/select.html">select</a></li>
+<li id="api_list_insert"><a href="../api/insert.html">insert</a></li>
+<li id="api_list_update"><a href="../api/update.html">update</a></li>
+<li id="api_list_delete"><a href="../api/delete.html">delete</a></li>
+<li id="api_list_replace"><a href="../api/replace.html">replace</a></li>
+<li id="api_list_get"><a href="../api/get.html">get</a></li>
+<li id="api_list_has"><a href="../api/has.html">has</a></li>
+<li id="api_list_count"><a href="../api/count.html">count</a></li>
+<li id="api_list_max"><a href="../api/max.html">max</a></li>
+<li id="api_list_min"><a href="../api/min.html">min</a></li>
+<li id="api_list_avg"><a href="../api/avg.html">avg</a></li>
+<li id="api_list_sum"><a href="../api/sum.html">sum</a></li>
+</ul>
+
+<h4>事务</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="../api/action.html">action</a></li>
+</ul>
+
+<h4>高级</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="../api/query.html">query</a></li>
+<li id="api_list_quote"><a href="../api/quote.html">quote</a></li>
+</ul>
+
+<h4>PDO 对象</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="../api/pdo.html">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="../api/debug.html">debug</a></li>
+<li id="api_list_error"><a href="../api/error.html">error</a></li>
+<li id="api_list_log"><a href="../api/log.html">log</a></li>
+<li id="api_list_last_query"><a href="../api/last_query.html">last_query</a></li>
+</ul>
+
+<h4>数据库信息</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="../api/info.html">info</a></li>
+</ul>
+</div>
+<div id="main_body">
+<div id="doc_version">版本: 1.1.3</div>
+<h3>query</h3>
+<p class="desc">插入新记录到表中</p><div class="function_name">query($query)</div><ul class="para_list"><li><h5>query [string]</h5><p>SQL 查询语句。</p></li></ul>
+<div class="function_return">返回: [object] PDOStatement 对象。</div><div class="note">此方法用于特殊的自定义 SQL 查询，复杂的查询。对于将要插入的每条数据，请使用 quote 方法来防止 SQL 注入。</div><pre class="prettyprint linenums">$database-&gt;query(&quot;CREATE TABLE table (
+	c1 INT STORAGE DISK,
+	c2 INT STORAGE MEMORY
+) ENGINE NDB;&quot;);
+
+$data = $database-&gt;query(&quot;SELECT email FROM account&quot;)-&gt;fetchAll();
+print_r($data);</pre>	</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>

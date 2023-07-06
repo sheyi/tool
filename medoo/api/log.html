@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../css/core.css"/>
+<link rel="shortcut icon" href="../favicon.png" />
+<title>Log API - Medoo中文文档</title>
+<meta name="keywords" content="Medoo,Medoo API,log" />
+<meta name="description" content="Medoo log API - Return the all executed queries." />
+<script type="text/javascript" src="../js/qatrix-1.1.js"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript">
+$ready(function ()
+{
+	prettyPrint();
+	$className.add($('api_list_log'), 'on');
+});
+</script>
+</head>
+<body>
+<header>
+<div id="header_body" class="clearfix">
+<a href="../index.html"><img width="297" height="58" id="head_logo" src="../images/medoo-logo.png" /></a>
+<nav>
+	<ul class="clearfix">
+		<li><a href="../index.html">主页</a></li>
+		<li><a href="../api/new.html">入门指南</a></li>
+		<li><a href="../doc.html">开发文档</a></li>
+		<li><a href="../about.html">关于</a></li>
+	</ul>
+</nav>
+</div>
+</header><div id="doc_container" class="clearfix">
+<div id="api_list_wrap">
+<h4>开始</h4 >
+<ul class="api_list">
+<li id="api_list_new"><a href="../api/new.html">new medoo()</a></li>
+</ul>
+
+<h4>Where 语法</h4 >
+<ul class="api_list">
+<li id="api_list_where"><a href="../api/where.html">where</a></li>
+</ul>
+
+<h4>查询</h4>
+<ul class="api_list">
+<li id="api_list_select"><a href="../api/select.html">select</a></li>
+<li id="api_list_insert"><a href="../api/insert.html">insert</a></li>
+<li id="api_list_update"><a href="../api/update.html">update</a></li>
+<li id="api_list_delete"><a href="../api/delete.html">delete</a></li>
+<li id="api_list_replace"><a href="../api/replace.html">replace</a></li>
+<li id="api_list_get"><a href="../api/get.html">get</a></li>
+<li id="api_list_has"><a href="../api/has.html">has</a></li>
+<li id="api_list_count"><a href="../api/count.html">count</a></li>
+<li id="api_list_max"><a href="../api/max.html">max</a></li>
+<li id="api_list_min"><a href="../api/min.html">min</a></li>
+<li id="api_list_avg"><a href="../api/avg.html">avg</a></li>
+<li id="api_list_sum"><a href="../api/sum.html">sum</a></li>
+</ul>
+
+<h4>事务</h4 >
+<ul class="api_list">
+<li id="api_list_action"><a href="../api/action.html">action</a></li>
+</ul>
+
+<h4>高级</h4>
+<ul class="api_list">
+<li id="api_list_query"><a href="../api/query.html">query</a></li>
+<li id="api_list_quote"><a href="../api/quote.html">quote</a></li>
+</ul>
+
+<h4>PDO 对象</h4>
+<ul class="api_list">
+<li id="api_list_pdo"><a href="../api/pdo.html">pdo</a></li>
+</ul>
+
+<h4>Debug</h4>
+<ul class="api_list">
+<li id="api_list_debug"><a href="../api/debug.html">debug</a></li>
+<li id="api_list_error"><a href="../api/error.html">error</a></li>
+<li id="api_list_log"><a href="../api/log.html">log</a></li>
+<li id="api_list_last_query"><a href="../api/last_query.html">last_query</a></li>
+</ul>
+
+<h4>数据库信息</h4>
+<ul class="api_list">
+<li id="api_list_info"><a href="../api/info.html">info</a></li>
+</ul>
+</div>
+<div id="main_body">
+<div id="doc_version">版本: 1.1.3</div>
+<h3>log</h3>
+<p class="desc">返回所有已执行的查询语句。</p><div class="function_name">log()</div>
+<div class="function_return">返回: [array] 所有已执行的查询语句数组</div><div class="note">您可以使用此函数检出执行的 SQL 查询以进行调试。</div><pre class="prettyprint linenums">$database-&gt;select(&quot;account&quot;, [
+	&quot;user_name&quot;,
+	&quot;email&quot;
+], [
+	&quot;user_id[&lt;]&quot; =&gt; 20
+]);
+
+$database-&gt;insert(&quot;account&quot;, [
+	&quot;user_name&quot; =&gt; &quot;foo&quot;,
+	&quot;email&quot; =&gt; &quot;foo@bar.com&quot;
+]);
+
+var_dump( $database-&gt;log() );
+// array(2) {
+//	[0]=&gt; string(62) &quot;SELECT &quot;user_name&quot;,&quot;email&quot; FROM &quot;account&quot; WHERE &quot;user_id&quot; &lt; 20&quot;
+//	[1]=&gt; string(74) &quot;INSERT INTO &quot;account&quot; (&quot;user_name&quot;, &quot;email&quot;) VALUES ('foo', 'foo@bar.com')&quot;
+// }
+</pre>	</div>
+</div>
+
+<footer>
+<div id="footer_body" class="clearfix">
+<a id="github_link" href="https://github.com/catfan/Medoo">
+<div id="github_text">Fork me on GitHub</div>
+</a><p id="footer_text">The Medoo project, All Rights Reserved, 2017.</p>
+</div>
+</footer></body>
+</html>
