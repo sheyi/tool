@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.root {
+  height: 100vh;
+  overflow: auto;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 8px;
+  background-image: linear-gradient(#fff, rgba(255, 255, 255, 0.4));
+  z-index: 10;
+}
+.toolbar > * {
+  vertical-align: middle;
+}
+.toolbar > .open {
+  width: 160px;
+}
+
+table {
+  border-spacing: 0;
+  margin: 8px;
+}
+
+tr.header {
+  position: sticky;
+  top: 43px;
+  z-index: 5;
+}
+td {
+  border: 1px solid #ddd;
+  min-width: 80px;
+  height: 1em;
+  line-height: 1;
+  position: relative;
+  outline: none;
+}
+td.header-left {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background-color: #eee;
+  min-width: 20px;
+  text-align: center;
+}
+td.header-top {
+  background-color: #eee;
+  text-align: center;
+}
+
+td:focus,
+td.selected {
+  background-color: #dfd;
+}
+
+td.selected-top {
+  border-top: 1px solid green;
+}
+td.selected-left {
+  border-left: 1px solid green;
+}
+td.selected-right {
+  border-right: 1px solid green;
+}
+td.selected-bottom {
+  border-bottom: 1px solid green;
+}
+
+.color-picker {
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.color-picker .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  font-size: 20px;
+}
+.color-picker .colors-item {
+  display: flex;
+}
+.color-picker .colors-item>div {
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  box-shadow: 0 0 8px #888;
+}
