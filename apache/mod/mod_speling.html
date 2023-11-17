@@ -1,30 +1,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_speling £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_speling ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_speling</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_speling</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>×Ô¶¯¾ÀÕıURLÖĞµÄÆ´Ğ´´íÎó</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>speling_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_speling.c</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>è‡ªåŠ¨çº æ­£URLä¸­çš„æ‹¼å†™é”™è¯¯</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>speling_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_speling.c</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
 
     <p>Requests to documents sometimes cannot be served by the core
@@ -56,17 +56,17 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CheckSpelling" id="CheckSpelling">CheckSpelling</a> <a name="checkspelling" id="checkspelling">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CheckSpelling" id="CheckSpelling">CheckSpelling</a> <a name="checkspelling" id="checkspelling">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Enables the spelling 
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Enables the spelling 
 module</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CheckSpelling on|off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CheckSpelling Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>Options</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_speling</td></tr>
-<tr><th><a href="directive-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>CheckSpelling was available as a separately available
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CheckSpelling on|off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CheckSpelling Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>Options</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_speling</td></tr>
+<tr><th><a href="directive-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>CheckSpelling was available as a separately available
 module for Apache 1.1, but was limited to miscapitalizations. As
 of Apache 1.3, it is part of the Apache distribution. Prior to Apache
 1.3.2, the <code>CheckSpelling</code> directive was only available in the
@@ -106,6 +106,6 @@ of Apache 1.3, it is part of the Apache distribution. Prior to Apache
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

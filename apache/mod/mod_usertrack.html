@@ -1,30 +1,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_usertrack £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_usertrack ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_usertrack</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_usertrack</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>Ê¹ÓÃSession¸ú×ÙÓÃ»§(»á·¢ËÍºÜ¶àCookie)£¬ÒÔ¼ÇÂ¼ÓÃ»§µÄµã»÷Á÷</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>usertrack_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_usertrack.c</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>ä½¿ç”¨Sessionè·Ÿè¸ªç”¨æˆ·(ä¼šå‘é€å¾ˆå¤šCookie)ï¼Œä»¥è®°å½•ç”¨æˆ·çš„ç‚¹å‡»æµ</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>usertrack_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_usertrack.c</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
     <p>Previous releases of Apache have included a module which
     generates a 'clickstream' log of user activity on a site using
@@ -96,14 +96,14 @@ time late in the year "37".
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CookieDomain" id="CookieDomain">CookieDomain</a> <a name="cookiedomain" id="cookiedomain">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CookieDomain" id="CookieDomain">CookieDomain</a> <a name="cookiedomain" id="cookiedomain">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>The domain to which the tracking cookie applies</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CookieDomain <em>domain</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_usertrack</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>The domain to which the tracking cookie applies</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CookieDomain <em>domain</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_usertrack</td></tr>
 </table>
 
     <p>This directive controls the setting of the domain to which
@@ -116,14 +116,14 @@ time late in the year "37".
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CookieExpires" id="CookieExpires">CookieExpires</a> <a name="cookieexpires" id="cookieexpires">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CookieExpires" id="CookieExpires">CookieExpires</a> <a name="cookieexpires" id="cookieexpires">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Expiry time for the tracking cookie</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CookieExpires <em>expiry-period</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_usertrack</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Expiry time for the tracking cookie</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CookieExpires <em>expiry-period</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_usertrack</td></tr>
 </table>
     <p>When used, this directive sets an expiry time on the cookie
     generated by the usertrack module. The <em>expiry-period</em>
@@ -138,15 +138,15 @@ time late in the year "37".
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CookieName" id="CookieName">CookieName</a> <a name="cookiename" id="cookiename">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CookieName" id="CookieName">CookieName</a> <a name="cookiename" id="cookiename">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Name of the tracking cookie</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CookieName <em>token</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CookieName Apache</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_usertrack</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Name of the tracking cookie</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CookieName <em>token</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CookieName Apache</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_usertrack</td></tr>
 </table>
     <p>This directive allows you to change the name of the cookie
     this module uses for its tracking purposes. By default the
@@ -158,16 +158,16 @@ time late in the year "37".
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CookieStyle" id="CookieStyle">CookieStyle</a> <a name="cookiestyle" id="cookiestyle">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CookieStyle" id="CookieStyle">CookieStyle</a> <a name="cookiestyle" id="cookiestyle">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Format of the cookie header field</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CookieStyle
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Format of the cookie header field</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CookieStyle
     <em>Netscape|Cookie|Cookie2|RFC2109|RFC2965</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CookieStyle Netscape</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_usertrack</td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CookieStyle Netscape</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_usertrack</td></tr>
 </table>
     <p>This directive controls the format of the cookie header
     field. The three formats allowed are:</p>
@@ -177,10 +177,10 @@ time late in the year "37".
       syntax. This is the default, and the syntax Apache has
       historically used.</li>
 
-      <li><strong>Cookie</strong>»ò<strong>RFC2109</strong>, which is the syntax that
+      <li><strong>Cookie</strong>æˆ–<strong>RFC2109</strong>, which is the syntax that
       superseded the Netscape syntax.</li>
 
-      <li><strong>Cookie2</strong>»ò<strong>RFC2965</strong>, which is the most
+      <li><strong>Cookie2</strong>æˆ–<strong>RFC2965</strong>, which is the most
       current cookie syntax.</li>
     </ul>
 
@@ -190,15 +190,15 @@ time late in the year "37".
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CookieTracking" id="CookieTracking">CookieTracking</a> <a name="cookietracking" id="cookietracking">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CookieTracking" id="CookieTracking">CookieTracking</a> <a name="cookietracking" id="cookietracking">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Enables tracking cookie</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CookieTracking on|off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CookieTracking off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_usertrack</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Enables tracking cookie</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CookieTracking on|off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CookieTracking off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_usertrack</td></tr>
 </table>
     <p>When the user track module is compiled in, and
     "CookieTracking on" is set, Apache will start sending a
@@ -211,6 +211,6 @@ time late in the year "37".
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

@@ -1,66 +1,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_cache £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_cache ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_cache</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_cache</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>»ùÓÚURI¼üµÄÄÚÈİ¶¯Ì¬»º³å(ÄÚ´æ»ò´ÅÅÌ)</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>cache_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_cache.c</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>åŸºäºURIé”®çš„å†…å®¹åŠ¨æ€ç¼“å†²(å†…å­˜æˆ–ç£ç›˜)</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>cache_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_cache.c</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
-    <div class="warning">Õâ¸öÄ£¿éÊ¹»áÈÆ¹ı<code class="directive"><a href="../mod/mod_authz_host.html#allow">Allow</a></code>ºÍ<code class="directive"><a href="../mod/mod_authz_host.html#deny">Deny</a></code>ÉèÖÃµÄ·ÃÎÊ¿ØÖÆ¡£ËùÒÔ£¬Äã²»Ó¦¸Ã»º³åÈÎºÎ¸ù¾İÕâÁ½¸öÖ¸ÁîÉèÖÃÁË·ÃÎÊ¿ØÖÆµÄÄÚÈİ¡£</div>
+    <div class="warning">è¿™ä¸ªæ¨¡å—ä½¿ä¼šç»•è¿‡<code class="directive"><a href="../mod/mod_authz_host.html#allow">Allow</a></code>å’Œ<code class="directive"><a href="../mod/mod_authz_host.html#deny">Deny</a></code>è®¾ç½®çš„è®¿é—®æ§åˆ¶ã€‚æ‰€ä»¥ï¼Œä½ ä¸åº”è¯¥ç¼“å†²ä»»ä½•æ ¹æ®è¿™ä¸¤ä¸ªæŒ‡ä»¤è®¾ç½®äº†è®¿é—®æ§åˆ¶çš„å†…å®¹ã€‚</div>
 
-    <p><code class="module"><a href="../mod/mod_cache.html">mod_cache</a></code>ÊµÏÖÁËÒ»¸ö<a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>¼æÈİµÄHTTP±¾µØ»º´æ»òHTTP´úÀí»º´æ¡£<code class="module"><a href="../mod/mod_cache.html">mod_cache</a></code>ĞèÒªÒ»¸ö»ò¶à¸ö´æ´¢¹ÜÀíÄ£¿éÌá¹©µÄ·şÎñ²ÅÄÜÕı³£¹¤×÷¡£Ä¿Ç°¹Ù·½·¢²¼µÄ´æ´¢¹ÜÀíÄ£¿éÓĞÁ½¸ö£º</p>
+    <p><code class="module"><a href="../mod/mod_cache.html">mod_cache</a></code>å®ç°äº†ä¸€ä¸ª<a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>å…¼å®¹çš„HTTPæœ¬åœ°ç¼“å­˜æˆ–HTTPä»£ç†ç¼“å­˜ã€‚<code class="module"><a href="../mod/mod_cache.html">mod_cache</a></code>éœ€è¦ä¸€ä¸ªæˆ–å¤šä¸ªå­˜å‚¨ç®¡ç†æ¨¡å—æä¾›çš„æœåŠ¡æ‰èƒ½æ­£å¸¸å·¥ä½œã€‚ç›®å‰å®˜æ–¹å‘å¸ƒçš„å­˜å‚¨ç®¡ç†æ¨¡å—æœ‰ä¸¤ä¸ªï¼š</p>
     <dl>
     <dt><code class="module"><a href="../mod/mod_disk_cache.html">mod_disk_cache</a></code></dt>
-    <dd>Ò»¸ö»ùÓÚ´ÅÅÌµÄ´æ´¢¹ÜÀíÄ£¿é¡£</dd>
+    <dd>ä¸€ä¸ªåŸºäºç£ç›˜çš„å­˜å‚¨ç®¡ç†æ¨¡å—ã€‚</dd>
 
     <dt><code class="module"><a href="../mod/mod_mem_cache.html">mod_mem_cache</a></code></dt>
-    <dd>Ò»¸ö»ùÓÚÄÚ´æµÄ´æ´¢¹ÜÀíÄ£¿é¡£<code class="module"><a href="../mod/mod_mem_cache.html">mod_mem_cache</a></code>¿ÉÒÔ±»ÅäÖÃÎªÁ½ÖÖ²»Í¬µÄ²Ù×÷Ä£Ê½£º¢Ù»º´æ´ò¿ªµÄÎÄ¼şÃèÊö·û£»¢ÚÔÚ¶Ñ(heap)ÉÏ»º´æ¶ÔÏó¡£<code class="module"><a href="../mod/mod_mem_cache.html">mod_mem_cache</a></code>¼È¿ÉÒÔÓÃÓÚ»º´æ±¾µØÉú³ÉµÄÄÚÈİ£¬Ò²¿ÉÒÔÓÃÓÚÎª<dfn>·´Ïò´úÀí</dfn>Ä£Ê½ÏÂµÄ<code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>(²Î¼û<code class="directive"><a href="../mod/mod_proxy.html#proxypass">ProxyPass</a></code>)»º´æºó¶Ë·şÎñÆ÷Êä³öµÄÄÚÈİ¡£</dd>
+    <dd>ä¸€ä¸ªåŸºäºå†…å­˜çš„å­˜å‚¨ç®¡ç†æ¨¡å—ã€‚<code class="module"><a href="../mod/mod_mem_cache.html">mod_mem_cache</a></code>å¯ä»¥è¢«é…ç½®ä¸ºä¸¤ç§ä¸åŒçš„æ“ä½œæ¨¡å¼ï¼šâ‘ ç¼“å­˜æ‰“å¼€çš„æ–‡ä»¶æè¿°ç¬¦ï¼›â‘¡åœ¨å †(heap)ä¸Šç¼“å­˜å¯¹è±¡ã€‚<code class="module"><a href="../mod/mod_mem_cache.html">mod_mem_cache</a></code>æ—¢å¯ä»¥ç”¨äºç¼“å­˜æœ¬åœ°ç”Ÿæˆçš„å†…å®¹ï¼Œä¹Ÿå¯ä»¥ç”¨äºä¸º<dfn>åå‘ä»£ç†</dfn>æ¨¡å¼ä¸‹çš„<code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>(å‚è§<code class="directive"><a href="../mod/mod_proxy.html#proxypass">ProxyPass</a></code>)ç¼“å­˜åç«¯æœåŠ¡å™¨è¾“å‡ºçš„å†…å®¹ã€‚</dd>
     </dl>
 
-    <p>ÄÚÈİ½«±»ÒÔ»ùÓÚURIµÄË÷Òı´æÈëºÍ¼ì³ö£¬µ«ÊÇ²¢²»±£´æÏàÓ¦µÄ·ÃÎÊ¿ØÖÆĞÅÏ¢¡£</p>
-    <p>¸ü¶àµÄÏ¸½Ú¡¢ÌÖÂÛ¡¢ÊµÀı£¬¿ÉÒÔ²Î¿¼<a href="../caching.html">»º³åÖ¸ÄÏ</a>¡£</p>
+    <p>å†…å®¹å°†è¢«ä»¥åŸºäºURIçš„ç´¢å¼•å­˜å…¥å’Œæ£€å‡ºï¼Œä½†æ˜¯å¹¶ä¸ä¿å­˜ç›¸åº”çš„è®¿é—®æ§åˆ¶ä¿¡æ¯ã€‚</p>
+    <p>æ›´å¤šçš„ç»†èŠ‚ã€è®¨è®ºã€å®ä¾‹ï¼Œå¯ä»¥å‚è€ƒ<a href="../caching.html">ç¼“å†²æŒ‡å—</a>ã€‚</p>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="related" id="related">Ïà¹ØÄ£¿éºÍÖ¸Áî</a></h2>
+<h2><a name="related" id="related">ç›¸å…³æ¨¡å—å’ŒæŒ‡ä»¤</a></h2>
     <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="related">
-<tr><th>Ïà¹ØÄ£¿é</th><th>Ïà¹ØÖ¸Áî</th></tr>
+<tr><th>ç›¸å…³æ¨¡å—</th><th>ç›¸å…³æŒ‡ä»¤</th></tr>
 <tr><td><ul><li><code class="module"><a href="../mod/mod_disk_cache.html">mod_disk_cache</a></code></li><li><code class="module"><a href="../mod/mod_mem_cache.html">mod_mem_cache</a></code></li></ul></td><td><ul><li><code class="directive"><a href="../mod/mod_disk_cache.html#cacheroot">CacheRoot</a></code></li><li><code class="directive"><a href="../mod/mod_disk_cache.html#cachesize">CacheSize</a></code></li><li><code class="directive"><a href="../mod/mod_disk_cache.html#cachedirlevels">CacheDirLevels</a></code></li><li><code class="directive"><a href="../mod/mod_disk_cache.html#cachedirlength">CacheDirLength</a></code></li><li><code class="directive"><a href="../mod/mod_disk_cache.html#cacheminfilesize">CacheMinFileSize</a></code></li><li><code class="directive"><a href="../mod/mod_disk_cache.html#cachemaxfilesize">CacheMaxFileSize</a></code></li><li><code class="directive"><a href="../mod/mod_mem_cache.html#mcachesize">MCacheSize</a></code></li><li><code class="directive"><a href="../mod/mod_mem_cache.html#mcachemaxobjectcount">MCacheMaxObjectCount</a></code></li><li><code class="directive"><a href="../mod/mod_mem_cache.html#mcacheminobjectsize">MCacheMinObjectSize</a></code></li><li><code class="directive"><a href="../mod/mod_mem_cache.html#mcachemaxobjectsize">MCacheMaxObjectSize</a></code></li><li><code class="directive"><a href="../mod/mod_mem_cache.html#mcacheremovalalgorithm">MCacheRemovalAlgorithm</a></code></li><li><code class="directive"><a href="../mod/mod_mem_cache.html#mcachemaxstreamingbuffer">MCacheMaxStreamingBuffer</a></code></li></ul></td></tr>
 </table>
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="sampleconf" id="sampleconf">Ê¾·¶ÅäÖÃ</a></h2>
-    <div class="example"><h3>httpd.conf Ê¾Àı</h3><p><code>
+<h2><a name="sampleconf" id="sampleconf">ç¤ºèŒƒé…ç½®</a></h2>
+    <div class="example"><h3>httpd.conf ç¤ºä¾‹</h3><p><code>
       #<br />
-      # »º´æÊ¾·¶ÅäÖÃ<br />
+      # ç¼“å­˜ç¤ºèŒƒé…ç½®<br />
       #<br />
       LoadModule cache_module modules/mod_cache.so<br />
       <br />
       &lt;IfModule mod_cache.c&gt;<br />
       <span class="indent">
         #LoadModule disk_cache_module modules/mod_disk_cache.so<br />
-        # Èç¹ûÄãÏëÊ¹ÓÃmod_disk_cache´úÌæmod_mem_cacheµÄ»°£¬<br />
-		# ÄÇÃ´¾ÍÈ¡ÏûÉÏÃæµÄ×¢ÊÍ£¬²¢½«ÏÂÃæµÄLoadModuleĞĞ¼ÓÉÏ×¢ÊÍ<br />
+        # å¦‚æœä½ æƒ³ä½¿ç”¨mod_disk_cacheä»£æ›¿mod_mem_cacheçš„è¯ï¼Œ<br />
+		# é‚£ä¹ˆå°±å–æ¶ˆä¸Šé¢çš„æ³¨é‡Šï¼Œå¹¶å°†ä¸‹é¢çš„LoadModuleè¡ŒåŠ ä¸Šæ³¨é‡Š<br />
         &lt;IfModule mod_disk_cache.c&gt;<br />
         <span class="indent">
           CacheRoot c:/cacheroot<br />
@@ -81,23 +81,23 @@
         </span>
         &lt;/IfModule&gt;<br />
         <br />
-        # ÔÚ³äµ±´úÀíµÄÊ±ºò£¬²»»º´æupdate-listÏÂµÄÄÚÈİ<br />
+        # åœ¨å……å½“ä»£ç†çš„æ—¶å€™ï¼Œä¸ç¼“å­˜update-listä¸‹çš„å†…å®¹<br />
         CacheDisable http://security.update.server/update-list/<br />
       </span>
       &lt;/IfModule&gt;
     </code></p></div>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheDefaultExpire" id="CacheDefaultExpire">CacheDefaultExpire</a> <a name="cachedefaultexpire" id="cachedefaultexpire">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheDefaultExpire" id="CacheDefaultExpire">CacheDefaultExpire</a> <a name="cachedefaultexpire" id="cachedefaultexpire">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ä¬ÈÏ»º´æÓĞĞ§ÆÚ(Ãë)</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheDefaultExpire <var>seconds</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheDefaultExpire 3600 (Ò»Ğ¡Ê±)</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>é»˜è®¤ç¼“å­˜æœ‰æ•ˆæœŸ(ç§’)</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheDefaultExpire <var>seconds</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheDefaultExpire 3600 (ä¸€å°æ—¶)</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
-    <p><code class="directive">CacheDefaultExpire</code>Ö¸ÁîÉèÖÃÁËÄÇĞ©¼ÈÃ»ÓĞ°üº¬"Expires"»ò"Cache-Control"Í·£¬Ò²Ã»ÓĞ°üº¬"Last-Modified"Í·µÄ»º´æ¶ÔÏóµÄÄ¬ÈÏÓĞĞ§ÆÚ(°´Ãë¼Æ)¡£<code class="directive">CacheMaxExpire</code>Ö¸ÁîµÄÖµ²¢<em>²»»á</em>¸²¸ÇÕâÀïµÄÉèÖÃ¡£</p>
+    <p><code class="directive">CacheDefaultExpire</code>æŒ‡ä»¤è®¾ç½®äº†é‚£äº›æ—¢æ²¡æœ‰åŒ…å«"Expires"æˆ–"Cache-Control"å¤´ï¼Œä¹Ÿæ²¡æœ‰åŒ…å«"Last-Modified"å¤´çš„ç¼“å­˜å¯¹è±¡çš„é»˜è®¤æœ‰æ•ˆæœŸ(æŒ‰ç§’è®¡)ã€‚<code class="directive">CacheMaxExpire</code>æŒ‡ä»¤çš„å€¼å¹¶<em>ä¸ä¼š</em>è¦†ç›–è¿™é‡Œçš„è®¾ç½®ã€‚</p>
 
     <div class="example"><p><code>
       CacheDefaultExpire 86400
@@ -105,29 +105,29 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheDisable" id="CacheDisable">CacheDisable</a> <a name="cachedisable" id="cachedisable">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheDisable" id="CacheDisable">CacheDisable</a> <a name="cachedisable" id="cachedisable">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>½ûÖ¹»º´æÄ³Ğ©ÌØ¶¨µÄURL</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheDisable <var> url-string</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>ç¦æ­¢ç¼“å­˜æŸäº›ç‰¹å®šçš„URL</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheDisable <var> url-string</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
-    <p><code class="directive">CacheDisable</code>Ö¸Áî±íÊ¾<em>½ûÖ¹</em>»º´æ<var>url-string</var>×ÔÉíÒÔ¼°ËùÓĞÒÔ<var>url-string</var>¿ªÍ·µÄURL¡£</p>
+    <p><code class="directive">CacheDisable</code>æŒ‡ä»¤è¡¨ç¤º<em>ç¦æ­¢</em>ç¼“å­˜<var>url-string</var>è‡ªèº«ä»¥åŠæ‰€æœ‰ä»¥<var>url-string</var>å¼€å¤´çš„URLã€‚</p>
 
-    <div class="example"><h3>Ê¾Àı</h3><p><code>
+    <div class="example"><h3>ç¤ºä¾‹</h3><p><code>
       CacheDisable /local_files
     </code></p></div>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheEnable" id="CacheEnable">CacheEnable</a> <a name="cacheenable" id="cacheenable">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheEnable" id="CacheEnable">CacheEnable</a> <a name="cacheenable" id="cacheenable">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ê¹ÓÃÌØ¶¨µÄ´æ´¢ÀàĞÍ»º´æÄ³Ğ©ÌØ¶¨µÄURL</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheEnable <var>cache_type</var> <var>url-string</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>ä½¿ç”¨ç‰¹å®šçš„å­˜å‚¨ç±»å‹ç¼“å­˜æŸäº›ç‰¹å®šçš„URL</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheEnable <var>cache_type</var> <var>url-string</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p><code class="directive">CacheEnable</code> directive instructs
     <code class="module"><a href="../mod/mod_cache.html">mod_cache</a></code> to cache urls at or below
@@ -170,14 +170,14 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheIgnoreCacheControl" id="CacheIgnoreCacheControl">CacheIgnoreCacheControl</a> <a name="cacheignorecachecontrol" id="cacheignorecachecontrol">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheIgnoreCacheControl" id="CacheIgnoreCacheControl">CacheIgnoreCacheControl</a> <a name="cacheignorecachecontrol" id="cacheignorecachecontrol">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ignore request to not serve cached content to client</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheIgnoreCacheControl On|Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheIgnoreCacheControl Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Ignore request to not serve cached content to client</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheIgnoreCacheControl On|Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheIgnoreCacheControl Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p>Ordinarily, requests containing a Cache-Control: no-cache or
     Pragma: no-cache header value will not be served from the cache.  The
@@ -197,22 +197,22 @@
        result in stale content being served.
     </div>
 
-<h3>²Î¼û</h3>
+<h3>å‚è§</h3>
 <ul>
 <li><code class="directive"><a href="#cachestoreprivate">CacheStorePrivate</a></code></li>
 <li><code class="directive"><a href="#cachestorenostore">CacheStoreNoStore</a></code></li>
 </ul>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheIgnoreHeaders" id="CacheIgnoreHeaders">CacheIgnoreHeaders</a> <a name="cacheignoreheaders" id="cacheignoreheaders">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheIgnoreHeaders" id="CacheIgnoreHeaders">CacheIgnoreHeaders</a> <a name="cacheignoreheaders" id="cacheignoreheaders">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Do not store the given HTTP header(s) in the cache.
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Do not store the given HTTP header(s) in the cache.
 </td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheIgnoreHeaders <var>header-string</var> [<var>header-string</var>] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheIgnoreHeaders None</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheIgnoreHeaders <var>header-string</var> [<var>header-string</var>] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheIgnoreHeaders None</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p>According to RFC 2616, hop-by-hop HTTP headers are not stored in
     the cache.  The following HTTP headers are hop-by-hop headers and thus
@@ -257,15 +257,15 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheIgnoreNoLastMod" id="CacheIgnoreNoLastMod">CacheIgnoreNoLastMod</a> <a name="cacheignorenolastmod" id="cacheignorenolastmod">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheIgnoreNoLastMod" id="CacheIgnoreNoLastMod">CacheIgnoreNoLastMod</a> <a name="cacheignorenolastmod" id="cacheignorenolastmod">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ignore the fact that a response has no Last Modified
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Ignore the fact that a response has no Last Modified
 header.</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheIgnoreNoLastMod On|Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheIgnoreNoLastMod Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheIgnoreNoLastMod On|Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheIgnoreNoLastMod Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p>Ordinarily, documents without a last-modified date are not cached.
     Under some circumstances the last-modified date is removed (during
@@ -284,16 +284,16 @@ header.</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheIgnoreQueryString" id="CacheIgnoreQueryString">CacheIgnoreQueryString</a> <a name="cacheignorequerystring" id="cacheignorequerystring">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheIgnoreQueryString" id="CacheIgnoreQueryString">CacheIgnoreQueryString</a> <a name="cacheignorequerystring" id="cacheignorequerystring">æŒ‡ä»¤</a></h2>
 <table class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ignore query string when caching</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheIgnoreQueryString On|Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheIgnoreQueryString Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Ignore query string when caching</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheIgnoreQueryString On|Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheIgnoreQueryString Off</code></td></tr>
 
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>Extension</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
-<tr><th><a href="directive-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>Available in Apache 2.2.6 and later</td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>Extension</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>Available in Apache 2.2.6 and later</td></tr>
 </table>
     <p>Ordinarily, requests with query string parameters are cached separately
     for each unique query string. This is according to RFC 2616/13.9 done only
@@ -311,15 +311,15 @@ header.</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheLastModifiedFactor" id="CacheLastModifiedFactor">CacheLastModifiedFactor</a> <a name="cachelastmodifiedfactor" id="cachelastmodifiedfactor">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheLastModifiedFactor" id="CacheLastModifiedFactor">CacheLastModifiedFactor</a> <a name="cachelastmodifiedfactor" id="cachelastmodifiedfactor">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>The factor used to compute an expiry date based on the
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>The factor used to compute an expiry date based on the
 LastModified date.</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheLastModifiedFactor <var>float</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheLastModifiedFactor 0.1</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheLastModifiedFactor <var>float</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheLastModifiedFactor 0.1</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p>In the event that a document does not provide an expiry date but does
     provide a last-modified date, an expiry date can be calculated based on
@@ -346,14 +346,14 @@ LastModified date.</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheMaxExpire" id="CacheMaxExpire">CacheMaxExpire</a> <a name="cachemaxexpire" id="cachemaxexpire">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheMaxExpire" id="CacheMaxExpire">CacheMaxExpire</a> <a name="cachemaxexpire" id="cachemaxexpire">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>The maximum time in seconds to cache a document</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheMaxExpire <var>seconds</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheMaxExpire 86400 (one day)</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>The maximum time in seconds to cache a document</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheMaxExpire <var>seconds</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheMaxExpire 86400 (one day)</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p><code class="directive">CacheMaxExpire</code> directive specifies the maximum number of
     seconds for which cachable HTTP documents will be retained without checking the origin
@@ -366,14 +366,14 @@ LastModified date.</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheStoreNoStore" id="CacheStoreNoStore">CacheStoreNoStore</a> <a name="cachestorenostore" id="cachestorenostore">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheStoreNoStore" id="CacheStoreNoStore">CacheStoreNoStore</a> <a name="cachestorenostore" id="cachestorenostore">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Attempt to cache requests or responses that have been marked as no-store.</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheStoreNoStore On|Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheStoreNoStore Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Attempt to cache requests or responses that have been marked as no-store.</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheStoreNoStore On|Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheStoreNoStore Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p>Ordinarily, requests or responses with Cache-Control: no-store header
        values will not be stored in the cache.  The
@@ -394,21 +394,21 @@ LastModified date.</td></tr>
        sensitive information in the cache.  You are hereby warned.
     </div>
 
-<h3>²Î¼û</h3>
+<h3>å‚è§</h3>
 <ul>
 <li><code class="directive"><a href="#cacheignorecachecontrol">CacheIgnoreCacheControl</a></code></li>
 <li><code class="directive"><a href="#cachestoreprivate">CacheStorePrivate</a></code></li>
 </ul>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheStorePrivate" id="CacheStorePrivate">CacheStorePrivate</a> <a name="cachestoreprivate" id="cachestoreprivate">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheStorePrivate" id="CacheStorePrivate">CacheStorePrivate</a> <a name="cachestoreprivate" id="cachestoreprivate">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Attempt to cache responses that the server has marked as private</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheStorePrivate On|Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>CacheStorePrivate Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Attempt to cache responses that the server has marked as private</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheStorePrivate On|Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>CacheStorePrivate Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_cache</td></tr>
 </table>
     <p>Ordinarily, responses with Cache-Control: private header values will not
        be stored in the cache.  The <code class="directive">CacheStorePrivate</code>
@@ -428,7 +428,7 @@ LastModified date.</td></tr>
        ideal for a 'private' cache.
     </div>
 
-<h3>²Î¼û</h3>
+<h3>å‚è§</h3>
 <ul>
 <li><code class="directive"><a href="#cacheignorecachecontrol">CacheIgnoreCacheControl</a></code></li>
 <li><code class="directive"><a href="#cachestorenostore">CacheStoreNoStore</a></code></li>
@@ -436,6 +436,6 @@ LastModified date.</td></tr>
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

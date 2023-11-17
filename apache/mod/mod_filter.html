@@ -1,31 +1,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_filter £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_filter ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_filter</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_filter</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>¸ù¾İÉÏÏÂÎÄÊµ¼ÊÇé¿ö¶ÔÊä³ö¹ıÂËÆ÷½øĞĞ¶¯Ì¬ÅäÖÃ</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>filter_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_filter.c</td></tr>
-<tr><th><a href="module-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>Version 2.1 ¼°ÒÔºóµÄ°æ±¾ÖĞ¿ÉÓÃ</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>æ ¹æ®ä¸Šä¸‹æ–‡å®é™…æƒ…å†µå¯¹è¾“å‡ºè¿‡æ»¤å™¨è¿›è¡ŒåŠ¨æ€é…ç½®</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>filter_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_filter.c</td></tr>
+<tr><th><a href="module-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>Version 2.1 åŠä»¥åçš„ç‰ˆæœ¬ä¸­å¯ç”¨</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
     <p>This module enables smart, context-sensitive configuration of
     output content filters.  For example, apache can be configured to
@@ -202,7 +202,7 @@
     <code class="directive"><a href="#filterprotocol">FilterProtocol</a></code> implements
     some of this functionality for back-compatibility with Apache 2.0
     modules.  For httpd 2.1 and later, the
-    <code>ap_register_output_filter_protocol</code>ºÍ<code>ap_filter_protocol</code> API enables filter modules to
+    <code>ap_register_output_filter_protocol</code>å’Œ<code>ap_filter_protocol</code> API enables filter modules to
     declare their own behaviour.</p>
 
     <p>At the same time, <code class="module"><a href="../mod/mod_filter.html">mod_filter</a></code> should not interfere
@@ -215,14 +215,14 @@
     Modules using it should test it carefully.</p>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="FilterChain" id="FilterChain">FilterChain</a> <a name="filterchain" id="filterchain">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="FilterChain" id="FilterChain">FilterChain</a> <a name="filterchain" id="filterchain">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Configure the filter chain</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>FilterChain [+=-@!]<var>filter-name</var> <var>...</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>Options</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_filter</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Configure the filter chain</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>FilterChain [+=-@!]<var>filter-name</var> <var>...</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>Options</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_filter</td></tr>
 </table>
     <p>This configures an actual filter chain, from declared filters.
     <code class="directive">FilterChain</code> takes any number of arguments,
@@ -251,35 +251,35 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="FilterDeclare" id="FilterDeclare">FilterDeclare</a> <a name="filterdeclare" id="filterdeclare">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="FilterDeclare" id="FilterDeclare">FilterDeclare</a> <a name="filterdeclare" id="filterdeclare">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Declare a smart filter</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>FilterDeclare <var>filter-name</var> <var>[type]</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>Options</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_filter</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Declare a smart filter</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>FilterDeclare <var>filter-name</var> <var>[type]</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>Options</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_filter</td></tr>
 </table>
     <p>This directive declares an output filter together with a
     header or environment variable that will determine runtime
     configuration.  The first argument is a <var>filter-name</var>
-    for use in <code class="directive"><a href="#filterprovider">FilterProvider</a></code>, <code class="directive"><a href="#filterchain">FilterChain</a></code>ºÍ<code class="directive"><a href="#filterprotocol">FilterProtocol</a></code> directives.</p>
+    for use in <code class="directive"><a href="#filterprovider">FilterProvider</a></code>, <code class="directive"><a href="#filterchain">FilterChain</a></code>å’Œ<code class="directive"><a href="#filterprotocol">FilterProtocol</a></code> directives.</p>
 
     <p>The final (optional) argument
     is the type of filter, and takes values of <code>ap_filter_type</code>
-    - namely <code>RESOURCE</code> (the default), <code>CONTENT_SET</code>, <code>PROTOCOL</code>, <code>TRANSCODE</code>, <code>CONNECTION</code>»ò<code>NETWORK</code>.</p>
+    - namely <code>RESOURCE</code> (the default), <code>CONTENT_SET</code>, <code>PROTOCOL</code>, <code>TRANSCODE</code>, <code>CONNECTION</code>æˆ–<code>NETWORK</code>.</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="FilterProtocol" id="FilterProtocol">FilterProtocol</a> <a name="filterprotocol" id="filterprotocol">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="FilterProtocol" id="FilterProtocol">FilterProtocol</a> <a name="filterprotocol" id="filterprotocol">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Deal with correct HTTP protocol handling</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>FilterProtocol <var>filter-name</var> [<var>provider-name</var>]
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Deal with correct HTTP protocol handling</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>FilterProtocol <var>filter-name</var> [<var>provider-name</var>]
     <var>proto-flags</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>Options</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_filter</td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>Options</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_filter</td></tr>
 </table>
     <p>This directs <code class="module"><a href="../mod/mod_filter.html">mod_filter</a></code> to deal with ensuring the
     filter doesn't run when it shouldn't, and that the HTTP response
@@ -320,15 +320,15 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="FilterProvider" id="FilterProvider">FilterProvider</a> <a name="filterprovider" id="filterprovider">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="FilterProvider" id="FilterProvider">FilterProvider</a> <a name="filterprovider" id="filterprovider">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Register a content filter</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>FilterProvider <var>filter-name</var> <var>provider-name</var>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Register a content filter</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>FilterProvider <var>filter-name</var> <var>provider-name</var>
  [req|resp|env]=<var>dispatch</var> <var>match</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>Options</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_filter</td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>Options</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_filter</td></tr>
 </table>
     <p>This directive registers a <em>provider</em> for the smart filter.
     The provider will be called if and only if the <var>match</var> declared
@@ -343,7 +343,7 @@
     </p>
 
     <p><var>dispatch</var> argument is a string with optional
-    <code>req=</code>, <code>resp=</code>»ò<code>env=</code> prefix
+    <code>req=</code>, <code>resp=</code>æˆ–<code>env=</code> prefix
     causing it to dispatch on (respectively) the request header, response
     header, or environment variable named.  In the absence of a
     prefix, it defaults to a response header.  A special case is the
@@ -378,14 +378,14 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="FilterTrace" id="FilterTrace">FilterTrace</a> <a name="filtertrace" id="filtertrace">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="FilterTrace" id="FilterTrace">FilterTrace</a> <a name="filtertrace" id="filtertrace">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Get debug/diagnostic information from
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Get debug/diagnostic information from
     <code class="module"><a href="../mod/mod_filter.html">mod_filter</a></code></td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>FilterTrace <var>filter-name</var> <var>level</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_filter</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>FilterTrace <var>filter-name</var> <var>level</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_filter</td></tr>
 </table>
     <p>This directive generates debug information from
     <code class="module"><a href="../mod/mod_filter.html">mod_filter</a></code>.
@@ -413,6 +413,6 @@
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

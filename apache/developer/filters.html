@@ -1,22 +1,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>Apache 2.0 ¹ıÂËÆ÷¹¤×÷Ô­Àí £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>Apache 2.0 è¿‡æ»¤å™¨å·¥ä½œåŸç† ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body id="manual-page"><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">¿ª·¢ÕßÎÄµµ</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">å¼€å‘è€…æ–‡æ¡£</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>Apache 2.0 ¹ıÂËÆ÷¹¤×÷Ô­Àí</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apache 2.0 è¿‡æ»¤å™¨å·¥ä½œåŸç†</h1>
 
 
     <div class="warning"><h3>Warning</h3>
@@ -182,7 +182,7 @@ Default_handler --&gt; sub_request_core
     get right, was because we had hacked so much to force it to work.  I
     wrote most of the hacks originally, so I am very much to blame.
     However, now that the code is right, I have started to remove some
-    hacks.  Most people should have seen that the <code>reset_filters</code>ºÍ<code>add_required_filters</code> functions are gone.  Those inserted
+    hacks.  Most people should have seen that the <code>reset_filters</code>å’Œ<code>add_required_filters</code> functions are gone.  Those inserted
     protocol level filters for error conditions, in fact, both functions did
     the same thing, one after the other, it was really strange. Because we
     don't lose protocol filters for error cases any more, those hacks went away.
@@ -195,6 +195,6 @@ Default_handler --&gt; sub_request_core
     follow.</p>
 </div></div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

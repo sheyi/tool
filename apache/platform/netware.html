@@ -1,21 +1,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>Using Apache With Novell NetWare £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>Using Apache With Novell NetWare ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body id="manual-page"><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Õë¶ÔÌØ¶¨Æ½Ì¨µÄËµÃ÷</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">é’ˆå¯¹ç‰¹å®šå¹³å°çš„è¯´æ˜</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
 <div id="page-content"><div id="preamble"><h1>Using Apache With Novell NetWare</h1>
 
 
@@ -94,7 +94,7 @@
       <li>Unzip the binary download file to the root of the <code>SYS:</code>
       volume (may be installed to any volume)</li>
 
-      <li>Edit the <code>httpd.conf</code> file setting <code class="directive"><a href="../mod/core.html#serverroot">ServerRoot</a></code>ºÍ<code class="directive"><a href="../mod/core.html#servername">ServerName</a></code> along with any file path values
+      <li>Edit the <code>httpd.conf</code> file setting <code class="directive"><a href="../mod/core.html#serverroot">ServerRoot</a></code>å’Œ<code class="directive"><a href="../mod/core.html#servername">ServerName</a></code> along with any file path values
       to reflect your correct server settings</li>
 
       <li>Add <code>SYS:/APACHE2</code> to the search path, for example:
@@ -128,7 +128,7 @@
       <code>SYS:/APACHE2/CONF</code> directory and rename to
       <code>HTTPD.CONF</code></li>
 
-      <li>Copy the <code>MIME.TYPES</code>, <code>CHARSET.CONV</code>ºÍ<code>MAGIC</code> files to <code>SYS:/APACHE2/CONF</code> directory</li>
+      <li>Copy the <code>MIME.TYPES</code>, <code>CHARSET.CONV</code>å’Œ<code>MAGIC</code> files to <code>SYS:/APACHE2/CONF</code> directory</li>
 
       <li>Copy all files and subdirectories in <code>\HTTPD-2.0\DOCS\ICONS</code>
       to <code>SYS:/APACHE2/ICONS</code></li>
@@ -209,7 +209,7 @@
       unload apache2
     </code></p></div>
 
-    <p>»ò</p>
+    <p>æˆ–</p>
 
     <div class="example"><p><code>
       apache2 shutdown
@@ -423,7 +423,7 @@
     <code>conf</code> directory and rename it to <code>HTTPD.CONF</code>.
     Edit the <code>HTTPD.CONF</code> file searching for all <code>@@Value@@</code>
     markers and replacing them with the appropriate setting. Copy over
-    the <code>conf/magic</code>ºÍ<code>conf/mime.types</code> files as well.
+    the <code>conf/magic</code>å’Œ<code>conf/mime.types</code> files as well.
     Alternatively, a complete distribution can be built by including the keyword
     <code>install</code> when invoking the makefiles.</p>
 
@@ -515,7 +515,7 @@
         to this location that are necessary to complete the following build steps.
         </li>
 
-        <li>Copy the files <code>\httpd-2.0\nwprebuild\GENCHARS.nlm</code>ºÍ<code>\httpd-2.0\nwprebuild\DFTABLES.nlm</code> to the <code>SYS:</code> volume of a
+        <li>Copy the files <code>\httpd-2.0\nwprebuild\GENCHARS.nlm</code>å’Œ<code>\httpd-2.0\nwprebuild\DFTABLES.nlm</code> to the <code>SYS:</code> volume of a
         NetWare server and run them using the following commands:
           <div class="example"><p><code>
             SYS:\genchars &gt; sys:\test_char.h<br />
@@ -523,7 +523,7 @@
           </code></p></div>
         </li>
 
-        <li>Copy the files <code>test_char.h</code>ºÍ<code>chartables.c</code>
+        <li>Copy the files <code>test_char.h</code>å’Œ<code>chartables.c</code>
         to the directory <code>\httpd-2.0\os\netware</code> on the build machine.</li>
 
         <li>Change directory to <code>\httpd-2.0</code> and build Apache by running
@@ -554,11 +554,11 @@
         and copies them to the <code>\nwprebuild</code> directory.</p></li>
 
         <li><code>gmake -f nwgnumakefile installdev</code><p>Same as install but also creates a
-        <code>\lib</code>ºÍ<code>\include</code> directory in the destination directory
+        <code>\lib</code>å’Œ<code>\include</code> directory in the destination directory
         and copies headers and import files.</p></li>
 
         <li><code>gmake -f nwgnumakefile clean</code><p>Cleans all object files and binaries
-        from the <code>\release.o</code>»ò<code>\debug.o</code> build areas depending on whether
+        from the <code>\release.o</code>æˆ–<code>\debug.o</code> build areas depending on whether
         <code>DEBUG</code> has been defined.</p></li>
 
         <li><code>gmake -f nwgnumakefile clobber_all</code><p>Same as clean and also deletes
@@ -635,6 +635,6 @@
 
   </div></div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

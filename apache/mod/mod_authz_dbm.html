@@ -1,31 +1,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_authz_dbm £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_authz_dbm ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_authz_dbm</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_authz_dbm</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>Ê¹ÓÃDBMÊı¾İ¿âÎÄ¼şÎª×éÌá¹©ÊÚÈ¨Ö§³Ö</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>authz_dbm_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_authz_dbm.c</td></tr>
-<tr><th><a href="module-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>½öÔÚ Apache 2.1 ¼°ÒÔºóµÄ°æ±¾ÖĞ¿ÉÓÃ</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>ä½¿ç”¨DBMæ•°æ®åº“æ–‡ä»¶ä¸ºç»„æä¾›æˆæƒæ”¯æŒ</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>authz_dbm_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_authz_dbm.c</td></tr>
+<tr><th><a href="module-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>ä»…åœ¨ Apache 2.1 åŠä»¥åçš„ç‰ˆæœ¬ä¸­å¯ç”¨</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
     <p>This module provides authorization capabilities so that
        authenticated users can be allowed or denied access to portions
@@ -33,15 +33,15 @@
        provided by <code class="module"><a href="../mod/mod_authz_groupfile.html">mod_authz_groupfile</a></code>.</p>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthDBMGroupFile" id="AuthDBMGroupFile">AuthDBMGroupFile</a> <a name="authdbmgroupfile" id="authdbmgroupfile">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthDBMGroupFile" id="AuthDBMGroupFile">AuthDBMGroupFile</a> <a name="authdbmgroupfile" id="authdbmgroupfile">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Sets the name of the database file containing the list
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Sets the name of the database file containing the list
 of user groups for authorization</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthDBMGroupFile <var>file-path</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authz_dbm</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthDBMGroupFile <var>file-path</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authz_dbm</td></tr>
 </table>
     <p><code class="directive">AuthDBMGroupFile</code> directive sets the
     name of a DBM file containing the list of user groups for user
@@ -53,7 +53,7 @@ of user groups for authorization</td></tr>
     belongs. There must be no whitespace within the value, and it
     must never contain any colons.</p>
 
-    <div class="warning"><h3>°²È«</h3>
+    <div class="warning"><h3>å®‰å…¨</h3>
       <p>Make sure that the <code class="directive">AuthDBMGroupFile</code> is
       stored outside the document tree of the web-server. Do
       <strong>not</strong> put it in the directory that it protects.
@@ -91,16 +91,16 @@ of user groups for authorization</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthzDBMAuthoritative" id="AuthzDBMAuthoritative">AuthzDBMAuthoritative</a> <a name="authzdbmauthoritative" id="authzdbmauthoritative">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthzDBMAuthoritative" id="AuthzDBMAuthoritative">AuthzDBMAuthoritative</a> <a name="authzdbmauthoritative" id="authzdbmauthoritative">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Sets whether authorization will be passed on to lower level
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Sets whether authorization will be passed on to lower level
 modules</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthzDBMAuthoritative On|Off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthzDBMAuthoritative On</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authz_dbm</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthzDBMAuthoritative On|Off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthzDBMAuthoritative On</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authz_dbm</td></tr>
 </table>
     <p>Setting the <code class="directive">AuthzDBMAuthoritative</code>
     directive explicitly to <code>Off</code> allows group authorization
@@ -117,7 +117,7 @@ modules</td></tr>
     regardless of the <code class="directive">AuthBasicAuthoritative</code> setting.</p>
 
     <p>A common use for this is in conjunction with one of the
-    auth providers; such as <code class="module"><a href="../mod/mod_authn_dbm.html">mod_authn_dbm</a></code>»ò<code class="module"><a href="../mod/mod_authn_file.html">mod_authn_file</a></code>. Whereas this DBM module supplies
+    auth providers; such as <code class="module"><a href="../mod/mod_authn_dbm.html">mod_authn_dbm</a></code>æˆ–<code class="module"><a href="../mod/mod_authn_file.html">mod_authn_file</a></code>. Whereas this DBM module supplies
     the bulk of the user credential checking; a few (administrator) related
     accesses fall through to a lower level with a well protected
     <code>.htpasswd</code> file.</p>
@@ -127,7 +127,7 @@ modules</td></tr>
     setting it thus keeps the system secure and forces an NCSA
     compliant behaviour.</p>
 
-    <div class="warning"><h3>°²È«</h3>
+    <div class="warning"><h3>å®‰å…¨</h3>
       <p>Do consider the implications of allowing a user to
       allow fall-through in his .htaccess file; and verify that this
       is really what you want; Generally it is easier to just secure
@@ -137,16 +137,16 @@ modules</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthzDBMType" id="AuthzDBMType">AuthzDBMType</a> <a name="authzdbmtype" id="authzdbmtype">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthzDBMType" id="AuthzDBMType">AuthzDBMType</a> <a name="authzdbmtype" id="authzdbmtype">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Sets the type of database file that is used to
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Sets the type of database file that is used to
 store list of user groups</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthzDBMType default|SDBM|GDBM|NDBM|DB</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthzDBMType default</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authz_dbm</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthzDBMType default|SDBM|GDBM|NDBM|DB</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthzDBMType default</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authz_dbm</td></tr>
 </table>
     <p>Sets the type of database file that is used to store the list
     of user groups.
@@ -160,6 +160,6 @@ store list of user groups</td></tr>
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

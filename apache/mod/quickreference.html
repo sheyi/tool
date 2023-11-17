@@ -1,27 +1,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>Ö¸ÁîËÙ²é £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>æŒ‡ä»¤é€ŸæŸ¥ ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body id="directive-index"><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">½ğ²½¹ú</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">ÆäËû×÷Æ·</a>) | ±¾Ò³×îºó¸üĞÂ£º0000Äê00ÔÂ00ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="preamble"><h1>Ö¸ÁîËÙ²é</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">é‡‘æ­¥å›½</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">å…¶ä»–ä½œå“</a>) | æœ¬é¡µæœ€åæ›´æ–°ï¼š0000å¹´00æœˆ00æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="preamble"><h1>æŒ‡ä»¤é€ŸæŸ¥</h1>
 
 
-    <p>Ö¸ÁîËÙ²éÁĞ³öÁËÃ¿¸öÖ¸ÁîµÄÓÃ·¨¡¢Ä¬ÈÏÖµ¡¢×´Ì¬ºÍ×÷ÓÃÓò¡£¸üÏêÏ¸µÄËµÃ÷¿ÉÒÔ²éÔÄ<a href="directive-dict.html">Ö¸Áî×Öµä</a>¡£</p>
+    <p>æŒ‡ä»¤é€ŸæŸ¥åˆ—å‡ºäº†æ¯ä¸ªæŒ‡ä»¤çš„ç”¨æ³•ã€é»˜è®¤å€¼ã€çŠ¶æ€å’Œä½œç”¨åŸŸã€‚æ›´è¯¦ç»†çš„è¯´æ˜å¯ä»¥æŸ¥é˜…<a href="directive-dict.html">æŒ‡ä»¤å­—å…¸</a>ã€‚</p>
 
-    <p>µÚÒ»ÁĞÊÇÖ¸ÁîµÄÃû³ÆºÍÓÃ·¨£»<br />µÚ¶şÁĞÊÇÖ¸ÁîµÄÄ¬ÈÏÖµ(Èç¹û´æÔÚ)£¬Èç¹ûºÜ³¤Ğ´²»ÏÂ£¬ÔòºóÃæ¸úÓĞ"+"±íÊ¾½Ø¶Ï¡£<br />µÚÈıºÍµÚËÄÁĞÊÇÖ¸ÁîÔÊĞí³öÏÖµÄÎ»ÖÃºÍ×´Ì¬£¬ÆäÖĞËõÂÔÓïÈçÏÂ±íËùÊ¾£º</p>
+    <p>ç¬¬ä¸€åˆ—æ˜¯æŒ‡ä»¤çš„åç§°å’Œç”¨æ³•ï¼›<br />ç¬¬äºŒåˆ—æ˜¯æŒ‡ä»¤çš„é»˜è®¤å€¼(å¦‚æœå­˜åœ¨)ï¼Œå¦‚æœå¾ˆé•¿å†™ä¸ä¸‹ï¼Œåˆ™åé¢è·Ÿæœ‰"+"è¡¨ç¤ºæˆªæ–­ã€‚<br />ç¬¬ä¸‰å’Œç¬¬å››åˆ—æ˜¯æŒ‡ä»¤å…è®¸å‡ºç°çš„ä½ç½®å’ŒçŠ¶æ€ï¼Œå…¶ä¸­ç¼©ç•¥è¯­å¦‚ä¸‹è¡¨æ‰€ç¤ºï¼š</p>
   </div>
 <div id="directive-ref"><table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA"id="legend">
 <tr><td class="letters"><span><a href="#A">&nbsp;A&nbsp;</a> | <a href="#B">&nbsp;B&nbsp;</a> | <a href="#C">&nbsp;C&nbsp;</a> | <a href="#D">&nbsp;D&nbsp;</a> | <a href="#E">&nbsp;E&nbsp;</a> | <a href="#F">&nbsp;F&nbsp;</a> | <a href="#G">&nbsp;G&nbsp;</a> | <a href="#H">&nbsp;H&nbsp;</a> | <a href="#I">&nbsp;I&nbsp;</a> | <a href="#K">&nbsp;K&nbsp;</a> | <a href="#L">&nbsp;L&nbsp;</a> | <a href="#M">&nbsp;M&nbsp;</a> | <a href="#N">&nbsp;N&nbsp;</a> | <a href="#O">&nbsp;O&nbsp;</a> | <a href="#P">&nbsp;P&nbsp;</a> | <a href="#R">&nbsp;R&nbsp;</a> | <a href="#S">&nbsp;S&nbsp;</a> | <a href="#T">&nbsp;T&nbsp;</a> | <a href="#U">&nbsp;U&nbsp;</a> | <a href="#V">&nbsp;V&nbsp;</a> | <a href="#W">&nbsp;W&nbsp;</a> | <a href="#X">&nbsp;X&nbsp;</a></span></td><td><table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA">
@@ -30,24 +30,24 @@
 <tr><th>d</th><td>directory</td></tr>
 <tr><th>h</th><td>.htaccess</td></tr>
 </table></td><td><table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA">
-<tr><th>C</th><td>ºËĞÄÄ£¿é</td></tr>
+<tr><th>C</th><td>æ ¸å¿ƒæ¨¡å—</td></tr>
 <tr><th>M</th><td>MPM</td></tr>
-<tr><th>B</th><td>»ù±¾Ä£¿é</td></tr>
-<tr><th>E</th><td>À©Õ¹Ä£¿é</td></tr>
-<tr><th>X</th><td>ÊÔÑéÄ£¿é</td></tr>
+<tr><th>B</th><td>åŸºæœ¬æ¨¡å—</td></tr>
+<tr><th>E</th><td>æ‰©å±•æ¨¡å—</td></tr>
+<tr><th>X</th><td>è¯•éªŒæ¨¡å—</td></tr>
 </table></td></tr>
 </table>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="qref">
 <tr><td><a href="core.html#acceptfilter" id="A" name="A">AcceptFilter <var>protocol</var> <var>accept_filter</var></a></td><td></td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">¸ù¾İĞ­ÒéÀàĞÍ¶Ô¼àÌıSocket½øĞĞÓÅ»¯</td></tr>
+<tr><td class="descr" colspan="4">æ ¹æ®åè®®ç±»å‹å¯¹ç›‘å¬Socketè¿›è¡Œä¼˜åŒ–</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#acceptmutex">AcceptMutex Default|<var>method</var></a></td><td> Default </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ApacheÓÃÓÚ´®ĞĞ»¯¶à¸ö×Ó½ø³ÌÔÚ(¶à¸ö)ÍøÂçÌ×½Ó×Ö(socket)ÉÏ½ÓÊÜÇëÇóµÄ·½·¨</td></tr>
+<tr class="odd"><td class="descr" colspan="4">Apacheç”¨äºä¸²è¡ŒåŒ–å¤šä¸ªå­è¿›ç¨‹åœ¨(å¤šä¸ª)ç½‘ç»œå¥—æ¥å­—(socket)ä¸Šæ¥å—è¯·æ±‚çš„æ–¹æ³•</td></tr>
 <tr><td><a href="core.html#acceptpathinfo">AcceptPathInfo On|Off|Default</a></td><td> Default </td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÊÇ·ñ½ÓÊÜ¸½´ø¶àÓàÂ·¾¶ÃûĞÅÏ¢µÄÇëÇó</td></tr>
+<tr><td class="descr" colspan="4">æ˜¯å¦æ¥å—é™„å¸¦å¤šä½™è·¯å¾„åä¿¡æ¯çš„è¯·æ±‚</td></tr>
 <tr class="odd"><td><a href="core.html#accessfilename">AccessFileName <var>filename</var> [<var>filename</var>] ...</a></td><td> .htaccess </td><td>sv</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·Ö²¼Ê½ÅäÖÃÎÄ¼şµÄÃû×Ö</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åˆ†å¸ƒå¼é…ç½®æ–‡ä»¶çš„åå­—</td></tr>
 <tr><td><a href="mod_actions.html#action">Action <var>action-type</var> <var>cgi-script</var> [virtual]</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Õë¶ÔÌØ¶¨µÄ´¦ÀíÆ÷»òÄÚÈİÀàĞÍ¼¤»îÒ»¸öCGI½Å±¾</td></tr>
+<tr><td class="descr" colspan="4">é’ˆå¯¹ç‰¹å®šçš„å¤„ç†å™¨æˆ–å†…å®¹ç±»å‹æ¿€æ´»ä¸€ä¸ªCGIè„šæœ¬</td></tr>
 <tr class="odd"><td><a href="mod_autoindex.html#addalt">AddAlt <var>string</var> <var>file</var> [<var>file</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Alternate text to display for a file, instead of an
 icon selected by filename</td></tr>
@@ -60,15 +60,15 @@ selected by MIME-encoding</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Alternate text to display for a file, instead of an
 icon selected by MIME content-type</td></tr>
 <tr><td><a href="mod_mime.html#addcharset">AddCharset <var>charset</var> <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÔÚ¸ø¶¨µÄÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄ×Ö·û¼¯Ö®¼ä½¨Á¢Ó³Éä</td></tr>
+<tr><td class="descr" colspan="4">åœ¨ç»™å®šçš„æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„å­—ç¬¦é›†ä¹‹é—´å»ºç«‹æ˜ å°„</td></tr>
 <tr class="odd"><td><a href="core.html#adddefaultcharset">AddDefaultCharset On|Off|<var>charset</var></a></td><td> Off </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">µ±Ó¦´ğÄÚÈİÊÇtext/plain»òtext/htmlÊ±£¬ÔÚHTTPÓ¦´ğÍ·ÖĞ¼ÓÈëµÄÄ¬ÈÏ×Ö·û¼¯</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å½“åº”ç­”å†…å®¹æ˜¯text/plainæˆ–text/htmlæ—¶ï¼Œåœ¨HTTPåº”ç­”å¤´ä¸­åŠ å…¥çš„é»˜è®¤å­—ç¬¦é›†</td></tr>
 <tr><td><a href="mod_autoindex.html#adddescription">AddDescription <var>string file</var> [<var>file</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr><td class="descr" colspan="4">Description to display for a file</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#addencoding">AddEncoding <var>MIME-enc</var> <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄ±àÂë·½Ê½Ö®¼ä½¨Á¢Ó³Éä¹ØÏµ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„ç¼–ç æ–¹å¼ä¹‹é—´å»ºç«‹æ˜ å°„å…³ç³»</td></tr>
 <tr><td><a href="mod_mime.html#addhandler">AddHandler <var>handler-name</var> <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÔÚÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄ´¦ÀíÆ÷Ö®¼ä½¨Á¢Ó³Éä</td></tr>
+<tr><td class="descr" colspan="4">åœ¨æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„å¤„ç†å™¨ä¹‹é—´å»ºç«‹æ˜ å°„</td></tr>
 <tr class="odd"><td><a href="mod_autoindex.html#addicon">AddIcon <var>icon</var> <var>name</var> [<var>name</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Icon to display for a file selected by name</td></tr>
 <tr><td><a href="mod_autoindex.html#addiconbyencoding">AddIconByEncoding <var>icon</var> <var>MIME-encoding</var>
@@ -81,35 +81,35 @@ content-encoding</td></tr>
 content-type</td></tr>
 <tr><td><a href="mod_mime.html#addinputfilter">AddInputFilter <var>filter</var>[;<var>filter</var>...]
 <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÔÚÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄÊäÈë¹ıÂËÆ÷Ö®¼ä½¨Á¢Ó³Éä</td></tr>
+<tr><td class="descr" colspan="4">åœ¨æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„è¾“å…¥è¿‡æ»¤å™¨ä¹‹é—´å»ºç«‹æ˜ å°„</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#addlanguage">AddLanguage <var>MIME-lang</var> <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄÓïÑÔÖ®¼ä½¨Á¢Ó³Éä</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„è¯­è¨€ä¹‹é—´å»ºç«‹æ˜ å°„</td></tr>
 <tr><td><a href="mod_info.html#addmoduleinfo">AddModuleInfo <var>module-name</var> <var>string</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">Îªserver-info´¦ÀíÆ÷ÏÔÊ¾µÄÄ£¿éÔö¼Ó¶îÍâĞÅÏ¢</td></tr>
+<tr><td class="descr" colspan="4">ä¸ºserver-infoå¤„ç†å™¨æ˜¾ç¤ºçš„æ¨¡å—å¢åŠ é¢å¤–ä¿¡æ¯</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#addoutputfilter">AddOutputFilter <var>filter</var>[;<var>filter</var>...]
 <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄÊä³ö¹ıÂËÆ÷Ö®¼ä½¨Á¢Ó³Éä¹ØÏµ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„è¾“å‡ºè¿‡æ»¤å™¨ä¹‹é—´å»ºç«‹æ˜ å°„å…³ç³»</td></tr>
 <tr><td><a href="core.html#addoutputfilterbytype">AddOutputFilterByType <var>filter</var>[;<var>filter</var>...]
 <var>MIME-type</var> [<var>MIME-type</var>] ...</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">¶ÔÌØ¶¨µÄMIMEÀàĞÍÖ¸¶¨Êä³ö¹ıÂËÆ÷</td></tr>
+<tr><td class="descr" colspan="4">å¯¹ç‰¹å®šçš„MIMEç±»å‹æŒ‡å®šè¾“å‡ºè¿‡æ»¤å™¨</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#addtype">AddType <var>MIME-type</var> <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚ¸ø¶¨µÄÎÄ¼şÀ©Õ¹ÃûÓëÌØ¶¨µÄÄÚÈİÀàĞÍÖ®¼ä½¨Á¢Ó³Éä</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨ç»™å®šçš„æ–‡ä»¶æ‰©å±•åä¸ç‰¹å®šçš„å†…å®¹ç±»å‹ä¹‹é—´å»ºç«‹æ˜ å°„</td></tr>
 <tr><td><a href="mod_alias.html#alias">Alias <var>URL-path</var>
 <var>file-path</var>|<var>directory-path</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Ó³ÉäURLµ½ÎÄ¼şÏµÍ³µÄÌØ¶¨ÇøÓò</td></tr>
+<tr><td class="descr" colspan="4">æ˜ å°„URLåˆ°æ–‡ä»¶ç³»ç»Ÿçš„ç‰¹å®šåŒºåŸŸ</td></tr>
 <tr class="odd"><td><a href="mod_alias.html#aliasmatch">AliasMatch <var>regex</var>
 <var>file-path</var>|<var>directory-path</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ê¹ÓÃÕıÔò±í´ïÊ½Ó³ÉäURLµ½ÎÄ¼şÏµÍ³</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼æ˜ å°„URLåˆ°æ–‡ä»¶ç³»ç»Ÿ</td></tr>
 <tr><td><a href="mod_authz_host.html#allow"> Allow from all|<var>host</var>|env=<var>env-variable</var>
 [<var>host</var>|env=<var>env-variable</var>] ...</a></td><td></td><td>dh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">¿ØÖÆÄÄĞ©Ö÷»úÄÜ¹»·ÃÎÊ·şÎñÆ÷µÄ¸ÃÇøÓò</td></tr>
+<tr><td class="descr" colspan="4">æ§åˆ¶å“ªäº›ä¸»æœºèƒ½å¤Ÿè®¿é—®æœåŠ¡å™¨çš„è¯¥åŒºåŸŸ</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#allowconnect">AllowCONNECT <var>port</var> [<var>port</var>] ...</a></td><td> 443 563 </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Í¨¹ı´úÀíÔÊĞíCONNECTµÄ¶Ë¿ÚºÅ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é€šè¿‡ä»£ç†å…è®¸CONNECTçš„ç«¯å£å·</td></tr>
 <tr><td><a href="core.html#allowencodedslashes">AllowEncodedSlashes On|Off</a></td><td> Off </td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">È·¶¨ÊÇ·ñÔÊĞíURLÖĞÊ¹ÓÃ¾­¹ı±àÂëµÄÂ·¾¶·Ö¸î·û</td></tr>
+<tr><td class="descr" colspan="4">ç¡®å®šæ˜¯å¦å…è®¸URLä¸­ä½¿ç”¨ç»è¿‡ç¼–ç çš„è·¯å¾„åˆ†å‰²ç¬¦</td></tr>
 <tr class="odd"><td><a href="core.html#allowoverride">AllowOverride All|None|<var>directive-type</var>
 [<var>directive-type</var>] ...</a></td><td> All </td><td>d</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">È·¶¨ÔÊĞí´æÔÚÓÚ.htaccessÎÄ¼şÖĞµÄÖ¸ÁîÀàĞÍ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç¡®å®šå…è®¸å­˜åœ¨äº.htaccessæ–‡ä»¶ä¸­çš„æŒ‡ä»¤ç±»å‹</td></tr>
 <tr><td><a href="mod_authn_anon.html#anonymous">Anonymous <var>user</var> [<var>user</var>] ...</a></td><td></td><td>dh</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">Specifies userIDs that are allowed access without
 password verification</td></tr>
@@ -124,10 +124,10 @@ error log</td></tr>
 <tr><td class="descr" colspan="4">Sets whether to check the password field for a correctly
 formatted email address</td></tr>
 <tr class="odd"><td><a href="mod_auth_basic.html#authbasicauthoritative">AuthBasicAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨ÊÇ·ñ½«(»ù±¾)ÈÏÖ¤ºÍÊÚÈ¨²Ù×÷½»ÓÉ¸üµ×²ãµÄÄ£¿éÀ´´¦Àí</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šæ˜¯å¦å°†(åŸºæœ¬)è®¤è¯å’Œæˆæƒæ“ä½œäº¤ç”±æ›´åº•å±‚çš„æ¨¡å—æ¥å¤„ç†</td></tr>
 <tr><td><a href="mod_auth_basic.html#authbasicprovider">AuthBasicProvider <var>provider-name</var>
 [<var>provider-name</var>] ...</a></td><td> file </td><td>dh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÉèÖÃ¸ÃÇøÓòµÄ(»ù±¾)ÈÏÖ¤Ö§³ÖÕß(Provider)</td></tr>
+<tr><td class="descr" colspan="4">è®¾ç½®è¯¥åŒºåŸŸçš„(åŸºæœ¬)è®¤è¯æ”¯æŒè€…(Provider)</td></tr>
 <tr class="odd"><td><a href="mod_authn_dbd.html#authdbduserpwquery">AuthDBDUserPWQuery <var>query</var></a></td><td></td><td>d</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">SQL query to look up a password for a user</td></tr>
 <tr><td><a href="mod_authn_dbd.html#authdbduserrealmquery">AuthDBDUserRealmQuery <var>query</var></a></td><td></td><td>d</td><td>E</td></tr>
@@ -143,27 +143,27 @@ store passwords</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Sets the name of a database file containing the list of users and
 passwords for authentication</td></tr>
 <tr><td><a href="mod_authn_default.html#authdefaultauthoritative">AuthDefaultAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÊÇ·ñ½«ÈÏÖ¤²Ù×÷½»ÓÉ¸üµ×²ãµÄÄ£¿éÀ´´¦Àí</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šæ˜¯å¦å°†è®¤è¯æ“ä½œäº¤ç”±æ›´åº•å±‚çš„æ¨¡å—æ¥å¤„ç†</td></tr>
 <tr class="odd"><td><a href="mod_auth_digest.html#authdigestalgorithm">AuthDigestAlgorithm MD5|MD5-sess</a></td><td> MD5 </td><td>dh</td><td>X</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ñ¡ÔñÔÚÕªÒªÈÏÖ¤ÖĞÓÃÓÚ¼ÆËãÇëÇóºÍÓ¦´ğµÄÉ¢ÁĞÖµµÄËã·¨</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é€‰æ‹©åœ¨æ‘˜è¦è®¤è¯ä¸­ç”¨äºè®¡ç®—è¯·æ±‚å’Œåº”ç­”çš„æ•£åˆ—å€¼çš„ç®—æ³•</td></tr>
 <tr><td><a href="mod_auth_digest.html#authdigestdomain">AuthDigestDomain <var>URI</var> [<var>URI</var>] ...</a></td><td></td><td>dh</td><td>X</td></tr>
-<tr><td class="descr" colspan="4">ÔÚÍ¬Ò»±£»¤ÇøÓòÖĞĞèÒª½øĞĞÕªÒªÈÏÖ¤µÄURI</td></tr>
+<tr><td class="descr" colspan="4">åœ¨åŒä¸€ä¿æŠ¤åŒºåŸŸä¸­éœ€è¦è¿›è¡Œæ‘˜è¦è®¤è¯çš„URI</td></tr>
 <tr class="odd"><td><a href="mod_auth_digest.html#authdigestnccheck">AuthDigestNcCheck On|Off</a></td><td> Off </td><td>s</td><td>X</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Enables or disables checking of the nonce-count sent by the
 server</td></tr>
 <tr><td><a href="mod_auth_digest.html#authdigestnonceformat">AuthDigestNonceFormat <var>format</var></a></td><td></td><td>dh</td><td>X</td></tr>
 <tr><td class="descr" colspan="4">Determines how the nonce is generated</td></tr>
 <tr class="odd"><td><a href="mod_auth_digest.html#authdigestnoncelifetime">AuthDigestNonceLifetime <var>seconds</var></a></td><td> 300 </td><td>dh</td><td>X</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·şÎñÆ÷nonce(µ±Ç°Öµ)µÄÓĞĞ§ÃëÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœåŠ¡å™¨nonce(å½“å‰å€¼)çš„æœ‰æ•ˆç§’æ•°</td></tr>
 <tr><td><a href="mod_auth_digest.html#authdigestprovider">AuthDigestProvider <var>provider-name</var>
 [<var>provider-name</var>] ...</a></td><td> file </td><td>dh</td><td>X</td></tr>
-<tr><td class="descr" colspan="4">ÉèÖÃ¸ÃÇøÓòµÄ(ÕªÒª)ÈÏÖ¤Ö§³ÖÕß(Provider)</td></tr>
+<tr><td class="descr" colspan="4">è®¾ç½®è¯¥åŒºåŸŸçš„(æ‘˜è¦)è®¤è¯æ”¯æŒè€…(Provider)</td></tr>
 <tr class="odd"><td><a href="mod_auth_digest.html#authdigestqop">AuthDigestQop none|auth|auth-int [auth|auth-int]</a></td><td> auth </td><td>dh</td><td>X</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨ÕªÒªÈÏÖ¤µÄ±£»¤ÖÊÁ¿</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šæ‘˜è¦è®¤è¯çš„ä¿æŠ¤è´¨é‡</td></tr>
 <tr><td><a href="mod_auth_digest.html#authdigestshmemsize">AuthDigestShmemSize <var>size</var></a></td><td> 1000 </td><td>s</td><td>X</td></tr>
-<tr><td class="descr" colspan="4">ÎªÁË¸ú×Ù¿Í»§¶Ë¶ø·ÖÅäµÄ¹²ÏíÄÚ´æ×Ö½ÚÊı</td></tr>
+<tr><td class="descr" colspan="4">ä¸ºäº†è·Ÿè¸ªå®¢æˆ·ç«¯è€Œåˆ†é…çš„å…±äº«å†…å­˜å­—èŠ‚æ•°</td></tr>
 <tr class="odd"><td><a href="mod_authz_groupfile.html#authgroupfile">AuthGroupFile <var>file-path</var></a></td><td></td><td>dh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Éè¶¨Ò»¸ö°üº¬ÓÃÓÚÖ´ĞĞÓÃ»§ÈÏÖ¤µÄÓÃ»§×éÁĞ±íµÄ´¿ÎÄ±¾ÎÄ¼ş</td></tr>
+<tr class="odd"><td class="descr" colspan="4">è®¾å®šä¸€ä¸ªåŒ…å«ç”¨äºæ‰§è¡Œç”¨æˆ·è®¤è¯çš„ç”¨æˆ·ç»„åˆ—è¡¨çš„çº¯æ–‡æœ¬æ–‡ä»¶</td></tr>
 <tr><td><a href="mod_authnz_ldap.html#authldapbinddn">AuthLDAPBindDN <em>distinguished-name</em></a></td><td></td><td>dh</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">Optional DN to use in binding to the LDAP server</td></tr>
 <tr class="odd"><td><a href="mod_authnz_ldap.html#authldapbindpassword">AuthLDAPBindPassword <em>password</em></a></td><td></td><td>dh</td><td>E</td></tr>
@@ -185,14 +185,14 @@ environment variable</td></tr>
 <tr><td><a href="mod_authnz_ldap.html#authldapurl">AuthLDAPUrl <em>url [NONE|SSL|TLS|STARTTLS]</em></a></td><td></td><td>dh</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">URL specifying the LDAP search parameters</td></tr>
 <tr class="odd"><td><a href="core.html#authname">AuthName <var>auth-domain</var></a></td><td></td><td>dh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÓÃÓÚHTTPÈÏÖ¤µÄÊÚÈ¨Óò</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç”¨äºHTTPè®¤è¯çš„æˆæƒåŸŸ</td></tr>
 <tr><td><a href="mod_authn_alias.html#authnprovideralias">&lt;AuthnProviderAlias <var>baseProvider Alias</var>&gt;
 ... &lt;/AuthnProviderAlias&gt;</a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">·â×°Ò»×é¶¨ÒåÀ©Õ¹ÈÏÖ¤Ö§³ÖÕßµÄÖ¸Áî£¬²¢ÎªÆäÖ¸¶¨Ò»¸ö±ğÃû</td></tr>
+<tr><td class="descr" colspan="4">å°è£…ä¸€ç»„å®šä¹‰æ‰©å±•è®¤è¯æ”¯æŒè€…çš„æŒ‡ä»¤ï¼Œå¹¶ä¸ºå…¶æŒ‡å®šä¸€ä¸ªåˆ«å</td></tr>
 <tr class="odd"><td><a href="core.html#authtype">AuthType Basic|Digest</a></td><td></td><td>dh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÓÃ»§ÈÏÖ¤ÀàĞÍ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç”¨æˆ·è®¤è¯ç±»å‹</td></tr>
 <tr><td><a href="mod_authn_file.html#authuserfile">AuthUserFile <var>file-path</var></a></td><td></td><td>dh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Éè¶¨Ò»¸öº¬ÓĞÈÏÖ¤Ê¹ÓÃµÄÓÃ»§Ãû/ÃÜÂëÁĞ±íµÄ´¿ÎÄ±¾ÎÄ¼ş</td></tr>
+<tr><td class="descr" colspan="4">è®¾å®šä¸€ä¸ªå«æœ‰è®¤è¯ä½¿ç”¨çš„ç”¨æˆ·å/å¯†ç åˆ—è¡¨çš„çº¯æ–‡æœ¬æ–‡ä»¶</td></tr>
 <tr class="odd"><td><a href="mod_authz_dbm.html#authzdbmauthoritative">AuthzDBMAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Sets whether authorization will be passed on to lower level
 modules</td></tr>
@@ -200,24 +200,24 @@ modules</td></tr>
 <tr><td class="descr" colspan="4">Sets the type of database file that is used to
 store list of user groups</td></tr>
 <tr class="odd"><td><a href="mod_authz_default.html#authzdefaultauthoritative">AuthzDefaultAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨ÊÇ·ñ½«ÊÚÈ¨²Ù×÷½»ÓÉ¸üµ×²ãµÄÄ£¿éÀ´´¦Àí</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šæ˜¯å¦å°†æˆæƒæ“ä½œäº¤ç”±æ›´åº•å±‚çš„æ¨¡å—æ¥å¤„ç†</td></tr>
 <tr><td><a href="mod_authz_groupfile.html#authzgroupfileauthoritative">AuthzGroupFileAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÊÇ·ñ½«ÊÚÈ¨²Ù×÷½»ÓÉ¸üµ×²ãµÄÄ£¿éÀ´´¦Àí</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šæ˜¯å¦å°†æˆæƒæ“ä½œäº¤ç”±æ›´åº•å±‚çš„æ¨¡å—æ¥å¤„ç†</td></tr>
 <tr class="odd"><td><a href="mod_authnz_ldap.html#authzldapauthoritative">AuthzLDAPAuthoritative on|off</a></td><td> on </td><td>dh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Prevent other authentication modules from
 authenticating the user if this one fails</td></tr>
 <tr><td><a href="mod_authz_owner.html#authzownerauthoritative">AuthzOwnerAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÊÇ·ñ½«ÊÚÈ¨²Ù×÷½»ÓÉ¸üµ×²ãµÄÄ£¿éÀ´´¦Àí</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šæ˜¯å¦å°†æˆæƒæ“ä½œäº¤ç”±æ›´åº•å±‚çš„æ¨¡å—æ¥å¤„ç†</td></tr>
 <tr class="odd"><td><a href="mod_authz_user.html#authzuserauthoritative">AuthzUserAuthoritative On|Off</a></td><td> On </td><td>dh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨ÊÇ·ñ½«ÊÚÈ¨²Ù×÷½»ÓÉ¸üµ×²ãµÄÄ£¿éÀ´´¦Àí</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šæ˜¯å¦å°†æˆæƒæ“ä½œäº¤ç”±æ›´åº•å±‚çš„æ¨¡å—æ¥å¤„ç†</td></tr>
 <tr><td><a href="mod_setenvif.html#browsermatch" id="B" name="B">BrowserMatch <em>regex [!]env-variable</em>[=<em>value</em>]
 [[!]<em>env-variable</em>[=<em>value</em>]] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">»ùÓÚUser-AgentÍ·ÓĞÌõ¼şµØÉèÖÃ»·¾³±äÁ¿</td></tr>
+<tr><td class="descr" colspan="4">åŸºäºUser-Agentå¤´æœ‰æ¡ä»¶åœ°è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
 <tr class="odd"><td><a href="mod_setenvif.html#browsermatchnocase">BrowserMatchNoCase  <em>regex [!]env-variable</em>[=<em>value</em>]
     [[!]<em>env-variable</em>[=<em>value</em>]] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">»ùÓÚ²»Çø·Ö´óĞ¡Ğ´µÄUser-AgentÍ·ÓĞÌõ¼şµØÉèÖÃ»·¾³±äÁ¿</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åŸºäºä¸åŒºåˆ†å¤§å°å†™çš„User-Agentå¤´æœ‰æ¡ä»¶åœ°è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
 <tr><td><a href="mod_log_config.html#bufferedlogs">BufferedLogs On|Off</a></td><td> Off </td><td>s</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÔÚ½«ÈÕÖ¾Ğ´Èë´ÅÅÌÇ°ÏÈÔÚÄÚ´æÖĞ½øĞĞ»º³å</td></tr>
+<tr><td class="descr" colspan="4">åœ¨å°†æ—¥å¿—å†™å…¥ç£ç›˜å‰å…ˆåœ¨å†…å­˜ä¸­è¿›è¡Œç¼“å†²</td></tr>
 <tr class="odd"><td><a href="mod_cache.html#cachedefaultexpire" id="C" name="C">CacheDefaultExpire <var>seconds</var></a></td><td> 3600 (one hour) </td><td>sv</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">The default duration to cache a document when no expiry date is specified.</td></tr>
 <tr><td><a href="mod_disk_cache.html#cachedirlength">CacheDirLength <var>length</var></a></td><td> 2 </td><td>sv</td><td>E</td></tr>
@@ -252,7 +252,7 @@ cache</td></tr>
 <tr class="odd"><td class="descr" colspan="4">The minimum size (in bytes) of a document to be placed in the
 cache</td></tr>
 <tr><td><a href="mod_negotiation.html#cachenegotiateddocs">CacheNegotiatedDocs On|Off</a></td><td> Off </td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÔÊĞí¾­¹ıÄÚÈİĞ­ÉÌµÄÎÄµµ±»´úÀí·şÎñÆ÷»º´æ</td></tr>
+<tr><td class="descr" colspan="4">å…è®¸ç»è¿‡å†…å®¹åå•†çš„æ–‡æ¡£è¢«ä»£ç†æœåŠ¡å™¨ç¼“å­˜</td></tr>
 <tr class="odd"><td><a href="mod_disk_cache.html#cacheroot">CacheRoot <var>directory</var></a></td><td></td><td>sv</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">The directory root under which cache files are
 stored</td></tr>
@@ -261,7 +261,7 @@ stored</td></tr>
 <tr class="odd"><td><a href="mod_cache.html#cachestoreprivate">CacheStorePrivate On|Off</a></td><td> Off </td><td>sv</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Attempt to cache responses that the server has marked as private</td></tr>
 <tr><td><a href="core.html#cgimapextension">CGIMapExtension <var>cgi-path</var> <var>.extension</var></a></td><td></td><td>dh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">¶¨Î»CGI½Å±¾½âÊÍÆ÷</td></tr>
+<tr><td class="descr" colspan="4">å®šä½CGIè„šæœ¬è§£é‡Šå™¨</td></tr>
 <tr class="odd"><td><a href="mod_charset_lite.html#charsetdefault">CharsetDefault <var>charset</var></a></td><td></td><td>svdh</td><td>X</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Charset to translate into</td></tr>
 <tr><td><a href="mod_charset_lite.html#charsetoptions">CharsetOptions <var>option</var> [<var>option</var>] ...</a></td><td> DebugLevel=0 NoImpl +</td><td>svdh</td><td>X</td></tr>
@@ -272,13 +272,13 @@ stored</td></tr>
 <tr><td class="descr" colspan="4">Enables the spelling 
 module</td></tr>
 <tr class="odd"><td><a href="core.html#contentdigest">ContentDigest On|Off</a></td><td> Off </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÊĞíÉú³ÉContent-MD5Ó¦´ğÍ·</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å…è®¸ç”ŸæˆContent-MD5åº”ç­”å¤´</td></tr>
 <tr><td><a href="mod_usertrack.html#cookiedomain">CookieDomain <em>domain</em></a></td><td></td><td>svdh</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">The domain to which the tracking cookie applies</td></tr>
 <tr class="odd"><td><a href="mod_usertrack.html#cookieexpires">CookieExpires <em>expiry-period</em></a></td><td></td><td>svdh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Expiry time for the tracking cookie</td></tr>
 <tr><td><a href="mod_log_config.html#cookielog">CookieLog <var>filename</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Éè¶¨Õë¶ÔcookiesµÄÈÕÖ¾ÎÄ¼şÃû</td></tr>
+<tr><td class="descr" colspan="4">è®¾å®šé’ˆå¯¹cookiesçš„æ—¥å¿—æ–‡ä»¶å</td></tr>
 <tr class="odd"><td><a href="mod_usertrack.html#cookiename">CookieName <em>token</em></a></td><td> Apache </td><td>svdh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Name of the tracking cookie</td></tr>
 <tr><td><a href="mod_usertrack.html#cookiestyle">CookieStyle
@@ -287,11 +287,11 @@ module</td></tr>
 <tr class="odd"><td><a href="mod_usertrack.html#cookietracking">CookieTracking on|off</a></td><td> off </td><td>svdh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Enables tracking cookie</td></tr>
 <tr><td><a href="mpm_common.html#coredumpdirectory">CoreDumpDirectory <var>directory</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">ApacheÊ¹ÓÃµÄÄÚºË×ª´¢Ä¿Â¼</td></tr>
+<tr><td class="descr" colspan="4">Apacheä½¿ç”¨çš„å†…æ ¸è½¬å‚¨ç›®å½•</td></tr>
 <tr class="odd"><td><a href="mod_log_config.html#customlog">CustomLog  <var>file</var>|<var>pipe</var>
 <var>format</var>|<var>nickname</var>
 [env=[!]<var>environment-variable</var>]</a></td><td></td><td>sv</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Éè¶¨ÈÕÖ¾µÄÎÄ¼şÃûºÍ¸ñÊ½</td></tr>
+<tr class="odd"><td class="descr" colspan="4">è®¾å®šæ—¥å¿—çš„æ–‡ä»¶åå’Œæ ¼å¼</td></tr>
 <tr><td><a href="mod_dav.html#dav" id="D" name="D">Dav On|Off|<var>provider-name</var></a></td><td> Off </td><td>d</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">Enable WebDAV HTTP methods</td></tr>
 <tr class="odd"><td><a href="mod_dav.html#davdepthinfinity">DavDepthInfinity on|off</a></td><td> off </td><td>svd</td><td>E</td></tr>
@@ -324,59 +324,59 @@ a DAV resource</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Icon to display for files when no specific icon is
 configured</td></tr>
 <tr><td><a href="mod_mime.html#defaultlanguage">DefaultLanguage <var>MIME-lang</var></a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÎªËùÓĞÎÄ¼şÉè¶¨ÌØ¶¨µÄÄ¬ÈÏÓïÑÔ</td></tr>
+<tr><td class="descr" colspan="4">ä¸ºæ‰€æœ‰æ–‡ä»¶è®¾å®šç‰¹å®šçš„é»˜è®¤è¯­è¨€</td></tr>
 <tr class="odd"><td><a href="core.html#defaulttype">DefaultType <var>MIME-type</var></a></td><td> text/plain </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚ·şÎñÆ÷ÎŞ·¨ÓÉÆäËû·½·¨È·¶¨ÄÚÈİÀàĞÍÊ±£¬·¢ËÍµÄÄ¬ÈÏMIMEÄÚÈİÀàĞÍ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨æœåŠ¡å™¨æ— æ³•ç”±å…¶ä»–æ–¹æ³•ç¡®å®šå†…å®¹ç±»å‹æ—¶ï¼Œå‘é€çš„é»˜è®¤MIMEå†…å®¹ç±»å‹</td></tr>
 <tr><td><a href="mod_deflate.html#deflatebuffersize">DeflateBufferSize <var>value</var></a></td><td> 8096 </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÓÃÓÚzlibÒ»´ÎÑ¹ËõµÄÆ¬¶Ï´óĞ¡(×Ö½Ú)</td></tr>
+<tr><td class="descr" colspan="4">ç”¨äºzlibä¸€æ¬¡å‹ç¼©çš„ç‰‡æ–­å¤§å°(å­—èŠ‚)</td></tr>
 <tr class="odd"><td><a href="mod_deflate.html#deflatecompressionlevel">DeflateCompressionLevel <var>value</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">½«Êä³öÄÚÈİÑ¹ËõµÄ³Ì¶È</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å°†è¾“å‡ºå†…å®¹å‹ç¼©çš„ç¨‹åº¦</td></tr>
 <tr><td><a href="mod_deflate.html#deflatefilternote">DeflateFilterNote [<var>type</var>] <var>notename</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÔÚÈÕÖ¾ÖĞ·ÅÖÃÑ¹ËõÂÊ±ê¼Ç</td></tr>
+<tr><td class="descr" colspan="4">åœ¨æ—¥å¿—ä¸­æ”¾ç½®å‹ç¼©ç‡æ ‡è®°</td></tr>
 <tr class="odd"><td><a href="mod_deflate.html#deflatememlevel">DeflateMemLevel <var>value</var></a></td><td> 9 </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">zlibÔÚÑ¹ËõÊ±×î¶à¿ÉÒÔÊ¹ÓÃ¶àÉÙÄÚ´æ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">zlibåœ¨å‹ç¼©æ—¶æœ€å¤šå¯ä»¥ä½¿ç”¨å¤šå°‘å†…å­˜</td></tr>
 <tr><td><a href="mod_deflate.html#deflatewindowsize">DeflateWindowSize <var>value</var></a></td><td> 15 </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ZlibÑ¹Ëõ´°¿Ú(compression window)µÄ´óĞ¡</td></tr>
+<tr><td class="descr" colspan="4">Zlibå‹ç¼©çª—å£(compression window)çš„å¤§å°</td></tr>
 <tr class="odd"><td><a href="mod_authz_host.html#deny"> Deny from all|<var>host</var>|env=<var>env-variable</var>
 [<var>host</var>|env=<var>env-variable</var>] ...</a></td><td></td><td>dh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¿ØÖÆÄÄĞ©Ö÷»ú±»½ûÖ¹·ÃÎÊ·şÎñÆ÷</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ§åˆ¶å“ªäº›ä¸»æœºè¢«ç¦æ­¢è®¿é—®æœåŠ¡å™¨</td></tr>
 <tr><td><a href="core.html#directory">&lt;Directory <var>directory-path</var>&gt;
 ... &lt;/Directory&gt;</a></td><td></td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">·â×°Ò»×éÖ¸Áî£¬Ê¹Ö®½ö¶ÔÎÄ¼ş¿Õ¼äÖĞµÄÄ³¸öÄ¿Â¼¼°Æä×ÓÄ¿Â¼ÉúĞ§</td></tr>
+<tr><td class="descr" colspan="4">å°è£…ä¸€ç»„æŒ‡ä»¤ï¼Œä½¿ä¹‹ä»…å¯¹æ–‡ä»¶ç©ºé—´ä¸­çš„æŸä¸ªç›®å½•åŠå…¶å­ç›®å½•ç”Ÿæ•ˆ</td></tr>
 <tr class="odd"><td><a href="mod_dir.html#directoryindex">DirectoryIndex
     <var>local-url</var> [<var>local-url</var>] ...</a></td><td> index.html </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">µ±¿Í»§¶ËÇëÇóÒ»¸öÄ¿Â¼Ê±Ñ°ÕÒµÄ×ÊÔ´ÁĞ±í</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å½“å®¢æˆ·ç«¯è¯·æ±‚ä¸€ä¸ªç›®å½•æ—¶å¯»æ‰¾çš„èµ„æºåˆ—è¡¨</td></tr>
 <tr><td><a href="core.html#directorymatch">&lt;DirectoryMatch <var>regex</var>&gt;
 ... &lt;/DirectoryMatch&gt;</a></td><td></td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">·â×°Ò»Ğ©Ö¸Áî²¢×÷ÓÃÓÚÎÄ¼şÏµÍ³ÖĞÆ¥ÅäÕıÔò±í´ïÊ½µÄËùÓĞÄ¿Â¼¼°Æä×ÓÄ¿Â¼</td></tr>
+<tr><td class="descr" colspan="4">å°è£…ä¸€äº›æŒ‡ä»¤å¹¶ä½œç”¨äºæ–‡ä»¶ç³»ç»Ÿä¸­åŒ¹é…æ­£åˆ™è¡¨è¾¾å¼çš„æ‰€æœ‰ç›®å½•åŠå…¶å­ç›®å½•</td></tr>
 <tr class="odd"><td><a href="mod_dir.html#directoryslash">DirectorySlash On|Off</a></td><td> On </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">´ò¿ª»ò¹Ø±ÕÄ¿Â¼½áÎ²Ğ±Ïß(/)×Ô¶¯²¹È«¹¦ÄÜ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ‰“å¼€æˆ–å…³é—­ç›®å½•ç»“å°¾æ–œçº¿(/)è‡ªåŠ¨è¡¥å…¨åŠŸèƒ½</td></tr>
 <tr><td><a href="core.html#documentroot">DocumentRoot <var>directory-path</var></a></td><td> /usr/local/apache/h +</td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">×é³ÉÍøÂçÉÏ¿É¼ûµÄÖ÷ÎÄµµÊ÷µÄ¸ùÄ¿Â¼</td></tr>
+<tr><td class="descr" colspan="4">ç»„æˆç½‘ç»œä¸Šå¯è§çš„ä¸»æ–‡æ¡£æ ‘çš„æ ¹ç›®å½•</td></tr>
 <tr class="odd"><td><a href="mod_dumpio.html#dumpioinput">DumpIOInput On|Off</a></td><td> Off </td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">½«ËùÓĞÊäÈëµÄÄÚÈİ¼ÇÂ¼µ½´íÎóÈÕÖ¾ÖĞ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å°†æ‰€æœ‰è¾“å…¥çš„å†…å®¹è®°å½•åˆ°é”™è¯¯æ—¥å¿—ä¸­</td></tr>
 <tr><td><a href="mod_dumpio.html#dumpiooutput">DumpIOOutput On|Off</a></td><td> Off </td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">½«ËùÓĞÊä³öµÄÄÚÈİ¼ÇÂ¼µ½´íÎóÈÕÖ¾ÖĞ</td></tr>
+<tr><td class="descr" colspan="4">å°†æ‰€æœ‰è¾“å‡ºçš„å†…å®¹è®°å½•åˆ°é”™è¯¯æ—¥å¿—ä¸­</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#enableexceptionhook" id="E" name="E">EnableExceptionHook On|Off</a></td><td> Off </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚ×Ó½ø³Ì±ÀÀ£ÒÔºóÆôÓÃÒ»¸ö¹³×ÓÀ´ÔËĞĞÒì³£´¦Àí³ÌĞò</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨å­è¿›ç¨‹å´©æºƒä»¥åå¯ç”¨ä¸€ä¸ªé’©å­æ¥è¿è¡Œå¼‚å¸¸å¤„ç†ç¨‹åº</td></tr>
 <tr><td><a href="core.html#enablemmap">EnableMMAP On|Off</a></td><td> On </td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÔÚµİËÍÖĞÊ¹ÓÃÄÚ´æÓ³Éä(memory-mapping)À´¶ÁÈ¡ÎÄ¼ş</td></tr>
+<tr><td class="descr" colspan="4">åœ¨é€’é€ä¸­ä½¿ç”¨å†…å­˜æ˜ å°„(memory-mapping)æ¥è¯»å–æ–‡ä»¶</td></tr>
 <tr class="odd"><td><a href="core.html#enablesendfile">EnableSendfile On|Off</a></td><td> On </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ê¹ÓÃ²Ù×÷ÏµÍ³ÄÚºËµÄsendfileÖ§³ÖÀ´½«ÎÄ¼ş·¢ËÍµ½¿Í»§¶Ë</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä½¿ç”¨æ“ä½œç³»ç»Ÿå†…æ ¸çš„sendfileæ”¯æŒæ¥å°†æ–‡ä»¶å‘é€åˆ°å®¢æˆ·ç«¯</td></tr>
 <tr><td><a href="core.html#errordocument">ErrorDocument <var>error-code</var> <var>document</var></a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">µ±Óöµ½´íÎóµÄÊ±ºò·şÎñÆ÷½«¸ø¿Í»§¶ËÊ²Ã´ÑùµÄÓ¦´ğ</td></tr>
+<tr><td class="descr" colspan="4">å½“é‡åˆ°é”™è¯¯çš„æ—¶å€™æœåŠ¡å™¨å°†ç»™å®¢æˆ·ç«¯ä»€ä¹ˆæ ·çš„åº”ç­”</td></tr>
 <tr class="odd"><td><a href="core.html#errorlog"> ErrorLog <var>file-path</var>|syslog[:<var>facility</var>]</a></td><td> logs/error_log (Uni +</td><td>sv</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">´æ·Å´íÎóÈÕÖ¾µÄÎ»ÖÃ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å­˜æ”¾é”™è¯¯æ—¥å¿—çš„ä½ç½®</td></tr>
 <tr><td><a href="mod_example.html#example">Example</a></td><td></td><td>svdh</td><td>X</td></tr>
 <tr><td class="descr" colspan="4">Demonstration directive to illustrate the Apache module
 API</td></tr>
 <tr class="odd"><td><a href="mod_expires.html#expiresactive">ExpiresActive On|Off</a></td><td></td><td>svdh</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÆôÓÃ»ò½ûÓÃ²úÉú&quot;Expires:&quot;ºÍ&quot;Cache-Control:&quot;Í·µÄ¹¦ÄÜ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯ç”¨æˆ–ç¦ç”¨äº§ç”Ÿ&quot;Expires:&quot;å’Œ&quot;Cache-Control:&quot;å¤´çš„åŠŸèƒ½</td></tr>
 <tr><td><a href="mod_expires.html#expiresbytype">ExpiresByType <var>MIME-type</var>
 <var>&lt;code&gt;seconds</var></a></td><td></td><td>svdh</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÓÉMIMEÀàĞÍÅäÖÃµÄExpiresÍ·µÄÖµ</td></tr>
+<tr><td class="descr" colspan="4">ç”±MIMEç±»å‹é…ç½®çš„Expireså¤´çš„å€¼</td></tr>
 <tr class="odd"><td><a href="mod_expires.html#expiresdefault">ExpiresDefault <var>&lt;code&gt;seconds</var></a></td><td></td><td>svdh</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ä¬ÈÏÓĞĞ§ÆÚµÄ¼ÆËã·½·¨</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é»˜è®¤æœ‰æ•ˆæœŸçš„è®¡ç®—æ–¹æ³•</td></tr>
 <tr><td><a href="mod_status.html#extendedstatus">ExtendedStatus On|Off</a></td><td> Off </td><td>s</td><td>B</td></tr>
 <tr><td class="descr" colspan="4">Keep track of extended status information for each 
 request</td></tr>
@@ -385,11 +385,11 @@ request</td></tr>
 <tr><td><a href="mod_ext_filter.html#extfilteroptions">ExtFilterOptions <var>option</var> [<var>option</var>] ...</a></td><td> DebugLevel=0 NoLogS +</td><td>d</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">Configure <code class="module"><a href="../mod/mod_ext_filter.html">mod_ext_filter</a></code> options</td></tr>
 <tr class="odd"><td><a href="core.html#fileetag" id="F" name="F">FileETag <var>component</var> ...</a></td><td> INode MTime Size </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÓÃÒÔ´´½¨ETagÓ¦´ğÍ·µÄÎÄ¼şµÄÊôĞÔ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç”¨ä»¥åˆ›å»ºETagåº”ç­”å¤´çš„æ–‡ä»¶çš„å±æ€§</td></tr>
 <tr><td><a href="core.html#files">&lt;Files <var>filename</var>&gt; ... &lt;/Files&gt;</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">°üº¬×÷ÓÃÓÚÆ¥ÅäÖ¸¶¨ÎÄ¼şÃûµÄÖ¸Áî</td></tr>
+<tr><td class="descr" colspan="4">åŒ…å«ä½œç”¨äºåŒ¹é…æŒ‡å®šæ–‡ä»¶åçš„æŒ‡ä»¤</td></tr>
 <tr class="odd"><td><a href="core.html#filesmatch">&lt;FilesMatch <var>regex</var>&gt; ... &lt;/FilesMatch&gt;</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">°üº¬×÷ÓÃÓÚÓëÕıÔò±í´ïÊ½Æ¥ÅäµÄÎÄ¼şÃûµÄÖ¸Áî</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åŒ…å«ä½œç”¨äºä¸æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…çš„æ–‡ä»¶åçš„æŒ‡ä»¤</td></tr>
 <tr><td><a href="mod_filter.html#filterchain">FilterChain [+=-@!]<var>filter-name</var> <var>...</var></a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr><td class="descr" colspan="4">Configure the filter chain</td></tr>
 <tr class="odd"><td><a href="mod_filter.html#filterdeclare">FilterDeclare <var>filter-name</var> <var>[type]</var></a></td><td></td><td>svdh</td><td>B</td></tr>
@@ -404,33 +404,33 @@ request</td></tr>
 <tr><td class="descr" colspan="4">Get debug/diagnostic information from
     <code class="module"><a href="../mod/mod_filter.html">mod_filter</a></code></td></tr>
 <tr class="odd"><td><a href="mod_negotiation.html#forcelanguagepriority">ForceLanguagePriority None|Prefer|Fallback [Prefer|Fallback]</a></td><td> Prefer </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨ÎŞ·¨Æ¥Åäµ¥¸öÎÄµµµÄÇé¿öÏÂËù²ÉÈ¡µÄ¶¯×÷</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šæ— æ³•åŒ¹é…å•ä¸ªæ–‡æ¡£çš„æƒ…å†µä¸‹æ‰€é‡‡å–çš„åŠ¨ä½œ</td></tr>
 <tr><td><a href="core.html#forcetype">ForceType <var>MIME-type</var>|None</a></td><td></td><td>dh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">Ç¿ÖÆËùÓĞÆ¥ÅäµÄÎÄ¼ş±»×÷ÎªÖ¸¶¨µÄMIMEÀàĞÍ½øĞĞËÅ·ş</td></tr>
+<tr><td class="descr" colspan="4">å¼ºåˆ¶æ‰€æœ‰åŒ¹é…çš„æ–‡ä»¶è¢«ä½œä¸ºæŒ‡å®šçš„MIMEç±»å‹è¿›è¡Œä¼ºæœ</td></tr>
 <tr class="odd"><td><a href="mod_log_forensic.html#forensiclog">ForensicLog <var>filename</var>|<var>pipe</var></a></td><td></td><td>sv</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Sets filename of the forensic log</td></tr>
 <tr><td><a href="mpm_common.html#gracefulshutdowntimeout" id="G" name="G">GracefulShutDownTimeout <var>seconds</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÓÅÑÅÍ£Ö¹·şÎñÆ÷µÄ³¬Ê±ÃëÊı</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šä¼˜é›…åœæ­¢æœåŠ¡å™¨çš„è¶…æ—¶ç§’æ•°</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#group">Group <var>unix-group</var></a></td><td> #-1 </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶ÔÇëÇóÌá¹©·şÎñµÄApache×Ó½ø³ÌÔËĞĞÊ±µÄÓÃ»§×é</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯¹è¯·æ±‚æä¾›æœåŠ¡çš„Apacheå­è¿›ç¨‹è¿è¡Œæ—¶çš„ç”¨æˆ·ç»„</td></tr>
 <tr><td><a href="mod_headers.html#header" id="H" name="H">Header [<var>condition</var>] set|append|add|unset|echo
 <var>header</var> [<var>value</var>] [early|env=[!]<var>variable</var>]</a></td><td></td><td>svdh</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÅäÖÃHTTPÓ¦´ğÍ·</td></tr>
+<tr><td class="descr" colspan="4">é…ç½®HTTPåº”ç­”å¤´</td></tr>
 <tr class="odd"><td><a href="mod_autoindex.html#headername">HeaderName <var>filename</var></a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Name of the file that will be inserted at the top
 of the index listing</td></tr>
 <tr><td><a href="core.html#hostnamelookups">HostnameLookups On|Off|Double</a></td><td> Off </td><td>svd</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÆôÓÃ¶Ô¿Í»§¶ËIPµÄDNS²éÕÒ</td></tr>
+<tr><td class="descr" colspan="4">å¯ç”¨å¯¹å®¢æˆ·ç«¯IPçš„DNSæŸ¥æ‰¾</td></tr>
 <tr class="odd"><td><a href="mod_ident.html#identitycheck" id="I" name="I">IdentityCheck On|Off</a></td><td> Off </td><td>svd</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÆôÓÃ¶ÔÔ¶¶ËÓÃ»§µÄRFC1413Éí·İ¼ø¶¨µÄÈÕÖ¾</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯ç”¨å¯¹è¿œç«¯ç”¨æˆ·çš„RFC1413èº«ä»½é‰´å®šçš„æ—¥å¿—</td></tr>
 <tr><td><a href="mod_ident.html#identitychecktimeout">IdentityCheckTimeout <var>seconds</var></a></td><td> 30 </td><td>svd</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">Determines the timeout duration for ident requests</td></tr>
 <tr class="odd"><td><a href="core.html#ifdefine">&lt;IfDefine [!]<var>parameter-name</var>&gt; ...
     &lt;/IfDefine&gt;</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·â×°Ò»×éÖ»ÓĞÔÚÆô¶¯Ê±µ±²âÊÔ½á¹ûÎªÕæÊ±²ÅÉúĞ§µÄÖ¸Áî</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å°è£…ä¸€ç»„åªæœ‰åœ¨å¯åŠ¨æ—¶å½“æµ‹è¯•ç»“æœä¸ºçœŸæ—¶æ‰ç”Ÿæ•ˆçš„æŒ‡ä»¤</td></tr>
 <tr><td><a href="core.html#ifmodule">&lt;IfModule [!]<var>module-file</var>|<var>module-identifier</var>&gt; ...
     &lt;/IfModule&gt;</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">·â×°Ö¸Áî²¢¸ù¾İÖ¸¶¨µÄÄ£¿éÊÇ·ñÆôÓÃÎªÌõ¼ş¶ø¾ö¶¨ÊÇ·ñ½øĞĞ´¦Àí</td></tr>
+<tr><td class="descr" colspan="4">å°è£…æŒ‡ä»¤å¹¶æ ¹æ®æŒ‡å®šçš„æ¨¡å—æ˜¯å¦å¯ç”¨ä¸ºæ¡ä»¶è€Œå†³å®šæ˜¯å¦è¿›è¡Œå¤„ç†</td></tr>
 <tr class="odd"><td><a href="mod_version.html#ifversion">&lt;IfVersion [[!]<var>operator</var>] <var>version</var>&gt; ...
 &lt;/IfVersion&gt;</a></td><td></td><td>svdh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">contains version dependent configuration</td></tr>
@@ -443,7 +443,7 @@ that are not explicitly mapped</td></tr>
 <tr><td class="descr" colspan="4">Action if no coordinates are given when calling
 an imagemap</td></tr>
 <tr class="odd"><td><a href="core.html#include">Include <var>file-path</var>|<var>directory-path</var></a></td><td></td><td>svd</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚ·şÎñÆ÷ÅäÖÃÎÄ¼şÖĞ°üº¬ÆäËüÅäÖÃÎÄ¼ş</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨æœåŠ¡å™¨é…ç½®æ–‡ä»¶ä¸­åŒ…å«å…¶å®ƒé…ç½®æ–‡ä»¶</td></tr>
 <tr><td><a href="mod_autoindex.html#indexignore">IndexIgnore <var>file</var> [<var>file</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr><td class="descr" colspan="4">Adds to the list of files to hide when listing 
 a directory</td></tr>
@@ -456,37 +456,37 @@ Name|Date|Size|Description</a></td><td> Ascending Name </td><td>svdh</td><td>B</
 <tr class="odd"><td><a href="mod_autoindex.html#indexstylesheet">IndexStyleSheet <var>url-path</var></a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Adds a CSS stylesheet to the directory index</td></tr>
 <tr><td><a href="mod_isapi.html#isapiappendlogtoerrors">ISAPIAppendLogToErrors on|off</a></td><td> off </td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">°ÑISAPIÀ©Õ¹µÄHSE_APPEND_LOG_PARAMETERÇëÇó¼ÇÂ¼ÔÚ´íÎóÈÕÖ¾ÖĞ</td></tr>
+<tr><td class="descr" colspan="4">æŠŠISAPIæ‰©å±•çš„HSE_APPEND_LOG_PARAMETERè¯·æ±‚è®°å½•åœ¨é”™è¯¯æ—¥å¿—ä¸­</td></tr>
 <tr class="odd"><td><a href="mod_isapi.html#isapiappendlogtoquery">ISAPIAppendLogToQuery on|off</a></td><td> on </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">°ÑISAPIÀ©Õ¹µÄHSE_APPEND_LOG_PARAMETERÇëÇó¼ÇÂ¼ÔÚ²éÑ¯ÓòÖĞ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŠŠISAPIæ‰©å±•çš„HSE_APPEND_LOG_PARAMETERè¯·æ±‚è®°å½•åœ¨æŸ¥è¯¢åŸŸä¸­</td></tr>
 <tr><td><a href="mod_isapi.html#isapicachefile">ISAPICacheFile <var>file-path</var> [<var>file-path</var>] ...</a></td><td></td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Æô¶¯Ê±ÔØÈëµÄISAPI¶¯Ì¬Á¬½Ó¿â</td></tr>
+<tr><td class="descr" colspan="4">å¯åŠ¨æ—¶è½½å…¥çš„ISAPIåŠ¨æ€è¿æ¥åº“</td></tr>
 <tr class="odd"><td><a href="mod_isapi.html#isapifakeasync">ISAPIFakeAsync on|off</a></td><td> off </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÎªISAPI»Øµ÷Ä£ÄâÒì²½Ö§³Ö</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä¸ºISAPIå›è°ƒæ¨¡æ‹Ÿå¼‚æ­¥æ”¯æŒ</td></tr>
 <tr><td><a href="mod_isapi.html#isapilognotsupported">ISAPILogNotSupported on|off</a></td><td> off </td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">¼ÇÂ¼ISAPI²»Ö§³ÖµÄ¹¦ÄÜµ÷ÓÃ</td></tr>
+<tr><td class="descr" colspan="4">è®°å½•ISAPIä¸æ”¯æŒçš„åŠŸèƒ½è°ƒç”¨</td></tr>
 <tr class="odd"><td><a href="mod_isapi.html#isapireadaheadbuffer">ISAPIReadAheadBuffer <var>size</var></a></td><td> 49152 </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">´«ËÍµ½ISAPIÀ©Õ¹µÄÔ¤¶Á»º³åÇø´óĞ¡</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä¼ é€åˆ°ISAPIæ‰©å±•çš„é¢„è¯»ç¼“å†²åŒºå¤§å°</td></tr>
 <tr><td><a href="core.html#keepalive" id="K" name="K">KeepAlive On|Off</a></td><td> On </td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÆôÓÃHTTP³Ö¾ÃÁ´½Ó</td></tr>
+<tr><td class="descr" colspan="4">å¯ç”¨HTTPæŒä¹…é“¾æ¥</td></tr>
 <tr class="odd"><td><a href="core.html#keepalivetimeout">KeepAliveTimeout <var>seconds</var></a></td><td> 5 </td><td>sv</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">³Ö¾ÃÁ´½ÓÖĞ·şÎñÆ÷ÔÚÁ½´ÎÇëÇóÖ®¼äµÈ´ıµÄÃëÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒä¹…é“¾æ¥ä¸­æœåŠ¡å™¨åœ¨ä¸¤æ¬¡è¯·æ±‚ä¹‹é—´ç­‰å¾…çš„ç§’æ•°</td></tr>
 <tr><td><a href="mod_negotiation.html#languagepriority" id="L" name="L">LanguagePriority <var>MIME-lang</var> [<var>MIME-lang</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÔÚ¿Í»§¶ËÃ»ÓĞÖ¸Ê¾ÓïÑÔÆ«ºÃµÄÇé¿öÏÂ£¬ÓïÑÔ±äÌåµÄÓÅÏÈ¼¶ÁĞ±í</td></tr>
+<tr><td class="descr" colspan="4">åœ¨å®¢æˆ·ç«¯æ²¡æœ‰æŒ‡ç¤ºè¯­è¨€åå¥½çš„æƒ…å†µä¸‹ï¼Œè¯­è¨€å˜ä½“çš„ä¼˜å…ˆçº§åˆ—è¡¨</td></tr>
 <tr class="odd"><td><a href="mod_ldap.html#ldapcacheentries">LDAPCacheEntries <var>number</var></a></td><td> 1024 </td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö÷LDAP»º³åµÄ×î´óÌõÄ¿Êı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä¸»LDAPç¼“å†²çš„æœ€å¤§æ¡ç›®æ•°</td></tr>
 <tr><td><a href="mod_ldap.html#ldapcachettl">LDAPCacheTTL <var>seconds</var></a></td><td> 600 </td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">search/bind»º³åÏîÄ¿ÓĞĞ§Ê±ÏŞ</td></tr>
+<tr><td class="descr" colspan="4">search/bindç¼“å†²é¡¹ç›®æœ‰æ•ˆæ—¶é™</td></tr>
 <tr class="odd"><td><a href="mod_ldap.html#ldapconnectiontimeout">LDAPConnectionTimeout <var>seconds</var></a></td><td></td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨Ì×½Ó×ÖÁ¬½Ó³¬Ê±ÃëÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šå¥—æ¥å­—è¿æ¥è¶…æ—¶ç§’æ•°</td></tr>
 <tr><td><a href="mod_ldap.html#ldapopcacheentries">LDAPOpCacheEntries <var>number</var></a></td><td> 1024 </td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">LDAP compare»º³åÇøµÄ´óĞ¡</td></tr>
+<tr><td class="descr" colspan="4">LDAP compareç¼“å†²åŒºçš„å¤§å°</td></tr>
 <tr class="odd"><td><a href="mod_ldap.html#ldapopcachettl">LDAPOpCacheTTL <var>seconds</var></a></td><td> 600 </td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">²Ù×÷»º³åÓĞĞ§Ê±ÏŞ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ“ä½œç¼“å†²æœ‰æ•ˆæ—¶é™</td></tr>
 <tr><td><a href="mod_ldap.html#ldapsharedcachefile">LDAPSharedCacheFile <var>directory-path/filename</var></a></td><td></td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÉèÖÃ¹²ÏíÄÚ´æ»º³åÇøÎÄ¼ş</td></tr>
+<tr><td class="descr" colspan="4">è®¾ç½®å…±äº«å†…å­˜ç¼“å†²åŒºæ–‡ä»¶</td></tr>
 <tr class="odd"><td><a href="mod_ldap.html#ldapsharedcachesize">LDAPSharedCacheSize <var>bytes</var></a></td><td> 102400 </td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¹²ÏíÄÚ´æ»º³åÇøµÄ×Ö½Ú´óĞ¡</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å…±äº«å†…å­˜ç¼“å†²åŒºçš„å­—èŠ‚å¤§å°</td></tr>
 <tr><td><a href="mod_ldap.html#ldaptrustedclientcert">LDAPTrustedClientCert <var>type</var> <var>directory-path/filename/nickname</var> <var>[password]</var></a></td><td></td><td>svdh</td><td>E</td></tr>
 <tr><td class="descr" colspan="4">Sets the file containing or nickname referring to a per
 connection client certificate. Not all LDAP toolkits support per
@@ -500,72 +500,72 @@ Certificate Authority or global client certificates</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Force server certificate verification</td></tr>
 <tr><td><a href="core.html#limit">&lt;Limit <var>method</var> [<var>method</var>] ... &gt; ...
     &lt;/Limit&gt;</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">½ö¶ÔÖ¸¶¨µÄHTTP·½·¨½øĞĞ·ÃÎÊ¿ØÖÆ</td></tr>
+<tr><td class="descr" colspan="4">ä»…å¯¹æŒ‡å®šçš„HTTPæ–¹æ³•è¿›è¡Œè®¿é—®æ§åˆ¶</td></tr>
 <tr class="odd"><td><a href="core.html#limitexcept">&lt;LimitExcept <var>method</var> [<var>method</var>] ... &gt; ...
     &lt;/LimitExcept&gt;</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶Ô³ıÁËÖ¸¶¨·½·¨ÒÔÍâµÄËùÓĞHTTP·½·¨½øĞĞ·ÃÎÊ¿ØÖÆ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯¹é™¤äº†æŒ‡å®šæ–¹æ³•ä»¥å¤–çš„æ‰€æœ‰HTTPæ–¹æ³•è¿›è¡Œè®¿é—®æ§åˆ¶</td></tr>
 <tr><td><a href="core.html#limitinternalrecursion">LimitInternalRecursion <var>number</var> [<var>number</var>]</a></td><td> 10 </td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÄÚ²¿ÖØ¶¨ÏòºÍÇ¶Ì××ÓÇëÇóµÄ×î´óÊıÁ¿</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šå†…éƒ¨é‡å®šå‘å’ŒåµŒå¥—å­è¯·æ±‚çš„æœ€å¤§æ•°é‡</td></tr>
 <tr class="odd"><td><a href="core.html#limitrequestbody">LimitRequestBody <var>bytes</var></a></td><td> 0 </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÏŞÖÆ¿Í»§¶Ë·¢ËÍµÄHTTPÇëÇóÌåµÄ×î´ó×Ö½Ú³¤¶È</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é™åˆ¶å®¢æˆ·ç«¯å‘é€çš„HTTPè¯·æ±‚ä½“çš„æœ€å¤§å­—èŠ‚é•¿åº¦</td></tr>
 <tr><td><a href="core.html#limitrequestfields">LimitRequestFields <var>number</var></a></td><td> 100 </td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÏŞÖÆ½ÓÊÜ¿Í»§¶ËÇëÇóÖĞHTTPÇëÇóÍ·ÓòµÄÊıÁ¿</td></tr>
+<tr><td class="descr" colspan="4">é™åˆ¶æ¥å—å®¢æˆ·ç«¯è¯·æ±‚ä¸­HTTPè¯·æ±‚å¤´åŸŸçš„æ•°é‡</td></tr>
 <tr class="odd"><td><a href="core.html#limitrequestfieldsize">LimitRequestFieldsize <var>bytes</var></a></td><td></td><td>s</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÏŞÖÆ¿Í»§¶Ë·¢ËÍµÄÇëÇóÍ·µÄ×Ö½ÚÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é™åˆ¶å®¢æˆ·ç«¯å‘é€çš„è¯·æ±‚å¤´çš„å­—èŠ‚æ•°</td></tr>
 <tr><td><a href="core.html#limitrequestline">LimitRequestLine <var>bytes</var></a></td><td> 8190 </td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÏŞÖÆ½ÓÊÜ¿Í»§¶Ë·¢ËÍµÄHTTPÇëÇóĞĞµÄ×Ö½ÚÊı</td></tr>
+<tr><td class="descr" colspan="4">é™åˆ¶æ¥å—å®¢æˆ·ç«¯å‘é€çš„HTTPè¯·æ±‚è¡Œçš„å­—èŠ‚æ•°</td></tr>
 <tr class="odd"><td><a href="core.html#limitxmlrequestbody">LimitXMLRequestBody <var>bytes</var></a></td><td> 1000000 </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÏŞÖÆ»ùÓÚXMLµÄÇëÇóÌåµÄ´óĞ¡</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é™åˆ¶åŸºäºXMLçš„è¯·æ±‚ä½“çš„å¤§å°</td></tr>
 <tr><td><a href="mpm_common.html#listen">Listen [<var>IP-address</var>:]<var>portnumber</var> [<var>protocol</var>]</a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">·şÎñÆ÷¼àÌıµÄIPµØÖ·ºÍ¶Ë¿Ú</td></tr>
+<tr><td class="descr" colspan="4">æœåŠ¡å™¨ç›‘å¬çš„IPåœ°å€å’Œç«¯å£</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#listenbacklog">ListenBacklog <var>backlog</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">°ëÁ´½Ó(pending connection)¶ÓÁĞµÄ×î´ó³¤¶È</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åŠé“¾æ¥(pending connection)é˜Ÿåˆ—çš„æœ€å¤§é•¿åº¦</td></tr>
 <tr><td><a href="mod_so.html#loadfile">LoadFile <em>filename</em> [<em>filename</em>] ...</a></td><td></td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">¼ÓÔØÒÑÃüÃûµÄÄ¿±êÎÄ¼ş»ò¿â</td></tr>
+<tr><td class="descr" colspan="4">åŠ è½½å·²å‘½åçš„ç›®æ ‡æ–‡ä»¶æˆ–åº“</td></tr>
 <tr class="odd"><td><a href="mod_so.html#loadmodule">LoadModule <em>module filename</em></a></td><td></td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¼ÓÔØÄ¿±êÎÄ¼ş»ò¿â£¬²¢½«ÆäÌí¼Óµ½»î¶¯Ä£¿éÁĞ±í</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åŠ è½½ç›®æ ‡æ–‡ä»¶æˆ–åº“ï¼Œå¹¶å°†å…¶æ·»åŠ åˆ°æ´»åŠ¨æ¨¡å—åˆ—è¡¨</td></tr>
 <tr><td><a href="core.html#location">&lt;Location
     <var>URL-path</var>|<var>URL</var>&gt; ... &lt;/Location&gt;</a></td><td></td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">½«·â×°µÄÖ¸Áî×÷ÓÃÓÚÆ¥ÅäµÄURL</td></tr>
+<tr><td class="descr" colspan="4">å°†å°è£…çš„æŒ‡ä»¤ä½œç”¨äºåŒ¹é…çš„URL</td></tr>
 <tr class="odd"><td><a href="core.html#locationmatch">&lt;LocationMatch
     <var>regex</var>&gt; ... &lt;/LocationMatch&gt;</a></td><td></td><td>sv</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">½«·â×°µÄÖ¸Áî×÷ÓÃÓÚÕıÔò±í´ïÊ½Æ¥ÅäµÄURL</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å°†å°è£…çš„æŒ‡ä»¤ä½œç”¨äºæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…çš„URL</td></tr>
 <tr><td><a href="mpm_common.html#lockfile">LockFile <var>filename</var></a></td><td> logs/accept.lock </td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">½ÓÊÜ´®ĞĞËøÎÄ¼şµÄÎ»ÖÃ</td></tr>
+<tr><td class="descr" colspan="4">æ¥å—ä¸²è¡Œé”æ–‡ä»¶çš„ä½ç½®</td></tr>
 <tr class="odd"><td><a href="mod_log_config.html#logformat">LogFormat <var>format</var>|<var>nickname</var>
 [<var>nickname</var>]</a></td><td> "%h %l %u %t \"%r\" +</td><td>sv</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶¨Òå·ÃÎÊÈÕÖ¾µÄ¼ÇÂ¼¸ñÊ½</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å®šä¹‰è®¿é—®æ—¥å¿—çš„è®°å½•æ ¼å¼</td></tr>
 <tr><td><a href="core.html#loglevel">LogLevel <var>level</var></a></td><td> warn </td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">¿ØÖÆ´íÎóÈÕÖ¾µÄÏêÏ¸³Ì¶È</td></tr>
+<tr><td class="descr" colspan="4">æ§åˆ¶é”™è¯¯æ—¥å¿—çš„è¯¦ç»†ç¨‹åº¦</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#maxclients" id="M" name="M">MaxClients <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÊĞíÍ¬Ê±ËÅ·şµÄ×î´ó½ÓÈëÇëÇóÊıÁ¿</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å…è®¸åŒæ—¶ä¼ºæœçš„æœ€å¤§æ¥å…¥è¯·æ±‚æ•°é‡</td></tr>
 <tr><td><a href="core.html#maxkeepaliverequests">MaxKeepAliveRequests <var>number</var></a></td><td> 100 </td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">Ò»¸ö³Ö¾ÃÁ´½ÓÖĞÔÊĞíµÄ×î´óÇëÇóÊıÁ¿</td></tr>
+<tr><td class="descr" colspan="4">ä¸€ä¸ªæŒä¹…é“¾æ¥ä¸­å…è®¸çš„æœ€å¤§è¯·æ±‚æ•°é‡</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#maxmemfree">MaxMemFree <var>KBytes</var></a></td><td> 0 </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö÷ÄÚ´æ·ÖÅä³ÌĞòÔÚÎ´µ÷ÓÃfree()µÄÇé¿öÏÂÔÊĞí³ÖÓĞµÄ×î´ó×ÔÓÉÄÚ´æÊıÁ¿(KB)</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä¸»å†…å­˜åˆ†é…ç¨‹åºåœ¨æœªè°ƒç”¨free()çš„æƒ…å†µä¸‹å…è®¸æŒæœ‰çš„æœ€å¤§è‡ªç”±å†…å­˜æ•°é‡(KB)</td></tr>
 <tr><td><a href="mpm_common.html#maxrequestsperchild">MaxRequestsPerChild <var>number</var></a></td><td> 10000 </td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">Ã¿¸ö×Ó½ø³ÌÔÚÆäÉú´æÆÚÄÚÔÊĞíËÅ·şµÄ×î´óÇëÇóÊıÁ¿</td></tr>
+<tr><td class="descr" colspan="4">æ¯ä¸ªå­è¿›ç¨‹åœ¨å…¶ç”Ÿå­˜æœŸå†…å…è®¸ä¼ºæœçš„æœ€å¤§è¯·æ±‚æ•°é‡</td></tr>
 <tr class="odd"><td><a href="beos.html#maxrequestsperthread">MaxRequestsPerThread <var>number</var></a></td><td> 0 </td><td>s</td><td>M</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Limit on the number of requests that an individual thread
 will handle during its life</td></tr>
 <tr><td><a href="prefork.html#maxspareservers">MaxSpareServers <var>number</var></a></td><td> 10 </td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">¿ÕÏĞ×Ó½ø³ÌµÄ×î´óÊıÁ¿</td></tr>
+<tr><td class="descr" colspan="4">ç©ºé—²å­è¿›ç¨‹çš„æœ€å¤§æ•°é‡</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#maxsparethreads">MaxSpareThreads <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">×î´ó¿ÕÏĞÏß³ÌÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœ€å¤§ç©ºé—²çº¿ç¨‹æ•°</td></tr>
 <tr><td><a href="mpm_netware.html#maxthreads">MaxThreads <var>number</var></a></td><td> 2048 </td><td>s</td><td>M</td></tr>
 <tr><td class="descr" colspan="4">Set the maximum number of worker threads</td></tr>
 <tr class="odd"><td><a href="mod_mem_cache.html#mcachemaxobjectcount">MCacheMaxObjectCount <var>value</var></a></td><td> 1009 </td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">×î´ó»º´æ¶ÔÏóÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœ€å¤§ç¼“å­˜å¯¹è±¡æ•°</td></tr>
 <tr><td><a href="mod_mem_cache.html#mcachemaxobjectsize">MCacheMaxObjectSize <var>bytes</var></a></td><td> 10000 </td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">»º´æÔÊĞíµÄ×î´óÎÄµµ´óĞ¡(×Ö½Ú)</td></tr>
+<tr><td class="descr" colspan="4">ç¼“å­˜å…è®¸çš„æœ€å¤§æ–‡æ¡£å¤§å°(å­—èŠ‚)</td></tr>
 <tr class="odd"><td><a href="mod_mem_cache.html#mcachemaxstreamingbuffer">MCacheMaxStreamingBuffer <var>size_in_bytes</var></a></td><td> the smaller of 1000 +</td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÄÚ´æÖĞÔÊĞí»º³åµÄ×î´óÁ÷Ê½ÏìÓ¦×Ö½Ú³¤¶È</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å†…å­˜ä¸­å…è®¸ç¼“å†²çš„æœ€å¤§æµå¼å“åº”å­—èŠ‚é•¿åº¦</td></tr>
 <tr><td><a href="mod_mem_cache.html#mcacheminobjectsize">MCacheMinObjectSize <var>bytes</var></a></td><td> 0 </td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÔÊĞí»º´æµÄ×îĞ¡ÎÄµµ´óĞ¡(×Ö½Ú)</td></tr>
+<tr><td class="descr" colspan="4">å…è®¸ç¼“å­˜çš„æœ€å°æ–‡æ¡£å¤§å°(å­—èŠ‚)</td></tr>
 <tr class="odd"><td><a href="mod_mem_cache.html#mcacheremovalalgorithm">MCacheRemovalAlgorithm LRU|GDSF</a></td><td> GDSF </td><td>s</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶¨ÒåÔÚĞèÒªÊ±ÄÄ¸öÎÄµµ±»ÒÆ³ö»º´æµÄËã·¨</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å®šä¹‰åœ¨éœ€è¦æ—¶å“ªä¸ªæ–‡æ¡£è¢«ç§»å‡ºç¼“å­˜çš„ç®—æ³•</td></tr>
 <tr><td><a href="mod_mem_cache.html#mcachesize">MCacheSize <var>KBytes</var></a></td><td> 100 </td><td>s</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">»º´æÔÊĞíÊ¹ÓÃµÄ×î´óÄÚ´æÁ¿£¬ÒÔKBÎªµ¥Î»</td></tr>
+<tr><td class="descr" colspan="4">ç¼“å­˜å…è®¸ä½¿ç”¨çš„æœ€å¤§å†…å­˜é‡ï¼Œä»¥KBä¸ºå•ä½</td></tr>
 <tr class="odd"><td><a href="mod_cern_meta.html#metadir">MetaDir <var>directory</var></a></td><td> .web </td><td>svdh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Name of the directory to find CERN-style meta information
 files</td></tr>
@@ -575,58 +575,58 @@ files</td></tr>
 <tr class="odd"><td class="descr" colspan="4">File name suffix for the file containg CERN-style
 meta information</td></tr>
 <tr><td><a href="mod_mime_magic.html#mimemagicfile">MimeMagicFile <var>file-path</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">Ê¹ÓÃÌØ¶¨µÄMagicÎÄ¼ş¼¤»î¸ù¾İÎÄ¼şÄÚÈİÈ·¶¨ÎÄ¼şMIMEÀàĞÍµÄ¹¦ÄÜ</td></tr>
+<tr><td class="descr" colspan="4">ä½¿ç”¨ç‰¹å®šçš„Magicæ–‡ä»¶æ¿€æ´»æ ¹æ®æ–‡ä»¶å†…å®¹ç¡®å®šæ–‡ä»¶MIMEç±»å‹çš„åŠŸèƒ½</td></tr>
 <tr class="odd"><td><a href="prefork.html#minspareservers">MinSpareServers <var>number</var></a></td><td> 5 </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¿ÕÏĞ×Ó½ø³ÌµÄ×îĞ¡ÊıÁ¿</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç©ºé—²å­è¿›ç¨‹çš„æœ€å°æ•°é‡</td></tr>
 <tr><td><a href="mpm_common.html#minsparethreads">MinSpareThreads <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">×îĞ¡¿ÕÏĞÏß³ÌÊı</td></tr>
+<tr><td class="descr" colspan="4">æœ€å°ç©ºé—²çº¿ç¨‹æ•°</td></tr>
 <tr class="odd"><td><a href="mod_file_cache.html#mmapfile">MMapFile <var>file-path</var> [<var>file-path</var>] ...</a></td><td></td><td>s</td><td>X</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Map a list of files into memory at startup time</td></tr>
 <tr><td><a href="mod_mime.html#modmimeusepathinfo">ModMimeUsePathInfo On|Off</a></td><td> Off </td><td>d</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">½«path_infoµ±³ÉÊÇÎÄ¼şÃûµÄÒ»¸ö×é³É²¿·Ö</td></tr>
+<tr><td class="descr" colspan="4">å°†path_infoå½“æˆæ˜¯æ–‡ä»¶åçš„ä¸€ä¸ªç»„æˆéƒ¨åˆ†</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#multiviewsmatch">MultiviewsMatch Any|NegotiatedOnly|Filters|Handlers
 [Handlers|Filters]</a></td><td> NegotiatedOnly </td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚÊ¹ÓÃMultiViews²éÑ¯ËùÆ¥ÅäµÄÎÄ¼şÊ±Òª°üº¬µÄÎÄ¼şÀàĞÍ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨ä½¿ç”¨MultiViewsæŸ¥è¯¢æ‰€åŒ¹é…çš„æ–‡ä»¶æ—¶è¦åŒ…å«çš„æ–‡ä»¶ç±»å‹</td></tr>
 <tr><td><a href="core.html#namevirtualhost" id="N" name="N">NameVirtualHost <var>addr</var>[:<var>port</var>]</a></td><td></td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÎªÒ»¸ö»ùÓÚÓòÃûµÄĞéÄâÖ÷»úÖ¸¶¨Ò»¸öIPµØÖ·(ºÍ¶Ë¿Ú)</td></tr>
+<tr><td class="descr" colspan="4">ä¸ºä¸€ä¸ªåŸºäºåŸŸåçš„è™šæ‹Ÿä¸»æœºæŒ‡å®šä¸€ä¸ªIPåœ°å€(å’Œç«¯å£)</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#noproxy">NoProxy <var>host</var> [<var>host</var>] ...</a></td><td></td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö±½Ó½øĞĞÁ¬½ÓµÄÖ÷»ú/Óò/ÍøÂç</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç›´æ¥è¿›è¡Œè¿æ¥çš„ä¸»æœº/åŸŸ/ç½‘ç»œ</td></tr>
 <tr><td><a href="mod_nw_ssl.html#nwssltrustedcerts">NWSSLTrustedCerts <var>filename</var> [<var>filename</var>] ...</a></td><td></td><td>s</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">¸½¼ÓµÄ¿Í»§¶ËÖ¤ÊéÁĞ±í</td></tr>
+<tr><td class="descr" colspan="4">é™„åŠ çš„å®¢æˆ·ç«¯è¯ä¹¦åˆ—è¡¨</td></tr>
 <tr class="odd"><td><a href="mod_nw_ssl.html#nwsslupgradeable">NWSSLUpgradeable [<var>IP-address</var>:]<var>portnumber</var></a></td><td></td><td>s</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÊĞíÔÚÇëÇóÖĞ½«Ò»¸öÁ¬½ÓÉı¼¶ÎªSSLÁ¬½Ó</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å…è®¸åœ¨è¯·æ±‚ä¸­å°†ä¸€ä¸ªè¿æ¥å‡çº§ä¸ºSSLè¿æ¥</td></tr>
 <tr><td><a href="core.html#options" id="O" name="O">Options
     [+|-]<var>option</var> [[+|-]<var>option</var>] ...</a></td><td> All </td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÅäÖÃÔÚÌØ¶¨Ä¿Â¼ÖĞ¿ÉÒÔÊ¹ÓÃÄÄĞ©ÌØĞÔ</td></tr>
+<tr><td class="descr" colspan="4">é…ç½®åœ¨ç‰¹å®šç›®å½•ä¸­å¯ä»¥ä½¿ç”¨å“ªäº›ç‰¹æ€§</td></tr>
 <tr class="odd"><td><a href="mod_authz_host.html#order"> Order <var>ordering</var></a></td><td> Deny,Allow </td><td>dh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¿ØÖÆÄ¬ÈÏµÄ·ÃÎÊ×´Ì¬ÓëAllowºÍDenyÖ¸ÁîÉúĞ§µÄË³Ğò</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ§åˆ¶é»˜è®¤çš„è®¿é—®çŠ¶æ€ä¸Allowå’ŒDenyæŒ‡ä»¤ç”Ÿæ•ˆçš„é¡ºåº</td></tr>
 <tr><td><a href="mod_env.html#passenv" id="P" name="P">PassEnv <var>env-variable</var> [<var>env-variable</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">´«ËÍshellÖĞµÄ»·¾³±äÁ¿</td></tr>
+<tr><td class="descr" colspan="4">ä¼ é€shellä¸­çš„ç¯å¢ƒå˜é‡</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#pidfile">PidFile <var>filename</var></a></td><td> logs/httpd.pid </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·şÎñÆ÷ÓÃÓÚ¼ÇÂ¼¸¸½ø³Ì(¼à¿Ø½ø³Ì)PIDµÄÎÄ¼ş</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœåŠ¡å™¨ç”¨äºè®°å½•çˆ¶è¿›ç¨‹(ç›‘æ§è¿›ç¨‹)PIDçš„æ–‡ä»¶</td></tr>
 <tr><td><a href="mod_echo.html#protocolecho">ProtocolEcho On|Off</a></td><td></td><td>sv</td><td>X</td></tr>
 <tr><td class="descr" colspan="4">Turn the echo server on or off</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxy">&lt;Proxy <var>wildcard-url</var>&gt; ...&lt;/Proxy&gt;</a></td><td></td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ó¦ÓÃÓÚËù´úÀí×ÊÔ´µÄÈİÆ÷</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åº”ç”¨äºæ‰€ä»£ç†èµ„æºçš„å®¹å™¨</td></tr>
 <tr><td><a href="mod_proxy.html#proxybadheader">ProxyBadHeader IsError|Ignore|StartBody</a></td><td> IsError </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">È·¶¨ÈçºÎ´¦Àí²»ºÏ·¨µÄÓ¦´ğÍ·</td></tr>
+<tr><td class="descr" colspan="4">ç¡®å®šå¦‚ä½•å¤„ç†ä¸åˆæ³•çš„åº”ç­”å¤´</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxyblock">ProxyBlock *|<var>word</var>|<var>host</var>|<var>domain</var>
 [<var>word</var>|<var>host</var>|<var>domain</var>] ...</a></td><td></td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÉèÖÃ±»´úÀíÆÁ±ÎµÄÓï¾ä¡¢Ö÷»ú¡¢Óò</td></tr>
+<tr class="odd"><td class="descr" colspan="4">è®¾ç½®è¢«ä»£ç†å±è”½çš„è¯­å¥ã€ä¸»æœºã€åŸŸ</td></tr>
 <tr><td><a href="mod_proxy.html#proxydomain">ProxyDomain <var>Domain</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">´úÀíÇëÇóµÄÄ¬ÈÏÓòÃû</td></tr>
+<tr><td class="descr" colspan="4">ä»£ç†è¯·æ±‚çš„é»˜è®¤åŸŸå</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxyerroroverride">ProxyErrorOverride On|Off</a></td><td> Off </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¸²¸Ç´úÀíÄÚÈİµÄ´íÎóÒ³</td></tr>
+<tr class="odd"><td class="descr" colspan="4">è¦†ç›–ä»£ç†å†…å®¹çš„é”™è¯¯é¡µ</td></tr>
 <tr><td><a href="mod_proxy.html#proxyiobuffersize">ProxyIOBufferSize <var>bytes</var></a></td><td> 8192 </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÄÚ²¿»º³åÇø´óĞ¡</td></tr>
+<tr><td class="descr" colspan="4">å†…éƒ¨ç¼“å†²åŒºå¤§å°</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxymatch">&lt;ProxyMatch <var>regex</var>&gt; ...&lt;/ProxyMatch&gt;</a></td><td></td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ó¦ÓÃÓÚÆ¥ÅäÕıÔò±í´ïÊ½µÄ´úÀí×ÊÔ´µÄÈİÆ÷</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åº”ç”¨äºåŒ¹é…æ­£åˆ™è¡¨è¾¾å¼çš„ä»£ç†èµ„æºçš„å®¹å™¨</td></tr>
 <tr><td><a href="mod_proxy.html#proxymaxforwards">ProxyMaxForwards <var>number</var></a></td><td> 10 </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">×ª·¢ÇëÇóµÄ×î´ó´úÀíÊıÄ¿</td></tr>
+<tr><td class="descr" colspan="4">è½¬å‘è¯·æ±‚çš„æœ€å¤§ä»£ç†æ•°ç›®</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxypass">ProxyPass [<var>path</var>] !|<var>url</var> [<var>key=value</var> <var>key=value</var> ...]]</a></td><td></td><td>svd</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">½«Ò»¸öÔ¶¶Ë·şÎñÆ÷Ó³Éäµ½±¾µØ·şÎñÆ÷µÄURL¿Õ¼äÖĞ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å°†ä¸€ä¸ªè¿œç«¯æœåŠ¡å™¨æ˜ å°„åˆ°æœ¬åœ°æœåŠ¡å™¨çš„URLç©ºé—´ä¸­</td></tr>
 <tr><td><a href="mod_proxy.html#proxypassreverse">ProxyPassReverse [<var>path</var>] <var>url</var></a></td><td></td><td>svd</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">µ÷ÕûÓÉ·´Ïò´úÀí·şÎñÆ÷·¢ËÍµÄHTTPÓ¦´ğÍ·ÖĞµÄURL</td></tr>
+<tr><td class="descr" colspan="4">è°ƒæ•´ç”±åå‘ä»£ç†æœåŠ¡å™¨å‘é€çš„HTTPåº”ç­”å¤´ä¸­çš„URL</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxypassreversecookiedomain">ProxyPassReverseCookieDomain <var>internal-domain</var> <var>public-domain</var></a></td><td></td><td>svd</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Adjusts the Domain string in Set-Cookie headers from a reverse-
 proxied server</td></tr>
@@ -634,53 +634,53 @@ proxied server</td></tr>
 <tr><td class="descr" colspan="4">Adjusts the Path string in Set-Cookie headers from a reverse-
 proxied server</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxypreservehost">ProxyPreserveHost On|Off</a></td><td> Off </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ê¹ÓÃ½øÈëµÄHTTPÇëÇóÍ·À´·¢ËÍ´úÀíÇëÇó</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä½¿ç”¨è¿›å…¥çš„HTTPè¯·æ±‚å¤´æ¥å‘é€ä»£ç†è¯·æ±‚</td></tr>
 <tr><td><a href="mod_proxy.html#proxyreceivebuffersize">ProxyReceiveBufferSize <var>bytes</var></a></td><td> 0 </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">´úÀíHTTPºÍFTPÁ¬½ÓµÄ½ÓÊÕ»º³åÇø´óĞ¡(×Ö½Ú)</td></tr>
+<tr><td class="descr" colspan="4">ä»£ç†HTTPå’ŒFTPè¿æ¥çš„æ¥æ”¶ç¼“å†²åŒºå¤§å°(å­—èŠ‚)</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxyremote">ProxyRemote <var>match</var> <var>remote-server</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÓÃÓÚ´¦ÀíÄ³Ğ©ÌØ¶¨ÇëÇóµÄÔ¶¶Ë´úÀí</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç”¨äºå¤„ç†æŸäº›ç‰¹å®šè¯·æ±‚çš„è¿œç«¯ä»£ç†</td></tr>
 <tr><td><a href="mod_proxy.html#proxyremotematch">ProxyRemoteMatch <var>regex</var> <var>remote-server</var></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">´¦ÀíÆ¥ÅäÕıÔò±í´ïÊ½µÄÇëÇóµÄÔ¶¶Ë´úÀí</td></tr>
+<tr><td class="descr" colspan="4">å¤„ç†åŒ¹é…æ­£åˆ™è¡¨è¾¾å¼çš„è¯·æ±‚çš„è¿œç«¯ä»£ç†</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxyrequests">ProxyRequests On|Off</a></td><td> Off </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÆôÓÃÕıÏò(±ê×¼)´úÀíÇëÇó</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯ç”¨æ­£å‘(æ ‡å‡†)ä»£ç†è¯·æ±‚</td></tr>
 <tr><td><a href="mod_proxy.html#proxytimeout">ProxyTimeout <var>seconds</var></a></td><td> 300 </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">´úÀíÇëÇóµÄÍøÂç³¬Ê±</td></tr>
+<tr><td class="descr" colspan="4">ä»£ç†è¯·æ±‚çš„ç½‘ç»œè¶…æ—¶</td></tr>
 <tr class="odd"><td><a href="mod_proxy.html#proxyvia">ProxyVia On|Off|Full|Block</a></td><td> Off </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¿ØÖÆ´úÀí¶ÔViaÓ¦´ğÍ·µÄÊ¹ÓÃ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ§åˆ¶ä»£ç†å¯¹Viaåº”ç­”å¤´çš„ä½¿ç”¨</td></tr>
 <tr><td><a href="mod_autoindex.html#readmename" id="R" name="R">ReadmeName <var>filename</var></a></td><td></td><td>svdh</td><td>B</td></tr>
 <tr><td class="descr" colspan="4">Name of the file that will be inserted at the end
 of the index listing</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#receivebuffersize">ReceiveBufferSize <var>bytes</var></a></td><td> 0 </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">TCP½ÓÊÕ»º³åÇø´óĞ¡(×Ö½Ú)</td></tr>
+<tr class="odd"><td class="descr" colspan="4">TCPæ¥æ”¶ç¼“å†²åŒºå¤§å°(å­—èŠ‚)</td></tr>
 <tr><td><a href="mod_alias.html#redirect">Redirect [<var>status</var>] <var>URL-path</var>
 <var>URL</var></a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">·¢ËÍÒ»¸öÍâ²¿ÖØ¶¨ÏòÊ¹¿Í»§¶ËÖØ¶¨Ïòµ½Ò»¸ö²»Í¬µÄURL</td></tr>
+<tr><td class="descr" colspan="4">å‘é€ä¸€ä¸ªå¤–éƒ¨é‡å®šå‘ä½¿å®¢æˆ·ç«¯é‡å®šå‘åˆ°ä¸€ä¸ªä¸åŒçš„URL</td></tr>
 <tr class="odd"><td><a href="mod_alias.html#redirectmatch">RedirectMatch [<var>status</var>] <var>regex</var>
 <var>URL</var></a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">»ùÓÚÕıÔò±í´ïÊ½Æ¥Åä¶Ôµ±Ç°µÄURL·¢ËÍÒ»¸öÍâ²¿ÖØ¶¨Ïò</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åŸºäºæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…å¯¹å½“å‰çš„URLå‘é€ä¸€ä¸ªå¤–éƒ¨é‡å®šå‘</td></tr>
 <tr><td><a href="mod_alias.html#redirectpermanent">RedirectPermanent <var>URL-path</var> <var>URL</var></a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">·¢ËÍÒ»¸öÍâ²¿ÓÀ¾ÃÖØ¶¨ÏòÊ¹¿Í»§¶ËÖØ¶¨Ïòµ½Ò»¸ö²»Í¬µÄURL</td></tr>
+<tr><td class="descr" colspan="4">å‘é€ä¸€ä¸ªå¤–éƒ¨æ°¸ä¹…é‡å®šå‘ä½¿å®¢æˆ·ç«¯é‡å®šå‘åˆ°ä¸€ä¸ªä¸åŒçš„URL</td></tr>
 <tr class="odd"><td><a href="mod_alias.html#redirecttemp">RedirectTemp <var>URL-path</var> <var>URL</var></a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·¢ËÍÒ»¸öÍâ²¿ÁÙÊ±ÖØ¶¨ÏòÊ¹¿Í»§¶ËÖØ¶¨Ïòµ½Ò»¸ö²»Í¬µÄURL</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å‘é€ä¸€ä¸ªå¤–éƒ¨ä¸´æ—¶é‡å®šå‘ä½¿å®¢æˆ·ç«¯é‡å®šå‘åˆ°ä¸€ä¸ªä¸åŒçš„URL</td></tr>
 <tr><td><a href="mod_mime.html#removecharset">RemoveCharset <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">É¾³ıÈÎºÎ¸ø¶¨µÄÀ©Õ¹ÃûÓëÄÚÈİ×Ö·û¼¯Ö®¼äµÄ¹ØÁª</td></tr>
+<tr><td class="descr" colspan="4">åˆ é™¤ä»»ä½•ç»™å®šçš„æ‰©å±•åä¸å†…å®¹å­—ç¬¦é›†ä¹‹é—´çš„å…³è”</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#removeencoding">RemoveEncoding <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">É¾³ıÈÎºÎ¸ø¶¨µÄÀ©Õ¹ÃûÓëÄÚÈİ±àÂë·½Ê½Ö®¼äµÄ¹ØÁª</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åˆ é™¤ä»»ä½•ç»™å®šçš„æ‰©å±•åä¸å†…å®¹ç¼–ç æ–¹å¼ä¹‹é—´çš„å…³è”</td></tr>
 <tr><td><a href="mod_mime.html#removehandler">RemoveHandler <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">É¾³ıÈÎºÎÖ¸¶¨À©Õ¹ÃûÓë´¦ÀíÆ÷Ö®¼äµÄ¹ØÁª</td></tr>
+<tr><td class="descr" colspan="4">åˆ é™¤ä»»ä½•æŒ‡å®šæ‰©å±•åä¸å¤„ç†å™¨ä¹‹é—´çš„å…³è”</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#removeinputfilter">RemoveInputFilter <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">É¾³ıÖ¸¶¨À©Õ¹ÃûÓëÊäÈë¹ıÂËÆ÷Ö®¼äµÄ¹ØÁª</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åˆ é™¤æŒ‡å®šæ‰©å±•åä¸è¾“å…¥è¿‡æ»¤å™¨ä¹‹é—´çš„å…³è”</td></tr>
 <tr><td><a href="mod_mime.html#removelanguage">RemoveLanguage <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">É¾³ıÖ¸¶¨µÄÀ©Õ¹ÃûÓëÄÚÈİÓïÑÔÖ®¼äµÄ¹ØÁª</td></tr>
+<tr><td class="descr" colspan="4">åˆ é™¤æŒ‡å®šçš„æ‰©å±•åä¸å†…å®¹è¯­è¨€ä¹‹é—´çš„å…³è”</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#removeoutputfilter">RemoveOutputFilter <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">É¾³ıÖ¸¶¨À©Õ¹ÃûÓëÊä³ö¹ıÂËÆ÷Ö®¼äµÄ¹ØÁª</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åˆ é™¤æŒ‡å®šæ‰©å±•åä¸è¾“å‡ºè¿‡æ»¤å™¨ä¹‹é—´çš„å…³è”</td></tr>
 <tr><td><a href="mod_mime.html#removetype">RemoveType <var>extension</var> [<var>extension</var>] ...</a></td><td></td><td>vdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">É¾³ıÖ¸¶¨À©Õ¹ÃûÓëÄÚÈİÀàĞÍÖ®¼äµÄ¹ØÁª</td></tr>
+<tr><td class="descr" colspan="4">åˆ é™¤æŒ‡å®šæ‰©å±•åä¸å†…å®¹ç±»å‹ä¹‹é—´çš„å…³è”</td></tr>
 <tr class="odd"><td><a href="mod_headers.html#requestheader">RequestHeader set|append|add|unset <var>header</var>
 [<var>value</var>] [early|env=[!]<var>variable</var>]</a></td><td></td><td>svdh</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÅäÖÃHTTPÇëÇóÍ·</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é…ç½®HTTPè¯·æ±‚å¤´</td></tr>
 <tr><td><a href="core.html#require">Require <var>entity-name</var> [<var>entity-name</var>] ...</a></td><td></td><td>dh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÄÄĞ©ÈÏÖ¤ÓÃ»§ÔÊĞí·ÃÎÊ¸Ã×ÊÔ´</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šå“ªäº›è®¤è¯ç”¨æˆ·å…è®¸è®¿é—®è¯¥èµ„æº</td></tr>
 <tr class="odd"><td><a href="mod_rewrite.html#rewritebase">RewriteBase <em>URL-path</em></a></td><td></td><td>dh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Sets the base URL for per-directory rewrites</td></tr>
 <tr><td><a href="mod_rewrite.html#rewritecond"> RewriteCond
@@ -707,70 +707,70 @@ engine</td></tr>
       <em>Pattern</em> <em>Substitution</em></a></td><td></td><td>svdh</td><td>E</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Defines rules for the rewriting engine</td></tr>
 <tr><td><a href="core.html#rlimitcpu">RLimitCPU <var>seconds</var>|max [<var>seconds</var>|max]</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÏŞÖÆApache×Ó½ø³ÌÅÉÉúµÄ½ø³ÌÕ¼ÓÃCPUµÄ×î´óÃëÊı</td></tr>
+<tr><td class="descr" colspan="4">é™åˆ¶Apacheå­è¿›ç¨‹æ´¾ç”Ÿçš„è¿›ç¨‹å ç”¨CPUçš„æœ€å¤§ç§’æ•°</td></tr>
 <tr class="odd"><td><a href="core.html#rlimitmem">RLimitMEM <var>bytes</var>|max [<var>bytes</var>|max]</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÏŞÖÆÓÉApache×Ó½ø³ÌÅÉÉúµÄ½ø³ÌÕ¼ÓÃµÄ×î´óÄÚ´æ×Ö½ÚÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é™åˆ¶ç”±Apacheå­è¿›ç¨‹æ´¾ç”Ÿçš„è¿›ç¨‹å ç”¨çš„æœ€å¤§å†…å­˜å­—èŠ‚æ•°</td></tr>
 <tr><td><a href="core.html#rlimitnproc">RLimitNPROC <var>number</var>|max [<var>number</var>|max]</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÏŞÖÆÓÉApache×Ó½ø³ÌÅÉÉúµÄ½ø³ÌËùÅÉÉúµÄ½ø³ÌÊıÄ¿</td></tr>
+<tr><td class="descr" colspan="4">é™åˆ¶ç”±Apacheå­è¿›ç¨‹æ´¾ç”Ÿçš„è¿›ç¨‹æ‰€æ´¾ç”Ÿçš„è¿›ç¨‹æ•°ç›®</td></tr>
 <tr class="odd"><td><a href="core.html#satisfy" id="S" name="S">Satisfy Any|All</a></td><td> All </td><td>dh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö÷»ú¼¶±ğµÄ·ÃÎÊ¿ØÖÆºÍÓÃ»§ÈÏÖ¤Ö®¼äµÄÏà»¥¹ØÏµ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä¸»æœºçº§åˆ«çš„è®¿é—®æ§åˆ¶å’Œç”¨æˆ·è®¤è¯ä¹‹é—´çš„ç›¸äº’å…³ç³»</td></tr>
 <tr><td><a href="mpm_common.html#scoreboardfile">ScoreBoardFile <var>file-path</var></a></td><td> logs/apache_status </td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">´æ´¢×Ó½ø³ÌĞ­µ÷Êı¾İ(coordination data)µÄÎÄ¼ş</td></tr>
+<tr><td class="descr" colspan="4">å­˜å‚¨å­è¿›ç¨‹åè°ƒæ•°æ®(coordination data)çš„æ–‡ä»¶</td></tr>
 <tr class="odd"><td><a href="mod_actions.html#script">Script <var>method</var> <var>cgi-script</var></a></td><td></td><td>svd</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶ÔÌØ¶¨µÄÇëÇó·½·¨¼¤»îÒ»¸öCGI½Å±¾</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯¹ç‰¹å®šçš„è¯·æ±‚æ–¹æ³•æ¿€æ´»ä¸€ä¸ªCGIè„šæœ¬</td></tr>
 <tr><td><a href="mod_alias.html#scriptalias">ScriptAlias <var>URL-path</var>
 <var>file-path</var>|<var>directory-path</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Ó³ÉäÒ»¸öURLµ½ÎÄ¼şÏµÍ³²¢ÊÓÖ®ÎªCGI½Å±¾</td></tr>
+<tr><td class="descr" colspan="4">æ˜ å°„ä¸€ä¸ªURLåˆ°æ–‡ä»¶ç³»ç»Ÿå¹¶è§†ä¹‹ä¸ºCGIè„šæœ¬</td></tr>
 <tr class="odd"><td><a href="mod_alias.html#scriptaliasmatch">ScriptAliasMatch <var>regex</var>
 <var>file-path</var>|<var>directory-path</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ê¹ÓÃÕıÔò±í´ïÊ½Ó³ÉäÒ»¸öURLµ½ÎÄ¼şÏµÍ³²¢ÊÓÖ®ÎªCGI½Å±¾</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼æ˜ å°„ä¸€ä¸ªURLåˆ°æ–‡ä»¶ç³»ç»Ÿå¹¶è§†ä¹‹ä¸ºCGIè„šæœ¬</td></tr>
 <tr><td><a href="core.html#scriptinterpretersource">ScriptInterpreterSource Registry|Registry-Strict|Script</a></td><td> Script </td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">¶¨Î»CGI½Å±¾½âÊÍÆ÷</td></tr>
+<tr><td class="descr" colspan="4">å®šä½CGIè„šæœ¬è§£é‡Šå™¨</td></tr>
 <tr class="odd"><td><a href="mod_cgi.html#scriptlog">ScriptLog <var>file-path</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">CGI½Å±¾´íÎóÈÕÖ¾ÎÄ¼şµÄÎ»ÖÃ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">CGIè„šæœ¬é”™è¯¯æ—¥å¿—æ–‡ä»¶çš„ä½ç½®</td></tr>
 <tr><td><a href="mod_cgi.html#scriptlogbuffer">ScriptLogBuffer <var>bytes</var></a></td><td> 1024 </td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">¼ÇÈëÈÕÖ¾ÎÄ¼şµÄPUT»òPOSTÇëÇóÍ·µÄ×î´óÊıÁ¿</td></tr>
+<tr><td class="descr" colspan="4">è®°å…¥æ—¥å¿—æ–‡ä»¶çš„PUTæˆ–POSTè¯·æ±‚å¤´çš„æœ€å¤§æ•°é‡</td></tr>
 <tr class="odd"><td><a href="mod_cgi.html#scriptloglength">ScriptLogLength <var>bytes</var></a></td><td> 10385760 </td><td>sv</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÈÕÖ¾ÎÄ¼şµÄ´óĞ¡ÏŞÖÆ(×Ö½Ú)</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ—¥å¿—æ–‡ä»¶çš„å¤§å°é™åˆ¶(å­—èŠ‚)</td></tr>
 <tr><td><a href="mod_cgid.html#scriptsock">ScriptSock <var>file-path</var></a></td><td> logs/cgisock </td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÓÃÀ´ÓëCGIÊØ»¤½ø³ÌÍ¨ĞÅµÄÌ×½Ó×ÖÎÄ¼şÃûÇ°×º</td></tr>
+<tr><td class="descr" colspan="4">ç”¨æ¥ä¸CGIå®ˆæŠ¤è¿›ç¨‹é€šä¿¡çš„å¥—æ¥å­—æ–‡ä»¶åå‰ç¼€</td></tr>
 <tr class="odd"><td><a href="mod_nw_ssl.html#securelisten">SecureListen [<var>IP-address</var>:]<var>portnumber</var>
 <var>Certificate-Name</var> [MUTUAL]</a></td><td></td><td>s</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÔÚÖ¸¶¨¶Ë¿ÚÆôÓÃSSL¼ÓÃÜ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åœ¨æŒ‡å®šç«¯å£å¯ç”¨SSLåŠ å¯†</td></tr>
 <tr><td><a href="mpm_common.html#sendbuffersize">SendBufferSize <var>bytes</var></a></td><td> 0 </td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">TCP·¢ËÍ»º³åÇø´óĞ¡(×Ö½Ú)</td></tr>
+<tr><td class="descr" colspan="4">TCPå‘é€ç¼“å†²åŒºå¤§å°(å­—èŠ‚)</td></tr>
 <tr class="odd"><td><a href="core.html#serveradmin">ServerAdmin <var>email-address</var>|<var>URL</var></a></td><td></td><td>sv</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·şÎñÆ÷·µ»Ø¸ø¿Í»§¶ËµÄ´íÎóĞÅÏ¢ÖĞ°üº¬µÄ¹ÜÀíÔ±ÓÊ¼şµØÖ·</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœåŠ¡å™¨è¿”å›ç»™å®¢æˆ·ç«¯çš„é”™è¯¯ä¿¡æ¯ä¸­åŒ…å«çš„ç®¡ç†å‘˜é‚®ä»¶åœ°å€</td></tr>
 <tr><td><a href="core.html#serveralias">ServerAlias <var>hostname</var> [<var>hostname</var>] ...</a></td><td></td><td>v</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">Æ¥ÅäÒ»¸ö»ùÓÚÓòÃûµÄĞéÄâÖ÷»úµÄ±ğÃû</td></tr>
+<tr><td class="descr" colspan="4">åŒ¹é…ä¸€ä¸ªåŸºäºåŸŸåçš„è™šæ‹Ÿä¸»æœºçš„åˆ«å</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#serverlimit">ServerLimit <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·şÎñÆ÷ÔÊĞíÅäÖÃµÄ½ø³ÌÊıÉÏÏŞ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœåŠ¡å™¨å…è®¸é…ç½®çš„è¿›ç¨‹æ•°ä¸Šé™</td></tr>
 <tr><td><a href="core.html#servername">ServerName <var>fully-qualified-domain-name</var>[:<var>port</var>]</a></td><td></td><td>sv</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">·şÎñÆ÷ÓÃÓÚ±æÊ¶×Ô¼ºµÄÖ÷»úÃûºÍ¶Ë¿ÚºÅ</td></tr>
+<tr><td class="descr" colspan="4">æœåŠ¡å™¨ç”¨äºè¾¨è¯†è‡ªå·±çš„ä¸»æœºåå’Œç«¯å£å·</td></tr>
 <tr class="odd"><td><a href="core.html#serverpath">ServerPath <var>URL-path</var></a></td><td></td><td>v</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Îª¼æÈİĞÔ²»ºÃµÄä¯ÀÀÆ÷·ÃÎÊ»ùÓÚÓòÃûµÄĞéÄâÖ÷»ú±£ÁôµÄURLÂ·¾¶Ãû</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ä¸ºå…¼å®¹æ€§ä¸å¥½çš„æµè§ˆå™¨è®¿é—®åŸºäºåŸŸåçš„è™šæ‹Ÿä¸»æœºä¿ç•™çš„URLè·¯å¾„å</td></tr>
 <tr><td><a href="core.html#serverroot">ServerRoot <var>directory-path</var></a></td><td> /usr/local/apache </td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">°²×°·şÎñÆ÷µÄ»ù´¡Ä¿Â¼</td></tr>
+<tr><td class="descr" colspan="4">å®‰è£…æœåŠ¡å™¨çš„åŸºç¡€ç›®å½•</td></tr>
 <tr class="odd"><td><a href="core.html#serversignature">ServerSignature On|Off|EMail</a></td><td> Off </td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÅäÖÃ·şÎñÆ÷Éú³ÉÒ³ÃæµÄÒ³½Å</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é…ç½®æœåŠ¡å™¨ç”Ÿæˆé¡µé¢çš„é¡µè„š</td></tr>
 <tr><td><a href="core.html#servertokens">ServerTokens Major|Minor|Min[imal]|Prod[uctOnly]|OS|Full</a></td><td> Full </td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÅäÖÃ&quot;Server:&quot;Ó¦´ğÍ·</td></tr>
+<tr><td class="descr" colspan="4">é…ç½®&quot;Server:&quot;åº”ç­”å¤´</td></tr>
 <tr class="odd"><td><a href="mod_env.html#setenv">SetEnv <var>env-variable</var> <var>value</var></a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÉèÖÃ»·¾³±äÁ¿</td></tr>
+<tr class="odd"><td class="descr" colspan="4">è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
 <tr><td><a href="mod_setenvif.html#setenvif">SetEnvIf <em>attribute
     regex [!]env-variable</em>[=<em>value</em>]
     [[!]<em>env-variable</em>[=<em>value</em>]] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">¸ù¾İ¿Í»§¶ËÇëÇóÊôĞÔÉèÖÃ»·¾³±äÁ¿</td></tr>
+<tr><td class="descr" colspan="4">æ ¹æ®å®¢æˆ·ç«¯è¯·æ±‚å±æ€§è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
 <tr class="odd"><td><a href="mod_setenvif.html#setenvifnocase">SetEnvIfNoCase <em>attribute regex 
         [!]env-variable</em>[=<em>value</em>]
     [[!]<em>env-variable</em>[=<em>value</em>]] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¸ù¾İ´óĞ¡Ğ´ÎŞ¹ØµÄ¿Í»§¶ËÇëÇóÊôĞÔÉèÖÃ»·¾³±äÁ¿</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ ¹æ®å¤§å°å†™æ— å…³çš„å®¢æˆ·ç«¯è¯·æ±‚å±æ€§è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
 <tr><td><a href="core.html#sethandler">SetHandler <var>handler-name</var>|None</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">Ç¿ÖÆËùÓĞÆ¥ÅäµÄÎÄ¼ş±»Ò»¸öÖ¸¶¨µÄ´¦ÀíÆ÷´¦Àí</td></tr>
+<tr><td class="descr" colspan="4">å¼ºåˆ¶æ‰€æœ‰åŒ¹é…çš„æ–‡ä»¶è¢«ä¸€ä¸ªæŒ‡å®šçš„å¤„ç†å™¨å¤„ç†</td></tr>
 <tr class="odd"><td><a href="core.html#setinputfilter">SetInputFilter <var>filter</var>[;<var>filter</var>...]</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÉèÖÃ´¦Àí¿Í»§¶ËÇëÇóºÍPOSTÊäÈëÊ±Ê¹ÓÃµÄ¹ıÂËÆ÷</td></tr>
+<tr class="odd"><td class="descr" colspan="4">è®¾ç½®å¤„ç†å®¢æˆ·ç«¯è¯·æ±‚å’ŒPOSTè¾“å…¥æ—¶ä½¿ç”¨çš„è¿‡æ»¤å™¨</td></tr>
 <tr><td><a href="core.html#setoutputfilter">SetOutputFilter <var>filter</var>[;<var>filter</var>...]</a></td><td></td><td>svdh</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÉèÖÃÓÃÓÚ´¦Àí·şÎñÆ÷Êä³öÓ¦´ğµÄ¹ıÂËÆ÷</td></tr>
+<tr><td class="descr" colspan="4">è®¾ç½®ç”¨äºå¤„ç†æœåŠ¡å™¨è¾“å‡ºåº”ç­”çš„è¿‡æ»¤å™¨</td></tr>
 <tr class="odd"><td><a href="mod_include.html#ssiendtag">SSIEndTag <var>tag</var></a></td><td> "--&gt;" </td><td>sv</td><td>B</td></tr>
 <tr class="odd"><td class="descr" colspan="4">String that ends an include element</td></tr>
 <tr><td><a href="mod_include.html#ssierrormsg">SSIErrorMsg <var>message</var></a></td><td> "[an error occurred +</td><td>svdh</td><td>B</td></tr>
@@ -878,54 +878,54 @@ in the Session Cache</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Maximum depth of CA Certificates in Client 
 Certificate verification</td></tr>
 <tr><td><a href="mpm_common.html#startservers">StartServers <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">·şÎñÆ÷Æô¶¯Ê±½¨Á¢µÄ×Ó½ø³ÌÊı</td></tr>
+<tr><td class="descr" colspan="4">æœåŠ¡å™¨å¯åŠ¨æ—¶å»ºç«‹çš„å­è¿›ç¨‹æ•°</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#startthreads">StartThreads <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">·şÎñÆ÷Æô¶¯Ê±½¨Á¢µÄÏß³ÌÊı</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æœåŠ¡å™¨å¯åŠ¨æ—¶å»ºç«‹çš„çº¿ç¨‹æ•°</td></tr>
 <tr><td><a href="mod_suexec.html#suexecusergroup">SuexecUserGroup <em>User Group</em></a></td><td></td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">ÔËĞĞCGI³ÌĞòµÄÓÃ»§ºÍ×é</td></tr>
+<tr><td class="descr" colspan="4">è¿è¡ŒCGIç¨‹åºçš„ç”¨æˆ·å’Œç»„</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#threadlimit" id="T" name="T">ThreadLimit <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ã¿¸ö×Ó½ø³Ì¿ÉÅäÖÃµÄÏß³ÌÊıÉÏÏŞ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æ¯ä¸ªå­è¿›ç¨‹å¯é…ç½®çš„çº¿ç¨‹æ•°ä¸Šé™</td></tr>
 <tr><td><a href="mpm_common.html#threadsperchild">ThreadsPerChild <var>number</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">Ã¿¸ö×Ó½ø³Ì½¨Á¢µÄÏß³ÌÊı</td></tr>
+<tr><td class="descr" colspan="4">æ¯ä¸ªå­è¿›ç¨‹å»ºç«‹çš„çº¿ç¨‹æ•°</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#threadstacksize">ThreadStackSize <var>size</var></a></td><td></td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">´¦Àí¿Í»§¶ËÁ¬½ÓµÄÏß³ÌÊ¹ÓÃµÄÕ»³ß´ç(×Ö½Ú)</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¤„ç†å®¢æˆ·ç«¯è¿æ¥çš„çº¿ç¨‹ä½¿ç”¨çš„æ ˆå°ºå¯¸(å­—èŠ‚)</td></tr>
 <tr><td><a href="core.html#timeout">TimeOut <var>seconds</var></a></td><td> 300 </td><td>s</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">·şÎñÆ÷ÔÚ¶Ï¶¨ÇëÇóÊ§°ÜÇ°µÈ´ıµÄÃëÊı</td></tr>
+<tr><td class="descr" colspan="4">æœåŠ¡å™¨åœ¨æ–­å®šè¯·æ±‚å¤±è´¥å‰ç­‰å¾…çš„ç§’æ•°</td></tr>
 <tr class="odd"><td><a href="core.html#traceenable">TraceEnable <var>[on|off|extended]</var></a></td><td> on </td><td>s</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">È·¶¨ÈçºÎ´¦ÀíTRACEÇëÇó</td></tr>
+<tr class="odd"><td class="descr" colspan="4">ç¡®å®šå¦‚ä½•å¤„ç†TRACEè¯·æ±‚</td></tr>
 <tr><td><a href="mod_log_config.html#transferlog">TransferLog <var>file</var>|<var>pipe</var></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">Ö¸¶¨ÈÕÖ¾ÎÄ¼şµÄÎ»ÖÃ</td></tr>
+<tr><td class="descr" colspan="4">æŒ‡å®šæ—¥å¿—æ–‡ä»¶çš„ä½ç½®</td></tr>
 <tr class="odd"><td><a href="mod_mime.html#typesconfig">TypesConfig <var>file-path</var></a></td><td> conf/mime.types </td><td>s</td><td>B</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Ö¸¶¨mime.typesÎÄ¼şµÄÎ»ÖÃ</td></tr>
+<tr class="odd"><td class="descr" colspan="4">æŒ‡å®šmime.typesæ–‡ä»¶çš„ä½ç½®</td></tr>
 <tr><td><a href="mod_env.html#unsetenv" id="U" name="U">UnsetEnv <var>env-variable</var> [<var>env-variable</var>] ...</a></td><td></td><td>svdh</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">É¾³ıÒ»¸ö»·¾³±äÁ¿</td></tr>
+<tr><td class="descr" colspan="4">åˆ é™¤ä¸€ä¸ªç¯å¢ƒå˜é‡</td></tr>
 <tr class="odd"><td><a href="core.html#usecanonicalname">UseCanonicalName On|Off|DNS</a></td><td> Off </td><td>svd</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">ÅäÖÃ·şÎñÆ÷ÈçºÎÈ·¶¨Ëü×Ô¼ºµÄÓòÃû</td></tr>
+<tr class="odd"><td class="descr" colspan="4">é…ç½®æœåŠ¡å™¨å¦‚ä½•ç¡®å®šå®ƒè‡ªå·±çš„åŸŸå</td></tr>
 <tr><td><a href="core.html#usecanonicalphysicalport">UseCanonicalPhysicalPort On|Off</a></td><td> Off </td><td>svd</td><td>C</td></tr>
-<tr><td class="descr" colspan="4">ÅäÖÃ·şÎñÆ÷ÈçºÎÈ·¶¨×Ô¼ºµÄ¶Ë¿Ú</td></tr>
+<tr><td class="descr" colspan="4">é…ç½®æœåŠ¡å™¨å¦‚ä½•ç¡®å®šè‡ªå·±çš„ç«¯å£</td></tr>
 <tr class="odd"><td><a href="mpm_common.html#user">User <var>unix-userid</var></a></td><td> #-1 </td><td>s</td><td>M</td></tr>
-<tr class="odd"><td class="descr" colspan="4">Êµ¼Ê·şÎñÓÚÇëÇóµÄ×Ó½ø³ÌÔËĞĞÊ±µÄÓÃ»§</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å®é™…æœåŠ¡äºè¯·æ±‚çš„å­è¿›ç¨‹è¿è¡Œæ—¶çš„ç”¨æˆ·</td></tr>
 <tr><td><a href="mod_userdir.html#userdir">UserDir <em>directory-filename</em></a></td><td></td><td>sv</td><td>B</td></tr>
-<tr><td class="descr" colspan="4">ÓÃ»§ÍøÕ¾Ä¿Â¼µÄÎ»ÖÃ</td></tr>
+<tr><td class="descr" colspan="4">ç”¨æˆ·ç½‘ç«™ç›®å½•çš„ä½ç½®</td></tr>
 <tr class="odd"><td><a href="mod_vhost_alias.html#virtualdocumentroot" id="V" name="V">VirtualDocumentRoot <em>interpolated-directory</em>|none</a></td><td> none </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶ÔÓÚ¸ø¶¨µÄ»ùÓÚÃû³ÆµÄĞéÄâÖ÷»ú¶¯Ì¬ÅäÖÃ¸ùÎÄµµÄ¿Â¼</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯¹äºç»™å®šçš„åŸºäºåç§°çš„è™šæ‹Ÿä¸»æœºåŠ¨æ€é…ç½®æ ¹æ–‡æ¡£ç›®å½•</td></tr>
 <tr><td><a href="mod_vhost_alias.html#virtualdocumentrootip">VirtualDocumentRootIP <em>interpolated-directory</em>|none</a></td><td> none </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">¶ÔÓÚ¸ø¶¨µÄ»ùÓÚIPµÄĞéÄâÖ÷»ú¶¯Ì¬ÅäÖÃ¸ùÎÄµµÄ¿Â¼</td></tr>
+<tr><td class="descr" colspan="4">å¯¹äºç»™å®šçš„åŸºäºIPçš„è™šæ‹Ÿä¸»æœºåŠ¨æ€é…ç½®æ ¹æ–‡æ¡£ç›®å½•</td></tr>
 <tr class="odd"><td><a href="core.html#virtualhost">&lt;VirtualHost
     <var>addr</var>[:<var>port</var>] [<var>addr</var>[:<var>port</var>]]
     ...&gt; ... &lt;/VirtualHost&gt;</a></td><td></td><td>s</td><td>C</td></tr>
-<tr class="odd"><td class="descr" colspan="4">°üº¬½ö×÷ÓÃÓÚÖ¸¶¨Ö÷»úÃû»òIPµØÖ·µÄÖ¸Áî</td></tr>
+<tr class="odd"><td class="descr" colspan="4">åŒ…å«ä»…ä½œç”¨äºæŒ‡å®šä¸»æœºåæˆ–IPåœ°å€çš„æŒ‡ä»¤</td></tr>
 <tr><td><a href="mod_vhost_alias.html#virtualscriptalias">VirtualScriptAlias <em>interpolated-directory</em>|none</a></td><td> none </td><td>sv</td><td>E</td></tr>
-<tr><td class="descr" colspan="4">¶ÔÓÚ¸ø¶¨µÄ»ùÓÚÃû³ÆµÄĞéÄâÖ÷»ú¶¯Ì¬ÅäÖÃCGIÄ¿Â¼</td></tr>
+<tr><td class="descr" colspan="4">å¯¹äºç»™å®šçš„åŸºäºåç§°çš„è™šæ‹Ÿä¸»æœºåŠ¨æ€é…ç½®CGIç›®å½•</td></tr>
 <tr class="odd"><td><a href="mod_vhost_alias.html#virtualscriptaliasip">VirtualScriptAliasIP <em>interpolated-directory</em>|none</a></td><td> none </td><td>sv</td><td>E</td></tr>
-<tr class="odd"><td class="descr" colspan="4">¶ÔÓÚ¸ø¶¨µÄ»ùÓÚIPµÄĞéÄâÖ÷»ú¶¯Ì¬ÅäÖÃCGIÄ¿Â¼</td></tr>
+<tr class="odd"><td class="descr" colspan="4">å¯¹äºç»™å®šçš„åŸºäºIPçš„è™šæ‹Ÿä¸»æœºåŠ¨æ€é…ç½®CGIç›®å½•</td></tr>
 <tr><td><a href="mpm_winnt.html#win32disableacceptex" id="W" name="W">Win32DisableAcceptEx</a></td><td></td><td>s</td><td>M</td></tr>
-<tr><td class="descr" colspan="4">Ê¹ÓÃaccept()´úÌæAcceptEx()½ÓÊÜÍøÂçÁ´½Ó</td></tr>
+<tr><td class="descr" colspan="4">ä½¿ç”¨accept()ä»£æ›¿AcceptEx()æ¥å—ç½‘ç»œé“¾æ¥</td></tr>
 <tr class="odd"><td><a href="mod_include.html#xbithack" id="X" name="X">XBitHack on|off|full</a></td><td> off </td><td>svdh</td><td>B</td></tr>
 <tr class="odd"><td class="descr" colspan="4">Parse SSI directives in files with the execute bit
 set</td></tr>
 </table></div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

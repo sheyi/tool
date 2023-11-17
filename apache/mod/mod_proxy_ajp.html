@@ -1,41 +1,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_proxy_ajp £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_proxy_ajp ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_proxy_ajp</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_proxy_ajp</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td><code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>µÄÀ©Õ¹£¬Ìá¹©Apache JServ ProtocolÖ§³Ö</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>proxy_ajp_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>proxy_ajp.c</td></tr>
-<tr><th><a href="module-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>½öÔÚ Apache 2.1 ¼°ÒÔºóµÄ°æ±¾ÖĞ¿ÉÓÃ</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td><code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>çš„æ‰©å±•ï¼Œæä¾›Apache JServ Protocolæ”¯æŒ</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>proxy_ajp_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>proxy_ajp.c</td></tr>
+<tr><th><a href="module-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>ä»…åœ¨ Apache 2.1 åŠä»¥åçš„ç‰ˆæœ¬ä¸­å¯ç”¨</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
     <p>This module <em>requires</em> the service of <code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>. It provides support for the 
     <code>Apache JServ Protocol version 1.3</code> (hereafter
     <em>AJP13</em>).</p>
 
     <p>Thus, in order to get the ability of handling <code>AJP13</code>
-    protocol, <code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>ºÍ<code class="module"><a href="../mod/mod_proxy_ajp.html">mod_proxy_ajp</a></code> have to be present in the server.</p>
+    protocol, <code class="module"><a href="../mod/mod_proxy.html">mod_proxy</a></code>å’Œ<code class="module"><a href="../mod/mod_proxy_ajp.html">mod_proxy_ajp</a></code> have to be present in the server.</p>
 
-    <div class="warning"><h3>¾¯¸æ</h3>
-      <p>ÔÚÄúÃ»ÓĞ<a href="mod_proxy.html#access">¶ÔÄúµÄ·şÎñÆ÷²ÉÈ¡°²È«´ëÊ©</a>Ö®Ç°£¬²»ÒªÆôÓÃ´úÀí¡£¿ª·ÅµÄ´úÀí·şÎñÆ÷¶ÔÄã×Ô¼ºµÄÄÚ²¿ÍøÂçºÍ´ó¹æÄ£µÄInternetÍø¶¼ÊÇÓĞ°²È«Òş»¼µÄ¡£</p>
+    <div class="warning"><h3>è­¦å‘Š</h3>
+      <p>åœ¨æ‚¨æ²¡æœ‰<a href="mod_proxy.html#access">å¯¹æ‚¨çš„æœåŠ¡å™¨é‡‡å–å®‰å…¨æªæ–½</a>ä¹‹å‰ï¼Œä¸è¦å¯ç”¨ä»£ç†ã€‚å¼€æ”¾çš„ä»£ç†æœåŠ¡å™¨å¯¹ä½ è‡ªå·±çš„å†…éƒ¨ç½‘ç»œå’Œå¤§è§„æ¨¡çš„Internetç½‘éƒ½æ˜¯æœ‰å®‰å…¨éšæ‚£çš„ã€‚</p>
     </div>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
@@ -304,7 +304,7 @@ attribute_value := (string)
     <p>This works on the assumption that no header names will have length
     greater than <code>0x9999 (==0xA000 - 1)</code>, which is perfectly
     reasonable, though somewhat arbitrary.</p>
-    <div class="note"><h3>×¢Òâ£º</h3>
+    <div class="note"><h3>æ³¨æ„ï¼š</h3>
     The <code>content-length</code> header is extremely
     important.  If it is present and non-zero, the container assumes that
     the request has a body (a POST request, for example), and immediately
@@ -337,13 +337,13 @@ attribute_value := (string)
 <tr><td>?ssl_key_size</td><td>0x0B</td><td /></tr>
 <tr><td>are_done</td><td>0xFF</td><td>request_terminator</td></tr>
 </table>
-    <p><code>context</code>ºÍ<code>servlet_path</code> are not
+    <p><code>context</code>å’Œ<code>servlet_path</code> are not
     currently set by the C code, and most of the Java code completely ignores
     whatever is sent over for those fields (and some of it will actually break
     if a string is sent along after one of those codes).  I don't know if this
     is a bug or an unimplemented feature or just vestigial code, but it's
     missing from both sides of the connection.</p>
-    <p><code>remote_user</code>ºÍ<code>auth_type</code> presumably
+    <p><code>remote_user</code>å’Œ<code>auth_type</code> presumably
     refer to HTTP-level authentication, and communicate the remote user's
     username and the type of authentication used to establish their identity
     (e.g. Basic, Digest).</p>
@@ -402,7 +402,7 @@ AJP13_GET_BODY_CHUNK :=
   
   <h3>Send Headers</h3>
     <p>The status code and message are the usual HTTP things
-    (e.g. <code>200</code>ºÍ<code>OK</code>). The response header names are
+    (e.g. <code>200</code>å’Œ<code>OK</code>). The response header names are
     encoded the same way the request header names are. See header_encoding above
     for details about how the the codes are distinguished from the strings.<br />
     The codes for common headers are:</p>
@@ -445,6 +445,6 @@ AJP13_GET_BODY_CHUNK :=
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

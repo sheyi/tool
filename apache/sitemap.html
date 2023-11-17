@@ -1,108 +1,108 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖÐÎÄ, ÊÖ²á, ÖÐÎÄ°æ, ÖÐÎÄÊÖ²á, ÖÐÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖÐÎÄ²Î¿¼ÊÖ²á, ½ð²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖÐÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ð²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="./style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="./style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="./style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>Õ¾µãµ¼º½ £­ Apache 2.2 ÖÐÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>ç«™ç‚¹å¯¼èˆª ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body id="manual-page">
-<div id="page-header"><p class="menu"><a href="./mod/index.html">Ä£¿éË÷Òý</a> | <a href="./mod/directives.html">Ö¸ÁîË÷Òý</a> | <a href="./faq/index.html">³£¼ûÎÊÌâ</a> | <a href="./glossary.html">´Ê»ã±í</a> | <a href="./sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="./images/feather.gif" /></div>
+<div id="page-header"><p class="menu"><a href="./mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="./mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="./faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="./glossary.html">è¯æ±‡è¡¨</a> | <a href="./sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="./images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="./images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="./index.html">°æ±¾2.2</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="./index.html">ç‰ˆæœ¬2.2</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="./translator_announcement.html#thanks">ÖÂÐ»</a> | ±¾ÆªÒëÕß£º<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">½ð²½¹ú</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">ÆäËû×÷Æ·</a>) | ±¾Ò³×îºó¸üÐÂ£º2006Äê10ÔÂ20ÈÕ[<a href="./translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îÐÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçÐÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>Õ¾µãµ¼º½</h1>
+<div id="translation-info">ã€€ã€€ <a href="./translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">é‡‘æ­¥å›½</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">å…¶ä»–ä½œå“</a>) | æœ¬é¡µæœ€åŽæ›´æ–°ï¼š2006å¹´10æœˆ20æ—¥[<a href="./translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>ç«™ç‚¹å¯¼èˆª</h1>
 
 
-<p>±¾Ò³ÁÐ³öÁËµ±Ç°ËùÓÐ¿ÉÓÃµÄ<a href="./index.html">Apache HTTP Server Version 2.2 ÎÄµµ</a>¡£</p>
+<p>æœ¬é¡µåˆ—å‡ºäº†å½“å‰æ‰€æœ‰å¯ç”¨çš„<a href="./index.html">Apache HTTP Server Version 2.2 æ–‡æ¡£</a>ã€‚</p>
 </div>
 	<div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="release" id="release">·¢ÐÐËµÃ÷</a></h2>
+<div class="section"><h2><a name="release" id="release">å‘è¡Œè¯´æ˜Ž</a></h2>
 <ul>
-<li><a href="translator_announcement.html">ÖÂÐ»ÓëÒëÕßÉùÃ÷</a></li>
-<li><a href="upgrading13to20.html">´Ó 1.3 Éý¼¶µ½ 2.0</a></li>
-<li><a href="upgrading.html">´Ó 2.0 Éý¼¶µ½ 2.2</a></li>
-<li><a href="new_features_2_2.html">Apache 2.1/2.2 µÄÐÂÌØÐÔ </a></li>
-<li><a href="new_features_2_0.html">Apache 2.0 µÄÐÂÌØÐÔ</a></li>
-<li><a href="license.html">Apache Ðí¿ÉÖ¤</a></li>
+<li><a href="translator_announcement.html">è‡´è°¢ä¸Žè¯‘è€…å£°æ˜Ž</a></li>
+<li><a href="upgrading13to20.html">ä»Ž 1.3 å‡çº§åˆ° 2.0</a></li>
+<li><a href="upgrading.html">ä»Ž 2.0 å‡çº§åˆ° 2.2</a></li>
+<li><a href="new_features_2_2.html">Apache 2.1/2.2 çš„æ–°ç‰¹æ€§ </a></li>
+<li><a href="new_features_2_0.html">Apache 2.0 çš„æ–°ç‰¹æ€§</a></li>
+<li><a href="license.html">Apache è®¸å¯è¯</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="using" id="using">Apache HTTP·þÎñÆ÷µÄÊ¹ÓÃ</a></h2>
-<ul><li><a href="install.html">±àÒëÓë°²×° Apache</a></li>
-<li><a href="invoking.html">Æô¶¯Apache</a></li>
-<li><a href="stopping.html">Í£Ö¹ºÍÖØÐÂÆô¶¯·þÎñÆ÷</a></li>
-<li><a href="configuring.html">ÅäÖÃÎÄ¼þ</a></li>
-<li><a href="sections.html">Directory¡¢Location¡¢Files ÅäÖÃ¶ÎµÄ¹¤×÷·½Ê½</a></li>
-<li><a href="caching.html">»º³åÖ¸ÄÏ</a></li>
-<li><a href="server-wide.html">·þÎñÆ÷È«¾ÖÅäÖÃ</a></li>
-<li><a href="logs.html">ÈÕÖ¾ÎÄ¼þ</a></li>
-<li><a href="urlmapping.html">´ÓURLµ½ÎÄ¼þÏµÍ³µÄÓ³Éä</a></li>
-<li><a href="dso.html">¶¯Ì¬¹²Ïí¶ÔÏó(DSO)Ö§³Ö</a></li>
-<li><a href="content-negotiation.html">ÄÚÈÝÐ­ÉÌ</a></li>
-<li><a href="custom-error.html">×Ô¶¨Òå´íÎóÏìÓ¦</a></li>
-<li><a href="bind.html">ÉèÖÃApache°ó¶¨µÄµØÖ·ºÍ¶Ë¿Ú</a></li>
-<li><a href="mpm.html">¶àÂ·´¦ÀíÄ£¿é(MPM) </a></li>
-<li><a href="env.html">ApacheµÄ»·¾³±äÁ¿</a></li>
-<li><a href="handler.html">Apache´¦ÀíÆ÷µÄÊ¹ÓÃ</a></li>
-<li><a href="filter.html">¹ýÂËÆ÷</a></li>
-<li><a href="suexec.html">suEXECÖ§³Ö</a></li>
+<div class="section"><h2><a name="using" id="using">Apache HTTPæœåŠ¡å™¨çš„ä½¿ç”¨</a></h2>
+<ul><li><a href="install.html">ç¼–è¯‘ä¸Žå®‰è£… Apache</a></li>
+<li><a href="invoking.html">å¯åŠ¨Apache</a></li>
+<li><a href="stopping.html">åœæ­¢å’Œé‡æ–°å¯åŠ¨æœåŠ¡å™¨</a></li>
+<li><a href="configuring.html">é…ç½®æ–‡ä»¶</a></li>
+<li><a href="sections.html">Directoryã€Locationã€Files é…ç½®æ®µçš„å·¥ä½œæ–¹å¼</a></li>
+<li><a href="caching.html">ç¼“å†²æŒ‡å—</a></li>
+<li><a href="server-wide.html">æœåŠ¡å™¨å…¨å±€é…ç½®</a></li>
+<li><a href="logs.html">æ—¥å¿—æ–‡ä»¶</a></li>
+<li><a href="urlmapping.html">ä»ŽURLåˆ°æ–‡ä»¶ç³»ç»Ÿçš„æ˜ å°„</a></li>
+<li><a href="dso.html">åŠ¨æ€å…±äº«å¯¹è±¡(DSO)æ”¯æŒ</a></li>
+<li><a href="content-negotiation.html">å†…å®¹åå•†</a></li>
+<li><a href="custom-error.html">è‡ªå®šä¹‰é”™è¯¯å“åº”</a></li>
+<li><a href="bind.html">è®¾ç½®Apacheç»‘å®šçš„åœ°å€å’Œç«¯å£</a></li>
+<li><a href="mpm.html">å¤šè·¯å¤„ç†æ¨¡å—(MPM) </a></li>
+<li><a href="env.html">Apacheçš„çŽ¯å¢ƒå˜é‡</a></li>
+<li><a href="handler.html">Apacheå¤„ç†å™¨çš„ä½¿ç”¨</a></li>
+<li><a href="filter.html">è¿‡æ»¤å™¨</a></li>
+<li><a href="suexec.html">suEXECæ”¯æŒ</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="vhosts" id="vhosts">ÐéÄâÖ÷»úÎÄµµ</a></h2>
-<ul><li class="separate"><a href="vhosts/index.html">Ë÷Òý</a></li>
-<li><a href="vhosts/name-based.html">»ùÓÚÖ÷»úÃûµÄÐéÄâÖ÷»ú</a></li>
-<li><a href="vhosts/ip-based.html">»ùÓÚIPµØÖ·µÄÐéÄâÖ÷»ú</a></li>
-<li><a href="vhosts/examples.html">ÐéÄâÖ÷»úÅäÖÃÊ¾Àý</a></li>
-<li><a href="vhosts/fd-limits.html">ÎÄ¼þÃèÊö·ûµÄÏÞÖÆ</a></li>
-<li><a href="vhosts/mass.html">¶¯Ì¬ÅäÖÃ´óÁ¿ÐéÄâÖ÷»ú</a></li>
-<li><a href="vhosts/details.html">ÉîÈëÌÖÂÛÐéÄâÖ÷»úµÄÆ¥Åä</a></li>
+<div class="section"><h2><a name="vhosts" id="vhosts">è™šæ‹Ÿä¸»æœºæ–‡æ¡£</a></h2>
+<ul><li class="separate"><a href="vhosts/index.html">ç´¢å¼•</a></li>
+<li><a href="vhosts/name-based.html">åŸºäºŽä¸»æœºåçš„è™šæ‹Ÿä¸»æœº</a></li>
+<li><a href="vhosts/ip-based.html">åŸºäºŽIPåœ°å€çš„è™šæ‹Ÿä¸»æœº</a></li>
+<li><a href="vhosts/examples.html">è™šæ‹Ÿä¸»æœºé…ç½®ç¤ºä¾‹</a></li>
+<li><a href="vhosts/fd-limits.html">æ–‡ä»¶æè¿°ç¬¦çš„é™åˆ¶</a></li>
+<li><a href="vhosts/mass.html">åŠ¨æ€é…ç½®å¤§é‡è™šæ‹Ÿä¸»æœº</a></li>
+<li><a href="vhosts/details.html">æ·±å…¥è®¨è®ºè™šæ‹Ÿä¸»æœºçš„åŒ¹é…</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="faq" id="faq">Apache·þÎñÆ÷³£¼ûÎÊÌâ½â´ð</a></h2>
-<ul><li><a href="faq/index.html">¸ÅÊö(±³¾°ÖªÊ¶/Ö§³Ö/´íÎóÐÅÏ¢)</a></li>
+<div class="section"><h2><a name="faq" id="faq">ApacheæœåŠ¡å™¨å¸¸è§é—®é¢˜è§£ç­”</a></h2>
+<ul><li><a href="faq/index.html">æ¦‚è¿°(èƒŒæ™¯çŸ¥è¯†/æ”¯æŒ/é”™è¯¯ä¿¡æ¯)</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="rewrite" id="rewrite">URLÖØÐ´</a></h2>
-<ul><li class="separate"><a href="rewrite/index.html">Ë÷Òý</a></li>
-<li><a href="rewrite/rewrite_intro.html">URLÖØÐ´£º¼ò½é</a></li>
-<li><a href="rewrite/rewrite_tech.html">URLÖØÐ´£º¼¼ÊõÏ¸½Ú</a></li>
-<li><a href="rewrite/rewrite_guide.html">URLÖØÐ´£º³õ¼¶Ö¸ÄÏ</a></li>
-<li><a href="rewrite/rewrite_guide_advanced.html">URLÖØÐ´£º¸ß¼¶Ö¸ÄÏ</a></li>
+<div class="section"><h2><a name="rewrite" id="rewrite">URLé‡å†™</a></h2>
+<ul><li class="separate"><a href="rewrite/index.html">ç´¢å¼•</a></li>
+<li><a href="rewrite/rewrite_intro.html">URLé‡å†™ï¼šç®€ä»‹</a></li>
+<li><a href="rewrite/rewrite_tech.html">URLé‡å†™ï¼šæŠ€æœ¯ç»†èŠ‚</a></li>
+<li><a href="rewrite/rewrite_guide.html">URLé‡å†™ï¼šåˆçº§æŒ‡å—</a></li>
+<li><a href="rewrite/rewrite_guide_advanced.html">URLé‡å†™ï¼šé«˜çº§æŒ‡å—</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="ssl" id="ssl">SSL/TLS¼ÓÃÜ</a></h2>
-<ul><li class="separate"><a href="ssl/index.html">Ë÷Òý</a></li>
-<li><a href="ssl/ssl_intro.html">SSL/TLS ¼ÓÃÜ£º¼ò½é</a></li>
-<li><a href="ssl/ssl_compat.html">SSL/TLS ¼ÓÃÜ£º¼æÈÝÐÔ</a></li>
-<li><a href="ssl/ssl_howto.html">SSL/TLS ¼ÓÃÜ£ºÈçºÎ...</a></li>
-<li><a href="ssl/ssl_faq.html">SSL/TLS ¼ÓÃÜ£º³£¼ûÎÊÌâ½â´ð</a></li>
+<div class="section"><h2><a name="ssl" id="ssl">SSL/TLSåŠ å¯†</a></h2>
+<ul><li class="separate"><a href="ssl/index.html">ç´¢å¼•</a></li>
+<li><a href="ssl/ssl_intro.html">SSL/TLS åŠ å¯†ï¼šç®€ä»‹</a></li>
+<li><a href="ssl/ssl_compat.html">SSL/TLS åŠ å¯†ï¼šå…¼å®¹æ€§</a></li>
+<li><a href="ssl/ssl_howto.html">SSL/TLS åŠ å¯†ï¼šå¦‚ä½•...</a></li>
+<li><a href="ssl/ssl_faq.html">SSL/TLS åŠ å¯†ï¼šå¸¸è§é—®é¢˜è§£ç­”</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="howto" id="howto">Ö¸µ¼ÐÔÎÄµµ(ÈçºÎ.../Ö¸ÄÏ)</a></h2>
-<ul><li class="separate"><a href="howto/index.html">Ë÷Òý</a></li>
-<li><a href="howto/auth.html">ÈÏÖ¤¡¢ÊÚÈ¨¡¢·ÃÎÊ¿ØÖÆ</a></li>
-<li><a href="howto/cgi.html">CGI¶¯Ì¬Ò³Ãæ</a></li>
-<li><a href="howto/ssi.html">·þÎñÆ÷¶Ë°üº¬(SSI)ÈëÃÅ</a></li>
-<li><a href="howto/htaccess.html">.htaccessÎÄ¼þ</a></li>
-<li><a href="howto/public_html.html">ÓÃ»§ÍøÕ¾Ä¿Â¼</a></li>
+<div class="section"><h2><a name="howto" id="howto">æŒ‡å¯¼æ€§æ–‡æ¡£(å¦‚ä½•.../æŒ‡å—)</a></h2>
+<ul><li class="separate"><a href="howto/index.html">ç´¢å¼•</a></li>
+<li><a href="howto/auth.html">è®¤è¯ã€æŽˆæƒã€è®¿é—®æŽ§åˆ¶</a></li>
+<li><a href="howto/cgi.html">CGIåŠ¨æ€é¡µé¢</a></li>
+<li><a href="howto/ssi.html">æœåŠ¡å™¨ç«¯åŒ…å«(SSI)å…¥é—¨</a></li>
+<li><a href="howto/htaccess.html">.htaccessæ–‡ä»¶</a></li>
+<li><a href="howto/public_html.html">ç”¨æˆ·ç½‘ç«™ç›®å½•</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="platform" id="platform">Õë¶ÔÌØ¶¨Æ½Ì¨µÄËµÃ÷</a></h2>
-<ul><li class="separate"><a href="platform/index.html">Ë÷Òý</a></li>
-<li><a href="platform/windows.html">ÔÚMicrosoft WindowsÖÐÊ¹ÓÃApache</a></li>
-<li><a href="platform/win_compiling.html">ÔÚMicrosoft WindowsÖÐ±àÒëApache</a></li>
-<li><a href="platform/netware.html">ÔÚNovell NetWareÖÐÔËÐÐApache</a></li>
-<li><a href="platform/perf-hp.html">ÔÚHPUXÉÏÔËÐÐ¸ßÐÔÄÜÍøÂç·þÎñÆ÷</a></li>
-<li><a href="platform/ebcdic.html">Apache¶ÔEBCDICµÄÒÆÖ²</a></li>
+<div class="section"><h2><a name="platform" id="platform">é’ˆå¯¹ç‰¹å®šå¹³å°çš„è¯´æ˜Ž</a></h2>
+<ul><li class="separate"><a href="platform/index.html">ç´¢å¼•</a></li>
+<li><a href="platform/windows.html">åœ¨Microsoft Windowsä¸­ä½¿ç”¨Apache</a></li>
+<li><a href="platform/win_compiling.html">åœ¨Microsoft Windowsä¸­ç¼–è¯‘Apache</a></li>
+<li><a href="platform/netware.html">åœ¨Novell NetWareä¸­è¿è¡ŒApache</a></li>
+<li><a href="platform/perf-hp.html">åœ¨HPUXä¸Šè¿è¡Œé«˜æ€§èƒ½ç½‘ç»œæœåŠ¡å™¨</a></li>
+<li><a href="platform/ebcdic.html">Apacheå¯¹EBCDICçš„ç§»æ¤</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="programs" id="programs">Apache HTTP·þÎñÆ÷ºÍÖ§³Ö³ÌÐò</a></h2>
-<ul><li class="separate"><a href="programs/index.html">Ë÷Òý</a></li>
+<div class="section"><h2><a name="programs" id="programs">Apache HTTPæœåŠ¡å™¨å’Œæ”¯æŒç¨‹åº</a></h2>
+<ul><li class="separate"><a href="programs/index.html">ç´¢å¼•</a></li>
 <li><a href="programs/httpd.html">httpd</a></li>
 <li><a href="programs/apachectl.html">apachectl</a></li>
 <li><a href="programs/ab.html">ab</a></li>
@@ -117,25 +117,25 @@
 <li><a href="programs/logresolve.html">logresolve</a></li>
 <li><a href="programs/rotatelogs.html">rotatelogs</a></li>
 <li><a href="programs/suexec.html">suexec</a></li>
-<li><a href="programs/other.html">ÆäËû³ÌÐò</a></li>
+<li><a href="programs/other.html">å…¶ä»–ç¨‹åº</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="misc" id="misc">ÔÓÏîÎÄµµ</a></h2>
-<ul><li class="separate"><a href="misc/index.html">Ë÷Òý</a></li>
-<li><a href="misc/perf-tuning.html">ÐÔÄÜ·½ÃæµÄÌáÊ¾ £­ ApacheÓÅ»¯</a></li>
-<li><a href="misc/security_tips.html">°²È«·½ÃæµÄÌáÊ¾</a></li>
-<li><a href="misc/dns-caveats.html">¹ØÓÚDNSºÍApache</a></li>
-<li><a href="misc/relevant_standards.html">Ïà¹Ø±ê×¼ºÍ¹æ·¶</a></li>
+<div class="section"><h2><a name="misc" id="misc">æ‚é¡¹æ–‡æ¡£</a></h2>
+<ul><li class="separate"><a href="misc/index.html">ç´¢å¼•</a></li>
+<li><a href="misc/perf-tuning.html">æ€§èƒ½æ–¹é¢çš„æç¤º ï¼ Apacheä¼˜åŒ–</a></li>
+<li><a href="misc/security_tips.html">å®‰å…¨æ–¹é¢çš„æç¤º</a></li>
+<li><a href="misc/dns-caveats.html">å…³äºŽDNSå’ŒApache</a></li>
+<li><a href="misc/relevant_standards.html">ç›¸å…³æ ‡å‡†å’Œè§„èŒƒ</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="modules" id="modules">ApacheÄ£¿é</a></h2>
-<ul><li><a href="mod/index.html">Ä£¿éË÷Òý</a></li>
-<li><a href="mod/directives.html">Ö¸ÁîË÷Òý</a></li>
-<li><a href="mod/quickreference.html">Ö¸ÁîËÙ²é</a></li>
-<li><a href="mod/module-dict.html">ÃèÊöApacheÄ£¿éµÄÊõÓï</a></li>
-<li><a href="mod/directive-dict.html">ÃèÊöApacheÖ¸ÁîµÄÊõÓï</a></li>
-</ul><ul><li><a href="mod/core.html">ºËÐÄ(Core)Ä£¿é</a></li>
-<li><a href="mod/mpm_common.html">¶àÂ·´¦ÀíÄ£¿é(MPM)µÄ¹«ÓÃÖ¸Áî</a></li>
+<div class="section"><h2><a name="modules" id="modules">Apacheæ¨¡å—</a></h2>
+<ul><li><a href="mod/index.html">æ¨¡å—ç´¢å¼•</a></li>
+<li><a href="mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a></li>
+<li><a href="mod/quickreference.html">æŒ‡ä»¤é€ŸæŸ¥</a></li>
+<li><a href="mod/module-dict.html">æè¿°Apacheæ¨¡å—çš„æœ¯è¯­</a></li>
+<li><a href="mod/directive-dict.html">æè¿°ApacheæŒ‡ä»¤çš„æœ¯è¯­</a></li>
+</ul><ul><li><a href="mod/core.html">æ ¸å¿ƒ(Core)æ¨¡å—</a></li>
+<li><a href="mod/mpm_common.html">å¤šè·¯å¤„ç†æ¨¡å—(MPM)çš„å…¬ç”¨æŒ‡ä»¤</a></li>
 <li><a href="mod/beos.html">beos(MPM)</a></li>
 <li><a href="mod/event.html">event(MPM)</a></li>
 <li><a href="mod/mpm_netware.html">netware(MPM)</a></li>
@@ -217,26 +217,26 @@
 <li><a href="mod/mod_vhost_alias.html">mod_vhost_alias</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="developer" id="developer">¿ª·¢ÕßÎÄµµ</a></h2>
-<ul><li class="separate"><a href="developer/index.html">Ë÷Òý</a></li>
-<li><a href="developer/API.html">Apache1.3 API ±¸ÍüÂ¼</a></li>
-<li><a href="developer/hooks.html">Apache2.0ÖÐµÄHookº¯Êý</a></li>
-<li><a href="developer/request.html">Apache2.0¶ÔÇëÇóµÄ´¦Àí</a></li>
-<li><a href="developer/filters.html">Apache2.0ÖÐ´¦ÀíÆ÷µÄÔË×÷</a></li>
-<li><a href="developer/modules.html">½«Ä£¿é´ÓApache1.3×ª»¯ÎªApache2.0</a></li>
-<li><a href="developer/debugging.html">APRÖÐÄÚ´æ·ÖÅäµÄµ÷ÊÔ</a></li>
-<li><a href="developer/documenting.html">Apache2.0ÎÄµµÖÆ×÷</a></li>
-<li><a href="developer/thread_safety.html">Apache2.0Ïß³Ì°²È«ÎÊÌâ</a></li>
+<div class="section"><h2><a name="developer" id="developer">å¼€å‘è€…æ–‡æ¡£</a></h2>
+<ul><li class="separate"><a href="developer/index.html">ç´¢å¼•</a></li>
+<li><a href="developer/API.html">Apache1.3 API å¤‡å¿˜å½•</a></li>
+<li><a href="developer/hooks.html">Apache2.0ä¸­çš„Hookå‡½æ•°</a></li>
+<li><a href="developer/request.html">Apache2.0å¯¹è¯·æ±‚çš„å¤„ç†</a></li>
+<li><a href="developer/filters.html">Apache2.0ä¸­å¤„ç†å™¨çš„è¿ä½œ</a></li>
+<li><a href="developer/modules.html">å°†æ¨¡å—ä»ŽApache1.3è½¬åŒ–ä¸ºApache2.0</a></li>
+<li><a href="developer/debugging.html">APRä¸­å†…å­˜åˆ†é…çš„è°ƒè¯•</a></li>
+<li><a href="developer/documenting.html">Apache2.0æ–‡æ¡£åˆ¶ä½œ</a></li>
+<li><a href="developer/thread_safety.html">Apache2.0çº¿ç¨‹å®‰å…¨é—®é¢˜</a></li>
 </ul>
 </div><div class="top"><a href="#page-header"><img alt="top" src="./images/up.gif" /></a></div>
-<div class="section"><h2><a name="index" id="index">´Ê»ãºÍË÷Òý</a></h2>
-<ul><li><a href="glossary.html">´Ê»ã±í</a></li>
-<li><a href="mod/index.html">Ä£¿éË÷Òý</a></li>
-<li><a href="mod/directives.html">Ö¸ÁîË÷Òý</a></li>
-<li><a href="mod/quickreference.html">Ö¸ÁîËÙ²é</a></li>
+<div class="section"><h2><a name="index" id="index">è¯æ±‡å’Œç´¢å¼•</a></h2>
+<ul><li><a href="glossary.html">è¯æ±‡è¡¨</a></li>
+<li><a href="mod/index.html">æ¨¡å—ç´¢å¼•</a></li>
+<li><a href="mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a></li>
+<li><a href="mod/quickreference.html">æŒ‡ä»¤é€ŸæŸ¥</a></li>
 </ul>
 </div></div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊÐí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØÐë±£ÁôÒëÕßÊðÃû£»Ïê¼û£º<a href="./translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="./mod/index.html">Ä£¿éË÷Òý</a> | <a href="./mod/directives.html">Ö¸ÁîË÷Òý</a> | <a href="./faq/index.html">³£¼ûÎÊÌâ</a> | <a href="./glossary.html">´Ê»ã±í</a> | <a href="./sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="./translator_announcement.html#announcement">è¯‘è€…å£°æ˜Ž</a>ã€‚</p>
+<p class="menu"><a href="./mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="./mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="./faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="./glossary.html">è¯æ±‡è¡¨</a> | <a href="./sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

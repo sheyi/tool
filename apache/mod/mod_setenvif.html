@@ -1,35 +1,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_setenvif £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_setenvif ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">½ğ²½¹ú</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">ÆäËû×÷Æ·</a>) | ±¾Ò³×îºó¸üĞÂ£º2006Äê10ÔÂ20ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_setenvif</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">é‡‘æ­¥å›½</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">å…¶ä»–ä½œå“</a>) | æœ¬é¡µæœ€åæ›´æ–°ï¼š2006å¹´10æœˆ20æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_setenvif</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>¸ù¾İ¿Í»§¶ËÇëÇóÍ·×Ö¶ÎÉèÖÃ»·¾³±äÁ¿</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>setenvif_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_setenvif.c</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>æ ¹æ®å®¢æˆ·ç«¯è¯·æ±‚å¤´å­—æ®µè®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>setenvif_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_setenvif.c</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
 
-    <p><code class="module"><a href="../mod/mod_setenvif.html">mod_setenvif</a></code>Ä£¿éÔÊĞí¸ù¾İÇëÇóµÄ²»Í¬·½ÃæÆ¥ÅäÖ¸¶¨µÄÕıÔò±í´ïÊ½À´ÉèÖÃ»·¾³±äÁ¿¡£ÕâĞ©»·¾³±äÁ¿¿ÉÓÉ·şÎñÆ÷µÄÆäËû²¿·ÖÊ¹ÓÃ¡£</p>
+    <p><code class="module"><a href="../mod/mod_setenvif.html">mod_setenvif</a></code>æ¨¡å—å…è®¸æ ¹æ®è¯·æ±‚çš„ä¸åŒæ–¹é¢åŒ¹é…æŒ‡å®šçš„æ­£åˆ™è¡¨è¾¾å¼æ¥è®¾ç½®ç¯å¢ƒå˜é‡ã€‚è¿™äº›ç¯å¢ƒå˜é‡å¯ç”±æœåŠ¡å™¨çš„å…¶ä»–éƒ¨åˆ†ä½¿ç”¨ã€‚</p>
 
-    <p>Ö¸Áî°´ÕÕËûÃÇÔÚÅäÖÃÎÄ¼şÖĞ³öÏÖµÄË³ĞòÉúĞ§¡£ËùÒÔ¿ÉÒÔÊ¹ÓÃ¸ü¶àµÄ¸´ºÏĞòÁĞ£¬ÕıÈçÏÂÀıËùÊ¾£¬Èç¹ûä¯ÀÀÆ÷ÊÇmozilla¶ø·ÇMSIEÔò»áÉèÖÃ<code>netscape</code> ¡£</p>
+    <p>æŒ‡ä»¤æŒ‰ç…§ä»–ä»¬åœ¨é…ç½®æ–‡ä»¶ä¸­å‡ºç°çš„é¡ºåºç”Ÿæ•ˆã€‚æ‰€ä»¥å¯ä»¥ä½¿ç”¨æ›´å¤šçš„å¤åˆåºåˆ—ï¼Œæ­£å¦‚ä¸‹ä¾‹æ‰€ç¤ºï¼Œå¦‚æœæµè§ˆå™¨æ˜¯mozillaè€ŒéMSIEåˆ™ä¼šè®¾ç½®<code>netscape</code> ã€‚</p>
 
 <div class="example"><p><code>
   BrowserMatch ^Mozilla netscape<br />
@@ -37,22 +37,22 @@
 </code></p></div>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="BrowserMatch" id="BrowserMatch">BrowserMatch</a> <a name="browsermatch" id="browsermatch">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="BrowserMatch" id="BrowserMatch">BrowserMatch</a> <a name="browsermatch" id="browsermatch">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>»ùÓÚUser-AgentÍ·ÓĞÌõ¼şµØÉèÖÃ»·¾³±äÁ¿</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>BrowserMatch <em>regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_setenvif</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>åŸºäºUser-Agentå¤´æœ‰æ¡ä»¶åœ°è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>BrowserMatch <em>regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_setenvif</td></tr>
 </table>
-  <p><code class="directive">BrowserMatch</code>Ö»ÊÇ<code class="directive"><a href="#setenvif">SetEnvIf</a></code>µÄÒ»ÖÖÌØÊâÇé¿ö£¬»ùÓÚ<code>User-Agent</code>Í·ÓĞÌõ¼şµØÉèÖÃ»·¾³±äÁ¿¡£ÏÂÃæµÄÁ½ĞĞ¾ßÓĞÏàÍ¬µÄĞ§¹û£º</p>
+  <p><code class="directive">BrowserMatch</code>åªæ˜¯<code class="directive"><a href="#setenvif">SetEnvIf</a></code>çš„ä¸€ç§ç‰¹æ®Šæƒ…å†µï¼ŒåŸºäº<code>User-Agent</code>å¤´æœ‰æ¡ä»¶åœ°è®¾ç½®ç¯å¢ƒå˜é‡ã€‚ä¸‹é¢çš„ä¸¤è¡Œå…·æœ‰ç›¸åŒçš„æ•ˆæœï¼š</p>
 <div class="example"><p><code>
    BrowserMatchNoCase Robot is_a_robot<br /> 
    SetEnvIfNoCase User-Agent Robot is_a_robot<br /> 
 </code></p></div>
 
-    <p>¸ü¶àµÄÀı×Ó£º</p>
+    <p>æ›´å¤šçš„ä¾‹å­ï¼š</p>
 <div class="example"><p><code>
     BrowserMatch ^Mozilla forms jpeg=yes browser=netscape<br />
     BrowserMatch "^Mozilla/[2-3]" tables agif frames javascript<br />
@@ -61,23 +61,23 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="BrowserMatchNoCase" id="BrowserMatchNoCase">BrowserMatchNoCase</a> <a name="browsermatchnocase" id="browsermatchnocase">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="BrowserMatchNoCase" id="BrowserMatchNoCase">BrowserMatchNoCase</a> <a name="browsermatchnocase" id="browsermatchnocase">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>»ùÓÚ²»Çø·Ö´óĞ¡Ğ´µÄUser-AgentÍ·ÓĞÌõ¼şµØÉèÖÃ»·¾³±äÁ¿</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>BrowserMatchNoCase  <em>regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_setenvif</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>åŸºäºä¸åŒºåˆ†å¤§å°å†™çš„User-Agentå¤´æœ‰æ¡ä»¶åœ°è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>BrowserMatchNoCase  <em>regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_setenvif</td></tr>
 </table>
 
-    <p><code class="directive">BrowserMatchNoCase</code>µÈÍ¬ÓÚ<code class="directive"><a href="#browsermatch">BrowserMatch</a></code> £¬½ö½öÊÇ½øĞĞ²»Çø·Ö´óĞ¡Ğ´µÄÆ¥Åä¡£ÀıÈç£º</p>
+    <p><code class="directive">BrowserMatchNoCase</code>ç­‰åŒäº<code class="directive"><a href="#browsermatch">BrowserMatch</a></code> ï¼Œä»…ä»…æ˜¯è¿›è¡Œä¸åŒºåˆ†å¤§å°å†™çš„åŒ¹é…ã€‚ä¾‹å¦‚ï¼š</p>
 <div class="example"><p><code>
     BrowserMatchNoCase mac platform=macintosh<br />
     BrowserMatchNoCase win platform=windows<br />
 </code></p></div>
 
-    <p><code class="directive">BrowserMatch</code>ºÍ<code class="directive">BrowserMatchNoCase</code>Ö»ÊÇ<code class="directive"><a href="#setenvif">SetEnvIf</a></code>ºÍ<code class="directive"><a href="#setenvifnocase">SetEnvIfNoCase</a></code>µÄÒ»ÖÖÌØÊâÇé¿ö¡£ÏÂÃæµÄÁ½ĞĞ¾ßÓĞÏàÍ¬µÄĞ§¹û£º</p>
+    <p><code class="directive">BrowserMatch</code>å’Œ<code class="directive">BrowserMatchNoCase</code>åªæ˜¯<code class="directive"><a href="#setenvif">SetEnvIf</a></code>å’Œ<code class="directive"><a href="#setenvifnocase">SetEnvIfNoCase</a></code>çš„ä¸€ç§ç‰¹æ®Šæƒ…å†µã€‚ä¸‹é¢çš„ä¸¤è¡Œå…·æœ‰ç›¸åŒçš„æ•ˆæœï¼š</p>
 <div class="example"><p><code>
    BrowserMatchNoCase Robot is_a_robot<br />
    SetEnvIfNoCase User-Agent Robot is_a_robot<br />
@@ -85,40 +85,40 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="SetEnvIf" id="SetEnvIf">SetEnvIf</a> <a name="setenvif" id="setenvif">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="SetEnvIf" id="SetEnvIf">SetEnvIf</a> <a name="setenvif" id="setenvif">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>¸ù¾İ¿Í»§¶ËÇëÇóÊôĞÔÉèÖÃ»·¾³±äÁ¿</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>SetEnvIf <em>attribute regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_setenvif</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>æ ¹æ®å®¢æˆ·ç«¯è¯·æ±‚å±æ€§è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>SetEnvIf <em>attribute regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_setenvif</td></tr>
 </table>
-    <p><code class="directive">SetEnvIf</code>Ö¸Áî¸ù¾İ¿Í»§¶ËµÄÇëÇóÊôĞÔÉèÖÃ»·¾³±äÁ¿¡£µÚÒ»¸ö²ÎÊı<em>attribute</em>±ØĞëÊÇÏÂÁĞÈıÖÖÀà±ğÖ®Ò»£º</p>
+    <p><code class="directive">SetEnvIf</code>æŒ‡ä»¤æ ¹æ®å®¢æˆ·ç«¯çš„è¯·æ±‚å±æ€§è®¾ç½®ç¯å¢ƒå˜é‡ã€‚ç¬¬ä¸€ä¸ªå‚æ•°<em>attribute</em>å¿…é¡»æ˜¯ä¸‹åˆ—ä¸‰ç§ç±»åˆ«ä¹‹ä¸€ï¼š</p>
 
 <ol>
-<li>Ò»¸öHTTPÇëÇóÍ·Óò(²Î¼û<a href="http://www.rfc-editor.org/rfc/rfc2616.txt">RFC2616</a>)£»ÀıÈç£º<code>Host</code>, <code>User-Agent</code>, <code>Referer</code>, <code>Accept-Language</code> ¡£¿ÉÒÔÓÃÒ»¸öÕıÔò±í´ïÊ½À´½øĞĞÆ¥Åä¡£</li>
+<li>ä¸€ä¸ªHTTPè¯·æ±‚å¤´åŸŸ(å‚è§<a href="http://www.rfc-editor.org/rfc/rfc2616.txt">RFC2616</a>)ï¼›ä¾‹å¦‚ï¼š<code>Host</code>, <code>User-Agent</code>, <code>Referer</code>, <code>Accept-Language</code> ã€‚å¯ä»¥ç”¨ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼æ¥è¿›è¡ŒåŒ¹é…ã€‚</li>
 
-<li>ÏÂÁĞÇëÇóÊôĞÔÖ®Ò»£º
+<li>ä¸‹åˆ—è¯·æ±‚å±æ€§ä¹‹ä¸€ï¼š
     <ul>
-      <li><code>Remote_Host</code> Ô¶³ÌÖ÷»úÃû(Èô¿ÉÓÃ)</li>
+      <li><code>Remote_Host</code> è¿œç¨‹ä¸»æœºå(è‹¥å¯ç”¨)</li>
 
-      <li><code>Remote_Addr</code> Ô¶³ÌÖ÷»úIPµØÖ·</li>
+      <li><code>Remote_Addr</code> è¿œç¨‹ä¸»æœºIPåœ°å€</li>
 
-      <li><code>Server_Addr</code> ½ÓÊÕµ½ÇëÇóµÄ·şÎñÆ÷IPµØÖ·(2.0.43¼°ÒÔºó°æ±¾)</li>
+      <li><code>Server_Addr</code> æ¥æ”¶åˆ°è¯·æ±‚çš„æœåŠ¡å™¨IPåœ°å€(2.0.43åŠä»¥åç‰ˆæœ¬)</li>
 
-      <li><code>Request_Method</code> ËùÓÃµÄÇëÇó·½·¨(<code>GET</code>, <code>POST</code>µÈµÈ)</li>
+      <li><code>Request_Method</code> æ‰€ç”¨çš„è¯·æ±‚æ–¹æ³•(<code>GET</code>, <code>POST</code>ç­‰ç­‰)</li>
 
-      <li><code>Request_Protocol</code> ÇëÇóËùÊ¹ÓÃµÄĞ­Òé¼°Æä°æ±¾("HTTP/0.9", "HTTP/1.0", "HTTP/1.1"µÈ)</li>
+      <li><code>Request_Protocol</code> è¯·æ±‚æ‰€ä½¿ç”¨çš„åè®®åŠå…¶ç‰ˆæœ¬("HTTP/0.9", "HTTP/1.0", "HTTP/1.1"ç­‰)</li>
 
-      <li><code>Request_URI</code> ÔÚHTTPÇëÇóĞĞÖĞÇëÇóµÄ×ÊÔ´(Í¨³£ÊÇURLÖĞÈ¥³ıĞ­Òé¡¢Ö÷»úÒÔ¼°²éÑ¯×Ö·û´®ºóÊ£ÓàµÄ²¿·Ö)¡£</li>
+      <li><code>Request_URI</code> åœ¨HTTPè¯·æ±‚è¡Œä¸­è¯·æ±‚çš„èµ„æº(é€šå¸¸æ˜¯URLä¸­å»é™¤åè®®ã€ä¸»æœºä»¥åŠæŸ¥è¯¢å­—ç¬¦ä¸²åå‰©ä½™çš„éƒ¨åˆ†)ã€‚</li>
     </ul>
 </li>
 
-<li>ÁĞ³öµÄÓë¸ÃÇëÇó¹ØÁªµÄ»·¾³±äÁ¿Ãû×ÖÖĞµÄÒ»¸ö¡£Õâ½«ÔÊĞí<code class="directive">SetEnvIf</code>Ö¸Áî»ùÓÚÔ¤ÏÈÆ¥ÅäµÄ½á¹û½øĞĞ²âÊÔ¡£Ö»ÓĞÄÇĞ©ÓÉ½ÏÔçµÄ<code>SetEnvIf[NoCase]</code>Ö¸Áî¶¨ÒåµÄ»·¾³±äÁ¿²Å¿ÉÒÔ°´ÕÕÕâÖÖ·½Ê½²âÊÔ¡£"½ÏÔçµÄ"ÒâË¼ÊÇËüÃÇÔÚ¸üÉÏ²ãµÄ×÷ÓÃÓò(±ÈÈçÈ«¾Ö·¶Î§)ÖĞ±»¶¨Òå»òÕßÔÚÍ¬Ò»×÷ÓÃÓòÖĞ½ÏÔç³öÏÖ¡£Ö»ÓĞÔÚÇëÇóµÄÊôĞÔÎ´ÄÜµÃµ½Æ¥Åä²¢ÇÒ<em>attribute</em>Ã»ÓĞÊ¹ÓÃÕıÔò±í´ïÊ½µÄÊ±ºò£¬»·¾³±äÁ¿²Å»á±»¿¼ÂÇ¡£</li>
+<li>åˆ—å‡ºçš„ä¸è¯¥è¯·æ±‚å…³è”çš„ç¯å¢ƒå˜é‡åå­—ä¸­çš„ä¸€ä¸ªã€‚è¿™å°†å…è®¸<code class="directive">SetEnvIf</code>æŒ‡ä»¤åŸºäºé¢„å…ˆåŒ¹é…çš„ç»“æœè¿›è¡Œæµ‹è¯•ã€‚åªæœ‰é‚£äº›ç”±è¾ƒæ—©çš„<code>SetEnvIf[NoCase]</code>æŒ‡ä»¤å®šä¹‰çš„ç¯å¢ƒå˜é‡æ‰å¯ä»¥æŒ‰ç…§è¿™ç§æ–¹å¼æµ‹è¯•ã€‚"è¾ƒæ—©çš„"æ„æ€æ˜¯å®ƒä»¬åœ¨æ›´ä¸Šå±‚çš„ä½œç”¨åŸŸ(æ¯”å¦‚å…¨å±€èŒƒå›´)ä¸­è¢«å®šä¹‰æˆ–è€…åœ¨åŒä¸€ä½œç”¨åŸŸä¸­è¾ƒæ—©å‡ºç°ã€‚åªæœ‰åœ¨è¯·æ±‚çš„å±æ€§æœªèƒ½å¾—åˆ°åŒ¹é…å¹¶ä¸”<em>attribute</em>æ²¡æœ‰ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼çš„æ—¶å€™ï¼Œç¯å¢ƒå˜é‡æ‰ä¼šè¢«è€ƒè™‘ã€‚</li>
 </ol>
 
-<p>µÚ¶ş¸ö²ÎÊı<em>regex</em>ÊÇÒ»¸ö<a class="glossarylink" href="../glossary.html#regex" title="see glossary">Perl¼æÈİµÄÕıÔò±í´ïÊ½</a>¡£Èç¹û<em>regex</em>ÊÇ¸ù¾İ<em>attribute</em>½øĞĞÆ¥ÅäµÄ£¬ÄÇÃ´Ê£ÓàµÄ²ÎÊı½«±»ÆÀ¹À¡£Ê£ÓàµÄ²ÎÊı¸ø³öÁËĞèÒªÉèÖÃµÄ±äÁ¿Ãû¼°Æä¿ÉÑ¡µÄÖµ¡£¸ñÊ½ÈçÏÂ£º</p>
+<p>ç¬¬äºŒä¸ªå‚æ•°<em>regex</em>æ˜¯ä¸€ä¸ª<a class="glossarylink" href="../glossary.html#regex" title="see glossary">Perlå…¼å®¹çš„æ­£åˆ™è¡¨è¾¾å¼</a>ã€‚å¦‚æœ<em>regex</em>æ˜¯æ ¹æ®<em>attribute</em>è¿›è¡ŒåŒ¹é…çš„ï¼Œé‚£ä¹ˆå‰©ä½™çš„å‚æ•°å°†è¢«è¯„ä¼°ã€‚å‰©ä½™çš„å‚æ•°ç»™å‡ºäº†éœ€è¦è®¾ç½®çš„å˜é‡ååŠå…¶å¯é€‰çš„å€¼ã€‚æ ¼å¼å¦‚ä¸‹ï¼š</p>
 
     <ol>
       <li><code><em>varname</em></code></li>
@@ -128,9 +128,9 @@
       <li><code><em>varname</em>=<em>value</em></code></li>
     </ol>
 
-    <p>µÚÒ»¸ö¸ñÊ½£¬»·¾³±äÁ¿<code><em>varname</em></code>µÄÖµ½«ÉèÎª"1"¡£µÚ¶ş¸ö¸ñÊ½½«É¾³ı¸ø¶¨µÄ±äÁ¿<code><em>varname</em></code>(Èô´æÔÚ)¡£µÚÈı¸ö¸ñÊ½½«Îª»·¾³±äÁ¿<code><em>varname</em></code>ÉèÖÃ<code><em>value</em></code>µÄ×ÖÃæÖµ¡£´Ó2.0.51°æ¿ªÊ¼£¬ApacheÄÜ¹»Ê¶±ğ<var>value</var>ÖĞ³öÏÖµÄ<code>$1</code>..<code>$9</code> £¬²¢½«ÆäÌæ»»Îª<var>regex</var>ÖĞ¶ÔÓ¦µÄÊ¹ÓÃÀ¨ºÅÀ¨ÆğÀ´µÄ×ÓÄ£Ê½¡£</p>
+    <p>ç¬¬ä¸€ä¸ªæ ¼å¼ï¼Œç¯å¢ƒå˜é‡<code><em>varname</em></code>çš„å€¼å°†è®¾ä¸º"1"ã€‚ç¬¬äºŒä¸ªæ ¼å¼å°†åˆ é™¤ç»™å®šçš„å˜é‡<code><em>varname</em></code>(è‹¥å­˜åœ¨)ã€‚ç¬¬ä¸‰ä¸ªæ ¼å¼å°†ä¸ºç¯å¢ƒå˜é‡<code><em>varname</em></code>è®¾ç½®<code><em>value</em></code>çš„å­—é¢å€¼ã€‚ä»2.0.51ç‰ˆå¼€å§‹ï¼ŒApacheèƒ½å¤Ÿè¯†åˆ«<var>value</var>ä¸­å‡ºç°çš„<code>$1</code>..<code>$9</code> ï¼Œå¹¶å°†å…¶æ›¿æ¢ä¸º<var>regex</var>ä¸­å¯¹åº”çš„ä½¿ç”¨æ‹¬å·æ‹¬èµ·æ¥çš„å­æ¨¡å¼ã€‚</p>
 
-	<div class="example"><h3>Ê¾Àı£º</h3><p><code>
+	<div class="example"><h3>ç¤ºä¾‹ï¼š</h3><p><code>
 
    SetEnvIf Request_URI "\.gif$" object_is_image=gif<br />
    SetEnvIf Request_URI "\.jpg$" object_is_image=jpg<br />
@@ -143,36 +143,36 @@
    SetEnvIf ^TS*  ^[a-z].*  HAVE_TS<br />
 </code></p></div>
 
-    <p>Ç°ÃæµÄÈı¸ö½«»áÉèÖÃ<code>object_is_image</code>»·¾³±äÁ¿(Èç¹ûÇëÇóµÄÊÇÍ¼Æ¬)¡£µÚËÄ¸ö½«»áÉèÖÃ<code>intra_site_referral</code>»·¾³±äÁ¿(Èç¹ûRefererÍ·±íÃ÷À´×ÔÓÚ<code>www.mydomain.com</code>)¡£</p>
+    <p>å‰é¢çš„ä¸‰ä¸ªå°†ä¼šè®¾ç½®<code>object_is_image</code>ç¯å¢ƒå˜é‡(å¦‚æœè¯·æ±‚çš„æ˜¯å›¾ç‰‡)ã€‚ç¬¬å››ä¸ªå°†ä¼šè®¾ç½®<code>intra_site_referral</code>ç¯å¢ƒå˜é‡(å¦‚æœRefererå¤´è¡¨æ˜æ¥è‡ªäº<code>www.mydomain.com</code>)ã€‚</p>
 
-    <p>×îºóÒ»¸ö½«»áÉèÖÃ»·¾³±äÁ¿<code>HAVE_TS</code>(Èç¹û°üº¬ÈÎºÎÒÔ"TS"¿ªÊ¼µÄÇëÇóÍ·£¬²¢ÇÒ¸ÃÇëÇóÍ·µÄÖµÊÇÒÔĞ¡Ğ´×ÖÄ¸[a-z]¿ªÍ·µÄ)¡£</p>
+    <p>æœ€åä¸€ä¸ªå°†ä¼šè®¾ç½®ç¯å¢ƒå˜é‡<code>HAVE_TS</code>(å¦‚æœåŒ…å«ä»»ä½•ä»¥"TS"å¼€å§‹çš„è¯·æ±‚å¤´ï¼Œå¹¶ä¸”è¯¥è¯·æ±‚å¤´çš„å€¼æ˜¯ä»¥å°å†™å­—æ¯[a-z]å¼€å¤´çš„)ã€‚</p>
 
-	<h3>²Î¼û</h3>
+	<h3>å‚è§</h3>
 <ul>
-<li><a href="../env.html">Apache»·¾³±äÁ¿</a>£¬ÒÔ»ñµÃ¸ü¶àÀı×Ó¡£</li>
+<li><a href="../env.html">Apacheç¯å¢ƒå˜é‡</a>ï¼Œä»¥è·å¾—æ›´å¤šä¾‹å­ã€‚</li>
 </ul>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="SetEnvIfNoCase" id="SetEnvIfNoCase">SetEnvIfNoCase</a> <a name="setenvifnocase" id="setenvifnocase">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="SetEnvIfNoCase" id="SetEnvIfNoCase">SetEnvIfNoCase</a> <a name="setenvifnocase" id="setenvifnocase">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>¸ù¾İ´óĞ¡Ğ´ÎŞ¹ØµÄ¿Í»§¶ËÇëÇóÊôĞÔÉèÖÃ»·¾³±äÁ¿</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>SetEnvIfNoCase <em>attribute regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>FileInfo</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>»ù±¾(B)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_setenvif</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>æ ¹æ®å¤§å°å†™æ— å…³çš„å®¢æˆ·ç«¯è¯·æ±‚å±æ€§è®¾ç½®ç¯å¢ƒå˜é‡</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>SetEnvIfNoCase <em>attribute regex [!]env-variable</em>[=<em>value</em>] [[!]<em>env-variable</em>[=<em>value</em>]] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>FileInfo</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>åŸºæœ¬(B)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_setenvif</td></tr>
 </table>
 
-    <p><code class="directive">SetEnvIfNoCase</code>µÈÍ¬ÓÚ<code class="directive"><a href="#setenvif">SetEnvIf</a></code> £¬½ö½öÊÇ½øĞĞ²»Çø·Ö´óĞ¡Ğ´µÄÆ¥Åä¡£ÀıÈç£º</p>
+    <p><code class="directive">SetEnvIfNoCase</code>ç­‰åŒäº<code class="directive"><a href="#setenvif">SetEnvIf</a></code> ï¼Œä»…ä»…æ˜¯è¿›è¡Œä¸åŒºåˆ†å¤§å°å†™çš„åŒ¹é…ã€‚ä¾‹å¦‚ï¼š</p>
 <div class="example"><p><code>
    SetEnvIfNoCase Host Apache\.Org site=apache
 </code></p></div>
 
-    <p>Õâ»á½«»·¾³±äÁ¿<code>site</code>ÉèÖÃÎª"<code>apache</code>"(Èç¹û"<code>Host:</code>"ÇëÇóÍ·°üº¬"<code>Apache.Org</code>"¡¢"<code>apache.org</code>"µÈ´óĞ¡Ğ´±äÌå)¡£</p>
+    <p>è¿™ä¼šå°†ç¯å¢ƒå˜é‡<code>site</code>è®¾ç½®ä¸º"<code>apache</code>"(å¦‚æœ"<code>Host:</code>"è¯·æ±‚å¤´åŒ…å«"<code>Apache.Org</code>"ã€"<code>apache.org</code>"ç­‰å¤§å°å†™å˜ä½“)ã€‚</p>
 
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

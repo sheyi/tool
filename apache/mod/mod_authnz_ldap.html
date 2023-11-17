@@ -1,31 +1,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_authnz_ldap £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_authnz_ldap ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_authnz_ldap</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_authnz_ldap</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>ÔÊĞíÊ¹ÓÃÒ»¸öLDAPÄ¿Â¼´æ´¢ÓÃ»§ÃûºÍÃÜÂëÊı¾İ¿âÀ´Ö´ĞĞ»ù±¾ÈÏÖ¤ºÍÊÚÈ¨</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>authnz_ldap_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_authnz_ldap.c</td></tr>
-<tr><th><a href="module-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>½öÔÚ Apache 2.1 ¼°ÒÔºóµÄ°æ±¾ÖĞ¿ÉÓÃ</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>å…è®¸ä½¿ç”¨ä¸€ä¸ªLDAPç›®å½•å­˜å‚¨ç”¨æˆ·åå’Œå¯†ç æ•°æ®åº“æ¥æ‰§è¡ŒåŸºæœ¬è®¤è¯å’Œæˆæƒ</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>authnz_ldap_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_authnz_ldap.c</td></tr>
+<tr><th><a href="module-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>ä»…åœ¨ Apache 2.1 åŠä»¥åçš„ç‰ˆæœ¬ä¸­å¯ç”¨</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
     <p>This module provides authentication front-ends such as
     <code class="module"><a href="../mod/mod_auth_basic.html">mod_auth_basic</a></code> to authenticate users through 
@@ -115,7 +115,7 @@
     <code class="directive"><a href="../mod/mod_auth_basic.html#authbasicprovider">AuthBasicProvider</a></code> directive 
     using the <code>ldap</code> value. The authz_ldap handler extends the 
     <code class="directive"><a href="../mod/core.html#require">Require</a></code> directive's authorization types
-    by adding <code>ldap-user</code>, <code>ldap-dn</code>ºÍ<code>ldap-group</code> 
+    by adding <code>ldap-user</code>, <code>ldap-dn</code>å’Œ<code>ldap-group</code> 
     values.</p>
 
 <h3><a name="authenphase" id="authenphase">The Authentication
@@ -237,7 +237,7 @@
     <p>Apache's <code class="directive"><a href="../mod/core.html#require">Require</a></code>
     directives are used during the authorization phase to ensure that
     a user is allowed to access a resource.  mod_authnz_ldap extends the 
-    authorization types with <code>ldap-user</code>, <code>ldap-dn</code>, <code>ldap-group</code>, <code>ldap-attribute</code>ºÍ<code>ldap-filter</code>.  Other authorization types may also be 
+    authorization types with <code>ldap-user</code>, <code>ldap-dn</code>, <code>ldap-group</code>, <code>ldap-attribute</code>å’Œ<code>ldap-filter</code>.  Other authorization types may also be 
     used but may require that additional authorization modules be loaded.</p>
 
 <h3><a name="reqvaliduser" id="reqvaliduser">require valid-user</a></h3>
@@ -303,7 +303,7 @@ uniqueMember: cn=Fred User, o=Airius<br />
     Barbara:</p>
 <div class="example"><p><code>require ldap-group cn=Administrators, o=Airius</code></p></div>
 
-    <p>Behavior of this directive is modified by the <code class="directive"><a href="#authldapgroupattribute">AuthLDAPGroupAttribute</a></code>ºÍ<code class="directive"><a href="#authldapgroupattributeisdn">AuthLDAPGroupAttributeIsDN</a></code>
+    <p>Behavior of this directive is modified by the <code class="directive"><a href="#authldapgroupattribute">AuthLDAPGroupAttribute</a></code>å’Œ<code class="directive"><a href="#authldapgroupattributeisdn">AuthLDAPGroupAttributeIsDN</a></code>
     directives.</p>
 
 
@@ -470,7 +470,7 @@ require valid-user
 <div class="section">
 <h2><a name="usingtls" id="usingtls">Using TLS</a></h2>
 
-    <p>To use TLS, see the <code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code> directives <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedclientcert">LDAPTrustedClientCert</a></code>, <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedglobalcert">LDAPTrustedGlobalCert</a></code>ºÍ<code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedmode">LDAPTrustedMode</a></code>.</p>
+    <p>To use TLS, see the <code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code> directives <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedclientcert">LDAPTrustedClientCert</a></code>, <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedglobalcert">LDAPTrustedGlobalCert</a></code>å’Œ<code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedmode">LDAPTrustedMode</a></code>.</p>
 
     <p>An optional second parameter can be added to the 
     <code class="directive"><a href="#authldapurl">AuthLDAPURL</a></code> to override
@@ -481,7 +481,7 @@ require valid-user
 <div class="section">
 <h2><a name="usingssl" id="usingssl">Using SSL</a></h2>
 
-    <p>To use SSL, see the <code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code> directives <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedclientcert">LDAPTrustedClientCert</a></code>, <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedglobalcert">LDAPTrustedGlobalCert</a></code>ºÍ<code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedmode">LDAPTrustedMode</a></code>.</p>
+    <p>To use SSL, see the <code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code> directives <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedclientcert">LDAPTrustedClientCert</a></code>, <code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedglobalcert">LDAPTrustedGlobalCert</a></code>å’Œ<code class="directive"><a href="../mod/mod_ldap.html#ldaptrustedmode">LDAPTrustedMode</a></code>.</p>
 
     <p>To specify a secure LDAP server, use <em>ldaps://</em> in the
     <code class="directive"><a href="#authldapurl">AuthLDAPURL</a></code>
@@ -492,7 +492,7 @@ require valid-user
     FrontPage with mod_authnz_ldap</a></h2>
 
     <p>Normally, FrontPage uses FrontPage-web-specific user/group
-    files (i.e., the <code class="module"><a href="../mod/mod_authn_file.html">mod_authn_file</a></code>ºÍ<code class="module"><a href="../mod/mod_authz_groupfile.html">mod_authz_groupfile</a></code> modules) to handle all
+    files (i.e., the <code class="module"><a href="../mod/mod_authn_file.html">mod_authn_file</a></code>å’Œ<code class="module"><a href="../mod/mod_authz_groupfile.html">mod_authz_groupfile</a></code> modules) to handle all
     authentication. Unfortunately, it is not possible to just
     change to LDAP authentication by adding the proper directives,
     because it will break the <em>Permissions</em> forms in
@@ -551,13 +551,13 @@ require group <em>mygroupfile</em>
       file. This could cause confusion for web administrators.</li>
 
       
-      <li>Apache must be compiled with <code class="module"><a href="../mod/mod_auth_basic.html">mod_auth_basic</a></code>, <code class="module"><a href="../mod/mod_authn_file.html">mod_authn_file</a></code>ºÍ<code class="module"><a href="../mod/mod_authz_groupfile.html">mod_authz_groupfile</a></code> in order to
+      <li>Apache must be compiled with <code class="module"><a href="../mod/mod_auth_basic.html">mod_auth_basic</a></code>, <code class="module"><a href="../mod/mod_authn_file.html">mod_authn_file</a></code>å’Œ<code class="module"><a href="../mod/mod_authz_groupfile.html">mod_authz_groupfile</a></code> in order to
       use FrontPage support. This is because Apache will still use
       the <code class="module"><a href="../mod/mod_authz_groupfile.html">mod_authz_groupfile</a></code> group file for determine 
       the extent of a user's access to the FrontPage web.</li>
 
       <li>The directives must be put in the <code>.htaccess</code>
-      files. Attempting to put them inside <code class="directive"><a href="../mod/core.html#location">&lt;Location&gt;</a></code>»ò<code class="directive"><a href="../mod/core.html#directory">&lt;Directory&gt;</a></code> directives won't work. This
+      files. Attempting to put them inside <code class="directive"><a href="../mod/core.html#location">&lt;Location&gt;</a></code>æˆ–<code class="directive"><a href="../mod/core.html#directory">&lt;Directory&gt;</a></code> directives won't work. This
       is because <code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code> has to be able to grab
       the <code class="directive"><a href="../mod/mod_authn_file.html#authgroupfile">AuthGroupFile</a></code>
       directive that is found in FrontPage <code>.htaccess</code>
@@ -571,14 +571,14 @@ require group <em>mygroupfile</em>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPBindDN" id="AuthLDAPBindDN">AuthLDAPBindDN</a> <a name="authldapbinddn" id="authldapbinddn">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPBindDN" id="AuthLDAPBindDN">AuthLDAPBindDN</a> <a name="authldapbinddn" id="authldapbinddn">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Optional DN to use in binding to the LDAP server</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPBindDN <em>distinguished-name</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Optional DN to use in binding to the LDAP server</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPBindDN <em>distinguished-name</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>An optional DN used to bind to the server when searching for
     entries. If not provided, <code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code> will use
@@ -586,29 +586,29 @@ require group <em>mygroupfile</em>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPBindPassword" id="AuthLDAPBindPassword">AuthLDAPBindPassword</a> <a name="authldapbindpassword" id="authldapbindpassword">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPBindPassword" id="AuthLDAPBindPassword">AuthLDAPBindPassword</a> <a name="authldapbindpassword" id="authldapbindpassword">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Password used in conjuction with the bind DN</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPBindPassword <em>password</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Password used in conjuction with the bind DN</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPBindPassword <em>password</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>A bind password to use in conjunction with the bind DN. Note
     that the bind password is probably sensitive data, and should be
-    properly protected. You should only use the <code class="directive"><a href="#authldapbinddn">AuthLDAPBindDN</a></code>ºÍ<code class="directive"><a href="#authldapbindpassword">AuthLDAPBindPassword</a></code> if you
+    properly protected. You should only use the <code class="directive"><a href="#authldapbinddn">AuthLDAPBindDN</a></code>å’Œ<code class="directive"><a href="#authldapbindpassword">AuthLDAPBindPassword</a></code> if you
     absolutely need them to search the directory.</p> 
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPCharsetConfig" id="AuthLDAPCharsetConfig">AuthLDAPCharsetConfig</a> <a name="authldapcharsetconfig" id="authldapcharsetconfig">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPCharsetConfig" id="AuthLDAPCharsetConfig">AuthLDAPCharsetConfig</a> <a name="authldapcharsetconfig" id="authldapcharsetconfig">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Language to charset conversion configuration file</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPCharsetConfig <em>file-path</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Language to charset conversion configuration file</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPCharsetConfig <em>file-path</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p><code class="directive">AuthLDAPCharsetConfig</code> directive sets the location
     of the language to charset conversion configuration file. <var>File-path</var> is relative
@@ -628,15 +628,15 @@ require group <em>mygroupfile</em>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPCompareDNOnServer" id="AuthLDAPCompareDNOnServer">AuthLDAPCompareDNOnServer</a> <a name="authldapcomparednonserver" id="authldapcomparednonserver">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPCompareDNOnServer" id="AuthLDAPCompareDNOnServer">AuthLDAPCompareDNOnServer</a> <a name="authldapcomparednonserver" id="authldapcomparednonserver">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Use the LDAP server to compare the DNs</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPCompareDNOnServer on|off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthLDAPCompareDNOnServer on</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Use the LDAP server to compare the DNs</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPCompareDNOnServer on|off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthLDAPCompareDNOnServer on</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>When set, <code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code> will use the LDAP
     server to compare the DNs. This is the only foolproof way to
@@ -651,15 +651,15 @@ require group <em>mygroupfile</em>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPDereferenceAliases" id="AuthLDAPDereferenceAliases">AuthLDAPDereferenceAliases</a> <a name="authldapdereferencealiases" id="authldapdereferencealiases">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPDereferenceAliases" id="AuthLDAPDereferenceAliases">AuthLDAPDereferenceAliases</a> <a name="authldapdereferencealiases" id="authldapdereferencealiases">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>When will the module de-reference aliases</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPDereferenceAliases never|searching|finding|always</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthLDAPDereferenceAliases Always</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>When will the module de-reference aliases</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPDereferenceAliases never|searching|finding|always</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthLDAPDereferenceAliases Always</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>This directive specifies when <code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code> will
     de-reference aliases during LDAP operations. The default is
@@ -667,32 +667,32 @@ require group <em>mygroupfile</em>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPGroupAttribute" id="AuthLDAPGroupAttribute">AuthLDAPGroupAttribute</a> <a name="authldapgroupattribute" id="authldapgroupattribute">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPGroupAttribute" id="AuthLDAPGroupAttribute">AuthLDAPGroupAttribute</a> <a name="authldapgroupattribute" id="authldapgroupattribute">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>LDAP attributes used to check for group membership</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPGroupAttribute <em>attribute</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>LDAP attributes used to check for group membership</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPGroupAttribute <em>attribute</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>This directive specifies which LDAP attributes are used to
     check for group membership. Multiple attributes can be used by
     specifying this directive multiple times. If not specified,
-    then <code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code> uses the <code>member</code>ºÍ<code>uniquemember</code> attributes.</p>
+    then <code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code> uses the <code>member</code>å’Œ<code>uniquemember</code> attributes.</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPGroupAttributeIsDN" id="AuthLDAPGroupAttributeIsDN">AuthLDAPGroupAttributeIsDN</a> <a name="authldapgroupattributeisdn" id="authldapgroupattributeisdn">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPGroupAttributeIsDN" id="AuthLDAPGroupAttributeIsDN">AuthLDAPGroupAttributeIsDN</a> <a name="authldapgroupattributeisdn" id="authldapgroupattributeisdn">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Use the DN of the client username when checking for
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Use the DN of the client username when checking for
 group membership</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPGroupAttributeIsDN on|off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthLDAPGroupAttributeIsDN on</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPGroupAttributeIsDN on|off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthLDAPGroupAttributeIsDN on</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>When set <code>on</code>, this directive says to use the
     distinguished name of the client username when checking for group
@@ -707,16 +707,16 @@ group membership</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPRemoteUserIsDN" id="AuthLDAPRemoteUserIsDN">AuthLDAPRemoteUserIsDN</a> <a name="authldapremoteuserisdn" id="authldapremoteuserisdn">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPRemoteUserIsDN" id="AuthLDAPRemoteUserIsDN">AuthLDAPRemoteUserIsDN</a> <a name="authldapremoteuserisdn" id="authldapremoteuserisdn">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Use the DN of the client username to set the REMOTE_USER
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Use the DN of the client username to set the REMOTE_USER
 environment variable</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPRemoteUserIsDN on|off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthLDAPRemoteUserIsDN off</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPRemoteUserIsDN on|off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthLDAPRemoteUserIsDN off</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>If this directive is set to on, the value of the
     <code>REMOTE_USER</code> environment variable will be set to the full
@@ -726,14 +726,14 @@ environment variable</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthLDAPUrl" id="AuthLDAPUrl">AuthLDAPUrl</a> <a name="authldapurl" id="authldapurl">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthLDAPUrl" id="AuthLDAPUrl">AuthLDAPUrl</a> <a name="authldapurl" id="authldapurl">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>URL specifying the LDAP search parameters</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthLDAPUrl <em>url [NONE|SSL|TLS|STARTTLS]</em></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>URL specifying the LDAP search parameters</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthLDAPUrl <em>url [NONE|SSL|TLS|STARTTLS]</em></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>An RFC 2255 URL which specifies the LDAP search parameters
     to use. The syntax of the URL is</p>
@@ -789,7 +789,7 @@ environment variable</td></tr>
 
 <dt>scope</dt>
 
-        <dd>The scope of the search. Can be either <code>one</code>»ò<code>sub</code>. Note that a scope of <code>base</code> is
+        <dd>The scope of the search. Can be either <code>one</code>æˆ–<code>sub</code>. Note that a scope of <code>base</code> is
         also supported by RFC 2255, but is not supported by this
         module. If the scope is not provided, or if <code>base</code> scope
         is specified, the default is to use a scope of
@@ -836,16 +836,16 @@ environment variable</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="AuthzLDAPAuthoritative" id="AuthzLDAPAuthoritative">AuthzLDAPAuthoritative</a> <a name="authzldapauthoritative" id="authzldapauthoritative">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="AuthzLDAPAuthoritative" id="AuthzLDAPAuthoritative">AuthzLDAPAuthoritative</a> <a name="authzldapauthoritative" id="authzldapauthoritative">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Prevent other authentication modules from
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Prevent other authentication modules from
 authenticating the user if this one fails</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>AuthzLDAPAuthoritative on|off</code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>AuthzLDAPAuthoritative on</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Override">¸²¸ÇÏî</a></th><td>AuthConfig</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_authnz_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>AuthzLDAPAuthoritative on|off</code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>AuthzLDAPAuthoritative on</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Override">è¦†ç›–é¡¹</a></th><td>AuthConfig</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_authnz_ldap</td></tr>
 </table>
     <p>Set to <code>off</code> if this module should let other
     authentication modules attempt to authenticate the user, should
@@ -856,6 +856,6 @@ authenticating the user if this one fails</td></tr>
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

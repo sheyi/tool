@@ -1,30 +1,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_file_cache £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_file_cache ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º&lt;<a href="../translator_announcement.html#join">ĞéÎ»ÒÔ´ı</a>&gt; | ±¾ÆªÒë¸åÍê³ÉÊ±¼ä£º?Äê?ÔÂ?ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_file_cache</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š&lt;<a href="../translator_announcement.html#join">è™šä½ä»¥å¾…</a>&gt; | æœ¬ç¯‡è¯‘ç¨¿å®Œæˆæ—¶é—´ï¼š?å¹´?æœˆ?æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_file_cache</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>Ìá¹©ÎÄ¼şÃèÊö·û»º´æÖ§³Ö£¬´Ó¶øÌá¸ßApacheĞÔÄÜ</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>ÊµÑé(X)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>file_cache_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>mod_file_cache.c</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>æä¾›æ–‡ä»¶æè¿°ç¬¦ç¼“å­˜æ”¯æŒï¼Œä»è€Œæé«˜Apacheæ€§èƒ½</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>å®éªŒ(X)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>file_cache_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>mod_file_cache.c</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
 
     <div class="warning">
@@ -44,7 +44,7 @@
     (specifically, the file I/O) for serving the file when the
     server is started rather than during each request.</p>
 
-    <p>×¢Òâ£ºYou cannot use this for speeding up CGI programs or
+    <p>æ³¨æ„ï¼šYou cannot use this for speeding up CGI programs or
     other files which are served by special content handlers. It
     can only be used for regular files which are usually served by
     the Apache core content handler.</p>
@@ -57,7 +57,7 @@
 <h2><a name="using" id="using">Using mod_file_cache</a></h2>
 
     <p><code class="module"><a href="../mod/mod_file_cache.html">mod_file_cache</a></code> caches a list of statically
-    configured files via <code class="directive"><a href="#mmapfile">MMapFile</a></code>»ò<code class="directive"><a href="#cachefile">CacheFile</a></code> directives in the main server configuration.</p>
+    configured files via <code class="directive"><a href="#mmapfile">MMapFile</a></code>æˆ–<code class="directive"><a href="#cachefile">CacheFile</a></code> directives in the main server configuration.</p>
 
     <p>Not all platforms support both directives. For example, Apache
     on Windows does not currently support the <code class="directive"><a href="#mmapstatic">MMapStatic</a></code> directive, while
@@ -86,7 +86,7 @@
       without restarting the server you may end up serving requests that
       are completely bogus. You should update files by unlinking the old
       copy and putting a new copy in place. Most tools such as
-      <code>rdist</code>ºÍ<code>mv</code> do this. The reason why this
+      <code>rdist</code>å’Œ<code>mv</code> do this. The reason why this
       modules doesn't take care of changes to the files is that this check
       would need an extra <code>stat()</code> every time which is a waste
       and against the intent of I/O reduction.</p>
@@ -96,7 +96,7 @@
 
       <p><code class="directive"><a href="#cachefile">CacheFile</a></code>
       directive of <code class="module"><a href="../mod/mod_file_cache.html">mod_file_cache</a></code> opens an active
-      <em>handle</em>»ò<em>file descriptor</em> to the file (or files)
+      <em>handle</em>æˆ–<em>file descriptor</em> to the file (or files)
       listed in the configuration directive and places these open file
       handles in the cache. When the file is requested, the server
       retrieves the handle from the cache and passes it to the
@@ -113,10 +113,10 @@
       modified <em>in place</em> without restarting the server you
       may end up serving requests that are completely bogus. You
       should update files by unlinking the old copy and putting a new
-      copy in place. Most tools such as <code>rdist</code>ºÍ<code>mv</code> do this.</p>
+      copy in place. Most tools such as <code>rdist</code>å’Œ<code>mv</code> do this.</p>
     
 
-    <div class="note"><h3>×¢Òâ</h3>
+    <div class="note"><h3>æ³¨æ„</h3>
       <p>Don't bother asking for a directive which recursively
       caches all the files in a directory. Try this instead... See the 
       <code class="directive"><a href="../mod/core.html#include">Include</a></code> directive, and consider
@@ -129,13 +129,13 @@
     </div>
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="CacheFile" id="CacheFile">CacheFile</a> <a name="cachefile" id="cachefile">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="CacheFile" id="CacheFile">CacheFile</a> <a name="cachefile" id="cachefile">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Cache a list of file handles at startup time</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>CacheFile <var>file-path</var> [<var>file-path</var>] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>ÊµÑé(X)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_file_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Cache a list of file handles at startup time</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>CacheFile <var>file-path</var> [<var>file-path</var>] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>å®éªŒ(X)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_file_cache</td></tr>
 </table>
     <p><code class="directive">CacheFile</code> directive opens handles to
     one or more files (given as whitespace separated arguments) and
@@ -150,27 +150,27 @@
     stuff to match paths through symbolic links <em>etc.</em>
     because that again would cost extra <code>stat()</code> system
     calls which is not acceptable. This module may or may not work
-    with filenames rewritten by <code class="module"><a href="../mod/mod_alias.html">mod_alias</a></code>»ò<code class="module"><a href="../mod/mod_rewrite.html">mod_rewrite</a></code>.</p>
+    with filenames rewritten by <code class="module"><a href="../mod/mod_alias.html">mod_alias</a></code>æˆ–<code class="module"><a href="../mod/mod_rewrite.html">mod_rewrite</a></code>.</p>
 
-    <div class="example"><h3>Ê¾Àı</h3><p><code>
+    <div class="example"><h3>ç¤ºä¾‹</h3><p><code>
       CacheFile /usr/local/apache/htdocs/index.html
     </code></p></div>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="MMapFile" id="MMapFile">MMapFile</a> <a name="mmapfile" id="mmapfile">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="MMapFile" id="MMapFile">MMapFile</a> <a name="mmapfile" id="mmapfile">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Map a list of files into memory at startup time</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>MMapFile <var>file-path</var> [<var>file-path</var>] ...</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>ÊµÑé(X)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_file_cache</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Map a list of files into memory at startup time</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>MMapFile <var>file-path</var> [<var>file-path</var>] ...</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>å®éªŒ(X)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_file_cache</td></tr>
 </table>
     <p><code class="directive">MMapFile</code> directive maps one or more files
     (given as whitespace separated arguments) into memory at server
     startup time. They are automatically unmapped on a server
     shutdown. When the files have changed on the filesystem at
-    least a <code>HUP</code>»ò<code>USR1</code> signal should be send to
+    least a <code>HUP</code>æˆ–<code>USR1</code> signal should be send to
     the server to re-<code>mmap()</code> them.</p>
 
     <p>Be careful with the <var>file-path</var> arguments: They have
@@ -179,15 +179,15 @@
     stuff to match paths through symbolic links <em>etc.</em>
     because that again would cost extra <code>stat()</code> system
     calls which is not acceptable. This module may or may not work
-    with filenames rewritten by <code class="module"><a href="../mod/mod_alias.html">mod_alias</a></code>»ò<code class="module"><a href="../mod/mod_rewrite.html">mod_rewrite</a></code>.</p>
+    with filenames rewritten by <code class="module"><a href="../mod/mod_alias.html">mod_alias</a></code>æˆ–<code class="module"><a href="../mod/mod_rewrite.html">mod_rewrite</a></code>.</p>
 
-    <div class="example"><h3>Ê¾Àı</h3><p><code>
+    <div class="example"><h3>ç¤ºä¾‹</h3><p><code>
       MMapFile /usr/local/apache/htdocs/index.html
     </code></p></div>
 
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

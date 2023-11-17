@@ -1,48 +1,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ÖĞÎÄ, ÊÖ²á, ÖĞÎÄ°æ, ÖĞÎÄÊÖ²á, ÖĞÎÄ°æÊÖ²á, ²Î¿¼ÊÖ²á, ÖĞÎÄ²Î¿¼ÊÖ²á, ½ğ²½¹ú" />
-<meta name="description" content="Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á" />
-<meta name="author" content="½ğ²½¹ú" />
+<meta name="keywords" content="Apache, ä¸­æ–‡, æ‰‹å†Œ, ä¸­æ–‡ç‰ˆ, ä¸­æ–‡æ‰‹å†Œ, ä¸­æ–‡ç‰ˆæ‰‹å†Œ, å‚è€ƒæ‰‹å†Œ, ä¸­æ–‡å‚è€ƒæ‰‹å†Œ, é‡‘æ­¥å›½" />
+<meta name="description" content="Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ" />
+<meta name="author" content="é‡‘æ­¥å›½" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>mod_ldap £­ Apache 2.2 ÖĞÎÄ°æ²Î¿¼ÊÖ²á</title>
+<title>mod_ldap ï¼ Apache 2.2 ä¸­æ–‡ç‰ˆå‚è€ƒæ‰‹å†Œ</title>
 </head>
 <body><div id="page-header">
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p><p class="apache">Apache HTTP Server °æ±¾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p><p class="apache">Apache HTTP Server ç‰ˆæœ¬2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">ÎÄµµ</a> &gt; <a href="../index.html">°æ±¾2.2</a> &gt; <a href="./index.html">Ä£¿é</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">æ–‡æ¡£</a> &gt; <a href="../index.html">ç‰ˆæœ¬2.2</a> &gt; <a href="./index.html">æ¨¡å—</a></div>
 
-<div id="translation-info">¡¡¡¡ <a href="../translator_announcement.html#thanks">ÖÂĞ»</a> | ±¾ÆªÒëÕß£º<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">½ğ²½¹ú</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">ÆäËû×÷Æ·</a>) | ±¾Ò³×îºó¸üĞÂ£º0000Äê00ÔÂ00ÈÕ[<a href="../translator_announcement.html#last_new" style="color:#F91C58">²é¿´×îĞÂ°æ±¾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">µçĞÅ¾µÏñ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ÍøÍ¨¾µÏñ</a></div>
-<div id="page-content"><div id="preamble"><h1>ApacheÄ£¿é mod_ldap</h1>
+<div id="translation-info">ã€€ã€€ <a href="../translator_announcement.html#thanks">è‡´è°¢</a> | æœ¬ç¯‡è¯‘è€…ï¼š<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">é‡‘æ­¥å›½</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">å…¶ä»–ä½œå“</a>) | æœ¬é¡µæœ€åæ›´æ–°ï¼š0000å¹´00æœˆ00æ—¥[<a href="../translator_announcement.html#last_new" style="color:#F91C58">æŸ¥çœ‹æœ€æ–°ç‰ˆæœ¬</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">ç”µä¿¡é•œåƒ</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">ç½‘é€šé•œåƒ</a></div>
+<div id="page-content"><div id="preamble"><h1>Apacheæ¨¡å— mod_ldap</h1>
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="module">
-<tr><th><a href="module-dict.html#Description">ËµÃ÷</a></th><td>ÎªÆäËüLDAPÄ£¿éÌá¹©LDAPÁ¬½Ó³ØºÍ½á¹û»º³å·şÎñ</td></tr>
-<tr><th><a href="module-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="module-dict.html#ModuleIdentifier">Ä£¿éÃû</a></th><td>ldap_module</td></tr>
-<tr><th><a href="module-dict.html#SourceFile">Ô´ÎÄ¼ş</a></th><td>util_ldap.c</td></tr>
-<tr><th><a href="module-dict.html#Compatibility">¼æÈİĞÔ</a></th><td>½öÔÚ Apache 2.0.41 ¼°ÒÔºóµÄ°æ±¾ÖĞ¿ÉÓÃ</td></tr>
+<tr><th><a href="module-dict.html#Description">è¯´æ˜</a></th><td>ä¸ºå…¶å®ƒLDAPæ¨¡å—æä¾›LDAPè¿æ¥æ± å’Œç»“æœç¼“å†²æœåŠ¡</td></tr>
+<tr><th><a href="module-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="module-dict.html#ModuleIdentifier">æ¨¡å—å</a></th><td>ldap_module</td></tr>
+<tr><th><a href="module-dict.html#SourceFile">æºæ–‡ä»¶</a></th><td>util_ldap.c</td></tr>
+<tr><th><a href="module-dict.html#Compatibility">å…¼å®¹æ€§</a></th><td>ä»…åœ¨ Apache 2.0.41 åŠä»¥åçš„ç‰ˆæœ¬ä¸­å¯ç”¨</td></tr>
 </table>
-<h3>¸ÅÊö</h3>
+<h3>æ¦‚è¿°</h3>
 
-    <p>±¾Ä£¿éÍ¨¹ıºó¶ËÁ¬½ÓLDAP·şÎñÀ´¸ÄÉÆÍøÕ¾ĞÔÄÜ¡£³ıÁË±ê×¼LDAP¿âÌá¹©µÄ¹¦ÄÜÍâ£¬±¾Ä£¿éÔö¼ÓÁËÒ»¸öLDAPÁ¬½Ó³ØºÍÒ»¸öLDAP¹²ÏíÄÚ´æ»º³åÇø¡£</p>
+    <p>æœ¬æ¨¡å—é€šè¿‡åç«¯è¿æ¥LDAPæœåŠ¡æ¥æ”¹å–„ç½‘ç«™æ€§èƒ½ã€‚é™¤äº†æ ‡å‡†LDAPåº“æä¾›çš„åŠŸèƒ½å¤–ï¼Œæœ¬æ¨¡å—å¢åŠ äº†ä¸€ä¸ªLDAPè¿æ¥æ± å’Œä¸€ä¸ªLDAPå…±äº«å†…å­˜ç¼“å†²åŒºã€‚</p>
 
-    <p>ÎªÁËÊ¹ÓÃ±¾Ä£¿éµÄ¹¦ÄÜ£¬LDAPÖ§³Ö±ØĞë±àÒë½øAPU¡£ÕâÊÇÍ¨¹ıÔÚ±àÒëApacheÊ±£¬ÔÚ<code class="program"><a href="../programs/configure.html">configure</a></code>½Å±¾ÃüÁîĞĞÉÏÔö¼Ó <code>--with-ldap</code> ¿ª¹ØÀ´ÊµÏÖµÄ¡£</p>
+    <p>ä¸ºäº†ä½¿ç”¨æœ¬æ¨¡å—çš„åŠŸèƒ½ï¼ŒLDAPæ”¯æŒå¿…é¡»ç¼–è¯‘è¿›APUã€‚è¿™æ˜¯é€šè¿‡åœ¨ç¼–è¯‘Apacheæ—¶ï¼Œåœ¨<code class="program"><a href="../programs/configure.html">configure</a></code>è„šæœ¬å‘½ä»¤è¡Œä¸Šå¢åŠ  <code>--with-ldap</code> å¼€å…³æ¥å®ç°çš„ã€‚</p>
 
-    <p>ÎªÁËÖ§³ÖSSL/TLS £¬ĞèÒª<a class="glossarylink" href="../glossary.html#apr" title="see glossary">APR</a>Á¬½ÓÒÔÏÂÒ»¸öLDAP SDK £º<a href="http://www.openldap.org/">OpenLDAP SDK</a>(2.x»ò¸üĞÂ), <a href="http://developer.novell.com/ndk/cldap.htm">Novell LDAP SDK</a>, <a href="http://www.mozilla.org/directory/csdk.html">Mozilla LDAP SDK</a>, ±¾µØ Solaris LDAP SDK (»ùÓÚMozilla), ±¾µØ Microsoft LDAP SDK, <a href="http://www.iplanet.com/downloads/developer/">iPlanet (Netscape)</a> SDK ¡£²Î¼û<a href="http://apr.apache.org">APR</a>ÍøÕ¾ÒÔ»ñÈ¡¸ü¶àĞÅÏ¢¡£</p>
+    <p>ä¸ºäº†æ”¯æŒSSL/TLS ï¼Œéœ€è¦<a class="glossarylink" href="../glossary.html#apr" title="see glossary">APR</a>è¿æ¥ä»¥ä¸‹ä¸€ä¸ªLDAP SDK ï¼š<a href="http://www.openldap.org/">OpenLDAP SDK</a>(2.xæˆ–æ›´æ–°), <a href="http://developer.novell.com/ndk/cldap.htm">Novell LDAP SDK</a>, <a href="http://www.mozilla.org/directory/csdk.html">Mozilla LDAP SDK</a>, æœ¬åœ° Solaris LDAP SDK (åŸºäºMozilla), æœ¬åœ° Microsoft LDAP SDK, <a href="http://www.iplanet.com/downloads/developer/">iPlanet (Netscape)</a> SDK ã€‚å‚è§<a href="http://apr.apache.org">APR</a>ç½‘ç«™ä»¥è·å–æ›´å¤šä¿¡æ¯ã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="exampleconfig" id="exampleconfig">Ê¾ÀıÅäÖÃ</a></h2>
-    <p>ÏÂÃæµÄÅäÖÃÊÇÒ»¸öÊ¹ÓÃ<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>Ä£¿éÀ´ÌáÉı<code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code>Ìá¹©µÄHTTP»ù±¾ÈÏÖ¤ĞÔÄÜµÄÀı×Ó¡£</p>
+<h2><a name="exampleconfig" id="exampleconfig">ç¤ºä¾‹é…ç½®</a></h2>
+    <p>ä¸‹é¢çš„é…ç½®æ˜¯ä¸€ä¸ªä½¿ç”¨<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>æ¨¡å—æ¥æå‡<code class="module"><a href="../mod/mod_authnz_ldap.html">mod_authnz_ldap</a></code>æä¾›çš„HTTPåŸºæœ¬è®¤è¯æ€§èƒ½çš„ä¾‹å­ã€‚</p>
 
     <div class="example"><p><code>
-      # ¿ªÆôLDAPÁ¬½Ó³Ø¼°¹²ÏíÄÚ´æ»º³å¡£<br />
-      # ¿ªÆôLDAP»º³å×´Ì¬´¦ÀíÆ÷¡£ĞèÒªÔØÈëmod_ldapºÍmod_authnz_ldapÄ£¿é¡£<br />
-      # °Ñ"yourdomain.example.com"¸ÄÎªÄãÕæÊµµÄÓòÃû¡£<br />
+      # å¼€å¯LDAPè¿æ¥æ± åŠå…±äº«å†…å­˜ç¼“å†²ã€‚<br />
+      # å¼€å¯LDAPç¼“å†²çŠ¶æ€å¤„ç†å™¨ã€‚éœ€è¦è½½å…¥mod_ldapå’Œmod_authnz_ldapæ¨¡å—ã€‚<br />
+      # æŠŠ"yourdomain.example.com"æ”¹ä¸ºä½ çœŸå®çš„åŸŸåã€‚<br />
       <br />
       LDAPSharedCacheSize 200000<br />
       LDAPCacheEntries 1024<br />
@@ -65,37 +65,37 @@
     </code></p></div>
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="pool" id="pool">LDAPÁ¬½Ó³Ø</a></h2>
+<h2><a name="pool" id="pool">LDAPè¿æ¥æ± </a></h2>
 
-    <p>LDAPÁ¬½ÓÊÇÔÚÇëÇóÖ®¼ä¹²ÏíµÄ¡£Õâ¾ÍÔÊĞíLDAP·şÎñÆ÷ÔÚÌø¹ıunbind->connect->rebindÕâÑùÒ»¸ö¹¤×÷ÖÜÆÚµÄÇé¿öÏÂ£¬±£ÁôÁ¬½ÓÒÔ¼õÉÙÎªÏÂÒ»´ÎÇëÇó×¼±¸Á¬½ÓµÄÊ±¼ä¡£ÕâÖÖĞÔÄÜÓÅ»¯ÓĞµãÏóHTTP·şÎñµÄKeep-Alives¹¦ÄÜ¡£</p>
+    <p>LDAPè¿æ¥æ˜¯åœ¨è¯·æ±‚ä¹‹é—´å…±äº«çš„ã€‚è¿™å°±å…è®¸LDAPæœåŠ¡å™¨åœ¨è·³è¿‡unbind->connect->rebindè¿™æ ·ä¸€ä¸ªå·¥ä½œå‘¨æœŸçš„æƒ…å†µä¸‹ï¼Œä¿ç•™è¿æ¥ä»¥å‡å°‘ä¸ºä¸‹ä¸€æ¬¡è¯·æ±‚å‡†å¤‡è¿æ¥çš„æ—¶é—´ã€‚è¿™ç§æ€§èƒ½ä¼˜åŒ–æœ‰ç‚¹è±¡HTTPæœåŠ¡çš„Keep-AlivesåŠŸèƒ½ã€‚</p>
 
-    <p>ÔÚÒ»¸ö±È½Ï·±Ã¦µÄ·şÎñÆ÷ÉÏ£¬ºÜÓĞ¿ÉÄÜĞí¶àÇëÇóÍ¬Ê±³¢ÊÔÓëÍ¬Ò»¸öLDAP·şÎñ½øĞĞÁ¬½Ó²¢µÃµ½ËüµÄ·şÎñ¡£Èç¹ûÒ»¸öLDAPÁ¬½ÓÕıÔÚÊ¹ÓÃ£¬Apache»áÔÚÔ­À´Á¬½ÓµÄ»ù´¡ÉÏ£¬Éú³ÉÒ»¸öĞÂµÄÁ¬½Ó¡£Õâ½«È·±£Á¬½Ó³Ø²»»á³ÉÎªÆ¿¾±¡£</p>
+    <p>åœ¨ä¸€ä¸ªæ¯”è¾ƒç¹å¿™çš„æœåŠ¡å™¨ä¸Šï¼Œå¾ˆæœ‰å¯èƒ½è®¸å¤šè¯·æ±‚åŒæ—¶å°è¯•ä¸åŒä¸€ä¸ªLDAPæœåŠ¡è¿›è¡Œè¿æ¥å¹¶å¾—åˆ°å®ƒçš„æœåŠ¡ã€‚å¦‚æœä¸€ä¸ªLDAPè¿æ¥æ­£åœ¨ä½¿ç”¨ï¼ŒApacheä¼šåœ¨åŸæ¥è¿æ¥çš„åŸºç¡€ä¸Šï¼Œç”Ÿæˆä¸€ä¸ªæ–°çš„è¿æ¥ã€‚è¿™å°†ç¡®ä¿è¿æ¥æ± ä¸ä¼šæˆä¸ºç“¶é¢ˆã€‚</p>
 
-    <p>²»ĞèÒªÔÚApacheÅäÖÃÖĞÊÖ¶¯¿ªÆôÁ¬½Ó³Ø¹¦ÄÜ¡£ÈÎºÎÊ¹ÓÃ±¾Ä£¿éÀ´·ÃÎÊLDAP·şÎñµÄÄ£¿é»á×Ô¶¯¹²ÏíÁ¬½Ó³Ø¡£</p>
+    <p>ä¸éœ€è¦åœ¨Apacheé…ç½®ä¸­æ‰‹åŠ¨å¼€å¯è¿æ¥æ± åŠŸèƒ½ã€‚ä»»ä½•ä½¿ç”¨æœ¬æ¨¡å—æ¥è®¿é—®LDAPæœåŠ¡çš„æ¨¡å—ä¼šè‡ªåŠ¨å…±äº«è¿æ¥æ± ã€‚</p>
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="cache" id="cache">LDAP»º³å</a></h2>
+<h2><a name="cache" id="cache">LDAPç¼“å†²</a></h2>
 
-    <p>ÎªÁË¸ÄÉÆĞÔÄÜ£¬<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>Ä£¿éÊ¹ÓÃÒ»ÖÖ»ı¼«µÄ»º³å²ßÂÔÒÔ¾¡Á¿¼õÉÙÓëLDAP·şÎñÆ÷µÄÁªÏµ¡£Í¨¹ı»º³å£¬¿ÉÒÔ·½±ãµØÊ¹ApacheÔÚÌá¹©ÊÜmod_authnz_ldap±£»¤µÄÒ³ÃæÊ±£¬µÃµ½¶ş±¶»òÈı±¶µÄÍÌÍÂÁ¿¡£Í¬Ê±£¬LDAP·şÎñÆ÷µÄ¸ºÔØÒ²»áÃ÷ÏÔµØ¼õĞ¡¡£</p>
+    <p>ä¸ºäº†æ”¹å–„æ€§èƒ½ï¼Œ<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>æ¨¡å—ä½¿ç”¨ä¸€ç§ç§¯æçš„ç¼“å†²ç­–ç•¥ä»¥å°½é‡å‡å°‘ä¸LDAPæœåŠ¡å™¨çš„è”ç³»ã€‚é€šè¿‡ç¼“å†²ï¼Œå¯ä»¥æ–¹ä¾¿åœ°ä½¿Apacheåœ¨æä¾›å—mod_authnz_ldapä¿æŠ¤çš„é¡µé¢æ—¶ï¼Œå¾—åˆ°äºŒå€æˆ–ä¸‰å€çš„ååé‡ã€‚åŒæ—¶ï¼ŒLDAPæœåŠ¡å™¨çš„è´Ÿè½½ä¹Ÿä¼šæ˜æ˜¾åœ°å‡å°ã€‚</p>
 
-    <p><code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>Ö§³ÖÁ½ÖÖÀàĞÍµÄLDAP»º³å¡£ÔÚsearch/bind½×¶Î£¬Ê¹ÓÃÒ»¸ö<em>search/bind»º³å</em>£¬ÔÚcompare½×¶Î£¬Ê¹ÓÃÁ½¸ö<em>operation»º³å</em>¡£·şÎñÆ÷ÒıÓÃµÄÃ¿¸öLDAP URL¶¼ÓĞÒ»×éËü×Ô¼ºµÄÉÏÊöÈı¸ö»º³å¡£</p>
+    <p><code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>æ”¯æŒä¸¤ç§ç±»å‹çš„LDAPç¼“å†²ã€‚åœ¨search/bindé˜¶æ®µï¼Œä½¿ç”¨ä¸€ä¸ª<em>search/bindç¼“å†²</em>ï¼Œåœ¨compareé˜¶æ®µï¼Œä½¿ç”¨ä¸¤ä¸ª<em>operationç¼“å†²</em>ã€‚æœåŠ¡å™¨å¼•ç”¨çš„æ¯ä¸ªLDAP URLéƒ½æœ‰ä¸€ç»„å®ƒè‡ªå·±çš„ä¸Šè¿°ä¸‰ä¸ªç¼“å†²ã€‚</p>
 
-    <h3><a name="search-bind" id="search-bind">Search/Bind»º³å</a></h3>
-      <p>´¦ÀíÒ»¸ö²éÑ¯ºÍ°ó¶¨²Ù×÷¶ÔLDAPÊµÊ©À´½²£¬ÊÇ·Ç³£ºÄÊ±£¬ÓÈÆäµ±Ä¿Â¼ºÜ´óÊ±£¬ÕâÒ»µã¸ü¼ÓÃ÷ÏÔ¡£Search/bind»º³åÓÃÀ´»º³åËùÓĞµÄ×îÖÕÄÜ³É¹¦°ó¶¨µÄ²éÑ¯¡£Ê§°ÜµÄ½á¹û(±ÈÈç£º²»³É¹¦µÄ²éÑ¯»ò²éÑ¯½á¹ûÎŞ·¨³É¹¦°ó¶¨)²»»á±»»º³å¡£ÕâÑù×öÊÇÒòÎªĞÅÈÎ¹ØÏµÊ§°ÜµÄÁ¬½ÓÔÚËùÓĞÁ¬½ÓÖĞÖ»Õ¼ÁËºÜĞ¡µÄÒ»¸ö°Ù·Ö±È£¬Òò´Ë£¬Í¨¹ı²»»º³åÕâĞ©Á¬½Ó£¬¿ÉÒÔ¼õÉÙ»º³åÇøµÄ´óĞ¡¡£</p>
+    <h3><a name="search-bind" id="search-bind">Search/Bindç¼“å†²</a></h3>
+      <p>å¤„ç†ä¸€ä¸ªæŸ¥è¯¢å’Œç»‘å®šæ“ä½œå¯¹LDAPå®æ–½æ¥è®²ï¼Œæ˜¯éå¸¸è€—æ—¶ï¼Œå°¤å…¶å½“ç›®å½•å¾ˆå¤§æ—¶ï¼Œè¿™ä¸€ç‚¹æ›´åŠ æ˜æ˜¾ã€‚Search/bindç¼“å†²ç”¨æ¥ç¼“å†²æ‰€æœ‰çš„æœ€ç»ˆèƒ½æˆåŠŸç»‘å®šçš„æŸ¥è¯¢ã€‚å¤±è´¥çš„ç»“æœ(æ¯”å¦‚ï¼šä¸æˆåŠŸçš„æŸ¥è¯¢æˆ–æŸ¥è¯¢ç»“æœæ— æ³•æˆåŠŸç»‘å®š)ä¸ä¼šè¢«ç¼“å†²ã€‚è¿™æ ·åšæ˜¯å› ä¸ºä¿¡ä»»å…³ç³»å¤±è´¥çš„è¿æ¥åœ¨æ‰€æœ‰è¿æ¥ä¸­åªå äº†å¾ˆå°çš„ä¸€ä¸ªç™¾åˆ†æ¯”ï¼Œå› æ­¤ï¼Œé€šè¿‡ä¸ç¼“å†²è¿™äº›è¿æ¥ï¼Œå¯ä»¥å‡å°‘ç¼“å†²åŒºçš„å¤§å°ã€‚</p>
 
-      <p><code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>ÔÚ»º³åÇøÀï´¢´æÁËÓÃ»§Ãû¡¢µÃµ½µÄDN ¡¢ÓÃÀ´°ó¶¨µÄ¿ÚÁî¡¢°ó¶¨µÄÊ±¼ä¡£µ±Ò»¸öĞÂµÄÁ¬½ÓÓÃÍ¬Ò»¸öÓÃ»§ÃûÀ´³õÊ¼»¯µÄÊ±ºò£¬<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>½«ĞÂµÄÁ¬½ÓµÄ¿ÚÁîÓë±£´æÔÚ»º³åÇøÀïµÄ¿ÚÁî½øĞĞ±È½Ï¡£Èç¹û¿ÚÁîÆ¥Åä£¬²¢ÇÒÄÇ¸ö»º³åÏîÄ¿ÉĞÎ´Ê§Ğ§µÄ»°£¬<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>¾ÍÌø¹ısearch/bind½×¶Î¡£</p>
+      <p><code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>åœ¨ç¼“å†²åŒºé‡Œå‚¨å­˜äº†ç”¨æˆ·åã€å¾—åˆ°çš„DN ã€ç”¨æ¥ç»‘å®šçš„å£ä»¤ã€ç»‘å®šçš„æ—¶é—´ã€‚å½“ä¸€ä¸ªæ–°çš„è¿æ¥ç”¨åŒä¸€ä¸ªç”¨æˆ·åæ¥åˆå§‹åŒ–çš„æ—¶å€™ï¼Œ<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>å°†æ–°çš„è¿æ¥çš„å£ä»¤ä¸ä¿å­˜åœ¨ç¼“å†²åŒºé‡Œçš„å£ä»¤è¿›è¡Œæ¯”è¾ƒã€‚å¦‚æœå£ä»¤åŒ¹é…ï¼Œå¹¶ä¸”é‚£ä¸ªç¼“å†²é¡¹ç›®å°šæœªå¤±æ•ˆçš„è¯ï¼Œ<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>å°±è·³è¿‡search/bindé˜¶æ®µã€‚</p>
 
-      <p>²éÑ¯Óë°ó¶¨»º³åÓÉ<code class="directive"><a href="#ldapcacheentries">LDAPCacheEntries</a></code>ºÍ<code class="directive"><a href="#ldapcachettl">LDAPCacheTTL</a></code>Ö¸ÁîÀ´¿ØÖÆ¡£</p>
+      <p>æŸ¥è¯¢ä¸ç»‘å®šç¼“å†²ç”±<code class="directive"><a href="#ldapcacheentries">LDAPCacheEntries</a></code>å’Œ<code class="directive"><a href="#ldapcachettl">LDAPCacheTTL</a></code>æŒ‡ä»¤æ¥æ§åˆ¶ã€‚</p>
     
 
-    <h3><a name="opcaches" id="opcaches">Operation»º³å</a></h3>
-      <p>ÔÚÇø·ÖÓë±æ±ğ¹ı³ÌÖĞ£¬<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>Ê¹ÓÃÁ½¸ö²Ù×÷»º³åÇøÀ´»º³å±È½ÏµÄ²Ù×÷¡£µÚÒ»¸ö»º³åÇøÓÃÀ´»º³åÊÇ·ñLDAP×é³ÉÔ±µÄ²âÊÔ½á¹û£¬µÚ¶ş¸öÓÃÀ´»º³å²»Í¬Ãû×Ö¼ä¼ø±ğµÄ±È½Ï½á¹û¡£</p>
+    <h3><a name="opcaches" id="opcaches">Operationç¼“å†²</a></h3>
+      <p>åœ¨åŒºåˆ†ä¸è¾¨åˆ«è¿‡ç¨‹ä¸­ï¼Œ<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>ä½¿ç”¨ä¸¤ä¸ªæ“ä½œç¼“å†²åŒºæ¥ç¼“å†²æ¯”è¾ƒçš„æ“ä½œã€‚ç¬¬ä¸€ä¸ªç¼“å†²åŒºç”¨æ¥ç¼“å†²æ˜¯å¦LDAPç»„æˆå‘˜çš„æµ‹è¯•ç»“æœï¼Œç¬¬äºŒä¸ªç”¨æ¥ç¼“å†²ä¸åŒåå­—é—´é‰´åˆ«çš„æ¯”è¾ƒç»“æœã€‚</p>
 
-      <p>ÕâÁ½¸ö»º³åÇø¶¼ÊÇÓÉ<code class="directive"><a href="#ldapopcacheentries">LDAPOpCacheEntries</a></code>ºÍ<code class="directive"><a href="#ldapopcachettl">LDAPOpCacheTTL</a></code>Ö¸ÁîÀ´¿ØÖÆµÄ¡£</p>
+      <p>è¿™ä¸¤ä¸ªç¼“å†²åŒºéƒ½æ˜¯ç”±<code class="directive"><a href="#ldapopcacheentries">LDAPOpCacheEntries</a></code>å’Œ<code class="directive"><a href="#ldapopcachettl">LDAPOpCacheTTL</a></code>æŒ‡ä»¤æ¥æ§åˆ¶çš„ã€‚</p>
     
 
-    <h3><a name="monitoring" id="monitoring">»º³åÇøµÄ¼à¿Ø</a></h3>
-      <p><code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>°üº¬ÁËÒ»¸öÍêÕûµÄ´¦ÀíÆ÷£¬Í¨¹ıËü¿ÉÒÔÊ¹¹ÜÀíÔ±¼à¿Ø»º³åÇøµÄĞÔÄÜ¡£Õâ¸ö´¦ÀíÆ÷µÄÃû×ÖÊÇ<code>ldap-status</code> £¬Òò´Ë¿ÉÒÔÓÃÏÂÁĞÖ¸ÁîÀ´µÃµ½<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>»º³åÇøµÄÏà¹ØĞÅÏ¢£º</p>
+    <h3><a name="monitoring" id="monitoring">ç¼“å†²åŒºçš„ç›‘æ§</a></h3>
+      <p><code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>åŒ…å«äº†ä¸€ä¸ªå®Œæ•´çš„å¤„ç†å™¨ï¼Œé€šè¿‡å®ƒå¯ä»¥ä½¿ç®¡ç†å‘˜ç›‘æ§ç¼“å†²åŒºçš„æ€§èƒ½ã€‚è¿™ä¸ªå¤„ç†å™¨çš„åå­—æ˜¯<code>ldap-status</code> ï¼Œå› æ­¤å¯ä»¥ç”¨ä¸‹åˆ—æŒ‡ä»¤æ¥å¾—åˆ°<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>ç¼“å†²åŒºçš„ç›¸å…³ä¿¡æ¯ï¼š</p>
 
       <div class="example"><p><code>
         &lt;Location /server/cache-info&gt;<br />
@@ -105,17 +105,17 @@
         &lt;/Location&gt;
       </code></p></div>
 
-      <p>Í¨¹ıURL <code>http://servername/cache-info</code> £¬¹ÜÀíÔ±¿ÉÒÔµÃµ½<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>Ê¹ÓÃµÄÃ¿¸ö»º³åµÄ×´Ì¬±¨¸æ¡£×¢Òâ£¬Èç¹ûApache²»Ö§³Ö¹²ÏíÄÚ´æ£¬ÄÇÃ´Ã¿¸ö<code class="program"><a href="../programs/httpd.html">httpd</a></code>ÊµÀı¶¼ÓĞËü×Ô¼ºµÄ»º³åÇø£¬Òò´Ë£¬Ã¿´ÎÊ¹ÓÃÉÏÊöURL¶¼¿ÉÄÜ»áµÃµ½²»Í¬µÄ½á¹û£¬ÕâÈ¡¾öÓÚ¾ßÌåÄÄ¸ö<code class="program"><a href="../programs/httpd.html">httpd</a></code>ÊµÀı´¦ÀíÁËÕâ¸öÇëÇó¡£</p>
+      <p>é€šè¿‡URL <code>http://servername/cache-info</code> ï¼Œç®¡ç†å‘˜å¯ä»¥å¾—åˆ°<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>ä½¿ç”¨çš„æ¯ä¸ªç¼“å†²çš„çŠ¶æ€æŠ¥å‘Šã€‚æ³¨æ„ï¼Œå¦‚æœApacheä¸æ”¯æŒå…±äº«å†…å­˜ï¼Œé‚£ä¹ˆæ¯ä¸ª<code class="program"><a href="../programs/httpd.html">httpd</a></code>å®ä¾‹éƒ½æœ‰å®ƒè‡ªå·±çš„ç¼“å†²åŒºï¼Œå› æ­¤ï¼Œæ¯æ¬¡ä½¿ç”¨ä¸Šè¿°URLéƒ½å¯èƒ½ä¼šå¾—åˆ°ä¸åŒçš„ç»“æœï¼Œè¿™å–å†³äºå…·ä½“å“ªä¸ª<code class="program"><a href="../programs/httpd.html">httpd</a></code>å®ä¾‹å¤„ç†äº†è¿™ä¸ªè¯·æ±‚ã€‚</p>
     
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="usingssltls" id="usingssltls">Ê¹ÓÃSSL/TSL</a></h2>
+<h2><a name="usingssltls" id="usingssltls">ä½¿ç”¨SSL/TSL</a></h2>
 
-    <p>Í¨¹ı<code class="directive"><a href="#ldaptrustedglobalcert">LDAPTrustedGlobalCert</a></code>, <code class="directive"><a href="#ldaptrustedclientcert">LDAPTrustedClientCert</a></code>, <code class="directive"><a href="#ldaptrustedmode">LDAPTrustedMode</a></code>Ö¸Áî¿ÉÒÔ¶¨ÒåÓëLDAP·şÎñÆ÷½¨Á¢SSL/TSLÁª½Ó¡£ÕâĞ©Ö¸ÁîÖ¸¶¨ÁËÊ¹ÓÃµÄCAºÍ¿ÉÑ¡µÄ¿Í»§¶ËÖ¤Êé£¬ÒÔ¼°Á¬½ÓÊ¹ÓÃµÄ¼ÓÃÜÀàĞÍ(none, SSL, TLS/STARTTLS)¡£</p>
+    <p>é€šè¿‡<code class="directive"><a href="#ldaptrustedglobalcert">LDAPTrustedGlobalCert</a></code>, <code class="directive"><a href="#ldaptrustedclientcert">LDAPTrustedClientCert</a></code>, <code class="directive"><a href="#ldaptrustedmode">LDAPTrustedMode</a></code>æŒ‡ä»¤å¯ä»¥å®šä¹‰ä¸LDAPæœåŠ¡å™¨å»ºç«‹SSL/TSLè”æ¥ã€‚è¿™äº›æŒ‡ä»¤æŒ‡å®šäº†ä½¿ç”¨çš„CAå’Œå¯é€‰çš„å®¢æˆ·ç«¯è¯ä¹¦ï¼Œä»¥åŠè¿æ¥ä½¿ç”¨çš„åŠ å¯†ç±»å‹(none, SSL, TLS/STARTTLS)ã€‚</p>
 
     <div class="example"><p><code>
-      # ÔÚ636¶Ë¿Ú½¨Á¢Ò»¸öSSL LDAPÁª½Ó¡£ĞèÒªÄ£¿émod_ldapºÍmod_authnz_ldapµÄÖ§³Ö¡£<br />
-      # ½«"yourdomain.example.com"ĞŞ¸ÄÎªÄú×Ô¼ºµÄÓòÃû¡£<br />
+      # åœ¨636ç«¯å£å»ºç«‹ä¸€ä¸ªSSL LDAPè”æ¥ã€‚éœ€è¦æ¨¡å—mod_ldapå’Œmod_authnz_ldapçš„æ”¯æŒã€‚<br />
+      # å°†"yourdomain.example.com"ä¿®æ”¹ä¸ºæ‚¨è‡ªå·±çš„åŸŸåã€‚<br />
       <br />
       LDAPTrustedGlobalCert CA_DER /certs/certfile.der<br />
       <br />
@@ -134,8 +134,8 @@
     </code></p></div>
 
     <div class="example"><p><code>
-      # ÔÚ389¶Ë¿Ú½¨Á¢Ò»¸öTLS LDAPÁª½Ó¡£ĞèÒªÄ£¿émod_ldapºÍmod_authnz_ldapµÄÖ§³Ö¡£<br />
-      # ½«"yourdomain.example.com"ĞŞ¸ÄÎªÄú×Ô¼ºµÄÓòÃû¡£<br />
+      # åœ¨389ç«¯å£å»ºç«‹ä¸€ä¸ªTLS LDAPè”æ¥ã€‚éœ€è¦æ¨¡å—mod_ldapå’Œmod_authnz_ldapçš„æ”¯æŒã€‚<br />
+      # å°†"yourdomain.example.com"ä¿®æ”¹ä¸ºæ‚¨è‡ªå·±çš„åŸŸåã€‚<br />
       <br />
       LDAPTrustedGlobalCert CA_DER /certs/certfile.der<br />
       <br />
@@ -301,39 +301,39 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPCacheEntries" id="LDAPCacheEntries">LDAPCacheEntries</a> <a name="ldapcacheentries" id="ldapcacheentries">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPCacheEntries" id="LDAPCacheEntries">LDAPCacheEntries</a> <a name="ldapcacheentries" id="ldapcacheentries">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ö÷LDAP»º³åµÄ×î´óÌõÄ¿Êı</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPCacheEntries <var>number</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>LDAPCacheEntries 1024</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>ä¸»LDAPç¼“å†²çš„æœ€å¤§æ¡ç›®æ•°</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPCacheEntries <var>number</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>LDAPCacheEntries 1024</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
-    <p>Ö¸¶¨Ö÷LDAP»º³åµÄ×î´óÌõÄ¿Êı¡£Õâ¸ö»º³åÇø°üº¬ÁË³É¹¦µÄsearch/bind¶Ô¡£°ÑËüÉèÎª0¿ÉÒÔ¹Ø±Õsearch/bind»º³å¡£Ä¬ÈÏÖµÊÇ1024 ¡£</p>
+    <p>æŒ‡å®šä¸»LDAPç¼“å†²çš„æœ€å¤§æ¡ç›®æ•°ã€‚è¿™ä¸ªç¼“å†²åŒºåŒ…å«äº†æˆåŠŸçš„search/bindå¯¹ã€‚æŠŠå®ƒè®¾ä¸º0å¯ä»¥å…³é—­search/bindç¼“å†²ã€‚é»˜è®¤å€¼æ˜¯1024 ã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPCacheTTL" id="LDAPCacheTTL">LDAPCacheTTL</a> <a name="ldapcachettl" id="ldapcachettl">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPCacheTTL" id="LDAPCacheTTL">LDAPCacheTTL</a> <a name="ldapcachettl" id="ldapcachettl">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>search/bind»º³åÏîÄ¿ÓĞĞ§Ê±ÏŞ</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPCacheTTL <var>seconds</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>LDAPCacheTTL 600</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>search/bindç¼“å†²é¡¹ç›®æœ‰æ•ˆæ—¶é™</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPCacheTTL <var>seconds</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>LDAPCacheTTL 600</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
-    <p>Ö¸¶¨search/bind»º³åÏîÄ¿ÓĞĞ§µÄÊ±¼ä£¬ÒÔÃëÎªµ¥Î»¡£Ä¬ÈÏÎª600Ãë(10·ÖÖÓ)¡£</p>
+    <p>æŒ‡å®šsearch/bindç¼“å†²é¡¹ç›®æœ‰æ•ˆçš„æ—¶é—´ï¼Œä»¥ç§’ä¸ºå•ä½ã€‚é»˜è®¤ä¸º600ç§’(10åˆ†é’Ÿ)ã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPConnectionTimeout" id="LDAPConnectionTimeout">LDAPConnectionTimeout</a> <a name="ldapconnectiontimeout" id="ldapconnectiontimeout">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPConnectionTimeout" id="LDAPConnectionTimeout">LDAPConnectionTimeout</a> <a name="ldapconnectiontimeout" id="ldapconnectiontimeout">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Ö¸¶¨Ì×½Ó×ÖÁ¬½Ó³¬Ê±ÃëÊı</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPConnectionTimeout <var>seconds</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>æŒ‡å®šå¥—æ¥å­—è¿æ¥è¶…æ—¶ç§’æ•°</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPConnectionTimeout <var>seconds</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
     <p>Specifies the timeout value (in seconds) in which the module will
     attempt to connect to the LDAP server.  If a connection is not
@@ -343,66 +343,66 @@
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPOpCacheEntries" id="LDAPOpCacheEntries">LDAPOpCacheEntries</a> <a name="ldapopcacheentries" id="ldapopcacheentries">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPOpCacheEntries" id="LDAPOpCacheEntries">LDAPOpCacheEntries</a> <a name="ldapopcacheentries" id="ldapopcacheentries">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>LDAP compare»º³åÇøµÄ´óĞ¡</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPOpCacheEntries <var>number</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>LDAPOpCacheEntries 1024</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>LDAP compareç¼“å†²åŒºçš„å¤§å°</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPOpCacheEntries <var>number</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>LDAPOpCacheEntries 1024</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
-    <p>Ö¸¶¨<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>Ê¹ÓÃµÄLDAP compare»º³åÇø´óĞ¡¡£Ä¬ÈÏÖµÊÇ1024Ìõ¡£°ÑËüÉèÎª0¿ÉÒÔ¹Ø±Õ²Ù×÷»º³å¡£</p>
+    <p>æŒ‡å®š<code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>ä½¿ç”¨çš„LDAP compareç¼“å†²åŒºå¤§å°ã€‚é»˜è®¤å€¼æ˜¯1024æ¡ã€‚æŠŠå®ƒè®¾ä¸º0å¯ä»¥å…³é—­æ“ä½œç¼“å†²ã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPOpCacheTTL" id="LDAPOpCacheTTL">LDAPOpCacheTTL</a> <a name="ldapopcachettl" id="ldapopcachettl">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPOpCacheTTL" id="LDAPOpCacheTTL">LDAPOpCacheTTL</a> <a name="ldapopcachettl" id="ldapopcachettl">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>²Ù×÷»º³åÓĞĞ§Ê±ÏŞ</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPOpCacheTTL <var>seconds</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>LDAPOpCacheTTL 600</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>æ“ä½œç¼“å†²æœ‰æ•ˆæ—¶é™</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPOpCacheTTL <var>seconds</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>LDAPOpCacheTTL 600</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
-    <p>Ö¸¶¨²Ù×÷»º³åÏîÄ¿µÄÓĞĞ§Ê±³¤£¬ÒÔÃëÎªµ¥Î»¡£Ä¬ÈÏÎª600Ãë¡£</p>
+    <p>æŒ‡å®šæ“ä½œç¼“å†²é¡¹ç›®çš„æœ‰æ•ˆæ—¶é•¿ï¼Œä»¥ç§’ä¸ºå•ä½ã€‚é»˜è®¤ä¸º600ç§’ã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPSharedCacheFile" id="LDAPSharedCacheFile">LDAPSharedCacheFile</a> <a name="ldapsharedcachefile" id="ldapsharedcachefile">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPSharedCacheFile" id="LDAPSharedCacheFile">LDAPSharedCacheFile</a> <a name="ldapsharedcachefile" id="ldapsharedcachefile">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>ÉèÖÃ¹²ÏíÄÚ´æ»º³åÇøÎÄ¼ş</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPSharedCacheFile <var>directory-path/filename</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>è®¾ç½®å…±äº«å†…å­˜ç¼“å†²åŒºæ–‡ä»¶</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPSharedCacheFile <var>directory-path/filename</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
-    <p>ÉèÖÃ¹²ÏíÄÚ´æ»º³åÇøÎÄ¼ş¡£ÈôÎ´ÉèÖÃ£¬½«Ê¹ÓÃÄäÃû¹²ÏíÄÚ´æ(ÈôÆ½Ì¨Ö§³Ö)¡£</p>
+    <p>è®¾ç½®å…±äº«å†…å­˜ç¼“å†²åŒºæ–‡ä»¶ã€‚è‹¥æœªè®¾ç½®ï¼Œå°†ä½¿ç”¨åŒ¿åå…±äº«å†…å­˜(è‹¥å¹³å°æ”¯æŒ)ã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPSharedCacheSize" id="LDAPSharedCacheSize">LDAPSharedCacheSize</a> <a name="ldapsharedcachesize" id="ldapsharedcachesize">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPSharedCacheSize" id="LDAPSharedCacheSize">LDAPSharedCacheSize</a> <a name="ldapsharedcachesize" id="ldapsharedcachesize">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>¹²ÏíÄÚ´æ»º³åÇøµÄ×Ö½Ú´óĞ¡</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPSharedCacheSize <var>bytes</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>LDAPSharedCacheSize 102400</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>å…±äº«å†…å­˜ç¼“å†²åŒºçš„å­—èŠ‚å¤§å°</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPSharedCacheSize <var>bytes</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>LDAPSharedCacheSize 102400</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
-    <p>Ö¸¶¨¹²ÏíÄÚ´æ»º³åÇøµÄ´óĞ¡£¬ÒÔByteÎªµ¥Î»¡£Ä¬ÈÏÎª100KB¡£</p>
+    <p>æŒ‡å®šå…±äº«å†…å­˜ç¼“å†²åŒºçš„å¤§å°ï¼Œä»¥Byteä¸ºå•ä½ã€‚é»˜è®¤ä¸º100KBã€‚</p>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPTrustedClientCert" id="LDAPTrustedClientCert">LDAPTrustedClientCert</a> <a name="ldaptrustedclientcert" id="ldaptrustedclientcert">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPTrustedClientCert" id="LDAPTrustedClientCert">LDAPTrustedClientCert</a> <a name="ldaptrustedclientcert" id="ldaptrustedclientcert">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Sets the file containing or nickname referring to a per
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Sets the file containing or nickname referring to a per
 connection client certificate. Not all LDAP toolkits support per
 connection client certificates.</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPTrustedClientCert <var>type</var> <var>directory-path/filename/nickname</var> <var>[password]</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPTrustedClientCert <var>type</var> <var>directory-path/filename/nickname</var> <var>[password]</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
     <p>It specifies the directory path, file name or nickname of a
     per connection client certificate used when establishing an SSL
@@ -425,14 +425,14 @@ connection client certificates.</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPTrustedGlobalCert" id="LDAPTrustedGlobalCert">LDAPTrustedGlobalCert</a> <a name="ldaptrustedglobalcert" id="ldaptrustedglobalcert">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPTrustedGlobalCert" id="LDAPTrustedGlobalCert">LDAPTrustedGlobalCert</a> <a name="ldaptrustedglobalcert" id="ldaptrustedglobalcert">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Sets the file or database containing global trusted
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Sets the file or database containing global trusted
 Certificate Authority or global client certificates</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPTrustedGlobalCert <var>type</var> <var>directory-path/filename</var> <var>[password]</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPTrustedGlobalCert <var>type</var> <var>directory-path/filename</var> <var>[password]</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
     <p>It specifies the directory path and file name of the trusted CA
     certificates and/or system wide client certificates <code class="module"><a href="../mod/mod_ldap.html">mod_ldap</a></code>
@@ -464,13 +464,13 @@ Certificate Authority or global client certificates</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPTrustedMode" id="LDAPTrustedMode">LDAPTrustedMode</a> <a name="ldaptrustedmode" id="ldaptrustedmode">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPTrustedMode" id="LDAPTrustedMode">LDAPTrustedMode</a> <a name="ldaptrustedmode" id="ldaptrustedmode">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Specifies the SSL/TLS mode to be used when connecting to an LDAP server.</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPTrustedMode <var>type</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Specifies the SSL/TLS mode to be used when connecting to an LDAP server.</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPTrustedMode <var>type</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config, virtual host, directory, .htaccess</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
     <p>The following modes are supported:</p>
     <ul>
@@ -489,14 +489,14 @@ Certificate Authority or global client certificates</td></tr>
 
 </div>
 <div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
-<div class="directive-section"><h2><a name="LDAPVerifyServerCert" id="LDAPVerifyServerCert">LDAPVerifyServerCert</a> <a name="ldapverifyservercert" id="ldapverifyservercert">Ö¸Áî</a></h2>
+<div class="directive-section"><h2><a name="LDAPVerifyServerCert" id="LDAPVerifyServerCert">LDAPVerifyServerCert</a> <a name="ldapverifyservercert" id="ldapverifyservercert">æŒ‡ä»¤</a></h2>
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="directive">
-<tr><th><a href="directive-dict.html#Description">ËµÃ÷</a></th><td>Force server certificate verification</td></tr>
-<tr><th><a href="directive-dict.html#Syntax">Óï·¨</a></th><td><code>LDAPVerifyServerCert <var>On|Off</var></code></td></tr>
-<tr><th><a href="directive-dict.html#Default">Ä¬ÈÏÖµ</a></th><td><code>LDAPVerifyServerCert On</code></td></tr>
-<tr><th><a href="directive-dict.html#Context">×÷ÓÃÓò</a></th><td>server config</td></tr>
-<tr><th><a href="directive-dict.html#Status">×´Ì¬</a></th><td>À©Õ¹(E)</td></tr>
-<tr><th><a href="directive-dict.html#Module">Ä£¿é</a></th><td>mod_ldap</td></tr>
+<tr><th><a href="directive-dict.html#Description">è¯´æ˜</a></th><td>Force server certificate verification</td></tr>
+<tr><th><a href="directive-dict.html#Syntax">è¯­æ³•</a></th><td><code>LDAPVerifyServerCert <var>On|Off</var></code></td></tr>
+<tr><th><a href="directive-dict.html#Default">é»˜è®¤å€¼</a></th><td><code>LDAPVerifyServerCert On</code></td></tr>
+<tr><th><a href="directive-dict.html#Context">ä½œç”¨åŸŸ</a></th><td>server config</td></tr>
+<tr><th><a href="directive-dict.html#Status">çŠ¶æ€</a></th><td>æ‰©å±•(E)</td></tr>
+<tr><th><a href="directive-dict.html#Module">æ¨¡å—</a></th><td>mod_ldap</td></tr>
 </table>
     <p>Specifies whether to force the verification of a 
      server certificate when establishing an SSL connection to the 
@@ -505,6 +505,6 @@ Certificate Authority or global client certificates</td></tr>
 </div>
 </div>
 <div id="footer">
-<p class="apache">±¾ÎÄÔÊĞí×ÔÓÉÊ¹ÓÃ¡¢·Ö·¢¡¢×ªÔØ£¬µ«±ØĞë±£ÁôÒëÕßÊğÃû£»Ïê¼û£º<a href="../translator_announcement.html#announcement">ÒëÕßÉùÃ÷</a>¡£</p>
-<p class="menu"><a href="../mod/index.html">Ä£¿éË÷Òı</a> | <a href="../mod/directives.html">Ö¸ÁîË÷Òı</a> | <a href="../faq/index.html">³£¼ûÎÊÌâ</a> | <a href="../glossary.html">´Ê»ã±í</a> | <a href="../sitemap.html">Õ¾µãµ¼º½</a></p></div>
+<p class="apache">æœ¬æ–‡å…è®¸è‡ªç”±ä½¿ç”¨ã€åˆ†å‘ã€è½¬è½½ï¼Œä½†å¿…é¡»ä¿ç•™è¯‘è€…ç½²åï¼›è¯¦è§ï¼š<a href="../translator_announcement.html#announcement">è¯‘è€…å£°æ˜</a>ã€‚</p>
+<p class="menu"><a href="../mod/index.html">æ¨¡å—ç´¢å¼•</a> | <a href="../mod/directives.html">æŒ‡ä»¤ç´¢å¼•</a> | <a href="../faq/index.html">å¸¸è§é—®é¢˜</a> | <a href="../glossary.html">è¯æ±‡è¡¨</a> | <a href="../sitemap.html">ç«™ç‚¹å¯¼èˆª</a></p></div>
 </body></html>

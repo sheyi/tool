@@ -1,27 +1,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ����, �ֲ�, ���İ�, �����ֲ�, ���İ��ֲ�, �ο��ֲ�, ���Ĳο��ֲ�, �𲽹�" />
-<meta name="description" content="Apache 2.2 ���İ�ο��ֲ�" />
-<meta name="author" content="�𲽹�" />
+<meta name="keywords" content="Apache, 中文, 手册, 中文版, 中文手册, 中文版手册, 参考手册, 中文参考手册, 金步国" />
+<meta name="description" content="Apache 2.2 中文版参考手册" />
+<meta name="author" content="金步国" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>ָ������ �� Apache 2.2 ���İ�ο��ֲ�</title>
+<title>指令索引 － Apache 2.2 中文版参考手册</title>
 </head>
 <body id="directive-index"><div id="page-header">
-<p class="menu"><a href="../mod/index.html">ģ������</a> | <a href="../mod/directives.html">ָ������</a> | <a href="../faq/index.html">��������</a> | <a href="../glossary.html">�ʻ��</a> | <a href="../sitemap.html">վ�㵼��</a></p><p class="apache">Apache HTTP Server �汾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">模块索引</a> | <a href="../mod/directives.html">指令索引</a> | <a href="../faq/index.html">常见问题</a> | <a href="../glossary.html">词汇表</a> | <a href="../sitemap.html">站点导航</a></p><p class="apache">Apache HTTP Server 版本2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">�ĵ�</a> &gt; <a href="../index.html">�汾2.2</a> &gt; <a href="./index.html">ģ��</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">文档</a> &gt; <a href="../index.html">版本2.2</a> &gt; <a href="./index.html">模块</a></div>
 
-<div id="translation-info">���� <a href="../translator_announcement.html#thanks">��л</a> | ��ƪ���ߣ�<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">�𲽹�</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">������Ʒ</a>) | ��ҳ�����£�2006��10��20��[<a href="../translator_announcement.html#last_new" style="color:#F91C58">�鿴���°汾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">���ž���</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">��ͨ����</a></div>
-<div id="preamble"><h1>ָ������</h1>
+<div id="translation-info">　　 <a href="../translator_announcement.html#thanks">致谢</a> | 本篇译者：<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">金步国</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">其他作品</a>) | 本页最后更新：2006年10月20日[<a href="../translator_announcement.html#last_new" style="color:#F91C58">查看最新版本</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">电信镜像</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">网通镜像</a></div>
+<div id="preamble"><h1>指令索引</h1>
 
 
-    <p>������ʾ��Apache��׼���а��е�����ָ�ָ�����������ͳһ�ĸ�ʽ�������õ�����������<a href="directive-dict.html" rel="Glossary">ָ�������ֵ�</a>����ϸ˵����</p>
+    <p>这里列示了Apache标准发行版中的所有指令。指令的描述采用统一的格式，其中用到的缩略语在<a href="directive-dict.html" rel="Glossary">指令术语字典</a>有详细说明。</p>
 
-    <p><a href="quickreference.html">ָ���ٲ�</a>�Ը�Ҫ��ʽ�ṩ��ÿ��ָ���ϸ�ڡ�</p>
+    <p><a href="quickreference.html">指令速查</a>以概要形式提供了每个指令的细节。</p>
   
 <p class="letters"><a href="#A">&nbsp;A&nbsp;</a> | <a href="#B">&nbsp;B&nbsp;</a> | <a href="#C">&nbsp;C&nbsp;</a> | <a href="#D">&nbsp;D&nbsp;</a> | <a href="#E">&nbsp;E&nbsp;</a> | <a href="#F">&nbsp;F&nbsp;</a> | <a href="#G">&nbsp;G&nbsp;</a> | <a href="#H">&nbsp;H&nbsp;</a> | <a href="#I">&nbsp;I&nbsp;</a> | <a href="#K">&nbsp;K&nbsp;</a> | <a href="#L">&nbsp;L&nbsp;</a> | <a href="#M">&nbsp;M&nbsp;</a> | <a href="#N">&nbsp;N&nbsp;</a> | <a href="#O">&nbsp;O&nbsp;</a> | <a href="#P">&nbsp;P&nbsp;</a> | <a href="#R">&nbsp;R&nbsp;</a> | <a href="#S">&nbsp;S&nbsp;</a> | <a href="#T">&nbsp;T&nbsp;</a> | <a href="#U">&nbsp;U&nbsp;</a> | <a href="#V">&nbsp;V&nbsp;</a> | <a href="#W">&nbsp;W&nbsp;</a> | <a href="#X">&nbsp;X&nbsp;</a></p>
 </div>
@@ -406,6 +406,6 @@
 <li><a href="mod_include.html#xbithack" id="X" name="X">XBitHack</a></li>
 </ul></div>
 <div id="footer">
-<p class="apache">������������ʹ�á��ַ���ת�أ������뱣�����������������<a href="../translator_announcement.html#announcement">��������</a>��</p>
-<p class="menu"><a href="../mod/index.html">ģ������</a> | <a href="../mod/directives.html">ָ������</a> | <a href="../faq/index.html">��������</a> | <a href="../glossary.html">�ʻ��</a> | <a href="../sitemap.html">վ�㵼��</a></p></div>
+<p class="apache">本文允许自由使用、分发、转载，但必须保留译者署名；详见：<a href="../translator_announcement.html#announcement">译者声明</a>。</p>
+<p class="menu"><a href="../mod/index.html">模块索引</a> | <a href="../mod/directives.html">指令索引</a> | <a href="../faq/index.html">常见问题</a> | <a href="../glossary.html">词汇表</a> | <a href="../sitemap.html">站点导航</a></p></div>
 </body></html>

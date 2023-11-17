@@ -1,87 +1,87 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Language" content="zh-CN" />
-<meta name="keywords" content="Apache, ����, �ֲ�, ���İ�, �����ֲ�, ���İ��ֲ�, �ο��ֲ�, ���Ĳο��ֲ�, �𲽹�" />
-<meta name="description" content="Apache 2.2 ���İ�ο��ֲ�" />
-<meta name="author" content="�𲽹�" />
+<meta name="keywords" content="Apache, 中文, 手册, 中文版, 中文手册, 中文版手册, 参考手册, 中文参考手册, 金步国" />
+<meta name="description" content="Apache 2.2 中文版参考手册" />
+<meta name="author" content="金步国" />
 <link href="../style/css/manual-zip.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
 <link href="../style/css/manual-zip-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
 <link href="../style/css/manual-print.css" rel="stylesheet" media="print" type="text/css" />
-<title>SSL/TLS��ǿ�ȼ��ܣ����� �� Apache 2.2 ���İ�ο��ֲ�</title>
+<title>SSL/TLS高强度加密：绪论 － Apache 2.2 中文版参考手册</title>
 </head>
 <body id="manual-page"><div id="page-header">
-<p class="menu"><a href="../mod/index.html">ģ������</a> | <a href="../mod/directives.html">ָ������</a> | <a href="../faq/index.html">��������</a> | <a href="../glossary.html">�ʻ��</a> | <a href="../sitemap.html">վ�㵼��</a></p><p class="apache">Apache HTTP Server �汾2.2</p><img alt="" src="../images/feather.gif" /></div>
+<p class="menu"><a href="../mod/index.html">模块索引</a> | <a href="../mod/directives.html">指令索引</a> | <a href="../faq/index.html">常见问题</a> | <a href="../glossary.html">词汇表</a> | <a href="../sitemap.html">站点导航</a></p><p class="apache">Apache HTTP Server 版本2.2</p><img alt="" src="../images/feather.gif" /></div>
 <div class="up"><a href="./index.html"><img title="&lt;-" alt="&lt;-" src="../images/left.gif" /></a></div>
-<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">�ĵ�</a> &gt; <a href="../index.html">�汾2.2</a> &gt; <a href="./index.html">SSL/TLS</a></div>
+<div id="path"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://httpd.apache.org/">HTTP Server</a> &gt; <a href="http://httpd.apache.org/docs/">文档</a> &gt; <a href="../index.html">版本2.2</a> &gt; <a href="./index.html">SSL/TLS</a></div>
 
-<div id="translation-info">���� <a href="../translator_announcement.html#thanks">��л</a> | ��ƪ���ߣ�<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">�𲽹�</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">������Ʒ</a>) | ��ҳ�����£�2006��10��20��[<a href="../translator_announcement.html#last_new" style="color:#F91C58">�鿴���°汾</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">���ž���</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">��ͨ����</a></div>
-<div id="page-content"><div id="preamble"><h1>SSL/TLS��ǿ�ȼ��ܣ�����</h1>
+<div id="translation-info">　　 <a href="../translator_announcement.html#thanks">致谢</a> | 本篇译者：<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">金步国</a>(<a href="http://lamp.linux.gov.cn/jinbuguo_florilegium.html">其他作品</a>) | 本页最后更新：2006年10月20日[<a href="../translator_announcement.html#last_new" style="color:#F91C58">查看最新版本</a>] <a href="http://lamp.linux.gov.cn/Apache/ApacheMenu/index.html">电信镜像</a> <a href="http://lapp.unixmap.net/Apache/ApacheMenu/index.html">网通镜像</a></div>
+<div id="page-content"><div id="preamble"><h1>SSL/TLS高强度加密：绪论</h1>
 
 
 <blockquote>
-<p>��׼�ĺô��������г����ѡ�����ȷʵ��ϲ���ִ�ı�׼����ֻ��ȴ����귢��һ����ϲ�����±�׼��</p>
+<p>标准的好处就是你有充足的选择。如果确实不喜欢现存的标准，你只需等待来年发布一个你喜欢的新标准。</p>
 
 <p class="cite">-- <cite>A. Tanenbaum</cite>, "Introduction to Computer Networks"</p>
 </blockquote>
 
-<p>��Ϊ���ۣ�������Ե�����ϤWeb��HTTP��Apache�Ķ��߶����ǰ�ȫ�����ר�ң�������SSLЭ���Ȩ����ָ�ϣ���������һ����֯�й���֤������⼼����Ҳû����Ҫ�ķ���ר��������ժ¼���������ơ����ǣ����Ļ�ͨ���ۺϽ������ָ����������ӣ���<code class="module"><a href="../mod/mod_ssl.html">mod_ssl</a></code>��ʹ�����ṩ�������ϣ���Ϊ������̽������㡣</p>
+<p>作为绪论，本文针对的是熟悉Web、HTTP、Apache的读者而不是安全方面的专家，它不是SSL协议的权威性指南，不讨论在一个组织中管理证书的特殊技术，也没有重要的法定专利声明及摘录和引用限制。但是，本文会通过综合讲述各种概念、定义和例子，给<code class="module"><a href="../mod/mod_ssl.html">mod_ssl</a></code>的使用者提供背景资料，作为更深入探索的起点。</p>
 
-<p>�����������Ҫ����Դ��<a href="http://home.comcast.net/~fjhirsch/Papers/wwwj/">Introducing SSL and Certificates using SSLeay</a>����������<a href="http://home.comcast.net/~fjhirsch/">Frederick J. Hirsch</a>���ɡ������� Open Group Research Institute��1997���ģ�������<a href="http://www.ora.com/catalog/wjsum97/">Web Security: A Matter of Trust</a>, World Wide Web Journal, Volume 2, Issue 3, Summer 1997���϶�����뷴����<a href="mailto:hirsch@fjhirsch.com">Frederick Hirsch</a>(ԭ����)����������뷴����<a href="mailto:rse@engelschall.com">Ralf S. Engelschall</a>(<code class="module"><a href="../mod/mod_ssl.html">mod_ssl</a></code>������)��</p>
+<p>这里的内容主要是来源于<a href="http://home.comcast.net/~fjhirsch/Papers/wwwj/">Introducing SSL and Certificates using SSLeay</a>并经过作者<a href="http://home.comcast.net/~fjhirsch/">Frederick J. Hirsch</a>许可。此文由 Open Group Research Institute于1997年夏，发表在<a href="http://www.ora.com/catalog/wjsum97/">Web Security: A Matter of Trust</a>, World Wide Web Journal, Volume 2, Issue 3, Summer 1997，肯定意见请反馈给<a href="mailto:hirsch@fjhirsch.com">Frederick Hirsch</a>(原作者)，反对意见请反馈给<a href="mailto:rse@engelschall.com">Ralf S. Engelschall</a>(<code class="module"><a href="../mod/mod_ssl.html">mod_ssl</a></code>的作者)。</p>
 </div>
 	<div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="cryptographictech" id="cryptographictech">���뼼��</a></h2>
+<h2><a name="cryptographictech" id="cryptographictech">密码技术</a></h2>
 
-<p>Ҫ����SSL�ͱ�����������ϵͳ����ϢժҪ����(�����ɢ�к���)������ǩ������Щ�������������������۵�����(����[<a href="#AC96">AC96</a>)���ṩ�˱����ԡ������Ժ���֤�Ļ�����</p>
+<p>要理解SSL就必须理解密码系统、消息摘要函数(单向或散列函数)和数字签名，这些技术是许多文献所讨论的主题(比如[<a href="#AC96">AC96</a>)，提供了保密性、完整性和认证的基础。</p>
 
-<h3><a name="cryptographicalgo" id="cryptographicalgo">����ϵͳ</a></h3>
+<h3><a name="cryptographicalgo" id="cryptographicalgo">密码系统</a></h3>
 
-    <p>����Alice����������з�һ����Ϣ�Ի�ת�ʽ𣬲�ϣ�������Ϣ�Ǳ��ܵģ���Ϊ���к��������ʺźͻ�ת������Ϣ��һ�ַ�����ʹ������ϵͳ����Ҫ�������Ϣת��Ϊ������ʽ���Ӷ�ֻ��Ϊϣ�����������˶�����һ������Ϊ������ʽ��������ϢҲ��ֻ����һ����Կ�����룬���û�У���ô������Ϣ�����ô�����Ϊ�õ�����ϵͳ����ʹ�����Ѷȸߵ���������Ϊԭ�Ĳ�ֵ�����ǻ�����ô���Ŭ����</p>
+    <p>假设Alice想给她的银行发一个消息以划转资金，并希望这个消息是保密的，因为其中含有她的帐号和划转金额等信息。一种方案是使用密码系统，将要传输的信息转变为加密形式，从而只能为希望他读懂的人读懂。一旦加密为这种形式，这条消息也许只能用一个密钥来破译，如果没有，那么这条信息毫无用处，因为好的密码系统可以使破译难度高到入侵者认为原文不值得他们花费那么大的努力。</p>
 
-    <p>����ϵͳ�������ࣺ����ĺ͹�����Կ��</p>
+    <p>密码系统有两大类：常规的和公共密钥。</p>
 
     <dl>
-    <dt>��������</dt>
-    <dd>�ֳ�Ϊ�Գ����룬��Ҫ�����ߺͽ����߹�ͬ����һ����Կ��һС���������ܺͽ��ܵ�������Ϣ����������Կ�Ǳ��ܵģ���ô������Ϣ���˷����ߺͽ������������û���˿����Ķ������Alice�����й�ͬ����һ����Կ������Ի��෢�ͱ�����Ϣ�����ǣ�˽��ͨѶ��Կ��ѡ����Ϊ������ȴ���ܲ�����и�ɻ��ġ�</dd>
+    <dt>常规密码</dt>
+    <dd>又称为对称密码，需要发送者和接收者共同持有一个密钥：一小段用来加密和解密的秘密信息。如果这个密钥是保密的，那么这条消息除了发送者和接受者以外可能没有人可以阅读。如果Alice和银行共同持有一个密钥，则可以互相发送保密信息。但是，私有通讯密钥的选择行为本身，却可能不是无懈可击的。</dd>
 
-    <dt>������Կ����</dt>
-    <dd>�ֳ�Ϊ���Գ����룬������һ��ʹ��������Կ���㷨�Խ����Կ�������⣬һ����Կ���ڼ��ܣ���һ�����ڽ��ܣ��Ӷ�ʹ�򵥹���һ����Կ(��������Կ����ƣ���Կ)������������(˽�е���Կ����ƣ�˽Կ)�Խ��ձ�����Ϣ��Ϊ���ܡ�</dd>
+    <dt>公共密钥密码</dt>
+    <dd>又称为不对称密码，定义了一种使用两个密钥的算法以解决密钥交换问题，一个密钥用于加密，另一个用于解密，从而使简单公布一个密钥(公共的密钥，简称：公钥)而保留其他的(私有的密钥，简称：私钥)以接收保密消息成为可能。</dd>
     </dl>
 
-    <p>�κ��˶������ù�Կ����һ����Ϣ����������˽Կ�ĳ������Ķ�����ˣ�Alice�Ϳ���ʹ�ù�Կ�����䱣����Ϣ�����͸�˽Կ�ĳ�����(����)��ֻ�������ܹ��������ܡ�</p>
+    <p>任何人都可以用公钥加密一条消息，而仅允许私钥的持有者阅读。如此，Alice就可能使用公钥加密其保密消息，发送给私钥的持有者(银行)，只有银行能够对它解密。</p>
 
 
-	<h3><a name="messagedigests" id="messagedigests">��ϢժҪ</a></h3>
+	<h3><a name="messagedigests" id="messagedigests">消息摘要</a></h3>
 
-    <p>��ȻAlice���ܼ�������Ϣʹ����Ϊ˽�еģ�����Ӧע�⵽ĳЩ�˿��ܻ�۸Ļ��滻��ԭʼ��Ϣ���Ի�ת�ʽ������Լ����ʻ���һ�ֱ�֤Alice��Ϣ�����Եķ�����ͬʱ��һ������Ϣ�ļ�ժҪ�����У�����������Ϣ�����ȶԣ�����������Ϣ��ȷ��</p>
+    <p>虽然Alice可能加密其消息使它称为私有的，但仍应注意到某些人可能会篡改或替换其原始消息，以划转资金到他们自己的帐户。一种保证Alice消息完整性的方法是同时发一个其消息的简单摘要给银行，供银行与消息本身比对，如果相符则消息正确。</p>
 
-    <p>�����ķ�������Ϊ<dfn>��ϢժҪ</dfn>��<em>������</em>��<em>ɢ�к���</em>����ϢժҪ���ڶԽϴ���ұ䳤����Ϣ�����϶̶��ҵȳ���һ�ֱ����������ʹ��ժҪ��ԭ����Ϣ�������ѣ����Ҷ�������ͬ����Ϣ����������������ͬ��ժҪ���Ӷ��ų����滻һ����ϢΪ��һ����ά����ͬժҪ�Ŀ����ԡ�</p>
+    <p>这样的方法被称为<dfn>消息摘要</dfn>、<em>单向函数</em>或<em>散列函数</em>。消息摘要用于对较大而且变长的消息建立较短而且等长的一种表述，其设计使将摘要还原成消息极其困难，而且对两个不同的消息几乎不可能生成相同的摘要，从而排除了替换一个消息为另一个而维持相同摘要的可能性。</p>
 
-    <p>Alice���ٵ���һ����ս��Ҫ��֤ժҪ���͵����еİ�ȫ����ˣ�����ȷ����Ϣ�������ԡ�</p>
+    <p>Alice面临的另一个挑战是要保证摘要发送到银行的安全，如此，才能确保消息的完整性。</p>
     
-    <p>һ�ֽ����������ժҪ�а�������ǩ����</p>
+    <p>一种解决方法是在摘要中包含数字签名。</p>
 
 
-<h3><a name="digitalsignatures" id="digitalsignatures">����ǩ��</a></h3>
-<p>��Alice������Ϣ�����У�������Ҫȷ�ϴ���Ϣ��ȷ�������͵ģ������������ߵ������ʺš�Ϊ�ˣ���������Ϣ�а���һ����Alice������<em>����ǩ��</em>��</p>
+<h3><a name="digitalsignatures" id="digitalsignatures">数字签名</a></h3>
+<p>当Alice发送消息到银行，银行需要确认此消息的确是她发送的，而不是入侵者盗用其帐号。为此，可以在消息中包含一个由Alice建立的<em>数字签名</em>。</p>
 
-<p>����ǩ�����Լ��ܵ���ϢժҪ��������Ϣ(����һ����ˮ��)�Լ������ߵ�˽����Կ�����ġ���Ȼ�κ��˶������ù�����Կ<em>����</em>ǩ��������ֻ��ǩ����֪����˽����Կ��Ҳ���ǣ�ֻ����Կ�ĳ����߲���ǩ����������ǩ���е�ժҪֻ�Ը���Ϣ��Ч����ȷ��û���˿��Ըı�ժҪ������ǩ�����䡣</p>
-<p>Ϊ�˱���ǩ���պ�����������������ã�ǩ��������һ����ˮ�š���ˣ���һ(ֻ�Ǽ���)Alice��û�з��ʹ���Ϣ����Ȼ���������ǩ���������п�����������թ��ָ�ء�</p>
+<p>数字签名是以加密的消息摘要和其他信息(比如一个流水号)以及发送者的私有密钥建立的。虽然任何人都可能用公共密钥<em>解密</em>签名，但是只有签发者知道其私有密钥，也就是，只有密钥的持有者才能签发。包含在签名中的摘要只对该消息有效，以确保没有人可以改变摘要而保持签名不变。</p>
+<p>为了避免签名日后被入侵者破译和再利用，签名包含有一个流水号。如此，万一(只是假设)Alice并没有发送此消息，虽然她可能真的签发过，银行可以免遭其欺诈性指控。</p>
 
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="certificates" id="certificates">֤��</a></h2>
+<h2><a name="certificates" id="certificates">证书</a></h2>
 
-<p>��ȻAlice�����Ѿ�������һ�����ܵ���Ϣ�����У�ǩ�����������Ա�֤��Ϣ�������ԣ���������Ȼ��Ҫȷ������ȷ���ں��Ǹ�����ͨѶ��Ҳ����˵������Ҫȷ�����õĹ�����Կ��ȷ��Ӧ�������õ�˽����Կ��ͬ��������Ҳ��Ҫ��֤����Ϣ��ǩ����ȷ��Ӧ��Alice��ǩ����</p>
+<p>虽然Alice可能已经发送了一个保密的消息给银行，签了名，并可以保证消息的完整性，但是她仍然需要确认她的确是在和那个银行通讯，也就是说，她需要确认她用的公共密钥的确对应于银行用的私有密钥。同样，银行也需要验证此消息的签名的确对应于Alice的签名。</p>
 
-<p>�������������֤���ಿ��һ���Ե�֤�飬��ȷ�Ϲ�����Կ��������һ���������εĴ�����ǩ���ģ���ô����˫�������Կ϶���ͨѶ��������ݡ�����������εĴ�����Ϊ<em>֤�����(Certificate Authority)</em>����֤��������֤��</p>
+<p>如果各部分有验证其余部分一致性的证书，以确认公共密钥，并是由一个可以信任的代理所签发的，那么他们双方都可以肯定其通讯对象的身份。这个可以信任的代理称为<em>证书机构(Certificate Authority)</em>，其证书用于认证。</p>
 
-<h3><a name="certificatecontents" id="certificatecontents">֤�������</a></h3>
+<h3><a name="certificatecontents" id="certificatecontents">证书的内容</a></h3>
 
-    <p>��һ��������Կ������֤����һ�����⣬��һ��������߷�������������ʵ�����ʵ���ݣ���<a href="#table1">��1</a>��ʾ�������е���Ϣ����������Ϣ(ʶ����[Distinguished Name])�͹�����Կ��������������֤���֤����������ƺ�ǩ���Լ�֤�����Ч���ޣ������ܻ���֤������������Ϣ����ˮ�ŵȸ�����Ϣ��</p>
+    <p>与一个公共密钥关联的证书有一个主题，即一个个体或者服务器或者其他实体的真实身份，如<a href="#table1">表1</a>所示。主题中的信息包含身份信息(识别名[Distinguished Name])和公共密钥，还包括发布此证书的证书机构的名称和签名以及证书的有效期限，还可能会有证书机构监管者信息和流水号等附加信息。</p>
 
-    <h4><a name="table1" id="table1">�� 1: Certificate Information</a></h4>
+    <h4><a name="table1" id="table1">表 1: Certificate Information</a></h4>
     
     <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA">
 <tr><th>Subject</th><td>Distinguished Name, Public Key</td></tr>
@@ -92,9 +92,9 @@
 </table>
     
 
-    <p>ʶ����������һ���ض�����������ָ�����ݣ����磬һ�����������һ������֤�飬ͬʱ����һ�����Ӷ�ߵ�֤�顣X.509��׼[<a href="#X509">X509</a>]�ж�����ʶ�����ĸ���������ƺ���д(��<a href="#table2">��2</a>)��</p>
+    <p>识别名用于在一个特定的上下文中指明身份，比如，一个个体可能有一个个人证书，同时还有一个其雇佣者的证书。X.509标准[<a href="#X509">X509</a>]中定义了识别名的各个项及其名称和缩写(见<a href="#table2">表2</a>)。</p>
 
-    <h4><a name="table2" id="table2">�� 2: Distinguished Name Information</a></h4>
+    <h4><a name="table2" id="table2">表 2: Distinguished Name Information</a></h4>
     
     <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="bordered">
 <tr><th>DN Field</th><th>Abbrev.</th><th>Description</th><th>Example</th></tr>
@@ -108,9 +108,9 @@
 </table>
     
 
-    <p>֤��������ܻᶨ��涨��Щʶ�����ǿ�ѡ�ģ�����Щ�Ǳ����һ���淶�������ܶ�������ݺ�֤��ʹ����������Ҫ�󡣱��磬һ��Netscape�����Ҫ��֤���е�Common Name������Ƿ��������ƣ������ƿ����Ƿ�����������ͨ��ģʽ�����磺<code>*.snakeoil.com</code> ��</p>
+    <p>证书机构可能会定义规定哪些识别名是可选的，而哪些是必须的一个规范，还可能对项的内容和证书使用人数有所要求。比如，一个Netscape浏览器要求证书中的Common Name项必须是服务器名称，此名称可以是服务器域名的通配模式，形如：<code>*.snakeoil.com</code> 。</p>
 
-    <p>֤��Ķ�������ʽ��ASN.1�Ǻŷ�[<a href="#X208">X208</a>] [<a href="#PKCS">PKCS</a>]��ʾ���Ǻŷ���������α�ʾ���ݣ��������������ν���Ϣת��ɶ�������ʽ��֤��Ķ����Ʊ���ʹ���˻��ڸ�ͨ�õĻ����������(Basic Encoding Rules[BER])��ʶ�����������(Distinguished Encoding Rules[DER])��Ϊ���ڲ��ܴ��������Ƶ�����½��д��䣬��������ʽ��Base64���뷽ʽ[<a href="#MIME">MIME</a>]ת����ASCII��ʽ������������Կ�ʼ�ͽ������ŷָ������ɵ��У���ΪPEM��ʽ(��������Դ��"Privacy Enhanced Mail")��������ʾ��</p>
+    <p>证书的二进制形式用ASN.1记号法[<a href="#X208">X208</a>] [<a href="#PKCS">PKCS</a>]表示，记号法定义了如何表示内容，编码规则定义了如何将信息转变成二进制形式。证书的二进制编码使用了基于更通用的基本编码规则(Basic Encoding Rules[BER])的识别名编码规则(Distinguished Encoding Rules[DER])。为了在不能处理二进制的情况下进行传输，二进制形式用Base64编码方式[<a href="#MIME">MIME</a>]转换成ASCII形式，其编码结果是以开始和结束符号分隔的若干的行，称为PEM形式(其名称来源于"Privacy Enhanced Mail")，如下所示：</p>
 
     <div class="example"><h3>Example of a PEM-encoded certificate (snakeoil.crt)</h3><pre>-----BEGIN CERTIFICATE-----
 MIIC7jCCAlegAwIBAgIBATANBgkqhkiG9w0BAQQFADCBqTELMAkGA1UEBhMCWFkx
@@ -132,48 +132,48 @@ dUHzICxBVC1lnHyYGjDuAMhe396lYAn8bCld1/L4NMGBCQ==
 -----END CERTIFICATE-----</pre></div>
 
 
-<h3><a name="certificateauthorities" id="certificateauthorities">֤�����</a></h3>
+<h3><a name="certificateauthorities" id="certificateauthorities">证书机构</a></h3>
 
-    <p>֤�����������֤��ǰ����֤֤���������Ϣ����ȷ����Կ����˽����Կ�ĳ���ʵ�塣���磺���Alice����һ������֤�飬��֤��������Ȼ�ȷ��Alice��ȷ������֤����Ǹ��ˡ�</p>
+    <p>证书机构在授予证书前会验证证书的申请信息，以确认密钥对中私有密钥的持有实体。比如：如果Alice申请一个个人证书，则证书机构首先会确认Alice的确是申请证书的那个人。</p>
 
-    <h4><a name="certificatechains" id="certificatechains">֤����</a></h4>
+    <h4><a name="certificatechains" id="certificatechains">证书链</a></h4>
     
-        <p>һ��֤�����Ҳ���ܸ���һ��֤���������֤�顣���ԣ�Alice������Ҫ���֤��������ߣ����丸�����ߣ�ֱ���ҵ�һ���������εġ�������ֻ������һ�����޵����������������֤�飬�Լ�С�������"����"֤������ķ��ա�</p>
+        <p>一个证书机构也可能给另一个证书机构授予证书。所以，Alice可能需要检查证书的授予者，及其父授予者，直到找到一个她所信任的。她可以只信任由一个有限的授予者链所授予的证书，以减小这个链中"劣质"证书带来的风险。</p>
     
 
-        <h4><a name="rootlevelca" id="rootlevelca">��������CA</a></h4>
+        <h4><a name="rootlevelca" id="rootlevelca">建立顶级CA</a></h4>
     
-        <p>��ǰ������ÿ��֤��Ҫ����������ָ��֤��������ʵ�����Ч�ԣ�ֱ�����һ����֤������������Ͳ���һ�����⣺���һ����֤�����û�������ߣ���ô˭Ϊ����֤���������أ�������������£���֤����"��ǩ����"����֤��������ߺ������е�һ�������ԣ��������ǩ����֤�鱸��ע�⡣���������㷺�����Ĺ�����Կ���Լ�С���������Կ�������ķ���--����Ȼ������ĳ���˷�����Կ����������֤�����Ҫ��ȫһЩ���������Ĭ�ϵ�����Ϊ����������֤�������</p>
+        <p>如前所述，每个证书要求其授予者指定证书主题中实体的有效性，直到最高一级的证书机构。这样就产生一个问题：最高一级的证书机构没有授予者，那么谁为它的证书作担保呢？仅在这种情况下，此证书是"自签名的"，即证书的授予者和主题中的一样，所以，必须对自签名的证书备加注意。顶级机构广泛发布的公共密钥可以减小信任这个密钥所带来的风险--这显然比其他某个人发布密钥并宣称他是证书机构要安全一些。浏览器被默认地配置为信任著名的证书机构。</p>
 
-        <p>���๫˾��רҵ֤���������<a href="http://www.thawte.com/">Thawte</a>��<a href="http://www.verisign.com/">VeriSign</a>���ṩ���·���</p>
+        <p>许多公司是专业证书机构，如<a href="http://www.thawte.com/">Thawte</a>和<a href="http://www.verisign.com/">VeriSign</a>，提供如下服务：</p>
 
         <ul>
-        <li>��֤֤�������</li>
-        <li>����֤�������</li>
-        <li>����͹���֤��</li>
+        <li>验证证书的申请</li>
+        <li>处理证书的申请</li>
+        <li>授予和管理证书</li>
         </ul>
 
-        <p>�Լ�����һ��֤�����Ҳ�ǿ��ܵģ���Ȼ��Internet�������з��գ�������֤���������������׵�Intranet�����У�������á�</p>
+        <p>自己建立一个证书机构也是可能的，虽然在Internet环境中有风险，但在验证个体或服务器较容易的Intranet环境中，会很有用。</p>
     
 
-    <h4><a name="certificatemanagement" id="certificatemanagement">֤��Ĺ���</a></h4>
+    <h4><a name="certificatemanagement" id="certificatemanagement">证书的管理</a></h4>
     
-        <p>����һ��֤�������Ҫһ����ǿ�ļ�ܡ������͹�����ϵ��֤�����������������֤�飬���������֤�����Ч�ں͸��£���ά��һ��������ĵ��Ѿ�ʧЧ��֤���б�(����֤���б�[Certificate Revocation Lists����CRL])�����磬Alice��Ϊ��˾��Ա���ʸ�����֤�飬���磬Alice�뿪��˾����Ҫ���ϴ�֤��ȡ�����ƾ֤����Ե���ͨ�����裬���Բ����ܴ�֤�鱾�������Ѿ����ϣ���ˣ���֤֤�����Ч�Ծͱ��������֤���б�(����ͨ�������Զ�������һ����)��</p>
+        <p>建立一个证书机构需要一个坚强的监管、技术和管理体系。证书机构不仅仅是授予证书，还必须管理证书的有效期和更新，并维护一个已授予的但已经失效的证书列表(作废证书列表[Certificate Revocation Lists，或CRL])。比如，Alice作为公司雇员有资格申请证书，又如，Alice离开公司后需要作废此证书等。由于凭证书可以到处通行无阻，所以不可能从证书本身看出已经作废，因此，验证证书的有效性就必须查作废证书列表(而这通常不是自动处理的一部分)。</p>
 
-        <div class="note"><h3>˵��</h3>
-        <p>���ʹ����һ�������û��Ĭ�����õ�֤������������������֤�������֤������������ʹ�����������֤�����֤�����ǩ���ķ�����֤�顣���������з��յģ���Ϊһ�����أ����������������֤�����ǩ��������֤�顣</p>
+        <div class="note"><h3>说明</h3>
+        <p>如果使用了一个浏览器没有默认配置的证书机构，则必须加载这个证书机构的证书进入浏览器，使浏览器可以验证由这个证书机构签发的服务器证书。这样做是有风险的，因为一旦加载，浏览器会接受由这个证书机构签发的所有证书。</p>
         </div>
 
 
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
-<h2><a name="ssl" id="ssl">��ȫ�׽��ֲ�(SSL)</a></h2>
+<h2><a name="ssl" id="ssl">安全套接字层(SSL)</a></h2>
 
-<p>��ȫ�׽��ֲ�Э����λ�ڿɿ����������ӵ������Э��(��TCP/IP)��Ӧ�ó���Э���(��HTTP)֮���һ��Э��㡣SSLͨ��������֤��ʹ������ǩ��ȷ�������ԡ�ʹ�ü���ȷ��˽���ԣ���ʵ�ֿͻ��˺ͷ�����֮��İ�ȫͨѶ��</p>
+<p>安全套接字层协议是位于可靠的面向连接的网络层协议(如TCP/IP)和应用程序协议层(如HTTP)之间的一种协议层。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。</p>
 
-<p>���Э�鱻���Ϊ֧�������������롢ժҪ��ǩ�����ض��㷨�����������Ŀ�Ķ��ض��ķ�����ѡ���㷨���������������㷨�Ե���������ѡ���Э�̲��������ڿͻ��ͷ���������Э��Ի��Ŀ�ʼ�׶Ρ�</p>
+<p>这个协议被设计为支持许多用于密码、摘要和签名的特定算法，允许因各种目的对特定的服务器选择算法，并允许采用新算法以得其利。其选择的协商操作发生在客户和服务器建立协议对话的开始阶段。</p>
 
-<h3><a name="table4" id="table4">�� 4: Versions of the SSL protocol</a></h3>
+<h3><a name="table4" id="table4">表 4: Versions of the SSL protocol</a></h3>
 
     <table border="1" cellpadding="0" cellspacing="0" bordercolor="#AAAAAA" class="bordered">
 <tr><th>Version</th><th>Source</th><th>Description</th><th>Browser Support</th></tr>
@@ -190,14 +190,14 @@ dUHzICxBVC1lnHyYGjDuAMhe396lYAn8bCld1/L4NMGBCQ==
 </table>
 
 
-<p>��<a href="#table4">��4</a>��ʾ��SSLЭ���ж��ְ汾��SSL3.0��һ���ŵ��������˶Լ���֤������֧�֣��������������ڷ����������������֤���ϸ���һ��������֤�顣���ļ���Ҳ�����������֤������֤�飬��ʹ�Դ������ߵ�֤�����֤�鲢û�а�װ����Ϊ���Ѿ����������֤�������ˡ�SSL3.0Ŀǰ����Internet Engineering Task Force(IETF)�з����Ǵ���㰲ȫ[<a href="#TLS1">TLS</a>]Э���׼�Ļ�����</p>
+<p>如<a href="#table4">表4</a>所示，SSL协议有多种版本。SSL3.0的一个优点是增加了对加载证书链的支持，以允许服务器在发给浏览器的授予者证书上附加一个服务器证书。链的加载也允许浏览器验证服务器证书，即使对此授予者的证书机构证书并没有安装，因为它已经包含在这个证书链中了。SSL3.0目前正由Internet Engineering Task Force(IETF)研发，是传输层安全[<a href="#TLS1">TLS</a>]协议标准的基础。</p>
 
-<h3><a name="session" id="session">�Ự�Ľ���</a></h3>
+<h3><a name="session" id="session">会话的建立</a></h3>
 
-    <p>SSL�Ự�ڿͻ��˺ͷ����������ֹ���֮��������<a href="#figure1">Figure 1</a>��ʾ������̿�����������Ƿ�����Ϊ֧�ַ�����֤����Ƿ�Ҫ���пͻ�֤��������ͬ����Ȼ����������Ϣ������Ҫ�������ֲ��������������ֻ˵�������й��ԵĲ��֣��μ����п�������µ�SSL�淶��</p>
+    <p>SSL会话在客户端和服务器的握手过程之后建立，如<a href="#figure1">Figure 1</a>所示，其过程可能因服务器是否配置为支持服务器证书和是否要求有客户证书有所不同。虽然存在密码信息管理需要额外握手操作的情况，本文只说明其中有共性的部分，参见所有可能情况下的SSL规范。</p>
 
-    <div class="note"><h3>˵��</h3>
-    <p>SSL�Ựһ�������Ϳ����ǿ����õģ��Ա����ڳ�ʼ�Ựʱ��������ʧ�����ಽ����ظ���Ϊ�ˣ�������Ϊ�������ӻ�����Ϊÿ��SSL�Ự�趨��Ψһ�ĻỰ��־���Լ������ֲ���(ֱ�������������еĻỰ��־����Ϊֹ)��</p>
+    <div class="note"><h3>说明</h3>
+    <p>SSL会话一旦建立就可能是可重用的，以避免在初始会话时的性能损失和许多步骤的重复。为此，服务器为其后的连接缓存了为每个SSL会话设定的唯一的会话标志，以减少握手操作(直到服务器缓存中的会话标志过期为止)。</p>
     </div>
 
     <p class="figure">
@@ -205,36 +205,36 @@ dUHzICxBVC1lnHyYGjDuAMhe396lYAn8bCld1/L4NMGBCQ==
     <a id="figure1" name="figure1"><dfn>Figure 1</dfn></a>: Simplified SSL
     Handshake Sequence</p>
 
-    <p>�ͻ��˺ͷ����������ֹ���������ʾ��</p>
+    <p>客户端和服务器的握手过程如下所示：</p>
 
     <ol>
-    <li>Э���������ݴ����������</li>
-    <li>�����������ͻ��˺ͷ������ĻỰ��Կ</li>
-    <li>��ѡ�Ŀͻ��˶Է���������֤</li>
-    <li>��ѡ�ķ������Կͻ��˵���֤</li>
+    <li>协商用于数据传输的密码组</li>
+    <li>建立并共享客户端和服务器的会话密钥</li>
+    <li>可选的客户端对服务器的认证</li>
+    <li>可选的服务器对客户端的认证</li>
     </ol>
 
-    <p>��һ����������Э�̣������ͻ��˺ͷ�����ѡ��һ����֧ͬ�ֵ������顣SSL3.0Э��淶������31�������顣�����������¸�������ɣ�</p>
+    <p>第一步的密码组协商，允许客户端和服务器选择一个共同支持的密码组。SSL3.0协议规范定义了31个密码组。密码组由以下各部分组成：</p>
 
     <ul>
-    <li>��Կ������</li>
-    <li>���ݴ�������</li>
-    <li>������Ϣ��֤����(Message Authentication Code[MAC])����ϢժҪ</li>
+    <li>密钥交换法</li>
+    <li>数据传输密码</li>
+    <li>建立消息认证代码(Message Authentication Code[MAC])的消息摘要</li>
     </ul>
 
-    <p>��������ɲ���˵�����¡�</p>
+    <p>此三个组成部分说明如下。</p>
 
 
-<h3><a name="keyexchange" id="keyexchange">��Կ��������</a></h3>
+<h3><a name="keyexchange" id="keyexchange">密钥交换方法</a></h3>
 
-    <p>��Կ������ָ������ڿͻ��˺ͷ����������ݴ�����ʹ�ù����ĶԳ���Կ��SSL2.0��ʹ��RSA��Կ��������SSL3.0����������֤��ʱ��ѡ��ʹ�ð���RSA�Ķ�����Կ�����㷨���Լ�����֤��Ϳͻ���-����������ͨѶ��Diffie-Hellman��Կ��������</p>
+    <p>密钥交换法指明如何在客户端和服务器的数据传输中使用共享的对称密钥。SSL2.0仅使用RSA密钥交换，而SSL3.0可以在启用证书时，选择使用包括RSA的多种密钥交换算法，以及无须证书和客户端-服务器先期通讯的Diffie-Hellman密钥交换法。</p>
 
-    <p>��Կ��������һ������������ǩ��(���ÿɲ���)������ã�����һ�֡�˽����Կ���ǩ������ȷ�������ɹ�����Կ[<a href="#AC96">AC96</a>, p516]����Ϣ���������е���������</p>
+    <p>密钥交换法的一个变数是数字签名(可用可不用)，如果用，用哪一种。私有密钥配合签名可以确保在生成共享密钥[<a href="#AC96">AC96</a>, p516]的信息交换过程中抵御攻击。</p>
 
 
-    <h3><a name="ciphertransfer" id="ciphertransfer">���ݴ�������</a></h3>
+    <h3><a name="ciphertransfer" id="ciphertransfer">数据传输密码</a></h3>
 
-    <p>SSLʹ����ǰ����ܶԻ���Ϣ�����������ĳ��������㷨(�Գ�����)�������а������������ڵľ���ѡ��</p>
+    <p>SSL使用在前面加密对话消息中有所讲述的常规密码算法(对称密码)，可以有包括不加密在内的九种选择：</p>
 
     <ul>
     <li>No encryption</li>
@@ -253,13 +253,13 @@ dUHzICxBVC1lnHyYGjDuAMhe396lYAn8bCld1/L4NMGBCQ==
         </ul></li>
     </ul>
 
-    <p>�����&quot;CBC&quot;��Cipher Block Chaining��ָ�ڼ��ܵ�ǰ��ʱ���õ���ǰ�Ѿ����ܵĲ����ı���&quot;DES&quot;��Data Encryption Standard[<a href="#AC96">AC96</a>, ch12]���ж������(����DES40��3DES_EDE)��&quot;Idea&quot;��������õ����ǿ�ļ����㷨֮һ��&quot;RC2&quot;��RSADSI[<a href="#AC96">AC96</a>,
-    ch13]��ר�����㷨��</p>
+    <p>这里的&quot;CBC&quot;是Cipher Block Chaining，指在加密当前块时会用到先前已经加密的部分文本；&quot;DES&quot;是Data Encryption Standard[<a href="#AC96">AC96</a>, ch12]，有多个变种(包括DES40和3DES_EDE)；&quot;Idea&quot;是现有最好的最坚强的加密算法之一；&quot;RC2&quot;是RSADSI[<a href="#AC96">AC96</a>,
+    ch13]的专属的算法。</p>
 
 
-    <h3><a name="digestfuntion" id="digestfuntion">ժҪ����</a></h3>
+    <h3><a name="digestfuntion" id="digestfuntion">摘要函数</a></h3>
 
-    <p>ժҪ����ָ����һ����¼��Ԫ��ν���ժҪ��SSL������֧�֣�</p>
+    <p>摘要函数指明对一个记录单元如何建立摘要。SSL有如下支持：</p>
 
     <ul>
     <li>No digest (Null choice)</li>
@@ -267,32 +267,32 @@ dUHzICxBVC1lnHyYGjDuAMhe396lYAn8bCld1/L4NMGBCQ==
     <li>Secure Hash Algorithm (SHA-1), a 160-bit hash</li>
     </ul>
 
-    <p>��ϢժҪ���ڽ������ܵ���Ϣ��֤��(MAC)������Ϣ����һͬ���ͣ���ȷ����Ϣ�����Բ�������ԭ������</p>
+    <p>消息摘要用于建立加密的消息认证码(MAC)，与消息本身一同发送，以确保消息完整性并抵御还原攻击。</p>
 
 
-<h3><a name="handshake" id="handshake">��������Э��</a></h3>
+<h3><a name="handshake" id="handshake">握手序列协议</a></h3>
 
-    <p>��������ʹ������Э�飺</p>
+    <p>握手序列使用三个协议：</p>
 
     <ul>
-    <li><dfn>SSL Handshake Protocol</dfn> ������ɿͻ��˺ͷ�����֮��Ի��Ľ�����</li>
-    <li><dfn>SSL Change Cipher Spec Protocol</dfn> ����ʵ�ʽ����Ի����������Լ����</li>
-    <li><dfn>SSL Alert Protocol</dfn> ���ڿͻ��˺ͷ�����֮�䴫��SSL������Ϣ��</li>
+    <li><dfn>SSL Handshake Protocol</dfn> ，以完成客户端和服务器之间对话的建立。</li>
+    <li><dfn>SSL Change Cipher Spec Protocol</dfn> ，以实际建立对话用密码组的约定。</li>
+    <li><dfn>SSL Alert Protocol</dfn> ，在客户端和服务器之间传输SSL出错消息。</li>
     </ul>
 
-    <p>��ЩЭ���Ӧ��Э��������� <dfn>SSL Record Protocol</dfn> ���з�װ����<a href="#figure2">Figure 2</a>��ʾ���ڲ�������ݵĽϵײ��Э���д��䡣��װЭ�����ײ�Э����˵��δ֪�ġ�</p>
+    <p>这些协议和应用协议的数据用 <dfn>SSL Record Protocol</dfn> 进行封装，如<a href="#figure2">Figure 2</a>所示，在不检查数据的较底层的协议中传输。封装协议对其底层协议来说是未知的。</p>
 
     <p class="figure">
     <img src="../images/ssl_intro_fig2.gif" alt="" width="428" height="217" /><br />
     <a id="figure2" name="figure2"><dfn>Figure 2</dfn></a>: SSL Protocol Stack
     </p>
 
-    <p>SSL����Э��Լ�¼Э��ķ�װ��ʹһ�����ڽ��еĶԻ�����Э�������Э�����԰�ȫ�ؽ��д��䡣�������û�н����Ի������ʹ��Null�����飬Ҳ����˵���ڽ����Ի���ǰ����ʹ�����룬����Ϣû��������ժҪ��</p>
+    <p>SSL控制协议对记录协议的封装，使一个正在进行的对话在重协商其控制协议后得以安全地进行传输。如果事先没有建立对话，则会使用Null密码组，也就是说，在建立对话以前，不使用密码，且消息没有完整性摘要。</p>
 
 
-<h3><a name="datatransfer" id="datatransfer">���ݴ���</a></h3>
+<h3><a name="datatransfer" id="datatransfer">数据传输</a></h3>
 
-    <p>SSL��¼Э�飬��<a href="#figure3">Figure 3</a>��ʾ�����ڿͻ��˺ͷ�����֮��Ĵ���Ӧ�ú�SSL�������ݣ����ܰ����ݷָ�ɽ�С�ĵ�Ԫ��������϶���ϸ߲�Э������Ϊһ����Ԫ����ʹ�õײ�ɿ�����Э�鴫�����ݵ�Ԫ֮ǰ�������ܻ����Щ��Ԫ����ѹ��������ժҪǩ���ͼ���(ע�⣺Ŀǰ������ҪSSL��ʵ�ֶ�ȱ����ѹ����֧��)��</p>
+    <p>SSL记录协议，如<a href="#figure3">Figure 3</a>所示，用于客户端和服务器之间的传输应用和SSL控制数据，可能把数据分割成较小的单元，或者组合多个较高层协议数据为一个单元。在使用底层可靠传输协议传输数据单元之前，它可能会对这些单元进行压缩、附着摘要签名和加密(注意：目前所有主要SSL的实现都缺乏对压缩的支持)。</p>
 
     <p class="figure">
     <img src="../images/ssl_intro_fig3.gif" alt="" width="423" height="323" /><br />
@@ -300,9 +300,9 @@ dUHzICxBVC1lnHyYGjDuAMhe396lYAn8bCld1/L4NMGBCQ==
     </p>
 
 
-<h3><a name="securehttp" id="securehttp">����HTTPͨѶ</a></h3>
+<h3><a name="securehttp" id="securehttp">保护HTTP通讯</a></h3>
 
-    <p>SSL��һ����������;�Ǳ�������������������֮�������HTTPͨѶ�����Ⲣ�ų�Ӧ���ڲ��ӱ�����HTTP���䷽����Ҫ�ǣ�����ͨHTTP����SSL����(��ΪHTTPS)������һ����Ҫ��������ʹ��URL����<code>https</code>������<code>http</code> ������ʹ�ò�ͬ�ķ������˿�(Ĭ�ϵ���443)��<code class="module"><a href="../mod/mod_ssl.html">mod_ssl</a></code>ΪApache����������ṩ�Ĺ�����Ҫ������Щ��...</p>
+    <p>SSL的一个常见的用途是保护浏览器和网络服务器之间的网络HTTP通讯，但这并排除应用于不加保护的HTTP。其方法主要是，对普通HTTP加以SSL保护(称为HTTPS)，但有一个重要的区别：它使用URL类型<code>https</code>而不是<code>http</code> ，而且使用不同的服务器端口(默认的是443)。<code class="module"><a href="../mod/mod_ssl.html">mod_ssl</a></code>为Apache网络服务器提供的功能主要就是这些了...</p>
 
 </div><div class="top"><a href="#page-header"><img alt="top" src="../images/up.gif" /></a></div>
 <div class="section">
@@ -346,6 +346,6 @@ Version 3.0</q>, 1996. See <a href="http://www.netscape.com/eng/ssl3/draft302.tx
 </dl>
 </div></div>
 <div id="footer">
-<p class="apache">������������ʹ�á��ַ���ת�أ������뱣�����������������<a href="../translator_announcement.html#announcement">��������</a>��</p>
-<p class="menu"><a href="../mod/index.html">ģ������</a> | <a href="../mod/directives.html">ָ������</a> | <a href="../faq/index.html">��������</a> | <a href="../glossary.html">�ʻ��</a> | <a href="../sitemap.html">վ�㵼��</a></p></div>
+<p class="apache">本文允许自由使用、分发、转载，但必须保留译者署名；详见：<a href="../translator_announcement.html#announcement">译者声明</a>。</p>
+<p class="menu"><a href="../mod/index.html">模块索引</a> | <a href="../mod/directives.html">指令索引</a> | <a href="../faq/index.html">常见问题</a> | <a href="../glossary.html">词汇表</a> | <a href="../sitemap.html">站点导航</a></p></div>
 </body></html>
